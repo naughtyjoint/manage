@@ -30,6 +30,7 @@ $db->close();
 ?>
 <!DOCTYPE html>
 <html>
+    aaa
     <head>
 		<?php include('../head.php');?>
     </head>
