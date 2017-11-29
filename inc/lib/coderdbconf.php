@@ -28,6 +28,6 @@ class coderDBConf
     public static $deposit_check = 'deposit_check'; //入款稽核
     public static $col_deposit_check = array('id'=>'id','name'=>'name','company'=>'company','method'=>'method','money'=>'money','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','contents'=>'contents');
     public static $deposit_application = 'deposit'; //入款申請
-    public static $col_deposit_application = array('id'=>'id','name'=>'name','company'=>'company','company_id'=>'company_id','method'=>'method','money'=>'money','status'=>'status','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','contents'=>'contents');
+    public static $col_deposit_application = array('id'=>'id','name'=>'name','company'=>'company','method'=>'method','money'=>'money','status'=>'status','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','contents'=>'contents');
 
 }

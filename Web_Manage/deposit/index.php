@@ -9,20 +9,21 @@ $listHelp->mutileSelect=true;
 $listHelp->editLink = "manage.php";
 $listHelp->addLink = "manage.php";
 $listHelp->ajaxSrc = "service.php";
-$listHelp->delSrc = "delservice.php";
+//$listHelp->delSrc = "delservice.php";
 //$listHelp->orderSrc = "orderservice.php";
 //$listHelp->ordersortable = "orderservice.php";
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['name'], 'name' => '名稱', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['name'], 'name' => '申請人', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['company'], 'name' => '第三方公司', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['method'], 'name' => '方式', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['company_id'], 'name' => '商戶', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['status'], 'name' => '狀態', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['status'], 'name' => '狀態', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['update_time'], 'name' => '審核時間', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['contents'], 'name' => '備註', 'order' => true);
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -120,14 +121,16 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
-                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['company'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['method'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['company_id'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
+                   
                     obj.append($tr);
                 }
             }, listComplete: function () {

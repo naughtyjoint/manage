@@ -2,7 +2,7 @@
 $inc_path="../../inc/";
 $manage_path="../";
 $main_auth_key='deposit';
-$fun_auth_key='check';
+$fun_auth_key='deposit_check';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);

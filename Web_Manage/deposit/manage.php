@@ -97,7 +97,13 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
-
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['money']) ?>
+                                        </div>
+                                    </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['company']) ?> </label>
@@ -115,19 +121,11 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['company_id']) ?> </label>
+                                            <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
                                         <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['company_id']) ?>
+                                            <?php echo $fhelp->drawForm($colname['contents']) ?>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
-                                        <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['money']) ?>
-                                        </div>
-                                    </div>
-                                    
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
