@@ -41,7 +41,7 @@ class coderAdmin
                 'list' => array(
                     'pay' => array('key' => 1, 'name' => $langary_auth['deposit']['list']['pay'], 'icon' => 'icon-usd', 'path' => 'deposit_pay/index.php', 'auth' => 30),
                     'player_group' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['gamer'], 'icon' => 'icon-usd', 'path' => 'player_group/index.php', 'auth' => 30),                    
-                    'player' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['player'], 'icon' => 'icon-usd', 'path' => 'player_data/index.php', 'auth' => 30),                                        
+                    'player' => array('key' => 1, 'name' => $langary_auth['deposit']['list']['player'], 'icon' => 'icon-usd', 'path' => 'player_data/index.php', 'auth' => 30),                                        
                     'application' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['application'], 'icon' => 'icon-usd', 'path' => 'deposit/index.php', 'auth' => 30),
                     'deposit_check' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['check'], 'icon' => 'icon-usd', 'path' => 'deposit_check/index.php', 'auth' => 30),                  
                     'log' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['log'], 'icon' => 'icon-usd', 'path' => 'deposit_log/index.php', 'auth' => 30)

@@ -2,10 +2,11 @@
 class class_player{
     public static function getList(){ //
         global $db;
-        $colname = coderDBConf::$col_player_group;
-        $sql = "select {$colname['title']} as name,{$colname['id']} as value
-                from ".coderDBConf::$player_group."
-                ORDER BY `{$colname['id']}` DESC";
+        $colname = coderDBConf::$col_player;
+        $sql = "select `{$colname['title']}` as name,`{$colname['id']}` as value
+                    from ".coderDBConf::$player."
+                    ORDER BY `{$colname['id']}` DESC";
+
         return $db->fetch_all_array($sql);
     }
 
@@ -14,41 +15,57 @@ class class_player{
         return coderHelp::getArrayPropertyVal($ary, 'value', $_val, 'name');
     }
 
-    public static function getList_all($in_id=""){ //全部 or 部分
-        global $db;
-        $colname = coderDBConf::$col_games;
+
+    public static function getList_agid($agid){ //判斷代理人或總代 有哪些玩家
+        $db = Database::DB();
+        $colname = coderDBConf::$col_users;
         $where = "";
-        if($in_id!==""){
-            $where .= "where `{$colname['id']}` in(".$in_id.")";
+        if($agid > 1){
+            $where .= "where `{$colname['agent_id']}` = $agid";
         }
-        $sql = "select {$colname['name']} as name,{$colname['id']} as value
-                from ".coderDBConf::$games."
+
+        $sql = "select `{$colname['nickname']}` as name,`{$colname['id']}` as value
+                from ".coderDBConf::$users."
                 $where
                 ORDER BY `{$colname['id']}` DESC";
+
         return $db->fetch_all_array($sql);
     }
 
-    public static function getList_ck($in_id=""){ //檢查遊戲ID
-        global $db;
-        $colname = coderDBConf::$col_games;
+    public static function getList_agidone($agid,$user_id){ //判斷代理人或總代 有哪些玩家　尋找單一玩家
+        $db = Database::DB();
+        $colname = coderDBConf::$col_player;
         $where = "";
-        if($in_id!==""){
-            $where .= "where `{$colname['id']}` in(".$in_id.")";
+        if($agid > 1){
+            $where .= "and `{$colname['agent_id']}` = $agid";
         }
+
+        $sql = "select `{$colname['nickname']}` as name,`{$colname['id']}` as value
+                from ".coderDBConf::$player."
+                where `{$colname['id']}`=$user_id $where
+                ORDER BY `{$colname['id']}` DESC";
+
+        return $db->query_prepare_first($sql);
+    }
+
+    public static function getList_addodds() //要新增賠率的 玩家ID
+    {
+        global $db;
+        $colname = coderDBConf::$col_users;
         $sql = "select {$colname['id']} as id
-                from ".coderDBConf::$games."
-                $where
+                from " . coderDBConf::$users . "
                 ORDER BY `{$colname['id']}` DESC";
         return $db->fetch_all_array($sql);
     }
 
-    public static function getList_one($id){ //
+    public static function getList_one($user_id){
         global $db;
-        $colname = coderDBConf::$col_games;
-        $sql = "select {$colname['name']} as name,{$colname['id']} as value
-                from ".coderDBConf::$games."
-                where `{$colname['id']}` = $id
+        $colname = coderDBConf::$col_users;
+        $sql = "select *
+                from ".coderDBConf::$users."
+                where `{$colname['id']}`=$user_id 
                 ORDER BY `{$colname['id']}` DESC";
+
         return $db->query_prepare_first($sql);
     }
 }

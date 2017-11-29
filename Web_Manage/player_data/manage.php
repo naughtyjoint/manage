@@ -90,6 +90,16 @@ if ($errorhandle->isException()) {
                                 <!--left start-->
                                 <div class="col-md-10">
                                     <!-- ## coder [formScript] -> ## -->
+                                    <div class="form-group">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['status']) ?>
+                                        </label>
+                                        <div class="col-sm-5 <?php echo ($adminuser['type'] == "1")?'control-label':'controls'?>" <?php echo ($adminuser['type'] == "1")?'style="text-align: left;"':''?>>
+                                            <?php
+                                                echo $fhelp->drawForm($colname['status']);
+                                            ?>
+                                        </div>
+                                    </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['title']) ?> </label>
@@ -97,11 +107,12 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['title']) ?>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
+                                    <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['m_id']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['m_id']) ?>
+                                            <?php echo $fhelp->drawLabel($colname['ug_id']) ?>
+                                        </label>
+                                        <div class="col-sm-5  controls">
+                                            <?php echo $fhelp->drawForm($colname['ug_id']) ?>
                                         </div>
                                     </div>
 

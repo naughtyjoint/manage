@@ -1,13 +1,16 @@
 <?php
 include_once('_config.php');
 include_once('filterconfig.php');
-coderAdmin::vaild($auth, 'view');
+
 
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
-$listHelp->editLink = "manage.php";
-$listHelp->addLink = "manage.php";
+//$listHelp->mutileSelect=true;
+//$listHelp->editLink = "manage.php";
+//$listHelp->addLink = "manage.php";
 $listHelp->ajaxSrc = "service.php";
+$listHelp->check_auth = false;
+//$listHelp->addLink = "manage.php";
 //$listHelp->delSrc = "delservice.php";
 //$listHelp->orderSrc = "orderservice.php";
 //$listHelp->ordersortable = "orderservice.php";
@@ -15,17 +18,11 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '80');
-$col[] = array('column' => $colname_u['title'], 'name' => '申請人', 'order' => false, 'width' => '100');
-$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['company'], 'name' => '第三方公司', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['method'], 'name' => '方式', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['status'], 'name' => '狀態', 'order' => true, 'width' => '90');
-$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['statustime'], 'name' => '審核時間', 'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['remark'], 'name' => '備註', 'order' => false);
+$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname['title'], 'name' => '玩家名稱 ', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
+
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -33,7 +30,7 @@ $listHelp->bindFilter($filterhelp);
 /* ## coder [listHelp] <-- ## */
 
 $db = Database::DB();
-coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', '列表');
+
 $db->close();
 ?>
 <!DOCTYPE html>
@@ -46,13 +43,14 @@ $db->close();
             background-color: white !important;
             border: none !important;
         }
+        tr{ cursor: pointer; }
     </style>
 </head>
 <body>
-<?php include('../navbar.php'); ?>
+<?php //include('../navbar.php'); ?>
 <!-- BEGIN Container -->
 <div class="container" id="main-container">
-    <?php include('../left.php'); ?>
+    <?php //include('../left.php'); ?>
     <!-- BEGIN Content -->
     <div id="main-content">
         <!-- BEGIN Page Title -->
@@ -122,19 +120,13 @@ $db->close();
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname['id'];?>"]);
-                    $tr.append('<td>' + row["uid"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname_u['title'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['company'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['method'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['statustime'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['remark'];?>"] + '</td>');
+                    $tr.attr("title", row["<?php echo $colname['title'];?>"]);
+
+                    $tr.attr("onClick", "parent.closeBox(function(){parent.$('#myuser').html('"+row["<?php echo $colname['title']?>"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').val('"+row["<?php echo $colname['id']?>"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').valid();});");
+                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['title'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-
                     obj.append($tr);
                 }
             }, listComplete: function () {

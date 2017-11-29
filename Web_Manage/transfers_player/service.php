@@ -3,8 +3,7 @@ include_once('_config.php');
 include_once('filterconfig.php');
 $errorhandle=new coderErrorHandle();
 try{
-	coderAdmin::vaild($auth,'view');
-	
+
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
 	$sHelp->select="*";
@@ -17,9 +16,15 @@ try{
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
 
+    //$where = class_agent::getWhere_lv($colname,$where,"u.");
 
     /*if($adminuser['type'] > 1){
-        $where .= ($where==''?'':' AND ')."u.`{$colname['agent_id']}` = ".$adminuser['id'];
+        if($adminuser['type'] == '4'){
+            $where .= ($where == '' ? '' : ' AND ') . "u.`{$colname['agent_id']}` = " . $adminuser['serviceid'];
+        }
+        else {
+            $where .= ($where == '' ? '' : ' AND ') . "u.`{$colname['agent_id']}` = " . $adminuser['id'];
+        }
     }*/
 
 	$sHelp->where=$where;
@@ -28,10 +33,10 @@ try{
 	//print_r($rows);exit;
 	for($i=0;$i<count($rows);$i++){
 		/* ## coder [modify] --> ## */
-		$rows[$i][$colname['status']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['status']]].'">'.coderHelp::getAryVal($langary_yn,$rows[$i][$colname['status']]).'</span>';
+
 		/* ## coder [modify] <-- ## */
 	}
-	
+
 	$result['result']=true;
 	$result['data']=$rows;
 	$result['page']=$sHelp->page_info;
