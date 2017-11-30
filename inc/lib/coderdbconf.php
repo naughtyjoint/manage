@@ -13,12 +13,16 @@ class coderDBConf
     public static $col_rules = array('id' => 'r_id', 'name' => 'r_name', 'depiction' => 'r_depiction','agents'=>'r_agents','service'=>'r_service', 'superadmin' => 'r_superadmin', 'system' => 'r_system', 'admin' => 'r_admin', 'updatetime' => 'r_updatetime', 'createtime' => 'r_createtime');
     public static $col_rules_auth = array('r_id' => 'r_id', 'main_key' => 'ra_main_key', 'fun_key' => 'ra_fun_key', 'auth' => 'ra_auth', 'admin' => 'ra_admin', 'updatetime' => 'ra_updatetime', 'createtime' => 'ra_createtime');
     /*↑↑必須↑↑*/
-    public static $dispensing = 'dispensing'; //出款工作
+    public static $bank= 'bank'; //銀行
+    public static $col_bank = array('id'=>'id','name'=>'name','bank_no'=>'bank_no','manager'=>'manager','create_time'=>'create_time');
+    public static $bank_card = 'bank_card'; //銀行卡
+    public static $col_bank_card = array('id'=>'id','name'=>'name','bank_name'=>'bank_name','bank_no'=>'bank_no','money'=>'money','manager'=>'manager','money_min'=>'money_min','money_max'=>'money_max','num'=>'num','alert'=>'alert','create_time'=>'create_time','update_time'=>'update_time');
+    public static $dispensing = 'dispensing'; //出款申請
     public static $col_dispensing = array('id'=>'id','name'=>'name','bank'=>'bank','num'=>'num','money'=>'money','contents'=>'contents','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','is_pay'=>'is_pay');
-    public static $bank = 'bank'; //銀行卡
-    public static $col_bank = array('id'=>'id','name'=>'name','bank'=>'bank','bank_no'=>'bank_no','money'=>'money','manager'=>'manager','money_min'=>'money_min','money_max'=>'money_max','num'=>'num','alert'=>'alert','create_time'=>'create_time','update_time'=>'update_time');
-    public static $dispensing_check = 'dispensing_check'; //出款稽核
-    public static $col_dispensing_check = array('id'=>'id','name'=>'name','money'=>'money','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','is_pay'=>'is_pay');
+    public static $dispensing_check = 'dispensing'; //出款審核
+    public static $col_dispensing_check = array('id'=>'id','name'=>'name','money'=>'money','manager'=>'manager','contents'=>'contents','create_time'=>'create_time','update_time'=>'update_time','is_pay'=>'is_pay');
+    public static $dispensing_log = 'dispensing_log'; //出款歷程
+    public static $col_dispensing_log = array('id'=>'id','money'=>'money','manager'=>'manager','update_time'=>'update_time','contents'=>'contents');
     public static $deposit_pay = 'deposit_pay'; //第三方支付
     public static $col_deposit_pay = array('id'=>'id','name'=>'name','company'=>'company','method'=>'method','company_id'=>'company_id','money'=>'money','manager'=>'manager');
     public static $player_group = 'player_group'; //玩家群組

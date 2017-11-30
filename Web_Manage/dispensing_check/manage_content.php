@@ -93,25 +93,32 @@ if ($errorhandle->isException()) {
                                     <!-- ## coder [formScript] -> ## -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
-                                        <div class="col-sm-5 control-label" style="text-align: left;">
-                                            <?php echo $langary_yn[$row[$colname['is_pay']]] ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-5 control-label" style="text-align: left;">
                                             <?php echo $row[$colname['name']]  ?>
                                         </div>
                                     </div>
-                                <div class="form-group ">
-                                    <label class="col-sm-3 col-lg-3 control-label">
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
                                         <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
-                                    <div class="col-sm-3 controls">
-                                        <?php echo $row[$colname['money']]?>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $row[$colname['money']]?>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                        <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $row[$colname['contents']] ?>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
+                                            <div class="col-sm-5 control-label" style="text-align: left;">
+                                                <?php echo $langary_yn[$row[$colname['is_pay']]] ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <div class="form-group">
                                     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
                                         <button type="button" class="btn btn-primary" onClick="parent.closeBox();">

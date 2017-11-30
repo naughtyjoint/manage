@@ -17,12 +17,13 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['name'], 'name' => '申請人', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['update_time'], 'name' => '審核時間', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['name'], 'name' => '名稱', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['bank_name'], 'name' => '銀行', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['bank_no'], 'name' => '後五碼', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['money'], 'name' => '餘額', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['num'], 'name' => '剩餘次數', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['is_pay'], 'name' => '是否出款', 'order' => true, 'width' => '100');
+//$col[]=array('column'=>$colname['id'],'name'=>$langary_Web_Manage_all['details'],'order'=>false,'width'=>'80','classname'=>'text-center');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
 
@@ -121,11 +122,12 @@ $db->close();
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['bank_name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['bank_no'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['num'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['is_pay'];?>"] + '</td>');
+                    //$tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'manage_content.php?id=' + row["<?php echo $colname['id']?>"]+'&level=2' + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

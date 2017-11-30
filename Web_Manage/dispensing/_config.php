@@ -2,7 +2,7 @@
 $inc_path="../../inc/";
 $manage_path="../";
 $main_auth_key='dispensing';
-$fun_auth_key='dispensing_work';
+$fun_auth_key='app';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);

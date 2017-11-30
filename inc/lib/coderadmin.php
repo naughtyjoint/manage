@@ -32,9 +32,11 @@ class coderAdmin
             ),
             'dispensing' => array('key' => 3, 'name' => $langary_auth['dispensing']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
-                    'dispensing_work' => array('key' => 1, 'name' => $langary_auth['dispensing']['list']['dispensing_work'], 'icon' => 'icon-usd', 'path' => 'dispensing/index.php', 'auth' => 30),
                     'bank' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['bank'], 'icon' => 'icon-usd', 'path' => 'bank/index.php', 'auth' => 30),
-                    'check' => array('key' => 1, 'name' => $langary_auth['dispensing']['list']['check'], 'icon' => 'icon-usd', 'path' => 'dispensing_check/index.php', 'auth' => 30)
+                    'bank_card' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['bank_card'], 'icon' => 'icon-usd', 'path' => 'bank_card/index.php', 'auth' => 30),
+                    'app' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['application'], 'icon' => 'icon-usd', 'path' => 'dispensing/index.php', 'auth' => 30),
+                    'dispencheck' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['check'], 'icon' => 'icon-usd', 'path' => 'dispensing_check/index.php', 'auth' => 30),
+                    'dislog' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['log'], 'icon' => 'icon-usd', 'path' => 'dispensing_log/index.php', 'auth' => 30)
                 )
             ),
             'deposit' => array('key' => 3, 'name' => $langary_auth['deposit']['name'], 'icon' => 'icon-usd', 'auth' => 30,

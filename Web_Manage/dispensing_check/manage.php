@@ -92,24 +92,30 @@ if ($errorhandle->isException()) {
                                     <!-- ## coder [formScript] -> ## -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['is_pay']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-3 controls">
                                             <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
-
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
                                         <div class="col-sm-3 controls">
                                             <?php echo $fhelp->drawForm($colname['money']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['contents']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['is_pay']) ?>
                                         </div>
                                     </div>
                                     <!-- ## coder [formScript] <- ## -->

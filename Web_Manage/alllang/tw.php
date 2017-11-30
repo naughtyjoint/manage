@@ -149,11 +149,13 @@ $langary_auth = array(
     'dispensing' => array(
         'name'=>'出款',
         'list'=>array(
-            'dispensing_work'=>'出款工作',
-            'bank'=>'銀行卡',
-            'check'=>'出款稽核'
+            'bank'=>'銀行',
+            'bank_card'=>'銀行卡',
+            'application'=>'出款申請',
+            'check'=>'出款審核',
+            'log'=>'出款歷程'
         )
-    ),
+        ),
     'deposit' => array(
         'name'=>'入款',
         'list'=>array(
@@ -475,6 +477,7 @@ $langary_Web_Manage_all = array(
     'die_error' => '操作錯誤',
     'details' => '詳細資訊',
     'player' => '玩家',
+    'bank' => '銀行',
 );
 
 

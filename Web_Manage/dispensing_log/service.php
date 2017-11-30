@@ -19,9 +19,6 @@ try{
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();
-	for($i=0;$i<count($rows);$i++){
-		$rows[$i][$colname['is_pay']]=$incary_pay[$rows[$i][$colname['is_pay']]];
-	}
 
 	$result['result']=true;
 	$result['data']=$rows;

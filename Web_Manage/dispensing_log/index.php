@@ -7,7 +7,7 @@ coderAdmin::vaild($auth, 'view');
 $listHelp = new coderListHelp('table1', $page_title);
 $listHelp->mutileSelect=true;
 $listHelp->editLink = "manage.php";
-$listHelp->addLink = "manage.php";
+//$listHelp->addLink = "manage.php";
 $listHelp->ajaxSrc = "service.php";
 $listHelp->delSrc = "delservice.php";
 //$listHelp->orderSrc = "orderservice.php";
@@ -17,12 +17,10 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['name'], 'name' => '申請人', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['update_time'], 'name' => '審核時間', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['is_pay'], 'name' => '是否出款', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['money'], 'name' => '修改金額', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['update_time'], 'name' => '最後更改時間', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['contents'], 'name' => '備註', 'order' => true, 'width' => '200');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
 
@@ -120,12 +118,11 @@ $db->close();
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['is_pay'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
+                   
                     obj.append($tr);
                 }
             }, listComplete: function () {

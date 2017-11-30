@@ -18,7 +18,7 @@ try {
             throw new Exception($langary_manage['exception']);
         }
         /* ## coder [bindData] --> ## */
-        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']];
+        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']].' | '.$langary_manage['updatetime'].' '.$row[$colname['update_time']];
         /* ## coder [bindData] <-- ## */
         /* ## coder [beforeBind] --> ## */
         /* ## coder [beforeBind] <-- ## */
@@ -86,24 +86,58 @@ if ($errorhandle->isException()) {
                             </div>
                         </div>
                         <div class="box-content">
-                            
                             <div class="row">
                                 <!--left start-->
                                 <div class="col-md-10">
                                     <!-- ## coder [formScript] -> ## -->
-                                    
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['name']) ?>
+                                            <?php echo $row[$colname['name']] ?>
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['bank_no']) ?> </label>
+                                            <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
                                         <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['bank_no']) ?>
+                                            <?php echo $row[$colname['money']] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['company']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $row[$colname['company']] ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['method']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $row[$colname['method']] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['create_time']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php  echo $row[$colname['create_time']] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['update_time']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php  echo $row[$colname['update_time']] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['contents']) ?>
                                         </div>
                                     </div>
                                     <!-- ## coder [formScript] <- ## -->

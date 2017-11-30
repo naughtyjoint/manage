@@ -18,7 +18,7 @@ try {
             throw new Exception($langary_manage['exception']);
         }
         /* ## coder [bindData] --> ## */
-        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']];
+        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']].' | '.$langary_manage['updatetime'].' '.$row[$colname['update_time']];
         /* ## coder [bindData] <-- ## */
         /* ## coder [beforeBind] --> ## */
         /* ## coder [beforeBind] <-- ## */
@@ -99,11 +99,41 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
+
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['bank_name']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['bank_name']) ?>
+                                        </div>
+                                    </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['bank_no']) ?> </label>
                                         <div class="col-sm-3 controls">
                                             <?php echo $fhelp->drawForm($colname['bank_no']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['money']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['num']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['num']) ?>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['alert']) ?> </label>
+                                        <div class="col-sm-3 controls">
+                                            <?php echo $fhelp->drawForm($colname['alert']) ?>
                                         </div>
                                     </div>
                                     <!-- ## coder [formScript] <- ## -->
