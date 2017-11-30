@@ -2,18 +2,15 @@
 $inc_path="../../inc/";
 $manage_path="../";
 $main_auth_key='dispensing';
-$fun_auth_key='app';
+$fun_auth_key='dislog';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$dispensing;
-$colname=coderDBConf::$col_dispensing;
+$table=coderDBConf::$dispensing_log;
+$colname=coderDBConf::$col_dispensing_log;
 
-$table_b=coderDBConf::$bank;
-$colname_b=coderDBConf::$col_bank;
 
-$bank_array = class_bank::getList(); //銀行
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';
