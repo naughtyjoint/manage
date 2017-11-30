@@ -1,14 +1,20 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
+include('../_config.php');
+
 $main_auth_key='deposit';
 $fun_auth_key='deposit_check';
-include('../_config.php');
+
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
 $table=coderDBConf::$deposit_check;
 $colname=coderDBConf::$col_deposit_check;
+
+
+$table_u=coderDBConf::$player; //玩家
+$colname_u=coderDBConf::$col_player;
 
 
 

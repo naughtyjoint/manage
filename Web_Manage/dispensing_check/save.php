@@ -32,7 +32,7 @@ try{
 
     $nowtime = datetime();
     $data[$colname['manager']]=$adminuser['username'];
-    $data[$colname['update_time']]= $nowtime;
+    $data[$colname['transfers_statustime']]= $nowtime;
 
 
     if($method=='edit'){

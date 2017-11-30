@@ -9,5 +9,6 @@ $fobj[$colname["id"]]=array("type"=>"hidden","name"=>"ID","column"=>$colname["id
             'required' => 'yes'
         )
     );
+    
 
 $fhelp->Bind($fobj);

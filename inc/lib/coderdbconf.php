@@ -25,9 +25,9 @@ class coderDBConf
     public static $col_player_group = array('id'=>'id','ind'=>'ind','title'=>'title','num_max'=>'num_max','num_min'=>'num_min','contents'=>'contents','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time');
     public static $player = 'player'; //玩家
     public static $col_player = array('id'=>'id','ug_id'=>'users_ug_id','openid'=>'openid','title'=>'title','status'=>'status','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'users_manager','logintime'=>'users_logintime');
-    public static $deposit_check = 'deposit_check'; //入款稽核
-    public static $col_deposit_check = array('id'=>'id','name'=>'name','company'=>'company','method'=>'method','money'=>'money','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','contents'=>'contents');
     public static $deposit = 'deposit'; //入款申請
     public static $col_deposit = array('id'=>'id','user_id'=>'user_id','money'=>'money','company'=>'company','method'=>'method','status'=>'status','remark'=>'remark','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
+    public static $deposit_check = 'deposit'; //入款審核
+    public static $col_deposit_check = array('id'=>'id','user_id'=>'user_id','money'=>'money','company'=>'company','method'=>'method','status'=>'status','remark'=>'remark','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
 
 }
