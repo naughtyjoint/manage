@@ -9,6 +9,9 @@ $fobj[$colname["id"]]=array("type"=>"hidden","name"=>"ID","column"=>$colname["id
             'required' => 'yes'
         )
     );
+    $fobj[$colname['bank']]=array('type'=>'text','name'=>'銀行','column'=>$colname['bank'],'autocomplete'=>'off','placeholder'=>'請輸入銀行名稱','validate'=>array('required'=>'yes'));
+    $fobj[$colname['bank_no']]=array('type'=>'text','name'=>'卡號','column'=>$colname['bank_no'],'autocomplete'=>'off','placeholder'=>'請輸入卡號','validate'=>array('required'=>'yes'));
+    
     
 
 $fhelp->Bind($fobj);

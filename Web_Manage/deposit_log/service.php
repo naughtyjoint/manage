@@ -7,8 +7,8 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="*";
-	$sHelp->table=$table;
+    $sHelp->select="*";
+    $sHelp->table=$table;
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby=get("orderkey",1);
@@ -16,6 +16,12 @@ try{
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
+
+
+    /*if($adminuser['type'] > 1){
+        $where .= ($where==''?'':' AND ')."u.`{$colname_u['agent_id']}` = ".$adminuser['id'];
+    }*/
+
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();

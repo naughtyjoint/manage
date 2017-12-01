@@ -7,8 +7,10 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="*";
-	$sHelp->table=$table;
+	$sHelp->select="bc.* , b.`{$colname_b['name']}` as b_name";
+	$sHelp->table = $table." bc 
+					LEFT JOIN $table_b b ON bc.`{$colname['bank_name']}` = b.`{$colname_b['id']}`
+					";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby=get("orderkey",1);

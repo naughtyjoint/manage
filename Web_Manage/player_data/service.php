@@ -7,13 +7,13 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="*";
-	$sHelp->table=$table;
+	// $sHelp->select="*";
+	// $sHelp->table=$table;
 
-	// $sHelp->select="g.* , m.{$colname_m['title']}";
-	// $sHelp->table = $table." g 
-	// 				LEFT JOIN $table_m m ON g.`{$colname['ug_id']}` = m.`{$colname_m['id']}`
-	// 				";
+	$sHelp->select="g.* , m.`{$colname_m['title']}` as title_m";
+	$sHelp->table = $table." g 
+					LEFT JOIN $table_m m ON g.`{$colname['ug_id']}` = m.`{$colname_m['id']}`
+					";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby=get("orderkey",1);

@@ -16,16 +16,7 @@ try{
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
 
-    //$where = class_agent::getWhere_lv($colname,$where,"u.");
-
-    /*if($adminuser['type'] > 1){
-        if($adminuser['type'] == '4'){
-            $where .= ($where == '' ? '' : ' AND ') . "u.`{$colname['agent_id']}` = " . $adminuser['serviceid'];
-        }
-        else {
-            $where .= ($where == '' ? '' : ' AND ') . "u.`{$colname['agent_id']}` = " . $adminuser['id'];
-        }
-    }*/
+    $where .= ($where == '' ? '' : ' AND ') . "`{$colname['status']}` = 1";
 
 	$sHelp->where=$where;
 

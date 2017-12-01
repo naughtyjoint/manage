@@ -5,22 +5,22 @@ coderAdmin::vaild($auth, 'view');
 
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
-$listHelp->mutileSelect=true;
-$listHelp->editLink = "manage.php";
+$listHelp->mutileSelect=false;
+//$listHelp->editLink = "manage.php";
 //$listHelp->addLink = "manage.php";
 $listHelp->ajaxSrc = "service.php";
-$listHelp->delSrc = "delservice.php";
+//$listHelp->delSrc = "delservice.php";
 //$listHelp->orderSrc = "orderservice.php";
 //$listHelp->ordersortable = "orderservice.php";
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['money'], 'name' => '修改金額', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['update_time'], 'name' => '最後更改時間', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['contents'], 'name' => '備註', 'order' => true, 'width' => '200');
+$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['contents'], 'name' => '修改內容', 'order' => false,'width'=>'120');
+$col[] = array('column'=>$colname['updated_time'],'name'=>'修改時間','order'=> true,'width'=>'80');
+$col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => false, 'width' => '100');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
 
@@ -102,7 +102,6 @@ $db->close();
 <?php include('../js.php'); ?>
 
 <script type="text/javascript" src="../js/coderlisthelp.js"></script>
-
 <script type="text/javascript">
     $(document).ready(function () {
         /* ## coder [listRow] --> ## */
@@ -116,20 +115,19 @@ $db->close();
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname['name'];?>"]);
+                    $tr.attr("title", row["<?php echo $colname['id'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
-                   
+                    $tr.append('<td>' + row["<?php echo $colname['updated_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {
-                //$("#sidebar").load("../do/leftuldo.php?path=<?php //echo $manage_path?>&ck=<?php //echo (isset($fun_auth_key))?$fun_auth_key:''?>");
+
             }
         });
-        /* ## coder [listRow] <-- ## */
+
     });
 </script>
 </body>
