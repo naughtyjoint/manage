@@ -10,10 +10,14 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$dispensing;
 $colname=coderDBConf::$col_dispensing;
 
-$table_b=coderDBConf::$bank;
-$colname_b=coderDBConf::$col_bank;
+$table_b=coderDBConf::$bank_card;
+$colname_b=coderDBConf::$col_bank_card;
 
-$bank_array = class_bank::getList(); //銀行
+$table_u=coderDBConf::$player; //玩家
+$colname_u=coderDBConf::$col_player;
+
+
+$bank_array = class_bank::getListCard(); //銀行卡
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';

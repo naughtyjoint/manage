@@ -43,14 +43,15 @@ try{
         /* ## coder [indInit] <-- ## */
         /* ## coder [insert] --> ## */
         /* ## coder [insert] <-- ## */        
-		$data[$colname['create_time']]= $nowtime;
+        $data[$colname['create_time']]= $nowtime;
+        $data[$colname['user_id']] = post($colname['user_id'],1);        
 		$id=$db->query_insert($table,$data);
 	}
 
 
-    $admin_title=isset($data[$colname['name']]) ? $data[$colname['name']] : '';
-    coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,$method,"{$data[$colname['name']]} id:{$id}");
-
+    $admin_title=isset($data[$colname['id']]) ? $data[$colname['id']] : '';
+    coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, $method, "id:{$id}");
+    
 
     $db->close();
 

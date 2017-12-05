@@ -9,7 +9,15 @@ class class_bank{
 
         return $db->fetch_all_array($sql);
     }
+    public static function getListCard(){ //
+        global $db;
+        $colname = coderDBConf::$col_bank_card;
+        $sql = "select `{$colname['name']}` as name,`{$colname['id']}` as value
+                    from ".coderDBConf::$bank_card."
+                    ORDER BY `{$colname['id']}` DESC";
 
+        return $db->fetch_all_array($sql);
+    }
     public static function getName($_val){
         $ary = self::getList();
         return coderHelp::getArrayPropertyVal($ary, 'value', $_val, 'name');

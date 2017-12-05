@@ -4,12 +4,11 @@ include_once('filterconfig.php');
 $errorhandle=new coderErrorHandle();
 try{
 	coderAdmin::vaild($auth,'view');
-	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="*";
-	$sHelp->table=$table;
-	$sHelp->page_size=get("pagenum");
+	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['title']}`";
+	$sHelp->table=$table." t
+	              LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`";
 	$sHelp->page=get("page");
 	$sHelp->orderby=get("orderkey",1);
 	$sHelp->orderdesc=get("orderdesc",1);
@@ -20,7 +19,7 @@ try{
 
 	$rows=$sHelp->getList();
 	for($i=0;$i<count($rows);$i++){
-		$rows[$i][$colname['is_pay']]=$incary_pay[$rows[$i][$colname['is_pay']]];
+        $rows[$i][$colname['is_pay']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['is_pay']]].'">'.coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['is_pay']]).'</span>';
 	}
 
 	$result['result']=true;

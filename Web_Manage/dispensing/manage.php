@@ -20,8 +20,6 @@ try {
         /* ## coder [bindData] --> ## */
         $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']].' | '.$langary_manage['updatetime'].' '.$row[$colname['update_time']];
         /* ## coder [bindData] <-- ## */
-        /* ## coder [beforeBind] --> ## */
-        /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
 
@@ -49,8 +47,6 @@ if ($errorhandle->isException()) {
     <link rel="stylesheet" type="text/css" href="../assets/dropzone/downloads/css/dropzone.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/jcrop/jquery.Jcrop.min.css"/>
     <!-- ## coder [phpScript] -> ## -->
-    <!-- ## coder [phpScript] <- ## -->
-
 </head>
 <body>
 <!-- BEGIN Container -->
@@ -87,21 +83,28 @@ if ($errorhandle->isException()) {
                         </div>
                         <div class="box-content">
                             <div class="row">
-                                <!--left start-->
-                                <div class="col-md-10">
                                     <!-- ## coder [formScript] -> ## -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['is_pay']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
-                                        <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['name']) ?>
+                                            <?php echo $fhelp->drawLabel($colname['user_id']) ?> </label>
+                                        <div class="col-sm-3 <?php echo (isset($row[$colname['user_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['user_id']]))?'style="text-align: left;"':''?>>
+                                            <?php
+                                            if(isset($row[$colname['user_id']])) {
+                                                echo class_player::getName($row[$colname['user_id']]);
+
+                                            }
+                                            else{
+                                                echo $fhelp->drawForm($colname['user_id']);
+                                        ?>
+                                                <div class="control-label" style="text-align: left; font-size: 16px;">
+                                                    <span id="myuser"></span>
+                                                    &nbsp;
+                                                    <a class="btn btn-success" onClick="openBox('../transfers_player/index.php','95%','95%','fade',function(){})">選擇玩家</a>
+                                                </div>
+
+                                        <?php
+                                            }
+                                        ?>
                                         </div>
                                     </div>
 
@@ -110,14 +113,6 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawLabel($colname['bank']) ?> </label>
                                         <div class="col-sm-3 controls">
                                             <?php echo $fhelp->drawForm($colname['bank']) ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['num']) ?> </label>
-                                        <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['num']) ?>
                                         </div>
                                     </div>
                                     <div class="form-group ">

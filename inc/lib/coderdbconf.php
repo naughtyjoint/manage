@@ -18,7 +18,7 @@ class coderDBConf
     public static $bank_card = 'bank_card'; //銀行卡
     public static $col_bank_card = array('id'=>'id','name'=>'name','bank_name'=>'bank_name','bank_no'=>'bank_no','money'=>'money','manager'=>'manager','money_min'=>'money_min','money_max'=>'money_max','num'=>'num','alert'=>'alert','create_time'=>'create_time','update_time'=>'update_time');
     public static $dispensing = 'dispensing'; //出款申請
-    public static $col_dispensing = array('id'=>'id','name'=>'name','bank'=>'bank','num'=>'num','money'=>'money','contents'=>'contents','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','is_pay'=>'is_pay');
+    public static $col_dispensing = array('id'=>'id','user_id'=>'user_id','name'=>'name','bank'=>'bank','num'=>'num','money'=>'money','contents'=>'contents','manager'=>'manager','create_time'=>'create_time','update_time'=>'update_time','check_time'=>'check_time','is_pay'=>'is_pay');
     public static $dispensing_check = 'dispensing'; //出款審核
     public static $col_dispensing_check = array('id'=>'id','name'=>'name','money'=>'money','manager'=>'manager','contents'=>'contents','create_time'=>'create_time','update_time'=>'update_time','is_pay'=>'is_pay');
     public static $dispensing_log = 'dispensing_log'; //出款歷程

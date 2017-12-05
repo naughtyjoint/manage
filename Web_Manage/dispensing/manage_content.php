@@ -100,9 +100,9 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
+                                            <?php echo $fhelp->drawLabel($colname_u['title']) ?> </label>
                                         <div class="col-sm-5 control-label" style="text-align: left;">
-                                            <?php echo $row[$colname['name']]  ?>
+                                            <?php echo $row[$colname_u['title']]  ?>
                                         </div>
                                     </div>
                                     <div class="form-group ">
