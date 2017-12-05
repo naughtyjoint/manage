@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-11-29 10:37:41
+-- 產生時間： 2017-12-05 02:49:22
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.10
 
@@ -58,20 +58,12 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-(1, '', '', 1, 0, 1, 0, '8917812745a2a0c82a6ded92e78b1072151192094749123bk0bl0n534bvtuve5tamqda7tu', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '192.168.1.174', '2017-11-29 10:02:27', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
+(1, '', '', 1, 0, 1, 0, '666040203e8bffc8758b3609ac35b4f8151243657778422ifhrv7vo4rntvj4fo79u2lm3tp', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-05 09:16:17', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (2, '2,1', '1', 1, 0, 2, 0, 'ae84098ab9476dcee271290d1f9c6abd1508314287189820q937kqqrbd85vblgb326b39a5', 'test1', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'test1-總代', 'test1@gmail.com', '', 3, NULL, '0000-00-00 00:00:00', '::1', '2017-10-18 16:11:27', 1, 'admin', '2017-10-17 14:10:01', '2017-10-18 16:10:55'),
 (3, '1', '1,2', 2, 2, 3, 0, '47c2b6232842f47d2418a4e2b6fffe8915083135197481104j4g4q3274gsqmqd0i5t0d9h6', 'test2', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'test2-代理人', 'test2@gmail.com', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-10-18 15:58:39', 1, 'test2', '2017-10-17 14:10:54', '2017-10-18 16:05:46'),
 (4, '1', '1,2,3', 3, 2, 3, 0, '046039e11ec81721fe4c79d99d52905d1508224170565258aau7np371buqmv9gn0kqtkti6', 'test3', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'test3-代理人', 'test3@gmail.com', '', 4, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'test2', '2017-10-17 15:09:30', '2017-10-18 16:06:08'),
 (5, '', '1,2', 2, 0, 4, 2, '1f1d58bcdf0bcfc735663321a0036eaa150839967477166ohjputbm1gfgaef06hrh6aobm4', 'stest1', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'stest1-總代客服', 'stest1@gmail.com', '', 5, NULL, '0000-00-00 00:00:00', '::1', '2017-10-19 15:54:34', 1, 'test1', '2017-10-17 15:11:04', '2017-10-17 15:11:04'),
 (6, '', '1,2,3', 3, 0, 4, 3, 'a8da5a97b9dce5bcdd07d00b1e4b1cde1508224382830788aau7np371buqmv9gn0kqtkti6', 'stest2', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'stest2-代理人客服', 'stest2@gmail.com', '', 5, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'test2', '2017-10-17 15:13:02', '2017-10-17 15:13:02'),
-(7, '', '', 1, 0, 1, 0, 'a5d5120a181129258143a8009ed28daf15082244209473802cn7knj2vsk82qggsu0748vs6', 'boss@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '老闆', 'boss@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:13:40', '2017-10-17 15:13:40'),
-(8, '', '', 1, 0, 1, 0, '0fb839a7a34f3457e1c19385a81d8c261508224454795002cn7knj2vsk82qggsu0748vs6', 'jean@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '特助', 'jean@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:14:14', '2017-10-17 15:14:14'),
-(9, '', '', 1, 0, 1, 0, '4b6a382a44838ce7e4c49657096991ce15082244784639302cn7knj2vsk82qggsu0748vs6', 'maggie@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '羿廷', 'maggie@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:14:38', '2017-10-17 15:14:38'),
-(10, '', '', 1, 0, 1, 0, 'e3f11fcc8cb1f3570acc828ca93c380315082245166636602cn7knj2vsk82qggsu0748vs6', 'shawna@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '偉婷', 'shawna@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:15:16', '2017-10-17 15:15:16'),
-(11, '', '', 1, 0, 1, 0, 'cd3126d07d33f4a97f9980a1a486687615082245477944302cn7knj2vsk82qggsu0748vs6', 'pllai@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '??', 'pllai@degather.com', '', 5, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:15:47', '2017-11-20 10:48:50'),
-(12, '', '', 1, 0, 1, 0, '3ea9ea301bec9efb69e6f73bf536591d15082245692200002cn7knj2vsk82qggsu0748vs6', 'kuansu@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '阿寬', 'kuansu@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:16:09', '2017-10-17 15:16:09'),
-(13, '', '', 1, 0, 1, 0, 'd454e5f3c3a8502e783a5d22243c4da315082245923412502cn7knj2vsk82qggsu0748vs6', 'evahu@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '家榛', 'evahu@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:16:32', '2017-10-17 15:16:32'),
-(14, '', '', 1, 0, 1, 0, '1f229816bdde82a319e5cec8dea9328315082246166039702cn7knj2vsk82qggsu0748vs6', 'mhchen@degather.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '孟孝', 'mhchen@degather.com', '', 2, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'admin', '2017-10-17 15:16:56', '2017-10-17 15:16:56'),
 (15, '', '1,2', 5, 0, 4, 2, '3fe84efde85e8e5ed5586bab9b89d146150823302031574pequr2gd3e7p0ifklpnh58aui6', 'stest11', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'stest1客服-建立總代客服', 'stest11@gmail.com', '', 12, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'stest1', '2017-10-17 17:37:00', '2017-10-17 17:39:55'),
 (16, '1', '1,2', 5, 2, 3, 0, '7acff93f96b09090a8678d4791bce41915082347596943pequr2gd3e7p0ifklpnh58aui6', 'newtest2', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'newtest2-st1總代客服建', 'newtest2@gmail.com', '', 4, NULL, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 1, 'stest1', '2017-10-17 18:05:59', '2017-10-17 18:06:32');
 
@@ -1189,7 +1181,217 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (1089, 'admin', 3, 1, '列表', '2017-11-29 17:36:06', '127.0.0.1', 2),
 (1090, 'admin', 3, 2, '列表', '2017-11-29 17:36:07', '127.0.0.1', 2),
 (1091, 'admin', 3, 1, '列表', '2017-11-29 17:36:08', '127.0.0.1', 2),
-(1092, 'admin', 3, 2, '列表', '2017-11-29 17:36:09', '127.0.0.1', 2);
+(1092, 'admin', 3, 2, '列表', '2017-11-29 17:36:09', '127.0.0.1', 2),
+(1093, 'admin', 0, 0, 'admin登入成功', '2017-11-30 09:58:42', '127.0.0.1', 1),
+(1094, 'admin', 3, 2, '列表', '2017-11-30 09:58:55', '127.0.0.1', 2),
+(1095, 'admin', 3, 1, '列表', '2017-11-30 09:59:17', '127.0.0.1', 2),
+(1096, 'admin', 3, 2, '列表', '2017-11-30 09:59:56', '127.0.0.1', 2),
+(1097, 'admin', 3, 1, '列表', '2017-11-30 10:00:04', '127.0.0.1', 2),
+(1098, 'admin', 3, 2, '列表', '2017-11-30 10:00:17', '127.0.0.1', 2),
+(1099, 'admin', 3, 1, '列表', '2017-11-30 10:06:32', '127.0.0.1', 2),
+(1100, 'admin', 3, 2, '列表', '2017-11-30 10:07:07', '127.0.0.1', 2),
+(1101, 'admin', 3, 1, '列表', '2017-11-30 10:07:15', '127.0.0.1', 2),
+(1102, 'admin', 3, 2, '列表', '2017-11-30 10:07:16', '127.0.0.1', 2),
+(1103, 'admin', 3, 1, '列表', '2017-11-30 10:07:22', '127.0.0.1', 2),
+(1104, 'admin', 3, 2, '列表', '2017-11-30 10:07:26', '127.0.0.1', 2),
+(1105, 'admin', 3, 1, '列表', '2017-11-30 10:08:18', '127.0.0.1', 2),
+(1106, 'admin', 3, 2, '列表', '2017-11-30 10:08:24', '127.0.0.1', 2),
+(1107, 'admin', 1, 1, '列表', '2017-11-30 10:08:35', '127.0.0.1', 2),
+(1108, 'admin', 3, 1, '列表', '2017-11-30 10:08:39', '127.0.0.1', 2),
+(1109, 'admin', 3, 2, '列表', '2017-11-30 10:08:42', '127.0.0.1', 2),
+(1110, 'admin', 3, 1, '列表', '2017-11-30 10:08:46', '127.0.0.1', 2),
+(1111, 'admin', 3, 2, '列表', '2017-11-30 10:08:53', '127.0.0.1', 2),
+(1112, 'admin', 1, 1, '列表', '2017-11-30 10:09:17', '127.0.0.1', 2),
+(1113, 'admin', 2, 1, '列表', '2017-11-30 10:09:25', '127.0.0.1', 2),
+(1114, 'admin', 2, 1, '8筆資料(\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\')', '2017-11-30 10:09:38', '127.0.0.1', 16),
+(1115, 'admin', 2, 1, '列表', '2017-11-30 10:10:02', '127.0.0.1', 2),
+(1116, 'admin', 3, 2, '列表', '2017-11-30 10:10:28', '127.0.0.1', 2),
+(1117, 'admin', 3, 2, '列表', '2017-11-30 10:52:53', '127.0.0.1', 2),
+(1118, 'admin', 3, 2, 'id:29', '2017-11-30 10:55:08', '127.0.0.1', 8),
+(1119, 'admin', 3, 2, '列表', '2017-11-30 10:55:10', '127.0.0.1', 2),
+(1120, 'admin', 0, 0, 'admin登入成功', '2017-11-30 10:56:07', '127.0.0.1', 1),
+(1121, 'admin', 3, 2, '列表', '2017-11-30 10:56:11', '127.0.0.1', 2),
+(1122, 'admin', 3, 1, '列表', '2017-11-30 10:56:27', '127.0.0.1', 2),
+(1123, 'admin', 3, 1, 'id:9', '2017-11-30 10:56:40', '127.0.0.1', 8),
+(1124, 'admin', 3, 1, 'id:8', '2017-11-30 10:56:48', '127.0.0.1', 8),
+(1125, 'admin', 3, 1, 'id:7', '2017-11-30 10:57:04', '127.0.0.1', 8),
+(1126, 'admin', 3, 1, '列表', '2017-11-30 10:58:05', '127.0.0.1', 2),
+(1127, 'admin', 3, 2, '列表', '2017-11-30 10:58:08', '127.0.0.1', 2),
+(1128, 'admin', 3, 1, '列表', '2017-11-30 10:58:28', '127.0.0.1', 2),
+(1129, 'admin', 3, 1, 'id:10', '2017-11-30 10:58:50', '127.0.0.1', 4),
+(1130, 'admin', 3, 2, '列表', '2017-11-30 10:58:55', '127.0.0.1', 2),
+(1131, 'admin', 3, 2, 'id:30', '2017-11-30 10:59:21', '127.0.0.1', 4),
+(1132, 'admin', 3, 2, '列表', '2017-11-30 10:59:25', '127.0.0.1', 2),
+(1133, 'admin', 3, 2, 'id:30', '2017-11-30 10:59:35', '127.0.0.1', 8),
+(1134, 'admin', 3, 2, '列表', '2017-11-30 10:59:38', '127.0.0.1', 2),
+(1135, 'admin', 3, 1, '列表', '2017-11-30 11:00:06', '127.0.0.1', 2),
+(1136, 'admin', 3, 2, '列表', '2017-11-30 11:00:08', '127.0.0.1', 2),
+(1137, 'admin', 3, 1, '列表', '2017-11-30 11:00:10', '127.0.0.1', 2),
+(1138, 'admin', 3, 2, '列表', '2017-11-30 11:00:18', '127.0.0.1', 2),
+(1139, 'admin', 3, 1, '列表', '2017-11-30 11:01:14', '127.0.0.1', 2),
+(1140, 'admin', 3, 1, '1筆資料(\'8\')', '2017-11-30 11:02:14', '127.0.0.1', 16),
+(1141, 'admin', 3, 1, 'id:11', '2017-11-30 11:02:25', '127.0.0.1', 4),
+(1142, 'admin', 3, 2, '列表', '2017-11-30 11:02:30', '127.0.0.1', 2),
+(1143, 'admin', 3, 2, 'id:31', '2017-11-30 11:03:11', '127.0.0.1', 4),
+(1144, 'admin', 3, 2, '列表', '2017-11-30 11:03:13', '127.0.0.1', 2),
+(1145, 'admin', 3, 2, 'id:31', '2017-11-30 11:03:25', '127.0.0.1', 8),
+(1146, 'admin', 3, 2, '列表', '2017-11-30 11:03:26', '127.0.0.1', 2),
+(1147, 'admin', 3, 1, '列表', '2017-11-30 11:03:36', '127.0.0.1', 2),
+(1148, 'admin', 3, 2, '列表', '2017-11-30 11:03:37', '127.0.0.1', 2),
+(1149, 'admin', 3, 2, 'id:32', '2017-11-30 11:05:48', '127.0.0.1', 4),
+(1150, 'admin', 3, 2, '列表', '2017-11-30 11:05:52', '127.0.0.1', 2),
+(1151, 'admin', 3, 2, 'id:32', '2017-11-30 11:05:57', '127.0.0.1', 8),
+(1152, 'admin', 3, 2, '列表', '2017-11-30 11:07:59', '127.0.0.1', 2),
+(1153, 'admin', 3, 2, 'id:33', '2017-11-30 11:08:32', '127.0.0.1', 4),
+(1154, 'admin', 3, 2, '列表', '2017-11-30 11:08:34', '127.0.0.1', 2),
+(1155, 'admin', 3, 2, 'id:33', '2017-11-30 11:09:33', '127.0.0.1', 8),
+(1156, 'admin', 3, 2, '列表', '2017-11-30 11:11:03', '127.0.0.1', 2),
+(1157, 'admin', 3, 2, 'id:33', '2017-11-30 11:11:15', '127.0.0.1', 8),
+(1158, 'admin', 3, 2, '列表', '2017-11-30 11:12:06', '127.0.0.1', 2),
+(1159, 'admin', 3, 2, 'id:33', '2017-11-30 11:12:22', '127.0.0.1', 8),
+(1160, 'admin', 3, 2, '列表', '2017-11-30 11:12:23', '127.0.0.1', 2),
+(1161, 'admin', 3, 2, 'id:33', '2017-11-30 11:12:32', '127.0.0.1', 8),
+(1162, 'admin', 3, 2, '列表', '2017-11-30 11:12:34', '127.0.0.1', 2),
+(1163, 'admin', 3, 2, 'id:33', '2017-11-30 11:13:21', '127.0.0.1', 8),
+(1164, 'admin', 3, 2, '列表', '2017-11-30 11:13:24', '127.0.0.1', 2),
+(1165, 'admin', 3, 2, 'id:33', '2017-11-30 11:13:29', '127.0.0.1', 8),
+(1166, 'admin', 3, 2, '列表', '2017-11-30 11:13:31', '127.0.0.1', 2),
+(1167, 'admin', 3, 2, 'id:33', '2017-11-30 11:14:28', '127.0.0.1', 8),
+(1168, 'admin', 3, 2, '列表', '2017-11-30 11:15:56', '127.0.0.1', 2),
+(1169, 'admin', 3, 2, 'id:33', '2017-11-30 11:16:04', '127.0.0.1', 8),
+(1170, 'admin', 3, 2, '列表', '2017-11-30 11:16:20', '127.0.0.1', 2),
+(1171, 'admin', 3, 2, 'id:33', '2017-11-30 11:16:34', '127.0.0.1', 8),
+(1172, 'admin', 3, 2, '列表', '2017-11-30 11:16:37', '127.0.0.1', 2),
+(1173, 'admin', 3, 2, 'id:33', '2017-11-30 11:16:46', '127.0.0.1', 8),
+(1174, 'admin', 3, 2, '列表', '2017-11-30 11:16:48', '127.0.0.1', 2),
+(1175, 'admin', 3, 1, '列表', '2017-11-30 11:38:24', '127.0.0.1', 2),
+(1176, 'admin', 3, 2, '列表', '2017-11-30 11:38:25', '127.0.0.1', 2),
+(1177, 'admin', 3, 1, '列表', '2017-11-30 11:40:59', '127.0.0.1', 2),
+(1178, 'admin', 3, 2, '列表', '2017-11-30 11:41:02', '127.0.0.1', 2),
+(1179, 'admin', 3, 1, '列表', '2017-11-30 11:41:22', '127.0.0.1', 2),
+(1180, 'admin', 3, 2, '列表', '2017-11-30 11:41:29', '127.0.0.1', 2),
+(1181, 'admin', 3, 2, '台灣銀行 id:14', '2017-11-30 11:47:13', '127.0.0.1', 8),
+(1182, 'admin', 3, 2, '列表', '2017-11-30 11:47:18', '127.0.0.1', 2),
+(1183, 'admin', 2, 1, '列表', '2017-11-30 11:55:26', '127.0.0.1', 2),
+(1184, 'admin', 3, 2, '列表', '2017-11-30 11:56:27', '127.0.0.1', 2),
+(1185, 'admin', 2, 1, '列表', '2017-11-30 11:58:13', '127.0.0.1', 2),
+(1186, 'admin', 3, 2, '列表', '2017-11-30 11:59:09', '127.0.0.1', 2),
+(1187, 'admin', 3, 2, 'test id:0', '2017-11-30 11:59:23', '127.0.0.1', 4),
+(1188, 'admin', 3, 2, '列表', '2017-11-30 11:59:41', '127.0.0.1', 2),
+(1189, 'admin', 2, 1, '列表', '2017-11-30 12:09:53', '127.0.0.1', 2),
+(1190, 'admin', 0, 0, 'admin登入成功', '2017-11-30 12:09:55', '192.168.1.174', 1),
+(1191, 'admin', 3, 2, '列表', '2017-11-30 12:10:01', '192.168.1.174', 2),
+(1192, 'admin', 3, 2, '列表', '2017-11-30 12:11:23', '127.0.0.1', 2),
+(1193, 'admin', 3, 2, 'cubbish inc id:8', '2017-11-30 12:12:27', '192.168.1.174', 8),
+(1194, 'admin', 3, 2, '列表', '2017-11-30 12:12:30', '192.168.1.174', 2),
+(1195, 'admin', 3, 1, '列表', '2017-11-30 13:52:05', '127.0.0.1', 2),
+(1196, 'admin', 3, 2, '列表', '2017-11-30 13:58:13', '127.0.0.1', 2),
+(1197, 'admin', 3, 1, '列表', '2017-11-30 14:07:25', '127.0.0.1', 2),
+(1198, 'admin', 3, 2, '列表', '2017-11-30 14:08:33', '127.0.0.1', 2),
+(1199, 'admin', 3, 2, '4筆資料(\'12\',\'11\',\'10\',\'9\')', '2017-11-30 14:08:47', '127.0.0.1', 16),
+(1200, 'admin', 3, 2, '工商01 id:0', '2017-11-30 14:08:57', '127.0.0.1', 8),
+(1201, 'admin', 3, 2, '列表', '2017-11-30 14:09:10', '127.0.0.1', 2),
+(1202, 'admin', 3, 2, '陳小名 id:9', '2017-11-30 14:16:05', '127.0.0.1', 4),
+(1203, 'admin', 3, 2, '列表', '2017-11-30 14:16:28', '127.0.0.1', 2),
+(1204, 'admin', 3, 1, '列表', '2017-11-30 14:17:24', '127.0.0.1', 2),
+(1205, 'admin', 3, 2, '列表', '2017-11-30 14:17:45', '127.0.0.1', 2),
+(1206, 'admin', 3, 1, '列表', '2017-11-30 14:19:36', '127.0.0.1', 2),
+(1207, 'admin', 3, 2, '列表', '2017-11-30 14:19:42', '127.0.0.1', 2),
+(1208, 'admin', 3, 1, '列表', '2017-11-30 14:19:48', '127.0.0.1', 2),
+(1209, 'admin', 3, 2, '列表', '2017-11-30 14:19:51', '127.0.0.1', 2),
+(1210, 'admin', 3, 2, 'id:34', '2017-11-30 14:20:45', '127.0.0.1', 4),
+(1211, 'admin', 3, 2, '列表', '2017-11-30 14:20:49', '127.0.0.1', 2),
+(1212, 'admin', 3, 2, 'id:34', '2017-11-30 14:21:22', '127.0.0.1', 8),
+(1213, 'admin', 3, 2, '列表', '2017-11-30 14:21:28', '127.0.0.1', 2),
+(1214, 'admin', 2, 3, '列表', '2017-11-30 14:22:54', '127.0.0.1', 2),
+(1215, 'admin', 3, 2, '列表', '2017-11-30 14:22:58', '127.0.0.1', 2),
+(1216, 'admin', 3, 1, '列表', '2017-11-30 14:23:29', '127.0.0.1', 2),
+(1217, 'admin', 3, 2, '列表', '2017-11-30 14:30:29', '127.0.0.1', 2),
+(1218, 'admin', 3, 1, '列表', '2017-11-30 14:30:30', '127.0.0.1', 2),
+(1219, 'admin', 3, 2, '列表', '2017-11-30 14:32:37', '127.0.0.1', 2),
+(1220, 'admin', 3, 1, '列表', '2017-11-30 14:33:30', '127.0.0.1', 2),
+(1221, 'admin', 3, 2, '列表', '2017-11-30 14:33:32', '127.0.0.1', 2),
+(1222, 'admin', 3, 1, '列表', '2017-11-30 14:33:39', '127.0.0.1', 2),
+(1223, 'admin', 3, 2, '列表', '2017-11-30 14:33:43', '127.0.0.1', 2),
+(1224, 'admin', 3, 1, '列表', '2017-11-30 14:37:20', '127.0.0.1', 2),
+(1225, 'admin', 3, 2, '列表', '2017-11-30 14:37:30', '127.0.0.1', 2),
+(1226, 'admin', 3, 2, '工商01 id:0', '2017-11-30 14:37:48', '127.0.0.1', 8),
+(1227, 'admin', 3, 2, '列表', '2017-11-30 14:37:57', '127.0.0.1', 2),
+(1228, 'admin', 3, 1, '列表', '2017-11-30 14:44:04', '127.0.0.1', 2),
+(1229, 'admin', 3, 2, '列表', '2017-11-30 14:44:09', '127.0.0.1', 2),
+(1230, 'admin', 0, 0, 'admin登入成功', '2017-11-30 14:46:00', '192.168.1.177', 1),
+(1231, 'admin', 3, 2, '列表', '2017-11-30 14:46:13', '192.168.1.177', 2),
+(1232, 'admin', 3, 1, '列表', '2017-11-30 14:47:10', '192.168.1.177', 2),
+(1233, 'admin', 3, 2, '列表', '2017-11-30 14:47:55', '192.168.1.177', 2),
+(1234, 'admin', 3, 1, '列表', '2017-11-30 14:48:02', '192.168.1.177', 2),
+(1235, 'admin', 3, 2, '列表', '2017-11-30 14:49:24', '192.168.1.177', 2),
+(1236, 'admin', 0, 0, 'admin登入成功', '2017-11-30 15:07:45', '192.168.1.177', 1),
+(1237, 'admin', 3, 1, '列表', '2017-11-30 15:08:07', '192.168.1.177', 2),
+(1238, 'admin', 3, 2, '列表', '2017-11-30 15:22:25', '192.168.1.177', 2),
+(1239, 'admin', 3, 1, '列表', '2017-11-30 15:22:45', '192.168.1.177', 2),
+(1240, 'admin', 3, 2, '列表', '2017-11-30 15:23:36', '192.168.1.177', 2),
+(1241, 'admin', 3, 1, '列表', '2017-11-30 15:23:43', '192.168.1.177', 2),
+(1242, 'admin', 3, 2, '列表', '2017-11-30 15:35:53', '192.168.1.177', 2),
+(1243, 'admin', 3, 1, '列表', '2017-11-30 15:48:05', '192.168.1.177', 2),
+(1244, 'admin', 3, 2, '列表', '2017-11-30 15:48:19', '192.168.1.177', 2),
+(1245, 'admin', 3, 1, '列表', '2017-11-30 15:50:34', '192.168.1.177', 2),
+(1246, 'admin', 3, 2, '列表', '2017-11-30 15:50:56', '192.168.1.177', 2),
+(1247, 'admin', 0, 0, 'admin登入成功', '2017-12-01 12:14:40', '127.0.0.1', 1),
+(1248, 'admin', 3, 2, '列表', '2017-12-01 12:14:44', '127.0.0.1', 2),
+(1249, 'admin', 3, 1, '列表', '2017-12-01 12:14:45', '127.0.0.1', 2),
+(1250, 'admin', 3, 2, '列表', '2017-12-01 12:14:53', '127.0.0.1', 2),
+(1251, 'admin', 3, 1, '列表', '2017-12-01 12:18:11', '127.0.0.1', 2),
+(1252, 'admin', 3, 2, '列表', '2017-12-01 12:18:12', '127.0.0.1', 2),
+(1253, 'admin', 3, 1, '列表', '2017-12-01 12:18:22', '127.0.0.1', 2),
+(1254, 'admin', 3, 2, '列表', '2017-12-01 12:18:22', '127.0.0.1', 2),
+(1255, 'admin', 3, 1, '列表', '2017-12-01 14:14:20', '127.0.0.1', 2),
+(1256, 'admin', 3, 2, '列表', '2017-12-01 14:15:46', '127.0.0.1', 2),
+(1257, 'admin', 3, 1, '列表', '2017-12-01 14:20:25', '127.0.0.1', 2),
+(1258, 'admin', 3, 2, '列表', '2017-12-01 14:20:28', '127.0.0.1', 2),
+(1259, 'admin', 3, 1, '列表', '2017-12-01 14:24:18', '127.0.0.1', 2),
+(1260, 'admin', 3, 1, 'id:11', '2017-12-01 14:24:23', '127.0.0.1', 8),
+(1261, 'admin', 3, 2, '列表', '2017-12-01 14:24:24', '127.0.0.1', 2),
+(1262, 'admin', 3, 2, 'id:35', '2017-12-01 14:45:59', '127.0.0.1', 4),
+(1263, 'admin', 3, 2, '列表', '2017-12-01 14:46:01', '127.0.0.1', 2),
+(1264, 'admin', 3, 2, 'id:35', '2017-12-01 14:46:17', '127.0.0.1', 8),
+(1265, 'admin', 3, 2, '列表', '2017-12-01 14:46:21', '127.0.0.1', 2),
+(1266, 'admin', 3, 1, '列表', '2017-12-01 15:14:05', '127.0.0.1', 2),
+(1267, 'admin', 3, 2, '列表', '2017-12-01 15:14:07', '127.0.0.1', 2),
+(1268, 'admin', 3, 1, '列表', '2017-12-01 15:15:56', '127.0.0.1', 2),
+(1269, 'admin', 3, 1, 'id:12', '2017-12-01 15:25:46', '127.0.0.1', 4),
+(1270, 'admin', 3, 2, '列表', '2017-12-01 15:25:54', '127.0.0.1', 2),
+(1271, 'admin', 3, 1, '列表', '2017-12-01 15:26:02', '127.0.0.1', 2),
+(1272, 'admin', 3, 2, '列表', '2017-12-01 15:26:03', '127.0.0.1', 2),
+(1273, 'admin', 3, 1, '列表', '2017-12-01 15:26:06', '127.0.0.1', 2),
+(1274, 'admin', 3, 2, '列表', '2017-12-01 15:27:48', '127.0.0.1', 2),
+(1275, 'admin', 3, 1, '列表', '2017-12-01 15:27:55', '127.0.0.1', 2),
+(1276, 'admin', 3, 2, '列表', '2017-12-01 15:28:01', '127.0.0.1', 2),
+(1277, 'admin', 3, 1, '列表', '2017-12-01 15:28:02', '127.0.0.1', 2),
+(1278, 'admin', 3, 2, '列表', '2017-12-01 15:28:07', '127.0.0.1', 2),
+(1279, 'admin', 3, 2, 'id:11', '2017-12-01 15:49:52', '127.0.0.1', 4),
+(1280, 'admin', 3, 2, '列表', '2017-12-01 15:55:05', '127.0.0.1', 2),
+(1281, 'admin', 3, 2, 'id:12', '2017-12-01 16:16:35', '127.0.0.1', 4),
+(1282, 'admin', 3, 2, '列表', '2017-12-01 16:20:10', '127.0.0.1', 2),
+(1283, 'admin', 3, 2, 'id:13', '2017-12-01 16:31:42', '127.0.0.1', 4),
+(1284, 'admin', 3, 2, '列表', '2017-12-01 16:31:53', '127.0.0.1', 2),
+(1285, 'admin', 3, 2, 'id:14', '2017-12-01 16:32:29', '127.0.0.1', 4),
+(1286, 'admin', 3, 2, '列表', '2017-12-01 16:37:22', '127.0.0.1', 2),
+(1287, 'admin', 3, 2, 'id:15', '2017-12-01 16:38:30', '127.0.0.1', 4),
+(1288, 'admin', 3, 2, '列表', '2017-12-01 16:39:12', '127.0.0.1', 2),
+(1289, 'admin', 0, 0, 'admin登入成功', '2017-12-04 11:33:25', '127.0.0.1', 1),
+(1290, 'admin', 3, 2, '列表', '2017-12-04 11:34:04', '127.0.0.1', 2),
+(1291, 'admin', 3, 1, '列表', '2017-12-04 16:23:20', '127.0.0.1', 2),
+(1292, 'admin', 3, 2, '列表', '2017-12-04 16:23:25', '127.0.0.1', 2),
+(1293, 'admin', 0, 0, 'admin登入成功', '2017-12-04 17:07:59', '192.168.1.174', 1),
+(1294, 'admin', 3, 2, '列表', '2017-12-04 17:08:03', '192.168.1.174', 2),
+(1295, 'admin', 3, 1, '列表', '2017-12-04 17:08:04', '192.168.1.174', 2),
+(1296, 'admin', 3, 2, '列表', '2017-12-04 17:08:04', '192.168.1.174', 2),
+(1297, 'admin', 3, 1, '列表', '2017-12-04 17:08:05', '192.168.1.174', 2),
+(1298, 'admin', 3, 2, '列表', '2017-12-04 17:08:08', '192.168.1.174', 2),
+(1299, 'admin', 3, 2, '陳添福 id:15', '2017-12-04 17:09:09', '192.168.1.174', 8),
+(1300, 'admin', 3, 2, '列表', '2017-12-04 17:09:12', '192.168.1.174', 2),
+(1301, 'admin', 0, 0, 'admin登入成功', '2017-12-05 09:16:17', '127.0.0.1', 1),
+(1302, 'admin', 3, 2, '列表', '2017-12-05 09:43:21', '127.0.0.1', 2);
 
 -- --------------------------------------------------------
 
@@ -1199,8 +1401,31 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 
 CREATE TABLE `bank` (
   `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '銀行名稱',
+  `bank_no` char(3) CHARACTER SET latin1 NOT NULL COMMENT '銀行代碼',
+  `manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `create_time` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `bank`
+--
+
+INSERT INTO `bank` (`id`, `name`, `bank_no`, `manager`, `create_time`) VALUES
+(10, '國泰世華商業', '013', 'admin', '2017-11-28'),
+(12, '中國信託', '822', 'admin', '2017-11-28'),
+(14, '台灣銀行', '008', 'admin', '2017-11-29');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `bank_card`
+--
+
+CREATE TABLE `bank_card` (
+  `id` int(11) NOT NULL,
   `name` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '名稱',
-  `bank` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '銀行',
+  `bank_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '銀行',
   `bank_no` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '卡號',
   `money` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '餘額',
   `money_min` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '最小出款',
@@ -1213,12 +1438,11 @@ CREATE TABLE `bank` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='幣種';
 
 --
--- 資料表的匯出資料 `bank`
+-- 資料表的匯出資料 `bank_card`
 --
 
-INSERT INTO `bank` (`id`, `name`, `bank`, `bank_no`, `money`, `money_min`, `money_max`, `num`, `alert`, `manager`, `create_time`, `update_time`) VALUES
-(8, '工商01', '中國信託', '8562123456', '300000', '10', '30000', 45, '', 'admin', '2017-11-23', '2017-11-23'),
-(9, '工商02', '國泰世華', '123456789', '500', '10', '500', 30, '', 'admin', '2017-11-23', '2017-11-23');
+INSERT INTO `bank_card` (`id`, `name`, `bank_name`, `bank_no`, `money`, `money_min`, `money_max`, `num`, `alert`, `manager`, `create_time`, `update_time`) VALUES
+(0, '工商01', '12', '12345', '500', NULL, NULL, 5, '', 'admin', '2017-11-30', '2017-11-30');
 
 -- --------------------------------------------------------
 
@@ -1245,38 +1469,15 @@ CREATE TABLE `deposit` (
 --
 
 INSERT INTO `deposit` (`id`, `user_id`, `money`, `company`, `method`, `status`, `remark`, `created_at`, `updated_at`, `transfers_manager`, `transfers_statustime`) VALUES
-(29, 3, 500, '樂付', '微信支付', 0, '金額輸錯', '2017-11-29 15:35:17', '2017-11-29 15:36:01', 'admin', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `deposit_check`
---
-
-CREATE TABLE `deposit_check` (
-  `id` int(11) NOT NULL,
-  `name` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '申請人',
-  `company` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '第三方公司',
-  `method` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '方式',
-  `manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `create_time` datetime NOT NULL COMMENT '申請時間',
-  `update_time` datetime NOT NULL COMMENT '收款時間',
-  `money` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '金額',
-  `contents` longtext COLLATE utf8_unicode_ci
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='幣種';
+(33, 10, 500, '樂付', '微信支付', 2, '金額輸入錯誤', '2017-11-30 11:08:32', '2017-11-30 11:16:46', 'admin', '2017-11-30 11:16:04'),
+(34, 9, 1000, '樂付2', '微信支付', 1, '', '2017-11-30 14:20:45', '2017-11-30 14:21:22', 'admin', '2017-11-30 14:21:22'),
+(35, 10, 800, 'test', 'test3', 0, 'test', '2017-12-01 14:45:59', '2017-12-01 14:46:17', 'admin', '0000-00-00 00:00:00');
 
 --
--- 資料表的匯出資料 `deposit_check`
---
-
-INSERT INTO `deposit_check` (`id`, `name`, `company`, `method`, `manager`, `create_time`, `update_time`, `money`, `contents`) VALUES
-(4, 'test', 'test123', '123456', 'admin', '2017-11-23 10:26:23', '2017-11-23 11:49:47', '567', '890');
-
---
--- 觸發器 `deposit_check`
+-- 觸發器 `deposit`
 --
 DELIMITER $$
-CREATE TRIGGER `deposit_check_updated_trigger` AFTER UPDATE ON `deposit_check` FOR EACH ROW insert into deposit_log(money, contents, manager) values ( NEW.money, NEW.contents, NEW.manager)
+CREATE TRIGGER `deposit_update_trigger` AFTER UPDATE ON `deposit` FOR EACH ROW insert into deposit_log(money, remark, transfers_manager) values ( NEW.money, NEW.remark, NEW.transfers_manager)
 $$
 DELIMITER ;
 
@@ -1289,8 +1490,8 @@ DELIMITER ;
 CREATE TABLE `deposit_log` (
   `id` int(11) NOT NULL,
   `money` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `contents` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `remark` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `transfers_manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `updated_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -1298,9 +1499,10 @@ CREATE TABLE `deposit_log` (
 -- 資料表的匯出資料 `deposit_log`
 --
 
-INSERT INTO `deposit_log` (`id`, `money`, `contents`, `manager`, `updated_time`) VALUES
+INSERT INTO `deposit_log` (`id`, `money`, `remark`, `transfers_manager`, `updated_time`) VALUES
 (9, '800', '測試一下800', '', '2017-11-27 15:40:31'),
-(10, '80', '修改80，誤打多一個0', 'admin', '2017-11-27 15:45:22');
+(10, '80', '修改80，誤打多一個0', 'admin', '2017-11-27 15:45:22'),
+(11, '800', 'test', 'admin', '2017-12-01 14:46:17');
 
 -- --------------------------------------------------------
 
@@ -1334,6 +1536,7 @@ INSERT INTO `deposit_pay` (`id`, `name`, `company`, `method`, `company_id`, `mon
 
 CREATE TABLE `dispensing` (
   `id` int(11) NOT NULL,
+  `user_id` tinyint(10) DEFAULT NULL COMMENT '玩家id',
   `name` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '申請人',
   `bank` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '銀行',
   `num` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '卡號',
@@ -1341,7 +1544,8 @@ CREATE TABLE `dispensing` (
   `contents` longtext COLLATE utf8_unicode_ci COMMENT '意見',
   `manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `create_time` datetime NOT NULL COMMENT '申請時間',
-  `update_time` datetime NOT NULL COMMENT '審核時間',
+  `update_time` datetime NOT NULL COMMENT '最後修改時間',
+  `check_time` datetime NOT NULL COMMENT '審核時間',
   `is_pay` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='幣種';
 
@@ -1349,33 +1553,39 @@ CREATE TABLE `dispensing` (
 -- 資料表的匯出資料 `dispensing`
 --
 
-INSERT INTO `dispensing` (`id`, `name`, `bank`, `num`, `money`, `contents`, `manager`, `create_time`, `update_time`, `is_pay`) VALUES
-(4, 'test', 'test123', '12', '123456', '48579', 'admin', '2017-11-23 10:26:23', '2017-11-23 11:49:47', 1),
-(7, '陳小名', '國泰世華', '45', '1200', '', 'admin', '2017-11-23 11:54:50', '2017-11-27 11:40:39', 0);
+INSERT INTO `dispensing` (`id`, `user_id`, `name`, `bank`, `num`, `money`, `contents`, `manager`, `create_time`, `update_time`, `check_time`, `is_pay`) VALUES
+(15, 10, '陳添福', '0', '50', '4000', '少一個零', 'admin', '2017-12-01 16:38:30', '2017-12-04 17:09:09', '0000-00-00 00:00:00', 0);
+
+--
+-- 觸發器 `dispensing`
+--
+DELIMITER $$
+CREATE TRIGGER `dispensing_check_updated_trigger` AFTER UPDATE ON `dispensing` FOR EACH ROW insert into dispensing_log(dispensing_id, contents, manager) values (OLD.id, NEW.contents, NEW.manager)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `dispensing_check`
+-- 資料表結構 `dispensing_log`
 --
 
-CREATE TABLE `dispensing_check` (
+CREATE TABLE `dispensing_log` (
   `id` int(11) NOT NULL,
-  `name` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '申請人',
-  `money` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '金額',
+  `dispensing_id` int(11) NOT NULL COMMENT '出款項目的ID',
+  `money` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `contents` longtext COLLATE utf8_unicode_ci NOT NULL,
   `manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `create_time` datetime NOT NULL COMMENT '申請時間',
-  `update_time` datetime NOT NULL COMMENT '審核時間',
-  `is_pay` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='幣種';
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 資料表的匯出資料 `dispensing_check`
+-- 資料表的匯出資料 `dispensing_log`
 --
 
-INSERT INTO `dispensing_check` (`id`, `name`, `money`, `manager`, `create_time`, `update_time`, `is_pay`) VALUES
-(4, 'test', '123456', 'admin', '2017-11-23 10:26:23', '2017-11-23 11:49:47', 1),
-(7, '陳小名', '1200', 'admin', '2017-11-23 11:54:50', '2017-11-23 14:57:39', 1);
+INSERT INTO `dispensing_log` (`id`, `dispensing_id`, `money`, `contents`, `manager`, `update_time`) VALUES
+(0, 4, '', '48579', 'admin', '2017-11-30 12:31:02'),
+(0, 15, '', '少一個零', 'admin', '2017-12-04 17:09:09');
 
 -- --------------------------------------------------------
 
@@ -1388,6 +1598,8 @@ CREATE TABLE `player` (
   `users_ug_id` int(11) NOT NULL COMMENT '玩家群組ID',
   `title` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '暱稱',
   `status` tinyint(4) NOT NULL DEFAULT '1',
+  `bank` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '銀行',
+  `bank_no` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '卡號',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `users_manager` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1398,13 +1610,11 @@ CREATE TABLE `player` (
 -- 資料表的匯出資料 `player`
 --
 
-INSERT INTO `player` (`id`, `users_ug_id`, `title`, `status`, `created_at`, `updated_at`, `users_manager`, `users_logintime`) VALUES
-(1, 1, 'Allen J', 1, '2017-07-14 00:58:26', '2017-09-13 07:13:29', 'test1', NULL),
-(3, 1, '代理人玩家', 1, NULL, '2017-07-31 07:46:54', 'admin', NULL),
-(6, 1, 'zZ', 1, '2017-08-29 03:41:26', '2017-08-29 03:41:26', 'test1', NULL),
-(7, 1, 'abc', 1, '2017-10-17 10:31:28', '2017-10-17 10:33:35', 'stest1', NULL),
-(8, 10, 'sss', 0, '2017-11-29 08:19:11', '2017-11-29 08:19:11', 'admin', NULL),
-(9, 10, 'aaa', 1, '2017-11-29 08:19:23', '2017-11-29 08:22:44', 'admin', NULL);
+INSERT INTO `player` (`id`, `users_ug_id`, `title`, `status`, `bank`, `bank_no`, `created_at`, `updated_at`, `users_manager`, `users_logintime`) VALUES
+(9, 10, '陳小名', 1, NULL, NULL, '2017-11-29 08:19:23', '2017-11-30 02:56:40', 'admin', NULL),
+(10, 9, '謝心怡', 1, NULL, NULL, '2017-11-30 02:58:50', '2017-11-30 02:58:50', 'admin', NULL),
+(11, 9, '王安安', 0, NULL, NULL, '2017-11-30 03:02:25', '2017-12-01 06:24:23', 'admin', NULL),
+(12, 10, 'test', 1, '中國信託', '789456123', '2017-12-01 07:25:46', '2017-12-01 07:25:46', 'admin', NULL);
 
 -- --------------------------------------------------------
 
@@ -1581,12 +1791,6 @@ ALTER TABLE `deposit`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `deposit_check`
---
-ALTER TABLE `deposit_check`
-  ADD PRIMARY KEY (`id`);
-
---
 -- 資料表索引 `deposit_log`
 --
 ALTER TABLE `deposit_log`
@@ -1602,12 +1806,6 @@ ALTER TABLE `deposit_pay`
 -- 資料表索引 `dispensing`
 --
 ALTER TABLE `dispensing`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `dispensing_check`
---
-ALTER TABLE `dispensing_check`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1642,31 +1840,25 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1093;
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1303;
 
 --
 -- 使用資料表 AUTO_INCREMENT `bank`
 --
 ALTER TABLE `bank`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit`
 --
 ALTER TABLE `deposit`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '交易編號', AUTO_INCREMENT=30;
-
---
--- 使用資料表 AUTO_INCREMENT `deposit_check`
---
-ALTER TABLE `deposit_check`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '交易編號', AUTO_INCREMENT=36;
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit_log`
 --
 ALTER TABLE `deposit_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit_pay`
@@ -1678,19 +1870,13 @@ ALTER TABLE `deposit_pay`
 -- 使用資料表 AUTO_INCREMENT `dispensing`
 --
 ALTER TABLE `dispensing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- 使用資料表 AUTO_INCREMENT `dispensing_check`
---
-ALTER TABLE `dispensing_check`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- 使用資料表 AUTO_INCREMENT `player`
 --
 ALTER TABLE `player`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '使用者編號', AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '使用者編號', AUTO_INCREMENT=13;
 
 --
 -- 使用資料表 AUTO_INCREMENT `player_group`
