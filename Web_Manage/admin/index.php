@@ -14,7 +14,7 @@ $col=array();
 $col[]=array('column'=>$colname['id'],'name'=>$langary_Web_Manage_all['id'],'order'=>true,'width'=>'60');
 $col[]=array('column'=>$colname['ispublic'],'name'=>$langary_Web_Manage_all['ispublic'],'order'=>true,'width'=>'60');
 //$col[]=array('column'=>$colname['pic'],'name'=>$langary_Web_Manage_all['pic'],'width'=>50);
-$col[]=array('column'=>$colname['name'],'name'=>$langary_Web_Manage_all['name'],'order'=>true,'width'=>'100');
+$col[]=array('column'=>$colname['name'],'name'=>"管理員名稱",'order'=>true,'width'=>'100');
 $col[]=array('column'=>$colname['username'],'name'=>$langary_Web_Manage_all['username'],'order'=>true,'width'=>'150');
 $col[]=array('column'=>$colname['email'],'name'=>$langary_Web_Manage_all['email'],'order'=>true);
 $col[]=array('column'=>$colname_rules['name'],'name'=>$langary_Web_Manage_all['rules_name'],'order'=>true,'width'=>'180');

@@ -13,7 +13,7 @@ $listHelp->delSrc = "delservice.php";
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => $langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['name'], 'name' => $langary_Web_Manage_all['name2'], 'order' => true/*,'width'=>'300'*/);
+$col[] = array('column' => $colname['name'], 'name' => '遊戲名稱', 'order' => true/*,'width'=>'300'*/);
 $col[] = array('column' => $colname['contents'], 'name' => "備註", 'order' => true/*,'width'=>'300'*/);
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => $langary_Web_Manage_all['manager'], 'order' => true, 'width' => '100');

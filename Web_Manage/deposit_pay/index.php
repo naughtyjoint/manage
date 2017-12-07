@@ -17,8 +17,8 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['name'], 'name' => '名稱', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['name'], 'name' => '名稱', 'order' => true);
+$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
