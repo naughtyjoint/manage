@@ -7,9 +7,14 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['title']}`";
+	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
+					,g.`{$colname_g['id']}` as game,g.`{$colname_g['name']}`
+					,third.`{$colname_third['id']}` as pay,third.`{$colname_third['name']}`";
 	$sHelp->table=$table." t
-	              LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`";
+				  LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
+				  LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`
+				  LEFT JOIN $table_third third ON third.`{$colname_third['id']}` = t.`{$colname['deposit_pay_id']}`";
+				  
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby=get("orderkey",1);

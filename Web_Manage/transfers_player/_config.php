@@ -7,11 +7,15 @@ include('../_config.php');
 $table=coderDBConf::$player;
 $colname=coderDBConf::$col_player;
 
+$table_g=coderDBConf::$game;
+$colname_g=coderDBConf::$col_game;
 
 $table_a = coderDBConf::$admin; //管理員
 $colname_a = coderDBConf::$col_admin;
 
-$colname_t=coderDBConf::$col_deposit; //上下分
+$colname_t=coderDBConf::$col_deposit;
+
+$game_array = class_users_group::getList(); //遊戲
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';

@@ -9,11 +9,11 @@ try{
     if($id!=""){
         coderAdmin::vaild($auth,'edit');
         $method='edit';
-        $active='編輯';
+        $active=$langary_edit_add['edit'];
     }else{
         coderAdmin::vaild($auth,'add');
         $method='add';
-        $active='新增';
+        $active=$langary_edit_add['add'];
     }
 
     $data=$fhelp->getSendData();
@@ -39,7 +39,6 @@ try{
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
         /* ## coder [indInit] --> ## */
-        //$data[$colname["ind"]]=coderListOrderHelp::getMaxInd($table,$colname["ind"]);
         /* ## coder [indInit] <-- ## */
         /* ## coder [insert] --> ## */
         /* ## coder [insert] <-- ## */        

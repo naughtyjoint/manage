@@ -44,26 +44,14 @@ try {
     if ($method == 'edit') {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
     } else {
-        /* ## coder [indInit] --> ## */
-        //$data[$colname["ind"]]=coderListOrderHelp::getMaxInd($table,$colname["ind"]);
-        /* ## coder [indInit] <-- ## */
-        /* ## coder [insert] --> ## */
-        /* ## coder [insert] <-- ## */
 
         $data[$colname['user_id']] = post($colname['user_id'],1);
-        // if(!class_player::getList_agidone($pid,$data[$colname['user_id']])){
-        //     throw new Exception("玩家錯誤!");
-        // }
-
-
-        //$data[$colname['amount']] = post($colname['amount'],1);
+        $data[$colname['game_id']] = post($colname['game_id'],1);
         $data[$colname['money']] = post($colname['money'],1);
-        //$data[$colname['cash']] = post($colname['cash'],1);
-        //$data[$colname['paycash']] = post($colname['paycash'],1);
-        $data[$colname['company']] = post($colname['company'],1);
-        $data[$colname['method']] = post($colname['method'],1);
+        $data[$colname['deposit_pay_id']] = post($colname['deposit_pay_id'],1);
 
-
+        $data[$colname['pay_code']] = post($colname['pay_code'],1);
+        
         $data[$colname['create_time']] = $nowtime;
         //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);

@@ -17,13 +17,11 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['status'], 'name' => '啟用', 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['title'], 'name' => '玩家名稱 ', 'order' => false, 'width' => '250');
-$col[] = array('column' => 'title_m', 'name' => '群組 ', 'order' => false);
-$col[] = array('column' => $colname['bank'], 'name' => '銀行 ', 'order' => false, 'width' => '250');
-$col[] = array('column' => $colname['bank_no'], 'name' => '銀行卡號 ', 'order' => false, 'width' => '250');
-$col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
+$col[] = array('column' => $colname['name'], 'name' => '玩家名稱 ', 'order' => false, 'width' => '250');
+$col[] = array('column' => 'game_name', 'name' => '遊戲名稱 ', 'order' => false);
+$col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
 
@@ -119,15 +117,13 @@ $db->close();
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname['title'];?>"]);
+                    $tr.attr("title", row["<?php echo $colname['name'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['title'];?>"] + '</td>');
-                    $tr.append('<td>' + row["title_m"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['bank'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['bank_no'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["game_name"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

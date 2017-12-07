@@ -15,7 +15,6 @@ try{
 		$idlist="'".implode("','",$id)."'";
 
 		$count=$db->exec("delete from $table where `{$colname['id']}` in($idlist)");
-		$count=$db->exec("delete  from $table_m where `{$colname_m['m_id']}` in($idlist)");
 		if($count>0){
 			$success=true;
 			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.$langary_delservice['insert'].'('.$idlist.')');

@@ -20,7 +20,7 @@ $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'wid
 $col[] = array('column' => $colname['name'], 'name' => '名稱', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['bank_no'], 'name' => '銀行代碼', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
-//$col[]=array('column'=>$colname['id'],'name'=>$langary_Web_Manage_all['details'],'order'=>false,'width'=>'80','classname'=>'text-center');
+$col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '100');
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
 
@@ -121,11 +121,10 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['bank_no'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    //$tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'manage_content.php?id=' + row["<?php echo $colname['id']?>"]+'&level=2' + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {
-                //$("#sidebar").load("../do/leftuldo.php?path=<?php //echo $manage_path?>&ck=<?php //echo (isset($fun_auth_key))?$fun_auth_key:''?>");
             }
         });
         /* ## coder [listRow] <-- ## */

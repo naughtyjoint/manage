@@ -9,7 +9,7 @@ try{
 	$sHelp=new coderSelectHelp($db);
 	$sHelp->select="bc.* , b.`{$colname_b['name']}` as b_name";
 	$sHelp->table = $table." bc 
-					LEFT JOIN $table_b b ON bc.`{$colname['bank_name']}` = b.`{$colname_b['id']}`
+					LEFT JOIN $table_b b ON bc.`{$colname['bank_id']}` = b.`{$colname_b['id']}`
 					";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");

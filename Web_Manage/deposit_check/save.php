@@ -33,7 +33,7 @@ try {
     $nowtime = datetime();
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['update_time']] = $nowtime;
-    $data[$colname['statustime']]= $nowtime;    
+    $data[$colname['check_time']]= $nowtime;    
 
     $nowstatus = post("nowstatus");
     /*if ($data[$colname['status']] === '' || $nowstatus > 0) {
@@ -63,8 +63,6 @@ try {
         //$data[$colname['paycash']] = post($colname['paycash'],1);
         $data[$colname['company']] = post($colname['company'],1);
         $data[$colname['method']] = post($colname['method'],1);
-
-
         $data[$colname['create_time']] = $nowtime;
         //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);

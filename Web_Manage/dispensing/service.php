@@ -6,9 +6,13 @@ try{
 	coderAdmin::vaild($auth,'view');
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['title']}`";
+	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`,
+	    			g.`{$colname_g['id']}` as game,g.`{$colname_g['name']}`,
+	                b.`{$colname_b['id']}` as bank_id,b.`{$colname_b['name']}`";
 	$sHelp->table=$table." t
-	              LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`";
+				  LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
+				  LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`				  
+				  LEFT JOIN $table_b b ON b.`{$colname_b['id']}` = t.`{$colname['bank_card_id']}`";
 	$sHelp->page=get("page");
 	$sHelp->orderby=get("orderkey",1);
 	$sHelp->orderdesc=get("orderdesc",1);

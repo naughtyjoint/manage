@@ -1,15 +1,28 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
+include('../_config.php');
+
 $main_auth_key='dispensing';
 $fun_auth_key='dispencheck';
-include('../_config.php');
+
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
 $table=coderDBConf::$dispensing;
 $colname=coderDBConf::$col_dispensing;
 
+
+$table_b=coderDBConf::$bank_card;
+$colname_b=coderDBConf::$col_bank_card;
+
+$table_g=coderDBConf::$game; //遊戲
+$colname_g=coderDBConf::$col_game;
+
+$table_u=coderDBConf::$player; //玩家
+$colname_u=coderDBConf::$col_player;
+
+$bank_array = class_bank::getListCard(); //銀行卡
 
 
 $orderColumn=$colname["id"];

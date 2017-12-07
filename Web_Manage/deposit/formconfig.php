@@ -2,12 +2,16 @@
 $fhelp=new coderFormHelp();
 $fobj=array();
 $fobj[$colname["id"]]=array("type"=>"hidden","name"=>"ID","column"=>$colname["id"],"sql"=>false);
-$fobj[$colname["remark"]]=array("type"=>"textarea","name"=>"備註","column"=>$colname["remark"],'placeholder'=>'請輸入備註',"validate"=>array('maxlength' => '255'));
+$fobj[$colname["contents"]]=array("type"=>"textarea","name"=>"備註","column"=>$colname["contents"],'placeholder'=>'請輸入備註',"validate"=>array('maxlength' => '255'));
 
 $fobj[$colname["user_id"]]=array("type"=>"hidden","name"=>"玩家","column"=>$colname["user_id"],"sql"=>false);
+$fobj[$colname["game_id"]]=array("type"=>"hidden","name"=>"遊戲名稱","column"=>$colname["game_id"],"sql"=>false);
 
 $fobj[$colname["money"]]=array("type"=>"text","name"=>"金額","column"=>$colname["money"],'placeholder'=>'請輸入金額',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
-$fobj[$colname["company"]]=array("type"=>"text","name"=>"第三方公司","column"=>$colname["company"],'placeholder'=>'請輸入第三方公司',"validate"=>array('require'=>'yes','maxlength' => '50'),'sql'=>false);
-$fobj[$colname["method"]]=array("type"=>"text","name"=>"方式","column"=>$colname["method"],'placeholder'=>'請輸入方式',"validate"=>array('require'=>'yes','maxlength' => '50'),'sql'=>false);
+$fobj[$colname['deposit_pay_id']] = array(
+    'type' => 'select', 'name' => '第三方支付', 'column' => $colname['deposit_pay_id'], 'ary' => $pay_array,'sql'=>false
+);
+$fobj[$colname["pay_code"]]=array("type"=>"text","name"=>"第三方序號","column"=>$colname["pay_code"],'placeholder'=>'請輸入第三方序號',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
+$fobj[$colname["create_time"]]=array("type"=>"hidden","name"=>"申請時間","column"=>$colname["create_time"],"sql"=>false);
 
 $fhelp->Bind($fobj);

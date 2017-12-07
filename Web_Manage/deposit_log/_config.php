@@ -10,6 +10,13 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$deposit_log;
 $colname=coderDBConf::$col_deposit_log;
 
+$table_u=coderDBConf::$player; //玩家
+$colname_u=coderDBConf::$col_player;
+
+$table_g=coderDBConf::$game; //遊戲
+$colname_g=coderDBConf::$col_game;
+
+
 $orderColumn=$colname["id"];
 $orderDesc='desc';
 $page_title=$auth['name'];
