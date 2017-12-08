@@ -30,7 +30,9 @@ class coderAdminLog{
 	public static function clearSession(){
 		unset($_SESSION['loginfo']);
 	}
-	
+
+
+	//新增操作紀錄
 	public static function insert($username,$main,$fun,$act,$descript=""){
 	    global $langary_coderAdminLog_all;
 		$db=Database::DB();

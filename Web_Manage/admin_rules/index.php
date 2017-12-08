@@ -23,6 +23,7 @@ $listHelp->Bind($col);
 
 $listHelp->bindFilter($help);
 $db = Database::DB();
+//新增帳號觀看操作紀錄
 coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'view',$langary_Web_Manage_all['insert']);
 $db->close();
 ?>

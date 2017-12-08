@@ -1,0 +1,25 @@
+main_key 為主功能的key
+	登入帳號(admin)：1
+	帳號角色權限(auth)：2
+	出款(dispensing)：3
+	入款(deposit)：4
+
+fun_key 為副功能的key
+	登入帳號：
+		帳號列表(admin)：1
+		操作歷程記錄(adminlog)：2
+	帳號角色權限：
+		角色列表(auth_rules)：1
+	出款：
+		銀行(bank)：1
+		銀行卡(bank_card)：2
+		出款申請(app)：3
+		出款審核(dispencheck)：4
+		出款歷程(dislog)：5
+	入款：
+		第三方支付(pay)：1
+		遊戲名稱(game)：2
+		玩家(player)：3
+		入款申請(application)：4
+		入款審核(deposit_check)：5
+		入款歷程(deposit_log)：6

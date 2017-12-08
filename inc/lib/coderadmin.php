@@ -19,34 +19,34 @@ class coderAdmin
     public static function init(){
         global $langary_auth,$adminuser;
         self::$Auth = array(
-            'admin' => array('key' => 2, 'name' => $langary_auth['admin']['name'], 'icon' => 'icon-lock', 'auth' => 30,
+            'admin' => array('key' => 1, 'name' => $langary_auth['admin']['name'], 'icon' => 'icon-lock', 'auth' => 30,
                 'list' => array(
                     'admin' => array('key' => 1, 'name' => $langary_auth['admin']['list']['admin'], 'icon' => 'icon-lock', 'path' => 'admin/index.php', 'auth' => 30),
-                    'adminlog' => array('key' => 3, 'name' => $langary_auth['admin']['list']['adminlog'], 'icon' => 'icon-lock', 'path' => 'adminlog/index.php', 'auth' => 2),
+                    'adminlog' => array('key' => 2, 'name' => $langary_auth['admin']['list']['adminlog'], 'icon' => 'icon-lock', 'path' => 'adminlog/index.php', 'auth' => 2),
                 )
             ),
-            'auth' => array('key' => 1, 'name' => $langary_auth['auth']['name'], 'icon' => 'icon-lock', 'auth' => 30,
+            'auth' => array('key' => 2, 'name' => $langary_auth['auth']['name'], 'icon' => 'icon-lock', 'auth' => 30,
                 'list' => array(
                     'auth_rules' => array('key' => 1, 'name' => $langary_auth['auth']['list']['auth_rules'], 'icon' => 'icon-lock', 'path' => 'admin_rules/index.php', 'auth' => 30)
                 )
             ),
             'dispensing' => array('key' => 3, 'name' => $langary_auth['dispensing']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
-                    'bank' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['bank'], 'icon' => 'icon-usd', 'path' => 'bank/index.php', 'auth' => 30),
+                    'bank' => array('key' => 1, 'name' => $langary_auth['dispensing']['list']['bank'], 'icon' => 'icon-usd', 'path' => 'bank/index.php', 'auth' => 30),
                     'bank_card' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['bank_card'], 'icon' => 'icon-usd', 'path' => 'bank_card/index.php', 'auth' => 30),
-                    'app' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['application'], 'icon' => 'icon-usd', 'path' => 'dispensing/index.php', 'auth' => 30),
-                    'dispencheck' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['check'], 'icon' => 'icon-usd', 'path' => 'dispensing_check/index.php', 'auth' => 30),
-                    'dislog' => array('key' => 2, 'name' => $langary_auth['dispensing']['list']['log'], 'icon' => 'icon-usd', 'path' => 'dispensing_log/index.php', 'auth' => 30)
+                    'app' => array('key' => 3, 'name' => $langary_auth['dispensing']['list']['application'], 'icon' => 'icon-usd', 'path' => 'dispensing/index.php', 'auth' => 30),
+                    'dispencheck' => array('key' => 4, 'name' => $langary_auth['dispensing']['list']['check'], 'icon' => 'icon-usd', 'path' => 'dispensing_check/index.php', 'auth' => 30),
+                    'dislog' => array('key' => 5, 'name' => $langary_auth['dispensing']['list']['log'], 'icon' => 'icon-usd', 'path' => 'dispensing_log/index.php', 'auth' => 30)
                 )
             ),
-            'deposit' => array('key' => 3, 'name' => $langary_auth['deposit']['name'], 'icon' => 'icon-usd', 'auth' => 30,
+            'deposit' => array('key' => 4, 'name' => $langary_auth['deposit']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
                     'pay' => array('key' => 1, 'name' => $langary_auth['deposit']['list']['pay'], 'icon' => 'icon-usd', 'path' => 'deposit_pay/index.php', 'auth' => 30),
                     'game' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['game'], 'icon' => 'icon-usd', 'path' => 'game/index.php', 'auth' => 30),                    
-                    'player' => array('key' => 1, 'name' => $langary_auth['deposit']['list']['player'], 'icon' => 'icon-usd', 'path' => 'player_data/index.php', 'auth' => 30),                                        
-                    'application' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['application'], 'icon' => 'icon-usd', 'path' => 'deposit/index.php', 'auth' => 30),
-                    'deposit_check' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['check'], 'icon' => 'icon-usd', 'path' => 'deposit_check/index.php', 'auth' => 30),                  
-                    'deposit_log' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['log'], 'icon' => 'icon-usd', 'path' => 'deposit_log/index.php', 'auth' => 30)
+                    'player' => array('key' => 3, 'name' => $langary_auth['deposit']['list']['player'], 'icon' => 'icon-usd', 'path' => 'player_data/index.php', 'auth' => 30),
+                    'application' => array('key' => 4, 'name' => $langary_auth['deposit']['list']['application'], 'icon' => 'icon-usd', 'path' => 'deposit/index.php', 'auth' => 30),
+                    'deposit_check' => array('key' => 5, 'name' => $langary_auth['deposit']['list']['check'], 'icon' => 'icon-usd', 'path' => 'deposit_check/index.php', 'auth' => 30),
+                    'deposit_log' => array('key' => 6, 'name' => $langary_auth['deposit']['list']['log'], 'icon' => 'icon-usd', 'path' => 'deposit_log/index.php', 'auth' => 30)
                 )
             )
         );
