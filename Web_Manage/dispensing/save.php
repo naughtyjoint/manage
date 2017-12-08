@@ -52,7 +52,6 @@ try {
         $data[$colname['num']] = post($colname['num'],1);          
         $data[$colname['money']] = post($colname['money'],1);
         $data[$colname['contents']] = post($colname['contents'],1);
-        
         $id = $db->query_insert($table, $data);
     }
 

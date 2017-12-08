@@ -120,7 +120,7 @@ if ($errorhandle->isException()) {
                             </div>
                             <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
                                 <?php
-                                        echo $fhelp->drawForm($colname['game_id']);
+                                    echo $fhelp->drawForm($colname['game_id']);
                                 ?>
                             </div>
                             

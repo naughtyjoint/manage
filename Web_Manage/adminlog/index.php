@@ -63,7 +63,7 @@ $db->close();
                             <div class="box-title">
                                 <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title?></h3>
                                 <div class="box-tool">
-                                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                                    <a d ata-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
                                     <a data-action="close" href="#"><i class="icon-remove"></i></a>
                                 </div>
                                 <div style="clear:both"></div>
@@ -93,7 +93,6 @@ $db->close();
 					for(var i=0;i<count;i++){
 						var row=rows[i];
 						var $tr=$('<tr></tr>');
-						
 						$tr.append('<td>'+row["<?php echo $colname['id']?>"]+'</td>');
 						$tr.append('<td>'+row["<?php echo $colname['username']?>"]+'</td>');
                         $tr.append('<td>'+row["<?php echo $colname['main_key']?>"]+'</td>'); 

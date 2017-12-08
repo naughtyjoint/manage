@@ -15,6 +15,7 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
+$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '80');
 $col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '80');
 $col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => false, 'width' => '100');
@@ -113,7 +114,7 @@ $db->close();
 <script type="text/javascript">
     $(document).ready(function () {
         /* ## coder [listRow] --> ## */
-        $('#table1').coderlisthelp({
+        $('#table1').coderlisthelp({ 
             debug: true, callback: function (obj, rows) {
                 obj.html('');
                 var count = rows.length;
@@ -124,6 +125,7 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['id'];?>"]);
+                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["uid"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_u['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_g['name'];?>"] + '</td>');

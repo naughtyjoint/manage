@@ -20,11 +20,6 @@ try{
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
 
-
-    /*if($adminuser['type'] > 1){
-        $where .= ($where==''?'':' AND ')."u.`{$colname_u['agent_id']}` = ".$adminuser['id'];
-    }*/
-
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();

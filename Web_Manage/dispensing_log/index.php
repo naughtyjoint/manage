@@ -13,7 +13,7 @@ $col = array();
 $col[] = array('column' => $colname['dispensing_id'], 'name' => '入款ID', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['contents'], 'name' => '修改備註', 'order' => false,'width'=>'120');
+$col[] = array('column' => $colname['contents'], 'name' => '修改內容', 'order' => false,'width'=>'120');
 $col[] = array('column'=>$colname['update_time'],'name'=>'修改時間','order'=> true,'width'=>'80');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => false, 'width' => '100');
 $listHelp->Bind($col);

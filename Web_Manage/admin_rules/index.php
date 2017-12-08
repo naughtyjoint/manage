@@ -105,7 +105,6 @@ $db->close();
 						$tr.attr("editlink","id="+row["<?php echo $colname['id']?>"]);
 						$tr.attr("delkey",row["<?php echo $colname['id']?>"]);
 						$tr.attr("title",row["<?php echo $colname['name']?>"]);
-
 						$tr.append('<td>'+row["<?php echo $colname['id']?>"]+'</td>');
                         //$tr.append('<td>'+row["<?php //echo $colname['agents']?>"]+'</td>');
                         $tr.append('<td>'+row["<?php echo $colname['service']?>"]+'</td>');

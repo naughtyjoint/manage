@@ -10,6 +10,9 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$dispensing;
 $colname=coderDBConf::$col_dispensing;
 
+$table_log=coderDBConf::$dispensing_log;
+$colname_log=coderDBConf::$col_dispensing_log;
+
 $table_b=coderDBConf::$bank_card;
 $colname_b=coderDBConf::$col_bank_card;
 

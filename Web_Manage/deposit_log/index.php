@@ -19,7 +19,7 @@ $col = array();
 $col[] = array('column' => $colname['deposit_id'], 'name' => '入款ID', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['contents'], 'name' => '修改備註', 'order' => false,'width'=>'120');
+$col[] = array('column' => $colname['contents'], 'name' => '修改內容', 'order' => false,'width'=>'120');
 $col[] = array('column'=>$colname['updated_time'],'name'=>'修改時間','order'=> true,'width'=>'80');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => false, 'width' => '100');
 $listHelp->Bind($col);
@@ -73,7 +73,7 @@ $db->close();
         </div>
         <!-- END Breadcrumb -->
 
-        <!-- BEGIN Main Content -->
+        <!-- BEGIN Main Content --> 
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
@@ -91,8 +91,6 @@ $db->close();
                 </div>
             </div>
         </div>
-
-
         <?php include('../footer.php'); ?>
 
         <a id="btn-scrollup" class="btn btn-circle btn-lg" href="#"><i class="icon-chevron-up"></i></a>
@@ -113,7 +111,7 @@ $db->close();
                 for (var i = 0; i < count; i++) {
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
-                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
+                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['updated_time'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['id'];?>"]);
