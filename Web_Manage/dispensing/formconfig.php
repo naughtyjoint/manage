@@ -6,9 +6,11 @@ $fobj[$colname["is_pay"]]=array("type"=>"checkbox","name"=>"是否出款","colum
 $fobj[$colname["user_id"]]=array("type"=>"hidden","name"=>"玩家","column"=>$colname["user_id"],"sql"=>false);
 $fobj[$colname["game_id"]]=array("type"=>"hidden","name"=>"遊戲名稱","column"=>$colname["game_id"],"sql"=>false);
 $fobj[$colname['bank_card_id']] = array(
-    'type' => 'select', 'name' => '銀行卡', 'column' => $colname['bank_card_id'], 'ary' => $bank_array,"sql"=>false
+    'type' => 'select', 'name' => '銀行卡', 'column' => $colname['bank_card_id'], 'ary' => $bankcard_array,"sql"=>false
 );
-$fobj[$colname["bank"]]=array("type"=>"text","name"=>"玩家銀行","column"=>$colname["bank"],'placeholder'=>'請輸入玩家銀行',"validate"=>array('maxlength' => '11'),"sql"=>false);
+$fobj[$colname['bank_id']] = array(
+    'type' => 'select', 'name' => '銀行', 'column' => $colname['bank_id'], 'ary' => $bank_array,"sql"=>false
+);
 $fobj[$colname["num"]]=array("type"=>"text","name"=>"玩家銀行卡號","column"=>$colname["num"],'placeholder'=>'請輸入玩家銀行卡號',"validate"=>array('maxlength' => '50','number' => 'yes'),"sql"=>false);
 $fobj[$colname["money"]]=array("type"=>"text","name"=>"金額","column"=>$colname["money"],'placeholder'=>'請輸入金額',"validate"=>array('maxlength' => '11','number' => 'yes'),"sql"=>false);
 //$fobj[$colname["create_time"]]=array("type"=>"text","name"=>"申請時間","column"=>$colname["create_time"],'placeholder'=>'請輸入申請時間',"validate"=>array('required' => 'yes','maxlength' => '11','number' => 'yes'));

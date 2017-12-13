@@ -9,5 +9,4 @@ $fobj[$colname['bank_id']] = array(
     )
 );
 $fobj[$colname["bank_card_no"]]=array("type"=>"text","name"=>"卡號","column"=>$colname["bank_card_no"],'placeholder'=>'請輸入卡號',"validate"=>array('required' => 'yes','maxlength' => '50'));
-$fobj[$colname["money"]]=array("type"=>"text","name"=>"餘額","column"=>$colname["money"],'placeholder'=>'請輸入餘額',"validate"=>array('required' => 'yes','maxlength' => '11','number' => 'yes'));
 $fhelp->Bind($fobj);

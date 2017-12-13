@@ -14,14 +14,17 @@ try{
 			LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();
+	for($i=0;$i<count($rows);$i++){
+		$rows[$i][$colname['is_pay']]=coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['is_pay']]);
+	}
 
 	$result['result']=true;
 	$result['data']=$rows;

@@ -48,7 +48,7 @@ try {
 
         $data[$colname['create_time']]= $nowtime;
         $data[$colname['user_id']] = post($colname['user_id'],1);  
-        $data[$colname['bank']] = post($colname['bank'],1);  
+        $data[$colname['bank_id']] = post($colname['bank'],1);  
         $data[$colname['money']] = post($colname['money'],1);  
         $id = $db->query_insert($table, $data);
     }

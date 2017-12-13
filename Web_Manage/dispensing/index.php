@@ -20,8 +20,8 @@ $col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width'
 $col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => false, 'width' => '100');
-$col[] = array('column' => $colname_b['name'], 'name' => '出款銀行卡', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['bank'], 'name' => '玩家銀行', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname_bc['name'], 'name' => '出款銀行卡', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname_b['name'], 'name' => '玩家銀行', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['num'], 'name' => '玩家銀行卡號', 'order' => false, 'width' => '150');
 $col[] = array('column' => $colname['is_pay'], 'name' => '狀態', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '120');
@@ -79,7 +79,7 @@ $db->close();
             </ul>
         </div>
         <!-- END Breadcrumb -->
-
+  
         <!-- BEGIN Main Content -->
         <div class="row">
             <div class="col-md-12">
@@ -129,8 +129,8 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname_u['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_g['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_bc['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_b['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['bank'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['num'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['is_pay'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');

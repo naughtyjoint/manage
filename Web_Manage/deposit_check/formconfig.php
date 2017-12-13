@@ -12,5 +12,5 @@ $fobj[$colname['deposit_pay_id']] = array(
     'type' => 'select', 'name' => '第三方支付', 'column' => $colname['deposit_pay_id'], 'ary' => $pay_array,'sql'=>false
 );
 $fobj[$colname["pay_code"]]=array("type"=>"text","name"=>"第三方序號","column"=>$colname["pay_code"],'placeholder'=>'請輸入第三方序號',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
-$fobj[$colname["status"]]=array("type"=>"radio","name"=>"狀態","column"=>$colname["status"],'ary'=>coderHelp::makeAryKeyToAryElement($langary_transfers,'key','name'),'mode'=>'no',"placeholder"=>"請設定狀態","equal"=>"=");
+$fobj[$colname["status"]]=array("type"=>"radio","name"=>"狀態","column"=>$colname["status"],'ary'=>coderHelp::makeAryKeyToAryElement($langary_transfers_manage,'key','name'),'mode'=>'no',"placeholder"=>"請設定狀態","equal"=>"=");
 $fhelp->Bind($fobj);

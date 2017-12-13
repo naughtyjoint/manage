@@ -268,9 +268,14 @@ $langary_pay_type = array(
 $langary_transfers = array(
     0 => '等待審核',
     1 => '已審核',
-    2 => '拒絕'
+    2 => '拒絕',
+    3 => '捨棄'
 );
-
+$langary_transfers_manage = array(
+    0 => '等待審核',
+    1 => '已審核',
+    2 => '拒絕',
+);
 //開獎
 $langary_bettings = array(
     0 => '未開獎',
@@ -393,6 +398,8 @@ $langary_manage = array(
     'system' => '系統資訊 : ',
     'ok' => '完成',
     'confirm_cancel' => '確定要取消',
+    'confirm_finish' => '確定完成',
+    'confirm_delete' => '確定要捨棄',
     'cancel' => '取消',
     'close' => '關閉',
 );

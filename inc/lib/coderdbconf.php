@@ -16,11 +16,11 @@ class coderDBConf
     public static $bank= 'bank'; //銀行
     public static $col_bank = array('id'=>'id','name'=>'name','bank_no'=>'bank_no','manager'=>'last_manager','create_time'=>'created_time');
     public static $bank_card = 'bank_card'; //銀行卡
-    public static $col_bank_card = array('id'=>'id','name'=>'bank_name','bank_id'=>'bank_id','bank_card_no'=>'bank_card_no','money'=>'money','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time');
+    public static $col_bank_card = array('id'=>'id','name'=>'bank_name','bank_id'=>'bank_id','bank_card_no'=>'bank_card_no','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time');
     public static $dispensing = 'dispensing'; //出款
-    public static $col_dispensing = array('id'=>'id','user_id'=>'user_id','game_id'=>'game_id','bank_card_id'=>'bank_card_id','bank'=>'bank','num'=>'num','money'=>'money','contents'=>'contents','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time','check_time'=>'check_time','is_pay'=>'is_pay');
+    public static $col_dispensing = array('id'=>'id','user_id'=>'user_id','game_id'=>'game_id','bank_card_id'=>'bank_card_id','bank_id'=>'bank_id','num'=>'num','money'=>'money','contents'=>'contents','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time','check_time'=>'check_time','is_pay'=>'is_pay');
     public static $dispensing_log = 'dispensing_log'; //出款歷程
-    public static $col_dispensing_log = array('id'=>'id','dispensing_id'=>'dispensing_id','user_id'=>'user_id','game_id'=>'game_id','manager'=>'last_manager','update_time'=>'updated_time','contents'=>'contents');
+    public static $col_dispensing_log = array('id'=>'id','dispensing_id'=>'dispensing_id','user_id'=>'user_id','game_id'=>'game_id','manager'=>'last_manager','update_time'=>'updated_time','contents'=>'contents','is_pay'=>'is_pay');
     public static $deposit_pay = 'deposit_pay'; //第三方支付
     public static $col_deposit_pay = array('id'=>'id','name'=>'pay_name','manager'=>'last_manager','create_time'=>'created_time');
     public static $game = 'game'; //遊戲名稱
@@ -32,6 +32,6 @@ class coderDBConf
     public static $deposit_check = 'deposit'; //入款審核
     public static $col_deposit_check = array('id'=>'id','user_id'=>'user_id','money'=>'money','company'=>'company','method'=>'method','status'=>'status','remark'=>'remark','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
     public static $deposit_log = 'deposit_log'; //入款歷程
-    public static $col_deposit_log = array('id'=>'id','user_id'=>'user_id','deposit_id'=>'deposit_id','game_id'=>'game_id','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
+    public static $col_deposit_log = array('id'=>'id','user_id'=>'user_id','deposit_id'=>'deposit_id','game_id'=>'game_id','status'=>'status','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
 
 }

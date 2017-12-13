@@ -82,7 +82,7 @@ if ($errorhandle->isException()) {
         <div class="row">
             <form class="form-horizontal" action="save.php" id="myform" name="myform" method="post">
                 <?php echo $fhelp->drawForm($colname['id']) ?>
-                <input type="hidden" name="nowstatus" value="<?php echo ($method == 'edit')?$row[$colname['status']]:'0'?>">
+                <input type="hidden" name="nowstatus" id="nowstatus" value="<?php echo ($method == 'edit')?$row[$colname['status']]:'0'?>">
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-title">
@@ -195,12 +195,30 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['contents']) ?>
                                         </div>
                                     </div>
-
-
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
-                                            <button type="submit" class="btn btn-primary"><i class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
+                                            <button type="button" class="btn btn-primary" onClick="$.confirm({
+                                                        title: '<?php echo $langary_manage['confirm_finish'].$active ?>'+'?',
+                                                        content: '',
+                                                        type: 'red',
+                                                        typeAnimated: true,
+                                                        buttons: {
+                                                            tryAgain: {
+                                                            text: langary_jsall['confirm_ok'],
+                                                            btnClass: 'btn-red',
+                                                                action: function(){
+                                                                    $('#myform').submit();
+                                                                }
+                                                            },
+                                                            alphabet: {
+                                                                text: langary_jsall['confirm_cancel'],
+                                                                    action: function(){
+                                                                }
+                                                            }
+                                                        }
+                                                    });">
+                                                <i class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
                                             <button type="button" class="btn" onClick="$.confirm({
                                                         title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
                                                         content: '',
@@ -222,6 +240,31 @@ if ($errorhandle->isException()) {
                                                         }
                                                     });">
                                             <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
+                                            <?php if(isset($row[$colname['status']]) && $row[$colname['status']] == 0){ ?>
+                                            <button type="button" class="btn btn-warning" onClick="$.confirm({
+                                                        title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
+                                                        content: '',
+                                                        type: 'red',
+                                                        typeAnimated: true,
+                                                        buttons: {
+                                                            tryAgain: {
+                                                            text: langary_jsall['confirm_ok'],
+                                                            btnClass: 'btn-red',
+                                                                action: function(){
+                                                                    document.getElementById('nowstatus').value = 3;
+                                                                    $('#myform').submit();
+                                                                }
+                                                            },
+                                                            alphabet: {
+                                                                text: langary_jsall['confirm_cancel'],
+                                                                    action: function(){
+                                                                }
+                                                            }
+                                                        }
+                                                    });">
+                                                <i class="icon-trash"></i> 捨棄</button>
+                                            <?php }?>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -262,6 +305,7 @@ if ($errorhandle->isException()) {
         /* ## coder [jsVaildScript] <-- ## */
     })
 
+                                                    
 
 </script>
 </body>

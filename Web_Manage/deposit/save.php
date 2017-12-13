@@ -35,11 +35,7 @@ try {
     $data[$colname['update_time']] = $nowtime;
 
     $nowstatus = post("nowstatus");
-    /*if ($data[$colname['status']] === '' || $nowstatus > 0) {
-        unset($data[$colname['status']]);
-    } else if ($data[$colname['status']] > 0) {
-        $data[$colname['statustime']] = $nowtime;
-    }*/
+    $data[$colname['status']] = $nowstatus;
 
     if ($method == 'edit') {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");

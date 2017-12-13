@@ -35,6 +35,7 @@ try {
     $data[$colname['update_time']] = $nowtime;
 
     $nowstatus = post("nowstatus");
+    $data[$colname['is_pay']] = $nowstatus;
     /*if ($data[$colname['status']] === '' || $nowstatus > 0) {
         unset($data[$colname['status']]);
     } else if ($data[$colname['status']] > 0) {
@@ -48,7 +49,7 @@ try {
         $data[$colname['user_id']] = post($colname['user_id'],1);  
         $data[$colname['game_id']] = post($colname['game_id'],1);          
         $data[$colname['bank_card_id']] = post($colname['bank_card_id'],1);          
-        $data[$colname['bank']] = post($colname['bank'],1);  
+        $data[$colname['bank_id']] = post($colname['bank_id'],1);  
         $data[$colname['num']] = post($colname['num'],1);          
         $data[$colname['money']] = post($colname['money'],1);
         $data[$colname['contents']] = post($colname['contents'],1);

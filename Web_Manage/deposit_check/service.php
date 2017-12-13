@@ -16,8 +16,8 @@ try{
 					LEFT JOIN $table_third third ON third.`{$colname_third['id']}` = t.`{$colname['deposit_pay_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
@@ -42,7 +42,7 @@ try{
 		//$rows[$i][$colname['is_public']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['is_public']]].'">'.coderHelp::getAryVal($langary_yn,$rows[$i][$colname['is_public']]).'</span>';
 
         $rows[$i][$colname['status']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['status']]].'">'.coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['status']]).'</span>';
-
+		
 		/* ## coder [modify] <-- ## */
 	}
 

@@ -89,18 +89,18 @@ if ($errorhandle->isException()) {
                             <div class="row">
                                     <!-- ## coder [formScript] -> ## -->
                                 <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['is_pay']]) && $row[$colname['is_pay']] > 0)?'control-label':'controls'?>" <?php echo (isset($row[$colname['is_pay']]) && $row[$colname['is_pay']] > 0)?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if(isset($row[$colname['is_pay']]) && $row[$colname['is_pay']] > 0) {
-                                                echo $langary_transfers[$row[$colname['is_pay']]];
-                                            }
-                                            else{
+                                    <label class="col-sm-3 col-lg-3 control-label">
+                                        <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
+                                    <div class="col-sm-3 <?php echo (isset($row[$colname['is_pay']]) && $row[$colname['is_pay']] > 0)?'control-label':'controls'?>" <?php echo (isset($row[$colname['is_pay']]) && $row[$colname['is_pay']] > 0)?'style="text-align: left;"':''?>>
+                                        <?php
+                                            if($row[$colname['is_pay']] != 3){
                                                 echo $fhelp->drawForm($colname['is_pay']);
+                                            }else{
+                                                echo "捨棄";
                                             }
-                                            ?>
-                                        </div>
+                                            
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
                                 <label class="col-sm-3 col-lg-3 control-label">
@@ -180,14 +180,14 @@ if ($errorhandle->isException()) {
                             </div>
                             <div class="form-group ">
                                 <label class="col-sm-3 col-lg-3 control-label">
-                                    <?php echo $fhelp->drawLabel($colname['bank']) ?> </label>
-                                <div class="col-sm-3 <?php echo (isset($row[$colname['bank']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['bank']]))?'style="text-align: left;"':''?>>
+                                    <?php echo $fhelp->drawLabel($colname['bank_id']) ?> </label>
+                                <div class="col-sm-3 <?php echo (isset($row[$colname['bank_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['bank_id']]))?'style="text-align: left;"':''?>>
                                     <?php
-                                    if(isset($row[$colname['bank']])) {
-                                        echo $row[$colname['bank']];
+                                    if(isset($row[$colname['bank_id']])) {
+                                        echo $row[$colname['bank_id']];
                                     }
                                     else{
-                                        echo $fhelp->drawForm($colname['bank']);
+                                        echo $fhelp->drawForm($colname['bank_id']);
                                     }
                                     ?>
                                 </div>
@@ -217,30 +217,48 @@ if ($errorhandle->isException()) {
                                 <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
-                                            <button type="submit" class="btn btn-primary"><i
-                                                        class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
-                                            <button type="button" class="btn"
-                                                    onClick="$.confirm({
-                                                                title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
-                                                                content: '',
-                                                                type: 'red',
-                                                                typeAnimated: true,
-                                                                buttons: {
-                                                                    tryAgain: {
-                                                                        text: langary_jsall['confirm_ok'],
-                                                                        btnClass: 'btn-red',
-                                                                        action: function(){
-                                                                            parent.closeBox();
-                                                                        }
-                                                                    },
-                                                                    alphabet: {
-                                                                        text: langary_jsall['confirm_cancel'],
-                                                                        action: function(){
-                                                                        }
-                                                                    }
-                                                                }
-                                                            });">
-                                                <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
+                                        <button type="button" class="btn btn-primary" onClick="$.confirm({
+                                            title: '<?php echo $langary_manage['confirm_finish'].$active ?>'+'?',
+                                            content: '',
+                                            type: 'red',
+                                            typeAnimated: true,
+                                            buttons: {
+                                                tryAgain: {
+                                                text: langary_jsall['confirm_ok'],
+                                                btnClass: 'btn-red',
+                                                    action: function(){
+                                                        $('#myform').submit();
+                                                    }
+                                                },
+                                                alphabet: {
+                                                    text: langary_jsall['confirm_cancel'],
+                                                        action: function(){
+                                                    }
+                                                }
+                                            }
+                                        });">
+                                    <i class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
+                                <button type="button" class="btn" onClick="$.confirm({
+                                            title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
+                                            content: '',
+                                            type: 'red',
+                                            typeAnimated: true,
+                                            buttons: {
+                                                tryAgain: {
+                                                text: langary_jsall['confirm_ok'],
+                                                btnClass: 'btn-red',
+                                                    action: function(){
+                                                        parent.closeBox();
+                                                    }
+                                                },
+                                                alphabet: {
+                                                    text: langary_jsall['confirm_cancel'],
+                                                        action: function(){
+                                                    }
+                                                }
+                                            }
+                                        });">
+                                <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
                                         </div>
                                     </div>
                                 </div>

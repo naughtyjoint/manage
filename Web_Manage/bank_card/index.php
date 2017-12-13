@@ -20,7 +20,6 @@ $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'wid
 $col[] = array('column' => $colname['name'], 'name' => '名稱', 'order' => true, 'width' => '150');
 $col[] = array('column' => 'b_name', 'name' => '銀行', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['bank_card_no'], 'name' => '卡號', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['money'], 'name' => '餘額', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '100');
@@ -125,7 +124,6 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["b_name"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['bank_card_no'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');

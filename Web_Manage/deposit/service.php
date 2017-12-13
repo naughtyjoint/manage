@@ -17,14 +17,13 @@ try{
 				  
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
+ 
 
-
-    $where = class_agent::getWhere_lv($colname_u,$where,"");
     /*if($adminuser['type'] > 1){
         if($adminuser['type'] == '4'){
             $where .= ($where == '' ? '' : ' AND ') . "`{$colname_u['agent_id']}` = " . $adminuser['serviceid'];

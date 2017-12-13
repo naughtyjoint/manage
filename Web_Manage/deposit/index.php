@@ -28,7 +28,6 @@ $col[] = array('column' => $colname['check_time'], 'name' => '審核時間', 'or
 $col[] = array('column' => $colname['contents'], 'name' => '備註', 'order' => false);
 $col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
-
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
 
@@ -138,7 +137,6 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-
                     obj.append($tr);
                 }
             }, listComplete: function () {
