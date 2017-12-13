@@ -15,6 +15,7 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
+$col[] = array('column' => $colname['id'], 'name' => '出款ID', 'order' => false, 'width' => '100');
 $col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '100');
@@ -125,6 +126,7 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname_u['name'];?>"]);
+                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["uid"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_u['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_g['name'];?>"] + '</td>');
