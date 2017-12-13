@@ -206,7 +206,14 @@ if ($errorhandle->isException()) {
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
                                             <div class="col-sm-3 controls">
-                                                <?php echo $fhelp->drawForm($colname['contents']) ?>
+                                                
+                                                <?php
+                                                    if($row[$colname['status']] != 3){
+                                                        echo $fhelp->drawForm($colname['contents']); 
+                                                    }else{
+                                                        echo $row[$colname['contents']];
+                                                    }
+                                                ?>
                                             </div>
                                         </div>
     
