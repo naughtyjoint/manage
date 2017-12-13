@@ -15,7 +15,7 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname['id'], 'name' => '出款ID', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '100');
 $col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '100');
