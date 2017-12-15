@@ -286,10 +286,12 @@ $langary_transfers_manage = array(
     2 => '拒絕',
 );
 $langary_mycard = array(
-    0 => '未付款',
-    1 => '已審核',
-    2 => '拒絕',
-    3 => '已付款'
+    0 => '未交易',
+    1 => '已交易'
+);
+$langary_mycard_pay = array(
+    0 => '未請款',
+    1 => '已請款'
 );
 //開獎
 $langary_bettings = array(

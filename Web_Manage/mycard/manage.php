@@ -90,9 +90,17 @@ if ($errorhandle->isException()) {
                                 <!--left start-->
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['ReturnCode']) ?> </label>
+                                            <div class="col-sm-5 control-label" style="text-align: left;">
+                                                <?php echo $langary_mycard[$row[$colname['ReturnCode']]] ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['PayResult']) ?> </label>
                                             <div class="col-sm-5 control-label" style="text-align: left;">
-                                                <?php echo $langary_mycard[$row[$colname['PayResult']]] ?>
+                                                <?php echo $langary_mycard_pay[$row[$colname['PayResult']]] ?>
                                             </div>
                                         </div>
                                         <div class="form-group ">
@@ -148,7 +156,6 @@ if ($errorhandle->isException()) {
                                                 text: langary_jsall['confirm_ok'],
                                                 btnClass: 'btn-red',
                                                     action: function(){
-                                                        document.getElementById('nowstatus').value = 3;
                                                         $('#myform').submit();
                                                     }
                                                 },

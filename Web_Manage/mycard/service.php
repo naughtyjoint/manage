@@ -38,8 +38,8 @@ try{
 	for($i=0;$i<count($rows);$i++){
 		/* ## coder [modify] --> ## */
 		//$rows[$i][$colname['is_public']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['is_public']]].'">'.coderHelp::getAryVal($langary_yn,$rows[$i][$colname['is_public']]).'</span>';
-
-        $rows[$i][$colname['PayResult']]='<span class="label label-'.$mycard_labelstyle[$rows[$i][$colname['PayResult']]].'">'.coderHelp::getAryVal($langary_mycard,$rows[$i][$colname['PayResult']]).'</span>';
+		$rows[$i][$colname['ReturnCode']]='<span class="label label-'.$mycard_labelstyle[$rows[$i][$colname['ReturnCode']]].'">'.coderHelp::getAryVal($langary_mycard,$rows[$i][$colname['ReturnCode']]).'</span>';		
+        $rows[$i][$colname['PayResult']]='<span class="label label-'.$mycard_labelstyle[$rows[$i][$colname['PayResult']]].'">'.coderHelp::getAryVal($langary_mycard_pay,$rows[$i][$colname['PayResult']]).'</span>';
 		
 		/* ## coder [modify] <-- ## */
 	}
