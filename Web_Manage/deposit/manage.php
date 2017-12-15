@@ -242,7 +242,7 @@ if ($errorhandle->isException()) {
                                             <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
                                             <?php if(isset($row[$colname['status']]) && $row[$colname['status']] == 0){ ?>
                                             <button type="button" class="btn btn-warning" onClick="$.confirm({
-                                                        title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
+                                                        title: '<?php echo $langary_manage['confirm_delete'].$active ?>'+'?',
                                                         content: '',
                                                         type: 'red',
                                                         typeAnimated: true,
@@ -251,8 +251,9 @@ if ($errorhandle->isException()) {
                                                             text: langary_jsall['confirm_ok'],
                                                             btnClass: 'btn-red',
                                                                 action: function(){
-                                                                    document.getElementById('nowstatus').value = 3;
-                                                                    $('#myform').submit();
+                                                                        document.getElementById('nowstatus').value = 3;
+                                                                        $('#myform').submit();
+                                                                    
                                                                 }
                                                             },
                                                             alphabet: {

@@ -166,7 +166,16 @@ $langary_auth = array(
             'log'=>'入款歷程',
             'check'=>'入款審核'
         )
+    ),
+    'mycard' => array(
+        'name'=>'mycard入款',
+        'list'=>array(
+            'product'=>'產品',
+            'log'=>'mycard入款歷程',
+            'check'=>'mycard入款審核'
+        )
     )
+
 );
 
 $langary_coderadmin_all = array(
@@ -275,6 +284,12 @@ $langary_transfers_manage = array(
     0 => '等待審核',
     1 => '已審核',
     2 => '拒絕',
+);
+$langary_mycard = array(
+    0 => '未付款',
+    1 => '已審核',
+    2 => '拒絕',
+    3 => '已付款'
 );
 //開獎
 $langary_bettings = array(

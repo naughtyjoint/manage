@@ -35,7 +35,6 @@ try {
     $data[$colname['update_time']] = $nowtime;
 
     $nowstatus = post("nowstatus");
-    $data[$colname['is_pay']] = $nowstatus;
     /*if ($data[$colname['status']] === '' || $nowstatus > 0) {
         unset($data[$colname['status']]);
     } else if ($data[$colname['status']] > 0) {
@@ -43,6 +42,17 @@ try {
     }*/
 
     if ($method == 'edit') {
+        $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
+        if(!empty($row[$colname['is_pay']])){
+        ?>
+            <script>
+                alert('無法捨棄!! 狀態已經被更改');
+            </script>
+        <?php
+            $data[$colname['is_pay']] = $row[$colname['is_pay']];
+        }else{
+            $data[$colname['is_pay']] = $nowstatus;
+        }
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
     } else {
         $data[$colname['create_time']]= $nowtime;

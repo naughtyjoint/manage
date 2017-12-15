@@ -35,19 +35,26 @@ try {
     $data[$colname['update_time']] = $nowtime;
 
     $nowstatus = post("nowstatus");
-    $data[$colname['status']] = $nowstatus;
-
+   
     if ($method == 'edit') {
+        $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
+        if(!empty($row[$colname['status']])){
+        ?>
+            <script>
+                alert('無法捨棄!! 狀態已經被更改');
+            </script>
+        <?php
+        }else{
+            $data[$colname['status']] = $nowstatus;
+        }
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
+        
     } else {
-
         $data[$colname['user_id']] = post($colname['user_id'],1);
         $data[$colname['game_id']] = post($colname['game_id'],1);
         $data[$colname['money']] = post($colname['money'],1);
         $data[$colname['deposit_pay_id']] = post($colname['deposit_pay_id'],1);
-
         $data[$colname['pay_code']] = post($colname['pay_code'],1);
-        
         $data[$colname['create_time']] = $nowtime;
         //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);

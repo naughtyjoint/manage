@@ -10,7 +10,7 @@ $manageinfo = "";
 try {
 
     if ($id != "") {
-        //coderAdmin::vaild($auth, 'edit');
+        coderAdmin::vaild($auth, 'edit');
 
         $db = Database::DB();
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
@@ -22,7 +22,7 @@ try {
         /* ## coder [bindData] <-- ## */
         /* ## coder [beforeBind] --> ## */
         /* ## coder [beforeBind] <-- ## */
-        //$row[$colname['date']] = date("Y-m-d",strtotime($row[$colname['date']]));
+
         $fhelp->bindData($row);
 
         $method = 'edit';
@@ -30,8 +30,7 @@ try {
 
         $db->close();
     } else {
-        die('<script>parent.closeBox();parent.showNotice("alert","'.$page_title.'","'.$langary_Web_Manage_all['die_error'].'")</script>');
-        //coderAdmin::vaild($auth, 'add');
+        coderAdmin::vaild($auth, 'add');
         $method = 'add';
         $active = $langary_edit_add['add'];
     }
@@ -79,7 +78,7 @@ if ($errorhandle->isException()) {
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-title">
-                            <h3><i class="<?php echo getIconClass($method) ?>"></i> <?php echo $page_title . $langary_Web_Manage_all['details'] ?>
+                            <h3><i class="<?php echo getIconClass($method) ?>"></i> <?php echo $page_title . $active ?>
                             </h3>
                             <div class="box-tool">
                                 <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
@@ -93,55 +92,48 @@ if ($errorhandle->isException()) {
                                     <!-- ## coder [formScript] -> ## -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
-                                        <div class="col-sm-5 control-label" style="text-align: left;">
-                                            <?php echo $$langary_yn[$row[$colname['is_pay']]] ?>
+                                            <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname_u['title']) ?> </label>
-                                        <div class="col-sm-5 control-label" style="text-align: left;">
-                                            <?php echo $row[$colname_u['title']]  ?>
+                                            <?php echo $fhelp->drawLabel($colname['product_id']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['product_id']) ?>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                    <label class="col-sm-3 col-lg-3 control-label">
-                                        <?php echo $fhelp->drawLabel($colname['bank']) ?> </label>
-                                    <div class="col-sm-3 controls">
-                                        <?php echo $row[$colname['bank']] ?>
-                                    </div>
-                                </div>
 
-                                <div class="form-group ">
-                                    <label class="col-sm-3 col-lg-3 control-label">
-                                        <?php echo $fhelp->drawLabel($colname['num']) ?> </label>
-                                    <div class="col-sm-3 controls">
-                                        <?php echo $row[$colname['num']] ?>
+                                    <!-- ## coder [formScript] <- ## -->
+                                    <div class="form-group">
+                                        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
+                                            <button type="submit" class="btn btn-primary"><i
+                                                        class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
+                                            <button type="button" class="btn"
+                                                    onClick="$.confirm({
+                                                                title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
+                                                                content: '',
+                                                                type: 'red',
+                                                                typeAnimated: true,
+                                                                buttons: {
+                                                                    tryAgain: {
+                                                                        text: langary_jsall['confirm_ok'],
+                                                                        btnClass: 'btn-red',
+                                                                        action: function(){
+                                                                                parent.closeBox();
+                                                                        }
+                                                                    },
+                                                                    alphabet: {
+                                                                        text: langary_jsall['confirm_cancel'],
+                                                                        action: function(){
+                                                                        }
+                                                                    }
+                                                                }
+                                                            });">
+                                                <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group ">
-                                    <label class="col-sm-3 col-lg-3 control-label">
-                                        <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
-                                    <div class="col-sm-3 controls">
-                                        <?php echo $row[$colname['money']]?>
-                                    </div>
-                                </div>
-                                <div class="form-group ">
-                                    <label class="col-sm-3 col-lg-3 control-label">
-                                        <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
-                                    <div class="col-sm-3 controls">
-                                        <?php echo $row[$colname['contents']] ?>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
-                                        <button type="button" class="btn btn-primary" onClick="parent.closeBox();">
-                                            <i class="icon-remove"></i><?php echo $langary_manage['close'];?><?php echo $active ?>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                                 </div>
                                 <!--left end-->
 
@@ -172,14 +164,12 @@ if ($errorhandle->isException()) {
 <!-- ## coder [includeScript] -> ## -->
 <!-- ## coder [includeScript] <- ## -->
 <script type="text/javascript">
-    $(".red").hide();
     $(document).ready(function () {
         /* ## coder [jsScript] --> ## */
         /* ## coder [jsScript] <-- ## */
 
         <?php echo coderFormHelp::drawVaildScript();?>
         /* ## coder [jsVaildScript] --> ## */
-
         /* ## coder [jsVaildScript] <-- ## */
     })
 

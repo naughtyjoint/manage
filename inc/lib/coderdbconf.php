@@ -33,5 +33,11 @@ class coderDBConf
     public static $col_deposit_check = array('id'=>'id','user_id'=>'user_id','money'=>'money','company'=>'company','method'=>'method','status'=>'status','remark'=>'remark','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
     public static $deposit_log = 'deposit_log'; //入款歷程
     public static $col_deposit_log = array('id'=>'id','user_id'=>'user_id','deposit_id'=>'deposit_id','game_id'=>'game_id','status'=>'status','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
+    public static $product = 'product'; //產品
+    public static $col_product = array('id'=>'id','product_id'=>'product_id','name'=>'name','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
+    public static $mycard = 'mycard'; //mycard入款審核
+    public static $col_mycard = array('id'=>'id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','CustomerId'=>'CustomerId','ProductName'=>'ProductName','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','Pay_time'=>'Pay_time','Check_time'=>'Check_time','manager'=>'last_manager');
+    public static $mycard_log = 'mycard_log'; //mycard入款歷程
+    public static $col_mycard_log = array('id'=>'id','deposit_id'=>'deposit_id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','PayResult'=>'PayResult','updated_time'=>'updated_time','manager'=>'last_manager');
 
 }

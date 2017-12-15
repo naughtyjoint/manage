@@ -48,6 +48,13 @@ class coderAdmin
                     'deposit_check' => array('key' => 5, 'name' => $langary_auth['deposit']['list']['check'], 'icon' => 'icon-usd', 'path' => 'deposit_check/index.php', 'auth' => 30),                  
                     'deposit_log' => array('key' => 6, 'name' => $langary_auth['deposit']['list']['log'], 'icon' => 'icon-usd', 'path' => 'deposit_log/index.php', 'auth' => 30)
                 )
+            ),
+            'mycard' => array('key' => 5, 'name' => $langary_auth['mycard']['name'], 'icon' => 'icon-usd', 'auth' => 30,
+                'list' => array(
+                    'product' => array('key' => 1, 'name' => $langary_auth['mycard']['list']['product'], 'icon' => 'icon-usd', 'path' => 'product/index.php', 'auth' => 30),
+                    'mycard_check' => array('key' => 2, 'name' => $langary_auth['mycard']['list']['check'], 'icon' => 'icon-usd', 'path' => 'mycard/index.php', 'auth' => 30),                  
+                    'mycard_log' => array('key' => 3, 'name' => $langary_auth['mycard']['list']['log'], 'icon' => 'icon-usd', 'path' => 'mycard_log/index.php', 'auth' => 30)
+                )
             )
         );
     }
