@@ -19,7 +19,8 @@ $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'wid
 $col[] = array('column' => $colname['CustomerId'], 'name' => '玩家ID', 'order' => true, 'width' => '80');
 $col[] = array('column' => $colname_p['name'], 'name' => '產品名稱', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['FacTradeSeq'], 'name' => '第三方序號', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['PayResult'], 'name' => '狀態', 'order' => true, 'width' => '90');
+$col[] = array('column' => $colname['ReturnCode'], 'name' => '交易狀態', 'order' => true, 'width' => '90');
+$col[] = array('column' => $colname['PayResult'], 'name' => '請款狀態', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['Amount'], 'name' => '金額', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Currency'], 'name' => '幣別', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Created_date'], 'name' => '申請時間', 'order' => true, 'width' => '120');
@@ -33,7 +34,7 @@ $listHelp->bindFilter($filterhelp);
 /* ## coder [listHelp] <-- ## */
 
 $db = Database::DB();
-coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', '列表');
+coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', '列表'); 
 $db->close();
 ?>
 <!DOCTYPE html>
@@ -80,7 +81,7 @@ $db->close();
 
         <!-- BEGIN Main Content -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12"> 
                 <div class="box">
                     <div class="box-title">
                         <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title ?></h3>
@@ -127,6 +128,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['CustomerId'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_p['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['FacTradeSeq'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['ReturnCode'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['PayResult'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Amount'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Currency'];?>"] + '</td>');

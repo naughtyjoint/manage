@@ -74,7 +74,7 @@ $incary_pay_check=array('<span class="label">等待支付</span>','<span class="
 $incary_yn_layout = array('<span class="label">否</span>','<span class="label label-success">是</span>');
 $test_ary = array('1'=>'測試1', '2'=>'測試2', '3'=>'測試3', '4'=>'測試4','5'=>'測試5');
 $incary_labelstyle=array(0=>'default',1=>'success',2=>'warning',3=>'important',4=>'inverse',5=>'pink',6=>'yellow',7=>'lime',8=>'magenta',9=>'gray');
-$mycard_labelstyle=array(0=>'default',1=>'important',2=>'warning',3=>'success',4=>'inverse',5=>'pink',6=>'yellow',7=>'lime',8=>'magenta',9=>'gray');
+$mycard_labelstyle=array(0=>'default',1=>'success',2=>'warning',3=>'success',4=>'inverse',5=>'pink',6=>'yellow',7=>'lime',8=>'magenta',9=>'gray');
 
 //可匯入序號 IP
 $incary_psnoIP = array("::1",'59.127.37.46');
