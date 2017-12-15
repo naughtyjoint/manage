@@ -18,14 +18,14 @@ $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '50');
 $col[] = array('column' => $colname['CustomerId'], 'name' => '玩家ID', 'order' => true, 'width' => '80');
 $col[] = array('column' => $colname_p['name'], 'name' => '產品名稱', 'order' => false, 'width' => '100');
-$col[] = array('column' => $colname['FacTradeSeq'], 'name' => '第三方序號', 'order' => true, 'width' => '150');
+$col[] = array('column' => $colname['FacTradeSeq'], 'name' => '第三方交易序號', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['ReturnCode'], 'name' => '交易狀態', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['PayResult'], 'name' => '請款狀態', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['Amount'], 'name' => '金額', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Currency'], 'name' => '幣別', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['Created_date'], 'name' => '申請時間', 'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['Pay_time'], 'name' => '付款時間', 'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['Check_time'], 'name' => '審核時間', 'order' => true, 'width' => '120');
+$col[] = array('column' => $colname['Created_date'], 'name' => '交易時間', 'order' => true, 'width' => '120');
+$col[] = array('column' => $colname['Pay_time'], 'name' => '交易完成時間', 'order' => true, 'width' => '120');
+$col[] = array('column' => $colname['Check_time'], 'name' => '請款時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 
 $listHelp->Bind($col);
