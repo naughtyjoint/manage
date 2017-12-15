@@ -1,6 +1,17 @@
 <?php
 include_once('_config.php');
 include_once('formconfig.php');
+$authcode = $_POST["AuthC"];
+$url = "https://test.b2b.mycard520.com.tw/MyBillingPay/api/PaymentConfirm?AuthCode=".$authcode;
+$ch = curl_init();
+
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+$output = curl_exec($ch);
+$opt = json_decode($output);
+curl_close($ch);
 
 $errorhandle = new coderErrorHandle();
 try {
@@ -34,7 +45,7 @@ try {
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['Check_time']]= $nowtime;    
 
-    $nowstatus = post("nowstatus");
+    $nowstatus = $opt->ReturnCode;
     $data[$colname['PayResult']] = $nowstatus;
     if ($method == 'edit') {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");

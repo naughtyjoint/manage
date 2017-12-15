@@ -74,6 +74,7 @@ if ($errorhandle->isException()) {
             <form class="form-horizontal" action="save.php" id="myform" name="myform" method="post">
                 <?php echo $fhelp->drawForm($colname['id']) ?>
                 <input type="hidden" name="nowstatus" id="nowstatus" value="<?php echo ($method == 'edit')?$row[$colname['PayResult']]:'0'?>">
+                <input type="hidden" name="AuthC" id="AuthC" value="<?php echo $row['AuthCode']; ?>">
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-title">
