@@ -45,11 +45,16 @@ try {
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['Check_time']]= $nowtime;    
 
+
     $nowstatus = $opt->ReturnCode;
-    $data[$colname['PayResult']] = $nowstatus;
-    if ($method == 'edit') {
-        $db->query_update($table, $data, " {$colname['id']}='{$id}'");
-    } 
+    if($nowstatus == 1){
+
+        $data[$colname['PayResult']] = $nowstatus;
+        if ($method == 'edit') {
+            $db->query_update($table, $data, " {$colname['id']}='{$id}'");
+        }
+
+    }
 
     $admin_title = isset($data[$colname['id']]) ? $data[$colname['id']] : '';
     coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, $method, "id:{$id}");
