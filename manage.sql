@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-12-19 10:57:32
+-- 產生時間： 2017-12-19 11:55:17
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.11
 
@@ -58,7 +58,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-(1, '', '', 1, 0, 1, 0, '3dc841930a1a217f956cc5800393f00b1513327603478043b640preell9hdgq4342hmtcbo', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-15 16:46:43', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
+(1, '', '', 1, 0, 1, 0, '8d3df47173097abe6513e642c7841f7d151365371653887sbf5kfpqqeqo1tdkkkbd8kj2eb', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2017-12-19 11:21:56', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '60e58df6877dd77b434aef35828397a8151322428638780bd2h9aut8a08m15lqfmdnbck5s', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:04:46', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db7b229025b7bf9e5c8bb2e1ea49518615132243199432qll4bu2p5e7v5vcr66igsi4kkd', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:05:19', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
 
@@ -735,7 +735,9 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (2939, 'admin', 5, 2, '列表', '2017-12-19 09:53:30', '127.0.0.1', 2),
 (2940, 'admin', 5, 3, '列表', '2017-12-19 09:53:32', '127.0.0.1', 2),
 (2941, 'admin', 5, 2, '列表', '2017-12-19 09:53:32', '127.0.0.1', 2),
-(2942, 'admin', 5, 3, '列表', '2017-12-19 10:08:36', '127.0.0.1', 2);
+(2942, 'admin', 5, 3, '列表', '2017-12-19 10:08:36', '127.0.0.1', 2),
+(2943, 'admin', 0, 0, 'admin登入成功', '2017-12-19 11:21:56', '::1', 1),
+(2944, 'admin', 5, 2, '列表', '2017-12-19 11:22:00', '::1', 2);
 
 -- --------------------------------------------------------
 
@@ -979,6 +981,8 @@ CREATE TABLE `member` (
   `id` int(11) NOT NULL COMMENT '使用者編號',
   `member_id` varchar(25) COLLATE utf8_unicode_ci NOT NULL COMMENT '會員ID',
   `member_name` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT '暱稱',
+  `platform_name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `point` int(11) NOT NULL,
   `anchor` tinyint(1) NOT NULL,
   `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -990,10 +994,10 @@ CREATE TABLE `member` (
 -- 資料表的匯出資料 `member`
 --
 
-INSERT INTO `member` (`id`, `member_id`, `member_name`, `point`, `anchor`, `created_time`, `updated_time`, `last_manager`) VALUES
-(1, 'CMPunk33', '王曉明', 0, 0, '2017-12-19 02:44:31', '2017-12-06 02:49:11', 'admin'),
-(2, 'GGQbbb123', '李小小', 0, 0, '2017-12-19 02:43:29', '2017-12-06 02:50:56', 'admin'),
-(3, 'a571615', '煞氣a小夫', 0, 0, '2017-12-19 02:44:25', '2017-12-06 03:26:56', 'admin');
+INSERT INTO `member` (`id`, `member_id`, `member_name`, `platform_name`, `email`, `point`, `anchor`, `created_time`, `updated_time`, `last_manager`) VALUES
+(1, 'CMPunk33', '王曉明', 'Facebook', '', 0, 0, '2017-12-19 03:27:17', '2017-12-06 02:49:11', 'admin'),
+(2, 'GGQbbb123', '李小小', 'Facebook', '', 0, 0, '2017-12-19 03:27:23', '2017-12-06 02:50:56', 'admin'),
+(3, 'a571615', '煞氣a小夫', 'Facebook', '', 0, 0, '2017-12-19 03:27:28', '2017-12-06 03:26:56', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1373,7 +1377,7 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2943;
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2945;
 
 --
 -- 使用資料表 AUTO_INCREMENT `bank`
