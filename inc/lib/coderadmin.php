@@ -30,6 +30,13 @@ class coderAdmin
                     'auth_rules' => array('key' => 1, 'name' => $langary_auth['auth']['list']['auth_rules'], 'icon' => 'icon-lock', 'path' => 'admin_rules/index.php', 'auth' => 30)
                 )
             ),
+            'member' => array('key' => 6, 'name' => $langary_auth['member']['name'], 'icon' => 'icon-lock', 'auth' => 30,
+                'list' => array(
+                    'platform' => array('key' => 1, 'name' => $langary_auth['member']['list']['platform'], 'icon' => 'icon-lock', 'path' => 'anchor/index.php', 'auth' => 30),
+                    'player' => array('key' => 2, 'name' => $langary_auth['member']['list']['player'], 'icon' => 'icon-lock', 'path' => 'member/index.php', 'auth' => 30),
+                    'anchor' => array('key' => 3, 'name' => $langary_auth['member']['list']['anchor'], 'icon' => 'icon-lock', 'path' => 'anchor/index.php', 'auth' => 30)
+                )
+            ),
             'dispensing' => array('key' => 3, 'name' => $langary_auth['dispensing']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
                     'bank' => array('key' => 1, 'name' => $langary_auth['dispensing']['list']['bank'], 'icon' => 'icon-usd', 'path' => 'bank/index.php', 'auth' => 30),
@@ -41,19 +48,19 @@ class coderAdmin
             ),
             'deposit' => array('key' => 4, 'name' => $langary_auth['deposit']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
-                    'pay' => array('key' => 1, 'name' => $langary_auth['deposit']['list']['pay'], 'icon' => 'icon-usd', 'path' => 'deposit_pay/index.php', 'auth' => 30),
-                    'game' => array('key' => 2, 'name' => $langary_auth['deposit']['list']['game'], 'icon' => 'icon-usd', 'path' => 'game/index.php', 'auth' => 30),                    
-                    'player' => array('key' => 3, 'name' => $langary_auth['deposit']['list']['player'], 'icon' => 'icon-usd', 'path' => 'player_data/index.php', 'auth' => 30),                                        
                     'application' => array('key' => 4, 'name' => $langary_auth['deposit']['list']['application'], 'icon' => 'icon-usd', 'path' => 'deposit/index.php', 'auth' => 30),
                     'deposit_check' => array('key' => 5, 'name' => $langary_auth['deposit']['list']['check'], 'icon' => 'icon-usd', 'path' => 'deposit_check/index.php', 'auth' => 30),                  
                     'deposit_log' => array('key' => 6, 'name' => $langary_auth['deposit']['list']['log'], 'icon' => 'icon-usd', 'path' => 'deposit_log/index.php', 'auth' => 30)
                 )
             ),
-            'mycard' => array('key' => 5, 'name' => $langary_auth['mycard']['name'], 'icon' => 'icon-usd', 'auth' => 30,
+            'product' => array('key' => 7, 'name' => $langary_auth['product']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
-                    'product' => array('key' => 1, 'name' => $langary_auth['mycard']['list']['product'], 'icon' => 'icon-usd', 'path' => 'product/index.php', 'auth' => 30),
-                    'mycard_check' => array('key' => 2, 'name' => $langary_auth['mycard']['list']['check'], 'icon' => 'icon-usd', 'path' => 'mycard/index.php', 'auth' => 30),                  
-                    'mycard_log' => array('key' => 3, 'name' => $langary_auth['mycard']['list']['log'], 'icon' => 'icon-usd', 'path' => 'mycard_log/index.php', 'auth' => 30)
+                    'product_data' => array('key' => 1, 'name' => $langary_auth['product']['list']['product_data'], 'icon' => 'icon-usd', 'path' => 'product/index.php', 'auth' => 30)
+                )
+            ),
+            'pay' => array('key' => 5, 'name' => $langary_auth['pay']['name'], 'icon' => 'icon-usd', 'auth' => 30,
+                'list' => array(
+                    'mycard' => array('key' => 2, 'name' => $langary_auth['pay']['list']['mycard'], 'icon' => 'icon-usd', 'path' => 'mycard/index.php', 'auth' => 30),                  
                 )
             )
         );

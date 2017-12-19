@@ -56,54 +56,12 @@ $langary_auth = array(
             'news_games'=>'遊戲公告'
         )
     ),
-    'company' => array(
-        'name'=>'公司報表',
+    'member' => array(
+        'name'=>'會員',
         'list'=>array(
-            'company_data'=>'公司報表'
-        )
-    ),
-    'agents' => array(
-        'name'=>'代理',
-        'list'=>array(
-            'admin_agent'=>'總代理人列表',
-            'agents_acc'=>'代理帳務',
-            'agents_data'=>'代理人列表',
-            'agents_service'=>'人員管理列表',
-            'individuation'=>'個性化設定',
-            'agents_link'=>'代理連結',
-            'agents_offer'=>'代理優惠'
-        )
-    ),
-    'player' => array(
-        'name'=>'玩家',
-        'list'=>array(
-            'player_data'=>'玩家列表',
-            'users_group'=>'玩家群組列表',
-            'player_log'=>'玩家下注紀錄',
-            'player_orderlog'=>'追單紀錄'
-        )
-    ),
-    'finance' => array(
-        'name'=>'財務報表',
-        'list'=>array(
-            'finance_day'=>'日報表',
-            'finance_numerical'=>'統計報表'
-        )
-    ),
-    'control' => array(
-        'name'=>'即時控盤',
-        'list'=>array(
-            'control_double'=>'雙面盤',
-            'control_oneten'=>'1-10位',
-            'control_color'=>'猜車選色區',
-            'control_bp'=>'莊閒制'
-        )
-    ),
-    'lottery' => array(
-        'name'=>'開獎紀錄',
-        'list'=>array(
-            'lottery_data'=>'北京賽車',
-            'lottery_data1'=>'幸運賽艇'
+            'platform'=>'平台列表',
+            'player'=>'玩家列表',
+            'anchor'=>'主播列表'
         )
     ),
     'games' => array(
@@ -113,23 +71,6 @@ $langary_auth = array(
             'games_player'=>'玩法設定'
         )
     ),
-    'acc' => array(
-        'name'=>'帳務',
-        'list'=>array(
-            'acc_table'=>'總攬列表',
-            'acc_on'=>'上分申請',
-            'acc_under'=>'下分申請',
-            'acc_on_check'=>'上分申請審核',
-            'acc_under_check'=>'下分申請審核'
-        )
-    ),
-    'exchange' => array(
-        'name'=>'幣種',
-        'list'=>array(
-            'exchange_rate'=>'幣種列表'
-        )
-    ),
-
     'admin' => array(
         'name'=>'登入帳號',
         'list'=>array(
@@ -167,12 +108,16 @@ $langary_auth = array(
             'check'=>'入款審核'
         )
     ),
-    'mycard' => array(
-        'name'=>'mycard入款',
+    'product' => array(
+        'name'=>'儲值商品',
         'list'=>array(
-            'product'=>'產品',
-            'log'=>'mycard入款歷程',
-            'check'=>'mycard入款審核'
+            'product_data'=>'商品列表',
+        )
+        ),
+    'pay' => array(
+        'name'=>'第三方入款',
+        'list'=>array(
+            'mycard'=>'mycard入款'
         )
     )
 
