@@ -58,7 +58,6 @@ try {
         $data[$colname['create_time']]= $nowtime;
         $data[$colname['user_id']] = post($colname['user_id'],1);  
         $data[$colname['game_id']] = post($colname['game_id'],1);          
-        $data[$colname['bank_card_id']] = post($colname['bank_card_id'],1);          
         $data[$colname['bank_id']] = post($colname['bank_id'],1);  
         $data[$colname['num']] = post($colname['num'],1);          
         $data[$colname['money']] = post($colname['money'],1);

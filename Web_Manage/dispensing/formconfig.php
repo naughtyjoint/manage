@@ -5,9 +5,7 @@ $fobj[$colname["id"]]=array("type"=>"hidden","name"=>"ID","column"=>$colname["id
 $fobj[$colname["is_pay"]]=array("type"=>"checkbox","name"=>"是否出款","column"=>$colname["is_pay"],"value"=>"1");
 $fobj[$colname["user_id"]]=array("type"=>"hidden","name"=>"玩家","column"=>$colname["user_id"],"sql"=>false);
 $fobj[$colname["game_id"]]=array("type"=>"hidden","name"=>"遊戲名稱","column"=>$colname["game_id"],"sql"=>false);
-$fobj[$colname['bank_card_id']] = array(
-    'type' => 'select', 'name' => '出款銀行卡', 'column' => $colname['bank_card_id'], 'ary' => $bankcard_array,"sql"=>false
-);
+
 $fobj[$colname['bank_id']] = array(
     'type' => 'select', 'name' => '玩家銀行', 'column' => $colname['bank_id'], 'ary' => $bank_array,"sql"=>false
 );

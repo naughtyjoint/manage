@@ -18,7 +18,7 @@ try{
 		LEFT JOIN $table_bc bc ON bc.`{$colname_bc['id']}` = t.`{$colname['bank_card_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby="updated_time";
+	$sHelp->orderby="created_time";
 	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();

@@ -34,7 +34,7 @@ try {
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['update_time']] = $nowtime;
     $data[$colname['check_time']]= $nowtime;    
-
+    $data[$colname['bank_card_id']] = post($colname['bank_card_id'],1);  
     $nowstatus = post("nowstatus");
     /*if ($data[$colname['status']] === '' || $nowstatus > 0) {
         unset($data[$colname['status']]);
@@ -60,6 +60,7 @@ try {
         $data[$colname['create_time']]= $nowtime;
         $data[$colname['user_id']] = post($colname['user_id'],1);  
         $data[$colname['bank_id']] = post($colname['bank'],1);  
+        $data[$colname['bank_card_id']] = post($colname['bank_card_id'],1);          
         $data[$colname['money']] = post($colname['money'],1);  
         $id = $db->query_insert($table, $data);
     }
