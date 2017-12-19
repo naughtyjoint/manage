@@ -2,18 +2,14 @@
 $inc_path="../../inc/";
 $manage_path="../";
 $main_auth_key='deposit';
-$fun_auth_key='player_group';
+$fun_auth_key='game';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$player_group;
-$colname=coderDBConf::$col_player_group;
+$table=coderDBConf::$game;
+$colname=coderDBConf::$col_game;
 
-$table_m=coderDBConf::$player;
-$colname_m=coderDBConf::$col_player;
-
-$orderColumn=$colname["ind"];
 $orderDesc='desc';
 $page_title=$auth['name'];
 $page=request_pag("page");

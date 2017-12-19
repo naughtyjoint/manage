@@ -36,7 +36,6 @@ try{
 
 
     if($method=='edit'){
-
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
 		$data[$colname['create_time']]= $nowtime;

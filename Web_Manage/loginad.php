@@ -74,17 +74,6 @@ else{
                     </div>
                     <div class="form-group">
                         <div class="controls">
-                            <!--<select name="actype" id="actype" class="form-control" autocomplete="off">
-                                <option value=""><?php /*echo $langary_login['actype'];*/?></option>
-                                <?php /*foreach ($langary_actype as $_actype_key => $_actype_val){*/?>
-                                <option value="<?php /*echo $_actype_key*/?>"><?php /*echo $_actype_val*/?></option>
-                                <?php /*}*/?>
-                            </select>-->
-                            <label style="margin-left: 5px"><h4><?php echo $langary_actype[1]?></h4></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="controls">
                             <input type="text" id="username" name="username" placeholder="<?php echo $langary_login['username'];?>"   class="form-control"  autocomplete="off"/>
                         </div>
                     </div>

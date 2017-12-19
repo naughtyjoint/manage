@@ -16,8 +16,10 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['deposit_id'], 'name' => '入款ID', 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname['status'], 'name' => '修改狀態', 'order' => false,'width'=>'120');
 $col[] = array('column' => $colname['contents'], 'name' => '修改內容', 'order' => false,'width'=>'120');
 $col[] = array('column'=>$colname['updated_time'],'name'=>'修改時間','order'=> true,'width'=>'80');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => false, 'width' => '100');
@@ -72,7 +74,7 @@ $db->close();
         </div>
         <!-- END Breadcrumb -->
 
-        <!-- BEGIN Main Content -->
+        <!-- BEGIN Main Content --> 
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
@@ -90,8 +92,6 @@ $db->close();
                 </div>
             </div>
         </div>
-
-
         <?php include('../footer.php'); ?>
 
         <a id="btn-scrollup" class="btn btn-circle btn-lg" href="#"><i class="icon-chevron-up"></i></a>
@@ -112,12 +112,10 @@ $db->close();
                 for (var i = 0; i < count; i++) {
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
-                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
-                    $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname['id'];?>"]);
-                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['deposit_id'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_u['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_g['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['updated_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');

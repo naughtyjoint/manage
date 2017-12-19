@@ -22,7 +22,7 @@ $obj[]=array('type'=>'select','name'=>$langary_Web_Manage_all['r_service'],'colu
 
 
 $obj[]=array('type'=>'dategroup','sql'=>true,'column'=>'dategroup',
-'ary'=>array(array('name'=>$langary_Web_Manage_all['create_time'],'column'=>$colname['createtime']),array('name'=>$langary_Web_Manage_all['update_time'],'column'=>$colname['updatetime']))
+'ary'=>array(array('name'=>$langary_Web_Manage_all['update_time'],'column'=>$colname['updatetime']))
 );
 
 $help->Bind($obj);

@@ -1,6 +1,6 @@
 <?PHP
-$webname="manage";//網站名稱
-$web_project_name='manage'; //專案名稱
+$webname="遊戲財務";//網站名稱
+$web_project_name='遊戲財務'; //專案名稱
 
 
 

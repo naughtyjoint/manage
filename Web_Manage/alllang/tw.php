@@ -160,13 +160,22 @@ $langary_auth = array(
         'name'=>'入款',
         'list'=>array(
             'pay'=>'第三方支付',
-            'gamer'=>'玩家群組',
+            'game'=>'遊戲名稱',
             'player'=>'玩家',
             'application'=>'入款申請',
             'log'=>'入款歷程',
             'check'=>'入款審核'
         )
+    ),
+    'mycard' => array(
+        'name'=>'mycard入款',
+        'list'=>array(
+            'product'=>'產品',
+            'log'=>'mycard入款歷程',
+            'check'=>'mycard入款審核'
+        )
     )
+
 );
 
 $langary_coderadmin_all = array(
@@ -268,9 +277,22 @@ $langary_pay_type = array(
 $langary_transfers = array(
     0 => '等待審核',
     1 => '已審核',
-    2 => '拒絕'
+    2 => '拒絕',
+    3 => '捨棄'
 );
-
+$langary_transfers_manage = array(
+    0 => '等待審核',
+    1 => '已審核',
+    2 => '拒絕',
+);
+$langary_mycard = array(
+    0 => '未交易',
+    1 => '已交易'
+);
+$langary_mycard_pay = array(
+    0 => '未請款',
+    1 => '已請款'
+);
 //開獎
 $langary_bettings = array(
     0 => '未開獎',
@@ -393,6 +415,8 @@ $langary_manage = array(
     'system' => '系統資訊 : ',
     'ok' => '完成',
     'confirm_cancel' => '確定要取消',
+    'confirm_finish' => '確定完成',
+    'confirm_delete' => '確定要捨棄',
     'cancel' => '取消',
     'close' => '關閉',
 );
@@ -428,7 +452,7 @@ $langary_Web_Manage_all = array(
     'email' => 'E-mail',
     'admin' => '管理員',
     'ispublic' => '啟用',
-    'group' => '群組',
+    'group' => '遊戲名稱',
     'r_id' => '所屬權限角色',
     'username_p' => '請輸入管理員帳號',
     'username_h' => '此帳密為登入系統之帳號,不能重覆。',

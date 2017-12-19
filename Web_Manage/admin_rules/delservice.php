@@ -12,11 +12,8 @@ try{
 	if(count($id)>0){
 		$db = Database::DB();
 		$idlist="'".implode("','",$id)."'";
-        if(in_array(3,$id) || in_array(4,$id)){ //[ID 3] 總代 & [ID 4] 代理人 不可刪除
-            throw new Exception($langary_Web_Manage_all['del']);
-        }
 		$row=$db->query_first("select * from $table_admin where {$colname_admin['r_id']} in($idlist) LIMIT 1");
-		if($row){throw new Exception($langary_Web_Manage_all['del2']);}
+		//if($row){throw new Exception($langary_Web_Manage_all['del2']);}
 
 		$count=$db->exec("delete from $table where {$colname['id']} in($idlist)");
 

@@ -16,9 +16,14 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname_u['title'], 'name' => '申請人', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '100');
+$col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '80');
+$col[] = array('column' => $colname_u['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname_g['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname_bc['name'], 'name' => '出款銀行卡', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname_b['name'], 'name' => '玩家銀行', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['num'], 'name' => '玩家銀行卡號', 'order' => false, 'width' => '150');
 $col[] = array('column' => $colname['is_pay'], 'name' => '狀態', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['check_time'], 'name' => '審核時間', 'order' => true, 'width' => '120');
@@ -75,7 +80,7 @@ $db->close();
             </ul>
         </div>
         <!-- END Breadcrumb -->
-
+  
         <!-- BEGIN Main Content -->
         <div class="row">
             <div class="col-md-12">
@@ -120,10 +125,15 @@ $db->close();
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname_u['title'];?>"]);
+                    $tr.attr("title", row["<?php echo $colname_u['name'];?>"]);
+                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["uid"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname_u['title'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_u['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_g['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_bc['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_b['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['num'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['is_pay'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['check_time'];?>"] + '</td>');

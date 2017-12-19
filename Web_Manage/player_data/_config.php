@@ -10,8 +10,8 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$player;
 $colname=coderDBConf::$col_player;
 
-$table_m=coderDBConf::$player_group;
-$colname_m=coderDBConf::$col_player_group;
+$table_g=coderDBConf::$game;
+$colname_g=coderDBConf::$col_game;
 
 $table_a = coderDBConf::$admin; //管理員
 $colname_a = coderDBConf::$col_admin;

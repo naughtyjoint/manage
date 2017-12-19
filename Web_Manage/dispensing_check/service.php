@@ -7,20 +7,39 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="*";
-	$sHelp->table=$table;
+	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`,
+		g.`{$colname_g['id']}` as game,g.`{$colname_g['name']}`,
+		b.`{$colname_b['id']}` as bank,b.`{$colname_b['name']}`,
+		bc.`{$colname_bc['id']}` as bank_card,bc.`{$colname_bc['name']}`";
+	$sHelp->table=$table." t
+		LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
+		LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`
+		LEFT JOIN $table_b b ON b.`{$colname_b['id']}` = t.`{$colname['bank_id']}`
+		LEFT JOIN $table_bc bc ON bc.`{$colname_bc['id']}` = t.`{$colname['bank_card_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
+
+
+    $where = class_agent::getWhere_lv($colname_u,$where,"");
+    /*if($adminuser['type'] > 1){
+        if($adminuser['type'] == '4'){
+            $where .= ($where == '' ? '' : ' AND ') . "`{$colname_u['agent_id']}` = " . $adminuser['serviceid'];
+        }
+        else {
+            $where .= ($where == '' ? '' : ' AND ') . "`{$colname_u['agent_id']}` = " . $adminuser['id'];
+        }
+    }*/
+
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();
 	for($i=0;$i<count($rows);$i++){
-		$rows[$i][$colname['is_pay']]=$incary_pay[$rows[$i][$colname['is_pay']]];
+        $rows[$i][$colname['is_pay']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['is_pay']]].'">'.coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['is_pay']]).'</span>';
 	}
 
 	$result['result']=true;

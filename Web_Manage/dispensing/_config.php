@@ -10,14 +10,24 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$dispensing;
 $colname=coderDBConf::$col_dispensing;
 
-$table_b=coderDBConf::$bank_card;
-$colname_b=coderDBConf::$col_bank_card;
+$table_log=coderDBConf::$dispensing_log;
+$colname_log=coderDBConf::$col_dispensing_log;
+
+$table_bc=coderDBConf::$bank_card;
+$colname_bc=coderDBConf::$col_bank_card;
 
 $table_u=coderDBConf::$player; //玩家
 $colname_u=coderDBConf::$col_player;
 
+$table_g=coderDBConf::$game; //遊戲名稱
+$colname_g=coderDBConf::$col_game;
 
-$bank_array = class_bank::getListCard(); //銀行卡
+$table_b=coderDBConf::$bank;
+$colname_b=coderDBConf::$col_bank;
+
+$bank_array = class_bank::getList(); //銀行
+
+$bankcard_array = class_bank::getListCard(); //銀行卡
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';

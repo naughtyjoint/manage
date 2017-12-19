@@ -95,7 +95,7 @@ if ($errorhandle->isException()) {
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['is_pay']) ?> </label>
                                         <div class="col-sm-5 control-label" style="text-align: left;">
-                                            <?php echo $langary_yn[$row[$colname['is_pay']]] ?>
+                                            <?php echo $$langary_yn[$row[$colname['is_pay']]] ?>
                                         </div>
                                     </div>
                                     <div class="form-group ">

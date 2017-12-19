@@ -9,12 +9,20 @@ $fun_auth_key='deposit_check';
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$deposit_check;
-$colname=coderDBConf::$col_deposit_check;
-
+$table=coderDBConf::$deposit;
+$colname=coderDBConf::$col_deposit;
 
 $table_u=coderDBConf::$player; //玩家
 $colname_u=coderDBConf::$col_player;
+
+$table_g=coderDBConf::$game; //遊戲
+$colname_g=coderDBConf::$col_game;
+
+
+$table_third=coderDBConf::$deposit_pay; //第三方
+$colname_third=coderDBConf::$col_deposit_pay;
+
+$pay_array = class_player::getList_pay(); //第三方
 
 
 

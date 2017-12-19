@@ -102,114 +102,167 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawLabel($colname['status']) ?> </label>
                                         <div class="col-sm-3 <?php echo (isset($row[$colname['status']]) && $row[$colname['status']] > 0)?'control-label':'controls'?>" <?php echo (isset($row[$colname['status']]) && $row[$colname['status']] > 0)?'style="text-align: left;"':''?>>
                                             <?php
-                                            if(isset($row[$colname['status']]) && $row[$colname['status']] > 0) {
-                                                echo $langary_transfers[$row[$colname['status']]];
-                                            }
-                                            else{
-                                                echo $fhelp->drawForm($colname['status']);
-                                            }
+                                                if($row[$colname['status']] != 3){
+                                                    echo $fhelp->drawForm($colname['status']);
+                                                }else{
+                                                    echo "捨棄";
+                                                }
+                                                
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['user_id']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['user_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['user_id']]))?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if(isset($row[$colname['user_id']])) {
-                                                echo class_player::getName($row[$colname['user_id']]);
-                                            }
-                                            else{
-                                                echo $fhelp->drawForm($colname['user_id']);
-                                        ?>
-                                                <div class="control-label" style="text-align: left; font-size: 16px;">
-                                                    <span id="myuser"></span>
-                                                    &nbsp;
-                                                    <a class="btn btn-success" onClick="openBox('../transfers_player/index.php','95%','95%','fade',function(){})">選擇玩家</a>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['user_id']) ?> </label>
+                                            <div class="col-sm-3 " >
+                                                <div class="<?php echo (isset($row[$colname['user_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['user_id']]))?'style="text-align: left;"':''?>>
+                                                    <?php
+                                                        if(isset($row[$colname['user_id']])) {
+                                                            echo class_player::getName($row[$colname['user_id']]);
+                                                        }
+                                                        else{
+                                                            echo $fhelp->drawForm($colname['user_id']);
+                                                            
+                                                    ?>
+                                                
+                                                    <div class="control-label" style="text-align: left; font-size: 16px;">
+                                                        <span id="myuser"></span><span id="mygame"></span>
+                                                        &nbsp;
+                                                        <a class="btn btn-success" onClick="openBox('../transfers_player/index.php','95%','95%','fade',function(){})">選擇玩家</a>
+                                                    </div>
+                                                    <?php 
+                                                        }
+                                                    ?>
                                                 </div>
-
+                                                <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
+                                                    <?php
+                                                            echo $fhelp->drawForm($colname['game_id']);
+                                                    ?>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
                                         <?php
+                                            if(isset($row[$colname['game_id']])) {
+                                        ?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['game_id']) ?> </label>
+                                            <div class="col-sm-3 " >
+                                            <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
+                                                <?php
+                                                    echo class_player::getName_game($row[$colname['game_id']]);
+                                                ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php 
                                             }
                                         ?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
+                                            <div class="col-sm-3 <?php echo (isset($row[$colname['money']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['money']]))?'style="text-align: left;"':''?>>
+                                                <?php
+                                                if(isset($row[$colname['money']])) {
+                                                    echo $row[$colname['money']];
+                                                }
+                                                else{
+                                                    echo $fhelp->drawForm($colname['money']);
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['deposit_pay_id']) ?> </label>
+                                            <div class="col-sm-3 <?php echo (isset($row[$colname['deposit_pay_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['deposit_pay_id']]))?'style="text-align: left;"':''?>>
+                                                <?php
+                                                if(isset($row[$colname['deposit_pay_id']])) {
+                                                    echo class_player::getName_pay($row[$colname['deposit_pay_id']]);
+                                                }
+                                                else{
+                                                    echo $fhelp->drawForm($colname['deposit_pay_id']);
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['pay_code']) ?> </label>
+                                        <div class="col-sm-3 <?php echo (isset($row[$colname['pay_code']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['pay_code']]))?'style="text-align: left;"':''?>>
+                                            <?php
+                                            if(isset($row[$colname['pay_code']])) {
+                                                echo $row[$colname['pay_code']];
+                                            }
+                                            else{
+                                                echo $fhelp->drawForm($colname['pay_code']);
+                                            }
+                                            ?>
                                         </div>
                                     </div>
 
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['money']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['money']]))?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if(isset($row[$colname['money']])) {
-                                                echo $row[$colname['money']];
-                                            }
-                                            else{
-                                                echo $fhelp->drawForm($colname['money']);
-                                            }
-                                            ?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
+                                            <div class="col-sm-3 controls">
+                                                
+                                                <?php
+                                                    if($row[$colname['status']] != 3){
+                                                        echo $fhelp->drawForm($colname['contents']); 
+                                                    }else{
+                                                        echo $row[$colname['contents']];
+                                                    }
+                                                ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['company']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['company']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['company']]))?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if(isset($row[$colname['company']])) {
-                                                echo $row[$colname['company']];
-                                            }
-                                            else{
-                                                echo $fhelp->drawForm($colname['company']);
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['method']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['method']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['method']]))?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if(isset($row[$colname['method']])) {
-                                                echo $row[$colname['method']];
-                                            }
-                                            else{
-                                                echo $fhelp->drawForm($colname['method']);
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['remark']) ?> </label>
-                                        <div class="col-sm-3 controls">
-                                            <?php echo $fhelp->drawForm($colname['remark']) ?>
-                                        </div>
-                                    </div>
-
+    
 
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
-                                            <button type="submit" class="btn btn-primary"><i class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
-                                            <button type="button" class="btn" onClick="$.confirm({
-                                                        title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
-                                                        content: '',
-                                                        type: 'red',
-                                                        typeAnimated: true,
-                                                        buttons: {
-                                                            tryAgain: {
-                                                            text: langary_jsall['confirm_ok'],
-                                                            btnClass: 'btn-red',
-                                                                action: function(){
-                                                                    parent.closeBox();
-                                                                }
-                                                            },
-                                                            alphabet: {
-                                                                text: langary_jsall['confirm_cancel'],
-                                                                    action: function(){
-                                                                }
-                                                            }
-                                                        }
-                                                    });">
-                                            <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
+                                        <button type="button" class="btn btn-primary" onClick="$.confirm({
+                                            title: '<?php echo $langary_manage['confirm_finish'].$active ?>'+'?',
+                                            content: '',
+                                            type: 'red',
+                                            typeAnimated: true,
+                                            buttons: {
+                                                tryAgain: {
+                                                text: langary_jsall['confirm_ok'],
+                                                btnClass: 'btn-red',
+                                                    action: function(){
+                                                        $('#myform').submit();
+                                                    }
+                                                },
+                                                alphabet: {
+                                                    text: langary_jsall['confirm_cancel'],
+                                                        action: function(){
+                                                    }
+                                                }
+                                            }
+                                        });">
+                                    <i class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
+                                <button type="button" class="btn" onClick="$.confirm({
+                                            title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
+                                            content: '',
+                                            type: 'red',
+                                            typeAnimated: true,
+                                            buttons: {
+                                                tryAgain: {
+                                                text: langary_jsall['confirm_ok'],
+                                                btnClass: 'btn-red',
+                                                    action: function(){
+                                                        parent.closeBox();
+                                                    }
+                                                },
+                                                alphabet: {
+                                                    text: langary_jsall['confirm_cancel'],
+                                                        action: function(){
+                                                    }
+                                                }
+                                            }
+                                        });">
+                                <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
                                         </div>
                                     </div>
                                 </div>

@@ -92,25 +92,11 @@ if ($errorhandle->isException()) {
                                     <!-- ## coder [formScript] -> ## -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['title']) ?> </label>
+                                            <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['title']) ?>
+                                            <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
-                                    <!-- <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php //echo $fhelp->drawLabel($colname['num_min']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php //echo $fhelp->drawForm($colname['num_min']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php //echo $fhelp->drawLabel($colname['num_max']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php //echo $fhelp->drawForm($colname['num_max']) ?>
-                                        </div>
-                                    </div> -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>

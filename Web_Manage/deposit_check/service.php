@@ -7,13 +7,17 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['title']}`";
+	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
+					,g.`{$colname_g['id']}` as game,g.`{$colname_g['name']}`
+					,third.`{$colname_third['id']}` as pay,third.`{$colname_third['name']}`";
 	$sHelp->table=$table." t
-	              LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`";
+					LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
+					LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`
+					LEFT JOIN $table_third third ON third.`{$colname_third['id']}` = t.`{$colname['deposit_pay_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
@@ -38,7 +42,7 @@ try{
 		//$rows[$i][$colname['is_public']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['is_public']]].'">'.coderHelp::getAryVal($langary_yn,$rows[$i][$colname['is_public']]).'</span>';
 
         $rows[$i][$colname['status']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['status']]].'">'.coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['status']]).'</span>';
-
+		
 		/* ## coder [modify] <-- ## */
 	}
 

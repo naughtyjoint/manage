@@ -9,11 +9,11 @@ try{
     if($id!=""){
         coderAdmin::vaild($auth,'edit');
         $method='edit';
-        $active=$langary_edit_add['edit'];
+        $active='編輯';
     }else{
         coderAdmin::vaild($auth,'add');
         $method='add';
-        $active=$langary_edit_add['add'];
+        $active='新增';
     }
 
     $data=$fhelp->getSendData();
@@ -23,33 +23,28 @@ try{
         throw new Exception($msg);
     }
 
-    //多圖圖片
-    //$picgroup = $data[$colname['picgroup']];
-    //$data[$colname['picgroup']] = json_encode($picgroup);
+    if(count($error)>0){
+        $msg=implode('<br/>',$error);
+        throw new Exception($msg);
+    }
 
-    /* ## coder [beforeModify] --> ## */
-    /* ## coder [beforeModify] <-- ## */
 
     $nowtime = datetime();
     $data[$colname['manager']]=$adminuser['username'];
     $data[$colname['update_time']]= $nowtime;
 
 
+
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
-        /* ## coder [indInit] --> ## */
-        $data[$colname["ind"]]=coderListOrderHelp::getMaxInd($table,$colname["ind"]);
-        /* ## coder [indInit] <-- ## */
-        /* ## coder [insert] --> ## */
-        /* ## coder [insert] <-- ## */        
 		$data[$colname['create_time']]= $nowtime;
 		$id=$db->query_insert($table,$data);
 	}
 
 
-    $admin_title=isset($data[$colname['title']]) ? $data[$colname['title']] : '';
-    coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,$method,"{$data[$colname['title']]} id:{$id}");
+    $admin_title=isset($data[$colname['id']]) ? $data[$colname['id']] : '';
+    coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,$method,"id:{$id}");
 
 
     $db->close();

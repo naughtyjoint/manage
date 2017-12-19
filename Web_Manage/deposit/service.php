@@ -7,19 +7,23 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['title']}`";
+	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
+					,g.`{$colname_g['id']}` as game,g.`{$colname_g['name']}`
+					,third.`{$colname_third['id']}` as pay,third.`{$colname_third['name']}`";
 	$sHelp->table=$table." t
-	              LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`";
+				  LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
+				  LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`
+				  LEFT JOIN $table_third third ON third.`{$colname_third['id']}` = t.`{$colname['deposit_pay_id']}`";
+				  
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
+ 
 
-
-    $where = class_agent::getWhere_lv($colname_u,$where,"");
     /*if($adminuser['type'] > 1){
         if($adminuser['type'] == '4'){
             $where .= ($where == '' ? '' : ' AND ') . "`{$colname_u['agent_id']}` = " . $adminuser['serviceid'];

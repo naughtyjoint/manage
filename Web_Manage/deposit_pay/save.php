@@ -38,12 +38,7 @@ try{
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
-        /* ## coder [indInit] --> ## */
-        //$data[$colname["ind"]]=coderListOrderHelp::getMaxInd($table,$colname["ind"]);
-        /* ## coder [indInit] <-- ## */
-        /* ## coder [insert] --> ## */
-        /* ## coder [insert] <-- ## */        
-		//$data[$colname['create_time']]= $nowtime;
+		$data[$colname['create_time']]= $nowtime;
 		$id=$db->query_insert($table,$data);
 	}
 

@@ -6,7 +6,7 @@ try{
 	
 	$success=false;
 	$count=0;
-	$msg="未知錯誤,請聯絡系統管理員";
+	$msg=$langary_delservice['msg'];
 
 	$id=request_ary('id',0);
 
@@ -15,20 +15,19 @@ try{
 		$idlist="'".implode("','",$id)."'";
 
 		$count=$db->exec("delete from $table where `{$colname['id']}` in($idlist)");
-
 		if($count>0){
 			$success=true;
-			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.'筆資料('.$idlist.')');
+			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.$langary_delservice['insert'].'('.$idlist.')');
 		}
 		else{
-			throw new Exception('查無刪除資料');
+			throw new Exception($langary_delservice['exception']);
 		}
 
 		$db->close();
 
 	}
 	else{
-		$msg="未選取刪除資料";
+		$msg=$langary_delservice['msg2'];
 	}
 
 	$result['result']=$success;

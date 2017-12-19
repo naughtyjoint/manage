@@ -22,7 +22,10 @@ class class_bank{
         $ary = self::getList();
         return coderHelp::getArrayPropertyVal($ary, 'value', $_val, 'name');
     }
-
+    public static function getNameCard($_val){
+        $ary = self::getListCard();
+        return coderHelp::getArrayPropertyVal($ary, 'value', $_val, 'name');
+    }
 
     public static function getList_agid($agid){ //判斷代理人或總代 有哪些玩家
         $db = Database::DB();
