@@ -149,21 +149,18 @@ if ($errorhandle->isException()) {
                             </div>
                             <?php 
                                 }
+                                if($row[$colname['is_pay']] != 3){
                             ?>        
-                                <div class="form-group ">
+                            <div class="form-group ">
                                 <label class="col-sm-3 col-lg-3 control-label">
                                     <?php echo $fhelp->drawLabel($colname['bank_card_id']) ?> </label>
                                 <div class="col-sm-3 <?php echo (isset($row[$colname['bank_card_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['bank_card_id']]))?'style="text-align: left;"':''?>>
-                                    <?php
-                                    if(isset($row[$colname['bank_card_id']])) {
-                                        echo class_bank::getNameCard($row[$colname['bank_card_id']]);
-                                    }
-                                    else{
+                                    <?php                                        
                                         echo $fhelp->drawForm($colname['bank_card_id']);
-                                    }
                                     ?>
                                 </div>
                             </div>
+                                <?php }?>
                             <div class="form-group ">
                                 <label class="col-sm-3 col-lg-3 control-label">
                                     <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
@@ -184,7 +181,7 @@ if ($errorhandle->isException()) {
                                 <div class="col-sm-3 <?php echo (isset($row[$colname['bank_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['bank_id']]))?'style="text-align: left;"':''?>>
                                     <?php
                                     if(isset($row[$colname['bank_id']])) {
-                                        echo $row[$colname['bank_id']];
+                                        echo class_bank::getName($row[$colname['bank_id']]);
                                     }
                                     else{
                                         echo $fhelp->drawForm($colname['bank_id']);
