@@ -2,13 +2,13 @@
 $inc_path="../../inc/";
 $manage_path="../";
 $main_auth_key='deposit';
-$fun_auth_key='game';
+$fun_auth_key='platform';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$game;
-$colname=coderDBConf::$col_game;
+$table=coderDBConf::$platform;
+$colname=coderDBConf::$col_platform;
 
 $orderDesc='desc';
 $page_title=$auth['name'];

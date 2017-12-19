@@ -13,8 +13,7 @@ $listHelp->delSrc = "delservice.php";
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => $langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['name'], 'name' => '遊戲名稱', 'order' => true/*,'width'=>'300'*/);
-$col[] = array('column' => $colname['contents'], 'name' => "備註", 'order' => true/*,'width'=>'300'*/);
+$col[] = array('column' => $colname['name'], 'name' => '平台名稱', 'order' => true/*,'width'=>'300'*/);
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => $langary_Web_Manage_all['manager'], 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['update_time'], 'name' => $langary_Web_Manage_all['update_time'], 'order' => true, 'width' => '120');
@@ -117,7 +116,6 @@ $db->close();
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');

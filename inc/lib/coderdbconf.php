@@ -23,10 +23,10 @@ class coderDBConf
     public static $col_dispensing_log = array('id'=>'id','dispensing_id'=>'dispensing_id','user_id'=>'user_id','game_id'=>'game_id','manager'=>'last_manager','update_time'=>'updated_time','contents'=>'contents','is_pay'=>'is_pay');
     public static $deposit_pay = 'deposit_pay'; //第三方支付
     public static $col_deposit_pay = array('id'=>'id','name'=>'pay_name','manager'=>'last_manager','create_time'=>'created_time');
-    public static $game = 'game'; //遊戲名稱
-    public static $col_game = array('id'=>'id','name'=>'game_name','contents'=>'contents','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time');
-    public static $player = 'player'; //玩家
-    public static $col_player = array('id'=>'id','game_id'=>'game_id','name'=>'player_name','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
+    public static $platform = 'platform'; //平台名稱
+    public static $col_platform = array('id'=>'id','name'=>'platform_name','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time');
+    public static $member = 'member'; //會員
+    public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_name'=>'platform_name','email'=>'email','point'=>'point','anchor'=>'anchor','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $deposit = 'deposit'; //入款申請
     public static $col_deposit = array('id'=>'id','user_id'=>'user_id','game_id'=>'game_id','money'=>'money','deposit_pay_id'=>'deposit_pay_id','pay_code'=>'pay_code','pay_id'=>'pay_id','status'=>'status','contents'=>'contents','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager','check_time'=>'check_time');
     public static $deposit_check = 'deposit'; //入款審核
@@ -34,9 +34,9 @@ class coderDBConf
     public static $deposit_log = 'deposit_log'; //入款歷程
     public static $col_deposit_log = array('id'=>'id','user_id'=>'user_id','deposit_id'=>'deposit_id','game_id'=>'game_id','status'=>'status','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
     public static $product = 'product'; //產品
-    public static $col_product = array('id'=>'id','product_id'=>'product_id','name'=>'name','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
+    public static $col_product = array('id'=>'id','product_id'=>'product_id','name'=>'name','amount'=>'amount','point'=>'point','ratio'=>'ratio','bonus'=>'bonus','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $mycard = 'mycard'; //mycard入款審核
-    public static $col_mycard = array('id'=>'id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','CustomerId'=>'CustomerId','ProductName'=>'ProductName','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','manager'=>'last_manager');
+    public static $col_mycard = array('id'=>'id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','member_id'=>'member_id','product_id'=>'product_id','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','manager'=>'last_manager');
     public static $mycard_log = 'mycard_log'; //mycard入款歷程
     public static $col_mycard_log = array('id'=>'id','deposit_id'=>'deposit_id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','PayResult'=>'PayResult','updated_time'=>'updated_time','manager'=>'last_manager');
 
