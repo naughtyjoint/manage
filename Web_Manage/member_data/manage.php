@@ -99,10 +99,10 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['game_id']) ?>
+                                            <?php echo $fhelp->drawLabel($colname_g['name']) ?>
                                         </label>
                                         <div class="col-sm-5  controls">
-                                            <?php echo $fhelp->drawForm($colname['game_id']) ?>
+                                            <?php echo $fhelp->drawForm($colname_g['name']) ?>
                                         </div>
                                     </div>
 

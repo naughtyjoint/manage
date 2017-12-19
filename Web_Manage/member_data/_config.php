@@ -7,11 +7,11 @@ include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$player;
-$colname=coderDBConf::$col_player;
+$table=coderDBConf::$member;
+$colname=coderDBConf::$col_member;
 
-$table_g=coderDBConf::$game;
-$colname_g=coderDBConf::$col_game;
+$table_g=coderDBConf::$platform;
+$colname_g=coderDBConf::$col_platform;
 
 $table_a = coderDBConf::$admin; //管理員
 $colname_a = coderDBConf::$col_admin;

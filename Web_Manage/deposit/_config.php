@@ -14,11 +14,11 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$deposit;
 $colname=coderDBConf::$col_deposit;
 
-$table_u=coderDBConf::$player; //玩家
-$colname_u=coderDBConf::$col_player;
+$table_u=coderDBConf::$member; //會員
+$colname_u=coderDBConf::$col_member;
 
-$table_g=coderDBConf::$game; //遊戲
-$colname_g=coderDBConf::$col_game;
+$table_g=coderDBConf::$platform; //平台
+$colname_g=coderDBConf::$col_platform;
 
 
 $table_third=coderDBConf::$deposit_pay; //第三方

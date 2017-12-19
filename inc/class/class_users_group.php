@@ -2,9 +2,9 @@
 class class_users_group{
     public static function getList(){ //
         global $db;
-        $colname = coderDBConf::$col_game;
+        $colname = coderDBConf::$col_platform;
         $sql = "select {$colname['name']} as name,{$colname['id']} as value
-                from ".coderDBConf::$game."
+                from ".coderDBConf::$platform."
                 ORDER BY `{$colname['id']}` DESC";
         return $db->fetch_all_array($sql);
     }

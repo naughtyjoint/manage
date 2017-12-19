@@ -12,7 +12,7 @@ try{
 
 	$sHelp->select="g.* , m.`{$colname_g['name']}` as game_name";
 	$sHelp->table = $table." g 
-					LEFT JOIN $table_g m ON g.`{$colname['game_id']}` = m.`{$colname_g['id']}`
+					LEFT JOIN $table_g m ON g.`{$colname['id']}` = m.`{$colname_g['name']}`
 					";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
