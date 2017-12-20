@@ -25,6 +25,8 @@ class coderDBConf
     // public static $col_deposit_pay = array('id'=>'id','name'=>'pay_name','manager'=>'last_manager','create_time'=>'created_time');
     public static $platform = 'platform'; //平台名稱
     public static $col_platform = array('id'=>'id','name'=>'platform_name','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time');
+    public static $anchor = 'anchor'; //主播
+    public static $col_anchor = array('id'=>'id','name'=>'name','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'update_time','manager'=>'last_manager');
     public static $member = 'member'; //會員
     public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_id'=>'platform_id','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $deposit = 'deposit'; //入款申請

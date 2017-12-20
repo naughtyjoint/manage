@@ -60,7 +60,7 @@ $langary_auth = array(
         'name'=>'會員',
         'list'=>array(
             'platform'=>'平台列表',
-            'player'=>'玩家列表',
+            'player'=>'會員列表',
             'anchor'=>'主播列表'
         )
     ),
@@ -380,6 +380,7 @@ $langary_Web_Manage_all = array(
     'is_public' => '公開',
     'create_time' => '建立日期',
     'update_time' => '最後修改時間',
+    'login_time' => '申請日期',
     'contents' => '內容',
     'id' => 'ID',
     'insert' => '列表',
@@ -447,6 +448,7 @@ $langary_Web_Manage_all = array(
     'details' => '詳細資訊',
     'player' => '玩家',
     'bank' => '銀行',
+    'platform' => '平台名稱',
 );
 
 

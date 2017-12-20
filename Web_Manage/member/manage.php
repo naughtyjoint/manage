@@ -49,7 +49,6 @@ if ($errorhandle->isException()) {
     <link rel="stylesheet" type="text/css" href="../assets/dropzone/downloads/css/dropzone.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/jcrop/jquery.Jcrop.min.css"/>
     <!-- ## coder [phpScript] -> ## -->
-    <!-- ## coder [phpScript] <- ## -->
 
 </head>
 <body>
@@ -94,13 +93,33 @@ if ($errorhandle->isException()) {
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['name']) ?>
+                                            <?php echo $row[$colname['name']]; ?>
                                         </div>
                                     </div>
-<<<<<<< HEAD:Web_Manage/platform/manage.php
-=======
-
->>>>>>> test:Web_Manage/platform/manage.php
+                                    <div class="form-group">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['platform_id']) ?>
+                                        </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $row[$colname['platform_id']]; ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['email']) ?>
+                                        </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $row[$colname['email']]; ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['point']) ?>
+                                        </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $row[$colname['point']]; ?>
+                                        </div>
+                                    </div>
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
