@@ -30,6 +30,7 @@ try{
 	$rows=$sHelp->getList();
 	//print_r($rows);exit;
 	for($i=0;$i<count($rows);$i++){
+        $rows[$i][$colname['status']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['status']]].'">'.coderHelp::getAryVal($langary_transfers_product,$rows[$i][$colname['status']]).'</span>';
 	}
 	
 	$result['result']=true;

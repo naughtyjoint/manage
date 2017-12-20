@@ -38,6 +38,7 @@ try{
 
 
     if($method=='edit'){
+
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
         $data[$colname['product_id']]=uniqid('GS');

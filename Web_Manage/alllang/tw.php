@@ -238,6 +238,12 @@ $langary_mycard_pay = array(
     0 => '未請款',
     1 => '已請款'
 );
+$langary_transfers_product = array(
+    0 => '等待審核',
+    1 => '已審核',
+    2 => '下架'
+);
+
 //開獎
 $langary_bettings = array(
     0 => '未開獎',
