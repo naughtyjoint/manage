@@ -1,11 +1,7 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
-<<<<<<< HEAD:Web_Manage/platform/_config.php
-$main_auth_key='deposit';
-=======
 $main_auth_key='member';
->>>>>>> test:Web_Manage/platform/_config.php
 $fun_auth_key='platform';
 include('../_config.php');
 
