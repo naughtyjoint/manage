@@ -10,14 +10,12 @@ try{
 	// $sHelp->select="*";
 	// $sHelp->table=$table;
 
-	$sHelp->select="g.* , m.`{$colname_g['name']}` as game_name";
-	$sHelp->table = $table." g 
-					LEFT JOIN $table_g m ON g.`{$colname['game_id']}` = m.`{$colname_g['id']}`
-					";
+	$sHelp->select="*";
+	$sHelp->table = $table;
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby=get("create_time");
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;

@@ -97,13 +97,6 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['contents']) ?>
-                                        </div>
-                                    </div>
 
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">

@@ -32,7 +32,7 @@ class coderAdmin
             ),
             'member' => array('key' => 6, 'name' => $langary_auth['member']['name'], 'icon' => 'icon-lock', 'auth' => 30,
                 'list' => array(
-                    'platform' => array('key' => 1, 'name' => $langary_auth['member']['list']['platform'], 'icon' => 'icon-lock', 'path' => 'anchor/index.php', 'auth' => 30),
+                    'platform' => array('key' => 1, 'name' => $langary_auth['member']['list']['platform'], 'icon' => 'icon-lock', 'path' => 'platform/index.php', 'auth' => 30),
                     'player' => array('key' => 2, 'name' => $langary_auth['member']['list']['player'], 'icon' => 'icon-lock', 'path' => 'member/index.php', 'auth' => 30),
                     'anchor' => array('key' => 3, 'name' => $langary_auth['member']['list']['anchor'], 'icon' => 'icon-lock', 'path' => 'anchor/index.php', 'auth' => 30)
                 )

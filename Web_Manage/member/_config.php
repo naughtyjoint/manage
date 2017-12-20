@@ -1,22 +1,22 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
-$main_auth_key='deposit';
+$main_auth_key='member';
 $fun_auth_key='player';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$player;
-$colname=coderDBConf::$col_player;
+$table=coderDBConf::$member;
+$colname=coderDBConf::$col_member;
 
-$table_g=coderDBConf::$game;
-$colname_g=coderDBConf::$col_game;
+$table_p=coderDBConf::$platform;
+$colname_p=coderDBConf::$col_platform;
 
 $table_a = coderDBConf::$admin; //管理員
 $colname_a = coderDBConf::$col_admin;
 
-$group_array = class_users_group::getList(); //角色ary
+$group_array = class_platform::getList(); //平台ary
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';
