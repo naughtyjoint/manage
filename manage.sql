@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-12-20 13:51:05
+-- 產生時間： 2017-12-20 15:19:26
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.11
 
@@ -955,7 +955,11 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (3158, 'admin', 6, 1, '列表', '2017-12-20 13:40:09', '127.0.0.1', 2),
 (3159, 'admin', 6, 2, '列表', '2017-12-20 13:40:11', '127.0.0.1', 2),
 (3160, 'admin', 6, 3, '列表', '2017-12-20 13:40:11', '127.0.0.1', 2),
-(3161, 'admin', 7, 1, '列表', '2017-12-20 13:40:13', '127.0.0.1', 2);
+(3161, 'admin', 7, 1, '列表', '2017-12-20 13:40:13', '127.0.0.1', 2),
+(3162, 'admin', 3, 1, '??', '2017-12-20 14:17:41', '127.0.0.1', 2),
+(3163, 'admin', 7, 1, '??', '2017-12-20 14:17:49', '127.0.0.1', 2),
+(3164, 'admin', 7, 1, 'id:7', '2017-12-20 14:27:41', '127.0.0.1', 8),
+(3165, 'admin', 7, 1, '??', '2017-12-20 15:18:23', '127.0.0.1', 2);
 
 -- --------------------------------------------------------
 
@@ -1276,17 +1280,6 @@ INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType
 (19, 'MC5a37693ddea23', NULL, 'GGQCC95', NULL, NULL, 'Money', 150, 'TWD', '2017-12-18 15:07:41', NULL, '2017-12-18 15:20:46', '2D778DD7201E2CDDD1304C0FB2C7372F65FF25F620C634A6D820109BA21F925A936DF7E33514F75235B70C29819CB385EE6D92EE108D9981', 0, 1, 'admin'),
 (20, 'MC5a376c84b9095', NULL, 'WAdfuju', NULL, NULL, 'Money', 150, 'TWD', '2017-12-18 15:21:40', '2017-12-18 15:36:11', '2017-12-18 15:36:59', '2D778DD7201E2CDD51DA3CCB2CBDFD5A65FF25F620C634A65365AA7EAAFAD891E8B549DD910F6F5A65EDDCF3E72F97C0EE6D92EE108D9981', 1, 1, 'admin');
 
---
--- 觸發器 `mycard`
---
-DELIMITER $$
-CREATE TRIGGER `mycard_update_trigger` AFTER UPDATE ON `mycard` FOR EACH ROW IF (NEW.PayResult != OLD.PayResult) 
-THEN
-INSERT INTO mycard_log(deposit_id,user_id,FacTradeSeq,PayResult, last_manager) values (OLD.id, OLD.CustomerId,OLD.FacTradeSeq,NEW.PayResult, new.last_manager);
-END IF
-$$
-DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -1372,7 +1365,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `product_id`, `name`, `amount`, `point`, `ratio`, `bonus`, `status`, `created_time`, `updated_time`, `last_manager`) VALUES
 (4, 'GW8102774', '1500點', 150, 1500, 10, 150, 0, '2017-12-20 02:30:37', '2017-12-20 02:30:37', 'admin'),
-(7, 'GS5a39d331a100f', '10000點', 1000, 10000, 10, 300, 0, '2017-12-20 04:20:53', '2017-12-20 04:20:53', 'admin');
+(7, 'GS5a39d331a100f', '10000點', 1000, 10000, 10, 300, 0, '2017-12-20 07:18:43', '2017-12-20 06:27:41', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1615,7 +1608,7 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3162;
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3166;
 
 --
 -- 使用資料表 AUTO_INCREMENT `anchor`

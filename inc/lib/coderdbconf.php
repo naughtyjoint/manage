@@ -36,7 +36,7 @@ class coderDBConf
     public static $deposit_log = 'deposit_log'; //入款歷程
     public static $col_deposit_log = array('id'=>'id','user_id'=>'user_id','deposit_id'=>'deposit_id','game_id'=>'game_id','status'=>'status','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
     public static $product = 'product'; //產品
-    public static $col_product = array('id'=>'id','product_id'=>'product_id','name'=>'name','amount'=>'amount','point'=>'point','ratio'=>'ratio','bonus'=>'bonus','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
+    public static $col_product = array('id'=>'id','product_id'=>'product_id','name'=>'name','amount'=>'amount','point'=>'point','ratio'=>'ratio','bonus'=>'bonus','status'=>'status','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $mycard = 'mycard'; //mycard入款審核
     public static $col_mycard = array('id'=>'id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','member_id'=>'member_id','product_id'=>'product_id','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','manager'=>'last_manager');
     public static $mycard_log = 'mycard_log'; //mycard入款歷程
