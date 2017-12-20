@@ -1,8 +1,8 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
-$main_auth_key='mycard';
-$fun_auth_key='product';
+$main_auth_key='product';
+$fun_auth_key='product_data';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);

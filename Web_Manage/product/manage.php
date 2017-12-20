@@ -24,6 +24,9 @@ try {
         /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
+        $fhelp->setAttr('amount','readonly',true);
+        $fhelp->setAttr('point','readonly',true);
+        $fhelp->setAttr('bonus','readonly',true);
 
         $method = 'edit';
         $active = $langary_edit_add['edit'];
@@ -99,12 +102,32 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['product_id']) ?> </label>
+                                            <?php echo $fhelp->drawLabel($colname['amount']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['product_id']) ?>
+                                            <?php echo $fhelp->drawForm($colname['amount']) ?>
                                         </div>
                                     </div>
-
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['point']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['point']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['bonus']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['bonus']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['ratio']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $row['ratio']; ?>
+                                        </div>
+                                    </div>
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
