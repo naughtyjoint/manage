@@ -112,14 +112,14 @@ $db->close();
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname['user_id'];?>"]);
+                    $tr.attr("title", row["<?php echo $colname['id'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['product_id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['product_name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['contents'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['updated_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['last_manager'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {
