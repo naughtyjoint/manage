@@ -7,11 +7,8 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
-					,g.`{$colname_g['id']}` as platform,g.`{$colname_g['name']}`";
-	$sHelp->table=$table." t
-			LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
-			LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`";
+	$sHelp->select="*";
+	$sHelp->table=$table;
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby="updated_time";
@@ -23,7 +20,7 @@ try{
 
 	$rows=$sHelp->getList();
 	for($i=0;$i<count($rows);$i++){
-		$rows[$i][$colname['is_pay']]=coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['is_pay']]);
+        $rows[$i][$colname['status']]=coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['status']]);
 	}
 
 	$result['result']=true;

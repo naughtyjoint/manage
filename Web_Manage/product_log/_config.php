@@ -2,7 +2,7 @@
 $inc_path="../../inc/";
 $manage_path="../";
 $main_auth_key='product';
-$fun_auth_key='pro_log';
+$fun_auth_key='product_log';
 include('../_config.php');
 
 $auth=coderAdmin::Auth($fun_auth_key);

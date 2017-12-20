@@ -112,8 +112,9 @@ $langary_auth = array(
         'name'=>'儲值商品',
         'list'=>array(
             'product_data'=>'商品列表',
+            'product_log'=>'商品歷程'
         )
-        ),
+    ),
     'pay' => array(
         'name'=>'第三方入款',
         'list'=>array(
