@@ -11,8 +11,8 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$mycard;
 $colname=coderDBConf::$col_mycard;
 
-$table_u=coderDBConf::$player; //玩家
-$colname_u=coderDBConf::$col_player;
+$table_m=coderDBConf::$member; //會員
+$colname_m=coderDBConf::$col_member;
 
 $table_p=coderDBConf::$product; //產品
 $colname_p=coderDBConf::$col_product;

@@ -105,19 +105,19 @@ if ($errorhandle->isException()) {
                                         </div>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['CustomerId']) ?> </label>
+                                                <?php echo $fhelp->drawLabel($colname['member_id']) ?> </label>
                                             <div class="col-sm-3 control-label" style="text-align: left;">
                                                     <?php
-                                                        echo $row[$colname['CustomerId']];
+                                                        echo $row[$colname['member_id']];
                                                     ?>
                                             </div>
                                         </div>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['ProductName']) ?> </label>
+                                                <?php echo $fhelp->drawLabel($colname['product_id']) ?> </label>
                                             <div class="col-sm-3 control-label" style="text-align: left;">
                                                     <?php
-                                                        echo class_mycard::getName($row[$colname['ProductName']]);
+                                                        echo class_mycard::getName($row[$colname['product_id']]);
                                                     ?>
                                                 
                                             </div>

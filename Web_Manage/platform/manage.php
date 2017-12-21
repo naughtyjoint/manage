@@ -97,10 +97,6 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
-<<<<<<< HEAD:Web_Manage/platform/manage.php
-=======
-
->>>>>>> test:Web_Manage/platform/manage.php
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">

@@ -7,11 +7,11 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
-					,p.`{$colname_p['product_id']}` as product,p.`{$colname_p['name']}`";
+	$sHelp->select="t.*,m.`{$colname_m['member_id']}` as uid,m.`{$colname_m['name']}`
+					,p.`{$colname_p['product_id']}` as product,p.`{$colname_p['name']}` as product_name";
 	$sHelp->table=$table." t
-					LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['CustomerId']}`
-					LEFT JOIN $table_p p ON p.`{$colname_p['product_id']}` = t.`{$colname['ProductName']}`";
+					LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['member_id']}`
+					LEFT JOIN $table_p p ON p.`{$colname_p['product_id']}` = t.`{$colname['product_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby="Created_date";
@@ -21,7 +21,7 @@ try{
 	$where = $sqlstr->SQL;
 
 
-    $where = class_agent::getWhere_lv($colname_u,$where,"");
+    $where = class_agent::getWhere_lv($colname_m,$where,"");
     /*if($adminuser['type'] > 1){
         if($adminuser['type'] == '4'){
             $where .= ($where == '' ? '' : ' AND ') . "`{$colname_u['agent_id']}` = " . $adminuser['serviceid'];

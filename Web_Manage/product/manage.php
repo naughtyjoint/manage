@@ -93,20 +93,13 @@ if ($errorhandle->isException()) {
                                 <!--left start-->
                                 <div class="col-md-10">
                                     <!-- ## coder [formScript] -> ## -->
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['status']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['status']]) && $row[$colname['status']] > 0)?'control-label':'controls'?>" <?php echo (isset($row[$colname['status']]) && $row[$colname['status']] > 0)?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if($row[$colname['status']] != 3){
-                                                echo $fhelp->drawForm($colname['status']);
-                                            }else{
-                                                echo "捨棄";
-                                            }
-
-                                            ?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['status']) ?> </label>
+                                            <div class="col-sm-5 controls">
+                                                <?php echo (isset($row['status']))? $row['status']:"等待審核"?>
+                                            </div>
                                         </div>
-                                    </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
@@ -139,7 +132,7 @@ if ($errorhandle->isException()) {
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['ratio']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $row['ratio']; ?>
+                                            <?php echo (isset($row[$colname['ratio']]))? $row['ratio'] : $fhelp->drawForm($colname['ratio']) ?>
                                         </div>
                                     </div>
                                     <!-- ## coder [formScript] <- ## -->
