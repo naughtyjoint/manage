@@ -8,9 +8,5 @@ $fobj[$colname["id"]]=array("type"=>"hidden","name"=>"ID","column"=>$colname["id
     $fobj[$colname['bonus']]=array('type'=>'text','name'=>'紅利','column'=>$colname['bonus'],'autocomplete'=>'off','placeholder'=>'請設定紅利點數','validate'=>array('required'=>'yes'));
     $fobj[$colname['ratio']]=array('type'=>'hidden','name'=>'比值','column'=>$colname['ratio']);
     $fobj[$colname["create_time"]]=array("type"=>"hidden","name"=>"建立時間","column"=>$colname["create_time"],"sql"=>false);
-<<<<<<< HEAD
     $fobj[$colname['status']]=array('type'=>'checkbox','name'=>"是否下架",'column'=>$colname['status'],'value'=>'1','default'=>'0');
-=======
-    $fobj[$colname["status"]]=array("type"=>"radio","name"=>"狀態","column"=>$colname["status"],'ary'=>coderHelp::makeAryKeyToAryElement($langary_transfers_product,'key','name'),'mode'=>'no',"placeholder"=>"請設定狀態","equal"=>"=");
->>>>>>> wade
 $fhelp->Bind($fobj);

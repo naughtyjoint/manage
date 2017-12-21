@@ -20,7 +20,7 @@ try{
 
 	$rows=$sHelp->getList();
 	for($i=0;$i<count($rows);$i++){
-        $rows[$i][$colname['status']]=coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['status']]);
+        $rows[$i][$colname['status']]=coderHelp::getAryVal($langary_transfers_product,$rows[$i][$colname['status']]);
 	}
 
 	$result['result']=true;
