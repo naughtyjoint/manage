@@ -26,7 +26,6 @@ $col[] = array('column' => $colname['Currency'], 'name' => '幣別', 'order' => 
 $col[] = array('column' => $colname['Created_date'], 'name' => '交易時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['Pay_time'], 'name' => '交易完成時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['Check_time'], 'name' => '請款時間', 'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -135,7 +134,6 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['Created_date'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Pay_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Check_time'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

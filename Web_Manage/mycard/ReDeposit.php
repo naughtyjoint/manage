@@ -26,11 +26,40 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
 
     if($TotalNum == 1){
 
-
-        $query = "UPDATE mycard SET ReturnCode=:ReturnCode WHERE FacTradeSeq=:FacTradeSeq";
-
+        $query = "UPDATE mycard SET ReturnCode=:ReturnCode , Pay_time=:Paytime WHERE FacTradeSeq=:FacTradeSeq";
+        $datetime = date('Y-m-d H:i:s',time());
         $stmt = $con->prepare($query);
         $stmt->bindParam(':ReturnCode', $ReturnCode);
+        $stmt->bindParam(':Paytime', $datetime);
+        $stmt->bindParam(':FacTradeSeq', $FacTradeSeq);
+        $stmt->execute();
+
+        $query_confirm = "SELECT AuthCode FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
+        $stmt = $con->prepare($query_confirm);
+        $stmt->bindParam(':FacTradeSeq', $FacTradeSeq);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        //mycard請款流程
+        $authcode = $row['AuthCode'];
+        $url = "https://test.b2b.mycard520.com.tw/MyBillingPay/api/PaymentConfirm?AuthCode=".$authcode;
+        $ch = curl_init();
+
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        $output = curl_exec($ch);
+        $opt = json_decode($output);
+        curl_close($ch);
+
+
+        $query_payment = "UPDATE mycard SET PayResult=:PayResult ,Check_time=:Checktime WHERE FacTradeSeq=:FacTradeSeq";
+        $stmt = $con->prepare($query_payment);
+        $stmt->bindParam(':PayResult',$opt->ReturnCode);
+        $stmt->bindParam(':Checktime', $datetime);
         $stmt->bindParam(':FacTradeSeq', $FacTradeSeq);
         $stmt->execute();
 
@@ -38,10 +67,40 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
     }else if($TotalNum > 1){
         foreach ($FacTradeSeq as $TradeSeq) {
 
-            $query = "UPDATE mycard SET ReturnCode=:ReturnCode WHERE FacTradeSeq=:FacTradeSeq";
-
+            $query = "UPDATE mycard SET ReturnCode=:ReturnCode , Pay_time=:Paytime WHERE FacTradeSeq=:FacTradeSeq";
+            $datetime = date('Y-m-d H:i:s',time());
             $stmt = $con->prepare($query);
             $stmt->bindParam(':ReturnCode', $ReturnCode);
+            $stmt->bindParam(':Paytime', $datetime);
+            $stmt->bindParam(':FacTradeSeq', $TradeSeq);
+            $stmt->execute();
+
+            $query_confirm = "SELECT AuthCode FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
+            $stmt = $con->prepare($query_confirm);
+            $stmt->bindParam(':FacTradeSeq', $TradeSeq);
+            $stmt->execute();
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+            //mycard請款流程
+            $authcode = $row['AuthCode'];
+            $url = "https://test.b2b.mycard520.com.tw/MyBillingPay/api/PaymentConfirm?AuthCode=".$authcode;
+            $ch = curl_init();
+
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+            $output = curl_exec($ch);
+            $opt = json_decode($output);
+            curl_close($ch);
+
+
+            $query_payment = "UPDATE mycard SET PayResult=:PayResult ,Check_time=:Checktime WHERE FacTradeSeq=:FacTradeSeq";
+            $stmt = $con->prepare($query_payment);
+            $stmt->bindParam(':PayResult',$opt->ReturnCode);
+            $stmt->bindParam(':Checktime', $datetime);
             $stmt->bindParam(':FacTradeSeq', $TradeSeq);
             $stmt->execute();
 
