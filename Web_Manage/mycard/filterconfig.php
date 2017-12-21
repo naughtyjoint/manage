@@ -1,7 +1,7 @@
 <?php
 $filterhelp = new coderFilterHelp();
 $obj[] = array('type' => 'keyword', 'name' => '關鍵字', 'sql' => true, 'ary' => array(
-    array('column' => $colname_u['name'], 'name' => '玩家名稱'),
+    array('column' => $colname_m['name'], 'name' => '玩家名稱'),
     array('column' => $colname['manager'], 'name' => '最後管理者')
 ));
 //$obj[] = array('type' => 'select', 'name' => '公開', 'column' => $colname['is_public'], 'sql' => true, 'ary' => coderHelp::makeAryKeyToAryElement($langary_yn,'value','name'));
