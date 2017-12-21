@@ -39,11 +39,7 @@ try {
     if ($method == 'edit') {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if(!empty($row[$colname['status']])){
-        ?>
-            <script>
-                alert('無法捨棄!! 狀態已經被更改');
-            </script>
-        <?php
+            $data[$colname['status']] = $row[$colname['status']];
         }else{
             $data[$colname['status']] = $nowstatus;
         }
@@ -51,10 +47,8 @@ try {
         
     } else {
         $data[$colname['user_id']] = post($colname['user_id'],1);
-        $data[$colname['game_id']] = post($colname['game_id'],1);
+        $data[$colname['platform_id']] = post($colname['platform_id'],1);
         $data[$colname['money']] = post($colname['money'],1);
-        $data[$colname['deposit_pay_id']] = post($colname['deposit_pay_id'],1);
-        $data[$colname['pay_code']] = post($colname['pay_code'],1);
         $data[$colname['create_time']] = $nowtime;
         //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);

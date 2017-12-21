@@ -12,15 +12,14 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$dispensing;
 $colname=coderDBConf::$col_dispensing;
 
-
 $table_bc=coderDBConf::$bank_card;
 $colname_bc=coderDBConf::$col_bank_card;
 
-$table_g=coderDBConf::$game; //遊戲
-$colname_g=coderDBConf::$col_game;
+$table_m=coderDBConf::$member; //玩家
+$colname_m=coderDBConf::$col_member;
 
-$table_u=coderDBConf::$player; //玩家
-$colname_u=coderDBConf::$col_player;
+$table_p=coderDBConf::$platform; //平台名稱
+$colname_p=coderDBConf::$col_platform;
 
 $table_b=coderDBConf::$bank;
 $colname_b=coderDBConf::$col_bank;

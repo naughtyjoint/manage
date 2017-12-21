@@ -23,7 +23,7 @@ class memberClass{
 	
 	//會員新增
 	public function Insert($member){ 
-		global $db, $member_id;
+		global $db, $user_id;
 		if($this -> isExisit($member -> email)){
 			throw new Exception('會員電子郵件重覆,請重新輸入');
 		}else{
@@ -36,13 +36,13 @@ class memberClass{
 			$data["member_createtime"] = request_cd();
 			$data["member_updatetime"] = request_cd();
 			
-			$member_id = $db -> query_insert(memberClass::$table, $data);
+			$user_id = $db -> query_insert(memberClass::$table, $data);
 		}
 	}
 	//檢查帳號是否存在
 	static function isExisit($acc){
 		global $db;
-		if($db -> query_first("SELECT member_id FROM ".memberClass::$table." WHERE member_acc = '$acc'")){
+		if($db -> query_first("SELECT user_id FROM ".memberClass::$table." WHERE member_acc = '$acc'")){
 			return true;
 		}else{
 			return false;
@@ -73,7 +73,7 @@ class memberClass{
 		else{
 			$_SESSION["session_acc"] = $row["member_account"];
 	 		$_SESSION["session_name"] = $row["member_name"];
-			$_SESSION["session_id"] = $row["member_id"];
+			$_SESSION["session_id"] = $row["user_id"];
 		}
 	}
 	//會員修改
@@ -90,7 +90,7 @@ class memberClass{
 			$data["member_age"] = $member -> age;
 			$data["member_birthday"] = $member -> birthday;
 			$data["member_address"] = $member -> address;
-			$data["member_id_number"] = $member -> id_number;
+			$data["user_id_number"] = $member -> id_number;
 			$data["member_emergency_contact"] = $member -> emergency_contact;
 			$data["member_emergency_telephone"] = $member -> emergency_telephone;
 			$data["member_emergency_contact_relationship"] = $member -> emergency_contact_relationship;
@@ -98,7 +98,7 @@ class memberClass{
 			$data["member_baptized_date"] = $member -> baptized_date;
 			
 			$data["member_update_time"] = request_cd();
-			$db -> query_update(memberClass::$table, $data, "member_id = ".$_SESSION["session_id"]);
+			$db -> query_update(memberClass::$table, $data, "user_id = ".$_SESSION["session_id"]);
 		}
 	}
 	//會員修改密碼
@@ -109,7 +109,7 @@ class memberClass{
 		}else{
 			$data["member_password"] = md5($password);
 			$data["member_update_time"] = request_cd();
-			$db -> query_update(memberClass::$table, $data, "member_id = ".$_SESSION["session_id"]);
+			$db -> query_update(memberClass::$table, $data, "user_id = ".$_SESSION["session_id"]);
 		}
 	}
 	

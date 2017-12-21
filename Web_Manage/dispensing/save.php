@@ -44,11 +44,6 @@ try {
     if ($method == 'edit') {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if(!empty($row[$colname['is_pay']])){
-        ?>
-            <script>
-                alert('無法捨棄!! 狀態已經被更改');
-            </script>
-        <?php
             $data[$colname['is_pay']] = $row[$colname['is_pay']];
         }else{
             $data[$colname['is_pay']] = $nowstatus;
@@ -57,15 +52,13 @@ try {
     } else {
         $data[$colname['create_time']]= $nowtime;
         $data[$colname['user_id']] = post($colname['user_id'],1);  
-        $data[$colname['game_id']] = post($colname['game_id'],1);          
+        $data[$colname['platform_id']] = post($colname['platform_id'],1);          
         $data[$colname['bank_id']] = post($colname['bank_id'],1);  
         $data[$colname['num']] = post($colname['num'],1);          
         $data[$colname['money']] = post($colname['money'],1);
         $data[$colname['contents']] = post($colname['contents'],1);
         $id = $db->query_insert($table, $data);
     }
-
-
     $admin_title = isset($data[$colname['id']]) ? $data[$colname['id']] : '';
     coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, $method, "id:{$id}");
 

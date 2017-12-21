@@ -2,10 +2,10 @@
 class class_player{
     public static function getList(){ //
         global $db;
-        $colname = coderDBConf::$col_player;
-        $sql = "select `{$colname['name']}` as name,`{$colname['id']}` as value
-                    from ".coderDBConf::$player."
-                    ORDER BY `{$colname['id']}` DESC";
+        $colname = coderDBConf::$col_member;
+        $sql = "select `{$colname['name']}` as name,`{$colname['member_id']}` as value
+                    from ".coderDBConf::$member."
+                    ORDER BY `{$colname['member_id']}` DESC";
 
         return $db->fetch_all_array($sql);
     }

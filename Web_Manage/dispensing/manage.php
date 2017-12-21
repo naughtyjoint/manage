@@ -11,22 +11,13 @@ try {
 
     if ($id != "") {
         coderAdmin::vaild($auth, 'edit');
-
         $db = Database::DB();
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if (empty($row)) {
             throw new Exception("查無相關資料!");
         }
-        /* ## coder [bindData] --> ## */
-
-        //$fhelp->setAttr($colname['status'], 'validate', array('required' => 'yes'));
         $manageinfo = '  管理者 : ' . $row[$colname['manager']] . ' | 建立時間 : ' . $row[$colname['create_time']] . ' | 上次修改時間 : ' . $row[$colname['update_time']];
-        /* ## coder [bindData] <-- ## */
-        /* ## coder [beforeBind] --> ## */
-        /* ## coder [beforeBind] <-- ## */
-
         $fhelp->bindData($row);
-
         $method = 'edit';
         $active = '編輯';
 
@@ -116,24 +107,24 @@ if ($errorhandle->isException()) {
                                     }
                                 ?>
                             </div>
-                            <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
+                            <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
                                 <?php
-                                    echo $fhelp->drawForm($colname['game_id']);
+                                    echo $fhelp->drawForm($colname['platform_id']);
                                 ?>
                             </div>
                             
                         </div>
                     </div>
                     <?php
-                        if(isset($row[$colname['game_id']])) {
+                        if(isset($row[$colname['platform_id']])) {
                     ?>
                     <div class="form-group ">
                         <label class="col-sm-3 col-lg-3 control-label">
-                            <?php echo $fhelp->drawLabel($colname['game_id']) ?> </label>
+                            <?php echo $fhelp->drawLabel($colname['platform_id']) ?> </label>
                         <div class="col-sm-3 " >
-                        <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
+                        <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
                             <?php
-                                echo class_player::getName_game($row[$colname['game_id']]);
+                                echo class_platform::getName($row[$colname['platform_id']]);
                             ?>
                             </div>
                         </div>
@@ -238,7 +229,7 @@ if ($errorhandle->isException()) {
                                     });">
                             <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
                             <?php if(isset($row[$colname['is_pay']]) && $row[$colname['is_pay']] == 0){ ?>
-                            <button type="button" class="btn btn-warning" onClick="$.confirm({
+                            <button type="button" class="btn btn-warning" id="btn-warning" onClick="$.confirm({
                                         title: '<?php echo $langary_manage['confirm_delete'].$active ?>'+'?',
                                         content: '',
                                         type: 'red',

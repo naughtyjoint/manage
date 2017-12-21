@@ -10,11 +10,11 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$dispensing_log;
 $colname=coderDBConf::$col_dispensing_log;
 
-$table_g=coderDBConf::$game; //遊戲
-$colname_g=coderDBConf::$col_game;
+$table_p=coderDBConf::$platform; //遊戲
+$colname_p=coderDBConf::$col_platform;
 
-$table_u=coderDBConf::$player; //玩家
-$colname_u=coderDBConf::$col_player;
+$table_m=coderDBConf::$member; //玩家
+$colname_m=coderDBConf::$col_member;
 
 
 $orderColumn=$colname["id"];

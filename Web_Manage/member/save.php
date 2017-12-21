@@ -38,7 +38,11 @@ try{
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
-		$data[$colname['create_time']]= $nowtime;
+        $data[$colname['create_time']]= $nowtime;
+        $data[$colname['member_id']] = post($colname['member_id'],1);  
+        $data[$colname['name']] = post($colname['name'],1); 
+        $data[$colname['platform_id']] = post($colname['platform_id'],1); 
+        $data[$colname['email']] = post($colname['email'],1); 
 		$id=$db->query_insert($table,$data);
 	}
 

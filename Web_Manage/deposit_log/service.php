@@ -6,11 +6,11 @@ try{
 	coderAdmin::vaild($auth,'view');
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
-					,g.`{$colname_g['id']}` as game,g.`{$colname_g['name']}`";
+	$sHelp->select="t.*,m.`{$colname_m['member_id']}` as uid,m.`{$colname_m['name']}`
+					,p.`{$colname_p['id']}` as platform,p.`{$colname_p['name']}`";
 	$sHelp->table=$table." t
-				LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`
-				LEFT JOIN $table_g g ON g.`{$colname_g['id']}` = t.`{$colname['game_id']}`";
+				LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['user_id']}`
+				LEFT JOIN $table_p p ON p.`{$colname_p['id']}` = t.`{$colname['platform_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby="updated_time";

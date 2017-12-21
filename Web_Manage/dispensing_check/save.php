@@ -45,11 +45,6 @@ try {
     if ($method == 'edit') {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if($row[$colname['is_pay']] == 3){
-        ?>
-            <script>
-                alert('狀態無法更改!! 可能已經被捨棄');
-            </script>
-        <?php
             $data[$colname['is_pay']] = 3;
         }
 

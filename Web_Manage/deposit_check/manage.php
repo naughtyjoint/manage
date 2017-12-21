@@ -134,24 +134,24 @@ if ($errorhandle->isException()) {
                                                         }
                                                     ?>
                                                 </div>
-                                                <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
+                                                <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
                                                     <?php
-                                                            echo $fhelp->drawForm($colname['game_id']);
+                                                            echo $fhelp->drawForm($colname['platform_id']);
                                                     ?>
                                                 </div>
                                                 
                                             </div>
                                         </div>
                                         <?php
-                                            if(isset($row[$colname['game_id']])) {
+                                            if(isset($row[$colname['platform_id']])) {
                                         ?>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['game_id']) ?> </label>
+                                                <?php echo $fhelp->drawLabel($colname['platform_id']) ?> </label>
                                             <div class="col-sm-3 " >
-                                            <div class="<?php echo (isset($row[$colname['game_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['game_id']]))?'style="text-align: left;"':''?>>
+                                            <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
                                                 <?php
-                                                    echo class_player::getName_game($row[$colname['game_id']]);
+                                                    echo class_platform::getName($row[$colname['platform_id']]);
                                                 ?>
                                                 </div>
                                             </div>
@@ -173,34 +173,6 @@ if ($errorhandle->isException()) {
                                                 ?>
                                             </div>
                                         </div>
-                                        <div class="form-group ">
-                                            <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['deposit_pay_id']) ?> </label>
-                                            <div class="col-sm-3 <?php echo (isset($row[$colname['deposit_pay_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['deposit_pay_id']]))?'style="text-align: left;"':''?>>
-                                                <?php
-                                                if(isset($row[$colname['deposit_pay_id']])) {
-                                                    echo class_player::getName_pay($row[$colname['deposit_pay_id']]);
-                                                }
-                                                else{
-                                                    echo $fhelp->drawForm($colname['deposit_pay_id']);
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['pay_code']) ?> </label>
-                                        <div class="col-sm-3 <?php echo (isset($row[$colname['pay_code']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['pay_code']]))?'style="text-align: left;"':''?>>
-                                            <?php
-                                            if(isset($row[$colname['pay_code']])) {
-                                                echo $row[$colname['pay_code']];
-                                            }
-                                            else{
-                                                echo $fhelp->drawForm($colname['pay_code']);
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
 
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">

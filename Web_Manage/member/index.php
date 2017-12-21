@@ -6,8 +6,8 @@ coderAdmin::vaild($auth, 'view');
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
 $listHelp->mutileSelect=true;
-//$listHelp->editLink = "manage.php";
-//$listHelp->addLink = "manage.php";
+$listHelp->editLink = "manage.php";
+$listHelp->addLink = "manage.php";
 $listHelp->delSrc = "delservice.php";
 $listHelp->ajaxSrc = "service.php";
 //$listHelp->orderSrc = "orderservice.php";

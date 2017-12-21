@@ -19,8 +19,8 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['name'], 'name' => '玩家名稱 ', 'order' => false, 'width' => '100');
-$col[] = array('column' => 'game_name', 'name' => '遊戲名稱 ', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['name'], 'name' => '會員名稱 ', 'order' => false, 'width' => '100');
+$col[] = array('column' => 'platform_name', 'name' => '平台名稱 ', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 
@@ -122,10 +122,10 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
-                    $tr.attr("onClick", "parent.closeBox(function(){parent.$('#myuser').html('"+row["<?php echo $colname['name']?>"]+"');parent.$('#mygame').html(' - "+row["game_name"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').val('"+row["<?php echo $colname['id']?>"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').valid();parent.$('#<?php echo $colname_t['game_id'];?>').val('"+row["<?php echo $colname['game_id']?>"]+"');parent.$('#<?php echo $colname_t['game_id'];?>').valid();})");
+                    $tr.attr("onClick", "parent.closeBox(function(){parent.$('#myuser').html('"+row["<?php echo $colname['name']?>"]+"');parent.$('#mygame').html(' - "+row["platform_name"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').val('"+row["<?php echo $colname['member_id']?>"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').valid();parent.$('#<?php echo $colname_t['platform_id'];?>').val('"+row["<?php echo $colname['platform_id']?>"]+"');parent.$('#<?php echo $colname_t['platform_id'];?>').valid();})");
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["game_name"] + '</td>');
+                    $tr.append('<td>' + row["platform_name"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
                     obj.append($tr);

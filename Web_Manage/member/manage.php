@@ -91,9 +91,16 @@ if ($errorhandle->isException()) {
                                     <!-- ## coder [formScript] -> ## -->
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['member_id']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['member_id']); ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $row[$colname['name']]; ?>
+                                            <?php echo $fhelp->drawForm($colname['name']); ?>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -101,7 +108,7 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawLabel($colname['platform_id']) ?>
                                         </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $row[$colname['platform_id']]; ?>
+                                            <?php echo $fhelp->drawForm($colname['platform_id']); ?>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -109,9 +116,10 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawLabel($colname['email']) ?>
                                         </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $row[$colname['email']]; ?>
+                                            <?php echo $fhelp->drawForm($colname['email']); ?>
                                         </div>
                                     </div>
+                                    <?php if(isset($row[$colname['point']])){?>
                                     <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['point']) ?>
@@ -120,6 +128,7 @@ if ($errorhandle->isException()) {
                                             <?php echo $row[$colname['point']]; ?>
                                         </div>
                                     </div>
+                                    <?php }?>
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
