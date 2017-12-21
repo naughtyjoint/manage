@@ -30,14 +30,18 @@ try{
 
 
     $nowtime = datetime();
+    $ratio = $data['point']/$data['amount'];
     $data[$colname['manager']]=$adminuser['username'];
     $data[$colname['update_time']]= $nowtime;
+    $data[$colname['ratio']] = $ratio;
 
 
 
     if($method=='edit'){
+
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
+        $data[$colname['product_id']]=uniqid('GS');
 		$data[$colname['create_time']]= $nowtime;
 		$id=$db->query_insert($table,$data);
 	}

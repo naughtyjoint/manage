@@ -7,31 +7,22 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	// $sHelp->select="*";
-	// $sHelp->table=$table;
-
 	$sHelp->select="*";
-	$sHelp->table = $table;
+	$sHelp->table=$table;
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby="updated_time";
+	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
-
-
-    /*if($adminuser['type'] > 1){
-        $where .= ($where==''?'':' AND ')."u.`{$colname['agent_id']}` = ".$adminuser['id'];
-    }*/
-
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();
-	//print_r($rows);exit;
 	for($i=0;$i<count($rows);$i++){
-        $rows[$i][$colname['status']]='<span class="label label-'.$product_labelstyle[$rows[$i][$colname['status']]].'">'.coderHelp::getAryVal($langary_transfers_product,$rows[$i][$colname['status']]).'</span>';
+        $rows[$i][$colname['status']]=coderHelp::getAryVal($langary_transfers,$rows[$i][$colname['status']]);
 	}
+
 	$result['result']=true;
 	$result['data']=$rows;
 	$result['page']=$sHelp->page_info;

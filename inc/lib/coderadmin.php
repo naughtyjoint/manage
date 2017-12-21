@@ -55,7 +55,8 @@ class coderAdmin
             ),
             'product' => array('key' => 7, 'name' => $langary_auth['product']['name'], 'icon' => 'icon-usd', 'auth' => 30,
                 'list' => array(
-                    'product_data' => array('key' => 1, 'name' => $langary_auth['product']['list']['product_data'], 'icon' => 'icon-usd', 'path' => 'product/index.php', 'auth' => 30)
+                    'product_data' => array('key' => 1, 'name' => $langary_auth['product']['list']['product_data'], 'icon' => 'icon-usd', 'path' => 'product/index.php', 'auth' => 30),
+                    'product_log' => array('key' => 2, 'name' => $langary_auth['product']['list']['product_log'], 'icon' => 'icon-usd', 'path' => 'product_log/index.php', 'auth' => 30)
                 )
             ),
             'pay' => array('key' => 5, 'name' => $langary_auth['pay']['name'], 'icon' => 'icon-usd', 'auth' => 30,

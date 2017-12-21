@@ -1,21 +1,15 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
+$main_auth_key='product';
+$fun_auth_key='product_log';
 include('../_config.php');
-
-$main_auth_key='pay';
-$fun_auth_key='mycard';
 
 $auth=coderAdmin::Auth($fun_auth_key);
 
-$table=coderDBConf::$mycard;
-$colname=coderDBConf::$col_mycard;
+$table=coderDBConf::$product_log;
+$colname=coderDBConf::$col_product_log;
 
-$table_u=coderDBConf::$member; //玩家
-$colname_u=coderDBConf::$col_member;
-
-$table_p=coderDBConf::$product; //產品
-$colname_p=coderDBConf::$col_product;
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';

@@ -7,11 +7,11 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`
+	$sHelp->select="t.*,u.`{$colname_u['member_id']}` as uid,u.`{$colname_u['name']}`
 					,p.`{$colname_p['product_id']}` as product,p.`{$colname_p['name']}`";
 	$sHelp->table=$table." t
-					LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['CustomerId']}`
-					LEFT JOIN $table_p p ON p.`{$colname_p['product_id']}` = t.`{$colname['ProductName']}`";
+					LEFT JOIN $table_u u ON u.`{$colname_u['member_id']}` = t.`{$colname['member_id']}`
+					LEFT JOIN $table_p p ON p.`{$colname_p['product_id']}` = t.`{$colname['product_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby="Created_date";

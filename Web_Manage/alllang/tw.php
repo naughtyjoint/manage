@@ -101,7 +101,7 @@ $langary_auth = array(
         'name'=>'入款',
         'list'=>array(
             'pay'=>'第三方支付',
-            'game'=>'遊戲名稱',
+            'platform'=>'平台名稱',
             'player'=>'玩家',
             'application'=>'入款申請',
             'log'=>'入款歷程',
@@ -112,6 +112,7 @@ $langary_auth = array(
         'name'=>'儲值商品',
         'list'=>array(
             'product_data'=>'商品列表',
+            'product_log'=>'商品歷程'
         )
         ),
     'pay' => array(
@@ -243,6 +244,10 @@ $langary_bettings = array(
     0 => '未開獎',
     1 => '已開獎',
     2 => '撤單'
+);
+$langary_transfers_product = array(
+    0 => '上架中',
+    1 => '下架',
 );
 
 //月份
