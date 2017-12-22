@@ -26,11 +26,12 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
 
     if($TotalNum == 1){
 
-        $query = "UPDATE mycard SET ReturnCode=:ReturnCode , Pay_time=:Paytime WHERE FacTradeSeq=:FacTradeSeq";
+        $query = "UPDATE mycard SET ReturnCode=:ReturnCode , Pay_time=:Paytime, Redeposit=:Redeposit WHERE FacTradeSeq=:FacTradeSeq";
         $datetime = date('Y-m-d H:i:s',time());
         $stmt = $con->prepare($query);
         $stmt->bindParam(':ReturnCode', $ReturnCode);
         $stmt->bindParam(':Paytime', $datetime);
+        $stmt->bindParam(':Redeposit', 1);
         $stmt->bindParam(':FacTradeSeq', $FacTradeSeq);
         $stmt->execute();
 
@@ -72,6 +73,7 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
             $stmt = $con->prepare($query);
             $stmt->bindParam(':ReturnCode', $ReturnCode);
             $stmt->bindParam(':Paytime', $datetime);
+            $stmt->bindParam(':Redeposit', 1);
             $stmt->bindParam(':FacTradeSeq', $TradeSeq);
             $stmt->execute();
 
