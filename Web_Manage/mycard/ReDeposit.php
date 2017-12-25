@@ -23,15 +23,16 @@ $fal_resultback = array(
 if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
 
     include 'database.php';
+    $datetime = date('Y-m-d H:i:s',time());
+    $redepositcheck = true;
 
     if($TotalNum == 1){
 
         $query = "UPDATE mycard SET ReturnCode=:ReturnCode , Pay_time=:Paytime, Redeposit=:Redeposit WHERE FacTradeSeq=:FacTradeSeq";
-        $datetime = date('Y-m-d H:i:s',time());
         $stmt = $con->prepare($query);
         $stmt->bindParam(':ReturnCode', $ReturnCode);
         $stmt->bindParam(':Paytime', $datetime);
-        $stmt->bindParam(':Redeposit', 1);
+        $stmt->bindParam(':Redeposit', $redepositcheck);
         $stmt->bindParam(':FacTradeSeq', $FacTradeSeq);
         $stmt->execute();
 
@@ -68,12 +69,12 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
     }else if($TotalNum > 1){
         foreach ($FacTradeSeq as $TradeSeq) {
 
-            $query = "UPDATE mycard SET ReturnCode=:ReturnCode , Pay_time=:Paytime WHERE FacTradeSeq=:FacTradeSeq";
-            $datetime = date('Y-m-d H:i:s',time());
+            $query = "UPDATE mycard SET ReturnCode=:ReturnCode, Pay_time=:Paytime, Redeposit=:Redeposit WHERE FacTradeSeq=:FacTradeSeq";
+
             $stmt = $con->prepare($query);
             $stmt->bindParam(':ReturnCode', $ReturnCode);
             $stmt->bindParam(':Paytime', $datetime);
-            $stmt->bindParam(':Redeposit', 1);
+            $stmt->bindParam(':Redeposit', $redepositcheck);
             $stmt->bindParam(':FacTradeSeq', $TradeSeq);
             $stmt->execute();
 
