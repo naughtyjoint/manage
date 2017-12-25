@@ -42,7 +42,7 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-
+    //mycard請款流程
     $authcode = $row['AuthCode'];
     $mem_id = $row['member_id'];
     $ProductId = $row['product_id'];
@@ -57,6 +57,15 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     $opt = json_decode($output);
     curl_close($ch);
 
+    //取得會員現有點數
+    $query_member = "SELECT point FROM member WHERE member_id=:member_id";
+    $stmt = $con->prepare($query_member);
+    $stmt->bindParam(':member_id', $mem_id);
+    $stmt->execute();
+    $member_row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $orig_point = $member_row['point'];
+
+
     //取得產品總點數
     $query_point = "SELECT point, bonus FROM product WHERE product_id=:product_id";
     $stmt = $con->prepare($query_point);
@@ -64,7 +73,7 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     $stmt->execute();
 
     $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-    $totalpoint = $rows['point']+$rows['bonus'];
+    $totalpoint = $orig_point+$rows['point']+$rows['bonus'];
 
 
     $query_payment = "UPDATE mycard SET PayResult=:PayResult ,Check_time=:Checktime WHERE FacTradeSeq=:FacTradeSeq";
