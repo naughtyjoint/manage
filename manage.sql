@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-12-25 14:40:50
+-- 產生時間： 2017-12-25 16:42:02
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.11
 
@@ -58,11 +58,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-
 (1, '', '', 1, 0, 1, 0, 'a4f7bc965f9d6a176176f3769c3e2f811513838627725292r8ni95hrk9mrvhefl6jqfms6p', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-21 14:43:47', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '1048851cd37e6659eed5e669579eab921513742759975002r8ni95hrk9mrvhefl6jqfms6p', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-20 12:05:59', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db7b229025b7bf9e5c8bb2e1ea49518615132243199432qll4bu2p5e7v5vcr66igsi4kkd', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:05:19', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
-
 
 -- --------------------------------------------------------
 
@@ -1207,7 +1205,21 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (3408, 'admin', 6, 2, '列表', '2017-12-25 14:37:04', '127.0.0.1', 2),
 (3409, 'admin', 5, 2, '列表', '2017-12-25 14:37:54', '127.0.0.1', 2),
 (3410, 'admin', 7, 1, '列表', '2017-12-25 14:38:37', '127.0.0.1', 2),
-(3411, 'admin', 5, 2, '列表', '2017-12-25 14:38:43', '127.0.0.1', 2);
+(3411, 'admin', 5, 2, '列表', '2017-12-25 14:38:43', '127.0.0.1', 2),
+(3412, 'admin', 6, 1, '??', '2017-12-25 16:35:12', '127.0.0.1', 2),
+(3413, 'admin', 6, 2, '??', '2017-12-25 16:35:12', '127.0.0.1', 2),
+(3414, 'admin', 6, 3, '??', '2017-12-25 16:35:13', '127.0.0.1', 2),
+(3415, 'admin', 6, 2, '??', '2017-12-25 16:35:15', '127.0.0.1', 2),
+(3416, 'admin', 6, 3, '??', '2017-12-25 16:38:49', '127.0.0.1', 2),
+(3417, 'admin', 6, 2, '??', '2017-12-25 16:38:50', '127.0.0.1', 2),
+(3418, 'admin', 3, 1, '??', '2017-12-25 16:39:00', '127.0.0.1', 2),
+(3419, 'admin', 3, 2, '??', '2017-12-25 16:39:01', '127.0.0.1', 2),
+(3420, 'admin', 3, 3, '??', '2017-12-25 16:39:01', '127.0.0.1', 2),
+(3421, 'admin', 3, 4, '??', '2017-12-25 16:39:02', '127.0.0.1', 2),
+(3422, 'admin', 3, 5, '??', '2017-12-25 16:39:02', '127.0.0.1', 2),
+(3423, 'admin', 4, 4, '??', '2017-12-25 16:39:04', '127.0.0.1', 2),
+(3424, 'admin', 4, 5, '??', '2017-12-25 16:39:05', '127.0.0.1', 2),
+(3425, 'admin', 4, 6, '??', '2017-12-25 16:39:05', '127.0.0.1', 2);
 
 -- --------------------------------------------------------
 
@@ -1219,11 +1231,19 @@ CREATE TABLE `anchor` (
   `id` int(11) NOT NULL,
   `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `point` int(11) NOT NULL,
+  `point` int(11) NOT NULL DEFAULT '0',
   `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updatetime` timestamp NULL DEFAULT NULL,
+  `update_time` timestamp NULL DEFAULT NULL,
   `last_manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `anchor`
+--
+
+INSERT INTO `anchor` (`id`, `name`, `email`, `point`, `created_time`, `update_time`, `last_manager`) VALUES
+(1, '多朵', 'aaa@bbb.com', 0, '2017-12-19 18:36:39', '2017-12-19 18:36:39', 'admin'),
+(2, '小花', 'test@gmail.com', 0, '2017-12-19 18:29:45', '2017-12-19 18:29:45', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1287,15 +1307,13 @@ CREATE TABLE `contribution` (
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-
 --
 -- 資料表的匯出資料 `contribution`
 --
 
 INSERT INTO `contribution` (`id`, `anchor_id`, `member_id`, `point`, `contents`, `created_date`) VALUES
-(1, 1, 'ad1475', 500, '', '2017-12-25 12:28:02'),
-(2, 2, 'a571615', 50, '', '2017-12-25 13:55:19');
-
+(1, 1, 0, 500, '', '2017-12-25 12:28:02'),
+(2, 2, 0, 50, '', '2017-12-25 13:55:19');
 
 -- --------------------------------------------------------
 
@@ -1559,7 +1577,6 @@ CREATE TABLE `mycard` (
 -- 資料表的匯出資料 `mycard`
 --
 
-
 INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType`, `ItemCode`, `product_id`, `Amount`, `Currency`, `Created_date`, `Pay_time`, `Check_time`, `AuthCode`, `ReturnCode`, `PayResult`, `Redeposit`, `last_manager`) VALUES
 (3, '780582', NULL, 'i12483254', NULL, NULL, 'GW8102774', 1390, 'TWD', '2017-12-12 17:12:43', '2017-12-14 10:16:32', '2017-12-15 17:41:54', '2D778DD7201E2CDD0B5BBFCD5A66D22AA69D7697DD8D786C4A40C055A83CB6B4706FB0B52DA93E900A673CF3CCF94770', 1, 1, 0, 'admin'),
 (7, '789541', NULL, 'iswaj5124', NULL, NULL, 'gs714851', 875, 'TWD', '2017-12-12 17:12:43', '2017-12-14 10:16:32', NULL, '2D778DD7201E2CDDE3AF771F3DDB31CDAB82F7A95A0217591363659765BF6A20F4A74B58B835B5DF0A673CF3CCF94770', 1, 0, 0, 'admin'),
@@ -1574,9 +1591,9 @@ INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType
 (18, 'MC5a37684452423', NULL, 'GGQCC46', NULL, NULL, 'Money', 150, 'TWD', '2017-12-18 15:03:32', NULL, '2017-12-18 15:07:14', '2D778DD7201E2CDD9C1C29A138AA6DDF65FF25F620C634A698EF9CA9208DFE55936DF7E33514F75223DD98B93CADC1C0EE6D92EE108D9981', 0, 1, 0, 'admin'),
 (19, 'MC5a37693ddea23', NULL, 'GGQCC95', NULL, NULL, 'Money', 150, 'TWD', '2017-12-18 15:07:41', NULL, '2017-12-18 15:20:46', '2D778DD7201E2CDDD1304C0FB2C7372F65FF25F620C634A6D820109BA21F925A936DF7E33514F75235B70C29819CB385EE6D92EE108D9981', 0, 1, 0, 'admin'),
 (20, 'MC5a376c84b9095', NULL, 'WAdfuju', NULL, NULL, 'GW8102774', 150, 'TWD', '2017-12-18 15:21:40', '2017-12-18 15:36:11', '2017-12-18 15:36:59', '2D778DD7201E2CDD51DA3CCB2CBDFD5A65FF25F620C634A65365AA7EAAFAD891E8B549DD910F6F5A65EDDCF3E72F97C0EE6D92EE108D9981', 1, 1, 0, 'admin'),
-(21, 'MC5a3b1d27592c5', NULL, 'pkpkling', 'Billing', NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 10:32:07', '2017-12-21 14:11:36', '2017-12-21 11:32:26', '182B27CBD326ABF81393D89E2F432791F9A41DE696824A0623FD5AFE7444B002463CFFFA13A573B867D3A0CE8B761E61EE6D92EE108D9981', 1, 1, 0, 'admin'),
-(23, 'MC5a3b52d51f4b6', NULL, 'PPD55', 'Billing', NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 14:21:09', '2017-12-21 14:55:28', '2017-12-21 14:55:28', '182B27CBD326ABF88AFE7744D55CF3D7060E12A83B8AC5820697B7170783F0EF5FF154EF900743D8ADC3FAFF136B12DBEE6D92EE108D9981', 1, 1, 0, NULL),
-(24, 'MC5a3b62b061471', NULL, 'motex', 'Billing', NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 15:28:48', '2017-12-21 15:33:23', '2017-12-21 15:33:23', '182B27CBD326ABF8DD808BCDC7BF3D6FAB8A7A42DF4E211F9995523FC7C52F28380BA684E5784E170340E7419073499CEE6D92EE108D9981', 1, 1, 0, NULL),
+(21, 'MC5a3b1d27592c5', NULL, 'pkpkling', 0, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 10:32:07', '2017-12-21 14:11:36', '2017-12-21 11:32:26', '182B27CBD326ABF81393D89E2F432791F9A41DE696824A0623FD5AFE7444B002463CFFFA13A573B867D3A0CE8B761E61EE6D92EE108D9981', 1, 1, 0, 'admin'),
+(23, 'MC5a3b52d51f4b6', NULL, 'PPD55', 0, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 14:21:09', '2017-12-21 14:55:28', '2017-12-21 14:55:28', '182B27CBD326ABF88AFE7744D55CF3D7060E12A83B8AC5820697B7170783F0EF5FF154EF900743D8ADC3FAFF136B12DBEE6D92EE108D9981', 1, 1, 0, NULL),
+(24, 'MC5a3b62b061471', NULL, 'motex', 0, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 15:28:48', '2017-12-21 15:33:23', '2017-12-21 15:33:23', '182B27CBD326ABF8DD808BCDC7BF3D6FAB8A7A42DF4E211F9995523FC7C52F28380BA684E5784E170340E7419073499CEE6D92EE108D9981', 1, 1, 0, NULL),
 (25, 'MC5a3b686d6d84f', NULL, 'motex154', NULL, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 15:53:17', NULL, '2017-12-21 16:12:09', '182B27CBD326ABF8C8AEF9F254C94DBFAB8A7A42DF4E211F6C0EB0E577B1B31C1FA8D07F31561FC1C7B8E42C6CEA14EEEE6D92EE108D9981', 1, 1, 0, 'admin'),
 (26, 'MC5a3b6edc743a9', NULL, 'umagayagi', NULL, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 16:20:44', NULL, NULL, '182B27CBD326ABF8BF812732D5922F65AB8A7A42DF4E211FEE5305AFC24D7B2D1E41833C24AE58EF8596801CE30C17F1EE6D92EE108D9981', 1, 0, 0, NULL),
 (27, 'MC5a3b7bf45529e', NULL, 'dodopopogo1', NULL, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-21 17:16:36', NULL, '2017-12-21 17:31:38', '182B27CBD326ABF87C704B64B417EB1127FA018AC7425F69020DC58F6F6274739386519E1E3FBBD4B97379740F2D7AEDEE6D92EE108D9981', 0, 1, 0, NULL),
@@ -1588,8 +1605,7 @@ INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType
 (33, 'MC5a3cbf06a072e', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:15:02', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF85714B4484AC2175CB84B8EE0798768F42C0D3CA2AC525088D2385DA1BDD4AEA114052E61CDB6F7BAEE6D92EE108D9981', 1, 0, 1, NULL),
 (34, 'MC5a3cbf14b28c1', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:15:16', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF84FF6BA675A32840DB84B8EE0798768F4481FB84CA747DE6FD2385DA1BDD4AEA164C92E8F011BA467EE6D92EE108D9981', 1, 0, 1, NULL),
 (35, 'MC5a3cc1b79c842', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:26:31', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF82145D4F8AD6B5E6C14E50B764CA495CB42DADC40926574CA4902937BDD6F2824043EEDA554B08DD7EE6D92EE108D9981', 1, 0, 1, NULL),
-(36, 'MC5a409c99ad49f', NULL, 'ad1475', 'Billing', NULL, 'GS5a3cbb0d6b2e2', 1500, 'TWD', '2017-12-25 14:37:13', '2017-12-25 14:39:43', '2017-12-25 14:39:43', '182B27CBD326ABF842168A08873FCB83DAA209AE5E6CDD95B061B6B829B5BDB4050F7CB8864B2ECC012F2FF2E0D28982EE6D92EE108D9981', 1, 1, 0, NULL);
-
+(36, 'MC5a409c99ad49f', NULL, 'ad1475', 0, NULL, 'GS5a3cbb0d6b2e2', 1500, 'TWD', '2017-12-25 14:37:13', '2017-12-25 14:39:43', '2017-12-25 14:39:43', '182B27CBD326ABF842168A08873FCB83DAA209AE5E6CDD95B061B6B829B5BDB4050F7CB8864B2ECC012F2FF2E0D28982EE6D92EE108D9981', 1, 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1680,7 +1696,6 @@ INSERT INTO `product` (`id`, `product_id`, `name`, `amount`, `point`, `ratio`, `
 (8, 'GS5a3cbb0d6b2e2', '15000點', 1500, 15000, 10, 1000, 0, '2017-12-22 07:58:05', '2017-12-22 07:58:05', 'admin'),
 (9, 'GS5a3cbb8c7afa4', '聖誕節20000點再送10000', 2000, 20000, 10, 10000, 0, '2017-12-22 08:00:12', '2017-12-22 08:00:12', 'admin');
 
-
 --
 -- 觸發器 `product`
 --
@@ -1721,7 +1736,6 @@ INSERT INTO `product_log` (`id`, `product_id`, `status`, `product_name`, `conten
 (10, 'GS5a39d331a100f', 0, '10000點', '更新', 'admin', '2017-12-20 17:45:37'),
 (11, 'GS5a39d331a100f', 1, '10000點', '更新', 'admin', '2017-12-21 11:42:04');
 
-
 -- --------------------------------------------------------
 
 --
@@ -1746,7 +1760,6 @@ CREATE TABLE `rules` (
 --
 
 INSERT INTO `rules` (`r_id`, `r_name`, `r_depiction`, `r_agents`, `r_service`, `r_superadmin`, `r_system`, `r_admin`, `r_updatetime`, `r_createtime`) VALUES
-
 (2, '系統管理員', '最高權限管理組', 0, 0, 0, '', 'admin', '2017-12-20 16:38:25', '2016-02-02 18:36:21'),
 (3, '總代理人', '這個是總代理人帳號權限\r\n不可改', 0, 0, 0, '', 'admin', '2017-12-08 10:00:07', '2017-07-15 12:21:16'),
 (4, '財務', '調閱玩家資料與上下分操作', 1, 0, 0, '', 'admin', '2017-12-21 16:52:40', '2017-07-16 10:43:18'),
@@ -1844,7 +1857,6 @@ INSERT INTO `rules_auth` (`ra_id`, `r_id`, `ra_main_key`, `ra_fun_key`, `ra_auth
 (269, 2, 7, 1, 30, 'admin', '2017-12-20 16:38:25', '2017-12-20 16:38:25'),
 (270, 2, 7, 2, 30, 'admin', '2017-12-20 16:38:25', '2017-12-20 16:38:25'),
 (271, 2, 5, 2, 30, 'admin', '2017-12-20 16:38:25', '2017-12-20 16:38:25');
-
 
 --
 -- 已匯出資料表的索引
@@ -1978,14 +1990,13 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3412;
-
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3426;
 
 --
 -- 使用資料表 AUTO_INCREMENT `anchor`
 --
 ALTER TABLE `anchor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表 AUTO_INCREMENT `bank`
@@ -2004,7 +2015,6 @@ ALTER TABLE `bank_card`
 --
 ALTER TABLE `contribution`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit`
@@ -2048,7 +2058,6 @@ ALTER TABLE `member`
 ALTER TABLE `mycard`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
-
 --
 -- 使用資料表 AUTO_INCREMENT `mycard_log`
 --
@@ -2072,7 +2081,6 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 
 --
 -- 使用資料表 AUTO_INCREMENT `rules_auth`
