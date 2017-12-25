@@ -34,7 +34,7 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     $stmt->bindParam(':FacTradeSeq', $result['FacTradeSeq']);
     $stmt->execute();
 
-    $query_confirm = "SELECT AuthCode FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
+    $query_confirm = "SELECT AuthCode, member_id, product_id FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
     $stmt = $con->prepare($query_confirm);
     $stmt->bindParam(':FacTradeSeq', $result['FacTradeSeq']);
     $stmt->execute();
@@ -43,9 +43,9 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
 
 
 
-
-
     $authcode = $row['AuthCode'];
+    $mem_id = $row['member_id'];
+    $ProductId = $row['product_id'];
     $url = "https://test.b2b.mycard520.com.tw/MyBillingPay/api/PaymentConfirm?AuthCode=".$authcode;
     $ch = curl_init();
 
@@ -57,12 +57,27 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     $opt = json_decode($output);
     curl_close($ch);
 
+    //取得產品總點數
+    $query_point = "SELECT point, bonus FROM product WHERE product_id=:product_id";
+    $stmt = $con->prepare($query_point);
+    $stmt->bindParam(':product_id', $ProductId);
+    $stmt->execute();
+
+    $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+    $totalpoint = $rows['point']+$rows['bonus'];
+
 
     $query_payment = "UPDATE mycard SET PayResult=:PayResult ,Check_time=:Checktime WHERE FacTradeSeq=:FacTradeSeq";
     $stmt = $con->prepare($query_payment);
     $stmt->bindParam(':PayResult',$opt->ReturnCode);
     $stmt->bindParam(':Checktime', $datetime);
     $stmt->bindParam(':FacTradeSeq', $result['FacTradeSeq']);
+    $stmt->execute();
+
+    $query_point_transfer = "UPDATE member SET point=:point WHERE member_id=:member_id";
+    $stmt = $con->prepare($query_point_transfer);
+    $stmt->bindParam(':point', $totalpoint);
+    $stmt->bindParam(':member_id', $mem_id);
     $stmt->execute();
 
     echo json_encode($suc_resultback);
