@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-12-25 10:53:05
+-- 產生時間： 2017-12-25 14:40:50
 -- 伺服器版本: 10.1.28-MariaDB
 -- PHP 版本： 7.1.11
 
@@ -1130,7 +1130,82 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (3333, 'admin', 7, 1, 'id:9', '2017-12-22 16:00:12', '127.0.0.1', 4),
 (3334, 'admin', 5, 2, '列表', '2017-12-22 16:00:23', '127.0.0.1', 2),
 (3335, 'admin', 7, 1, '列表', '2017-12-22 16:02:33', '127.0.0.1', 2),
-(3336, 'admin', 5, 2, '列表', '2017-12-22 16:06:23', '127.0.0.1', 2);
+(3336, 'admin', 5, 2, '列表', '2017-12-22 16:06:23', '127.0.0.1', 2),
+(3337, 'admin', 7, 1, '列表', '2017-12-25 14:22:27', '127.0.0.1', 2),
+(3338, 'admin', 7, 2, '列表', '2017-12-25 14:22:30', '127.0.0.1', 2),
+(3339, 'admin', 5, 2, '列表', '2017-12-25 14:22:32', '127.0.0.1', 2),
+(3340, 'admin', 3, 1, '列表', '2017-12-25 14:22:39', '127.0.0.1', 2),
+(3341, 'admin', 3, 2, '列表', '2017-12-25 14:22:40', '127.0.0.1', 2),
+(3342, 'admin', 3, 3, '列表', '2017-12-25 14:22:40', '127.0.0.1', 2),
+(3343, 'admin', 3, 5, '列表', '2017-12-25 14:22:41', '127.0.0.1', 2),
+(3344, 'admin', 4, 4, '列表', '2017-12-25 14:22:43', '127.0.0.1', 2),
+(3345, 'admin', 4, 5, '列表', '2017-12-25 14:22:44', '127.0.0.1', 2),
+(3346, 'admin', 4, 6, '列表', '2017-12-25 14:22:45', '127.0.0.1', 2),
+(3347, 'admin', 4, 5, '列表', '2017-12-25 14:23:22', '127.0.0.1', 2),
+(3348, 'admin', 4, 6, '列表', '2017-12-25 14:23:24', '127.0.0.1', 2),
+(3349, 'admin', 4, 5, '列表', '2017-12-25 14:23:25', '127.0.0.1', 2),
+(3350, 'admin', 3, 2, '列表', '2017-12-25 14:23:27', '127.0.0.1', 2),
+(3351, 'admin', 3, 4, '列表', '2017-12-25 14:23:28', '127.0.0.1', 2),
+(3352, 'admin', 3, 5, '列表', '2017-12-25 14:23:31', '127.0.0.1', 2),
+(3353, 'admin', 4, 5, '列表', '2017-12-25 14:23:33', '127.0.0.1', 2),
+(3354, 'admin', 4, 6, '列表', '2017-12-25 14:28:44', '127.0.0.1', 2),
+(3355, 'admin', 4, 5, '列表', '2017-12-25 14:28:45', '127.0.0.1', 2),
+(3356, 'admin', 4, 6, '列表', '2017-12-25 14:28:46', '127.0.0.1', 2),
+(3357, 'admin', 4, 5, '列表', '2017-12-25 14:28:50', '127.0.0.1', 2),
+(3358, 'admin', 7, 1, '列表', '2017-12-25 14:28:52', '127.0.0.1', 2),
+(3359, 'admin', 7, 2, '列表', '2017-12-25 14:28:53', '127.0.0.1', 2),
+(3360, 'admin', 5, 2, '列表', '2017-12-25 14:28:54', '127.0.0.1', 2),
+(3361, 'admin', 4, 5, '列表', '2017-12-25 14:28:57', '127.0.0.1', 2),
+(3362, 'admin', 4, 6, '列表', '2017-12-25 14:28:58', '127.0.0.1', 2),
+(3363, 'admin', 4, 5, '列表', '2017-12-25 14:28:59', '127.0.0.1', 2),
+(3364, 'admin', 4, 6, '列表', '2017-12-25 14:29:05', '127.0.0.1', 2),
+(3365, 'admin', 4, 5, '列表', '2017-12-25 14:29:06', '127.0.0.1', 2),
+(3366, 'admin', 4, 6, '列表', '2017-12-25 14:29:08', '127.0.0.1', 2),
+(3367, 'admin', 4, 5, '列表', '2017-12-25 14:29:09', '127.0.0.1', 2),
+(3368, 'admin', 4, 6, '列表', '2017-12-25 14:29:09', '127.0.0.1', 2),
+(3369, 'admin', 4, 5, '列表', '2017-12-25 14:30:53', '127.0.0.1', 2),
+(3370, 'admin', 4, 6, '列表', '2017-12-25 14:30:54', '127.0.0.1', 2),
+(3371, 'admin', 6, 2, '列表', '2017-12-25 14:31:02', '127.0.0.1', 2),
+(3372, 'admin', 3, 3, '列表', '2017-12-25 14:32:15', '127.0.0.1', 2),
+(3373, 'admin', 3, 4, '列表', '2017-12-25 14:32:16', '127.0.0.1', 2),
+(3374, 'admin', 3, 5, '列表', '2017-12-25 14:32:17', '127.0.0.1', 2),
+(3375, 'admin', 4, 6, '列表', '2017-12-25 14:32:18', '127.0.0.1', 2),
+(3376, 'admin', 4, 5, '列表', '2017-12-25 14:32:21', '127.0.0.1', 2),
+(3377, 'admin', 4, 4, '列表', '2017-12-25 14:32:26', '127.0.0.1', 2),
+(3378, 'admin', 6, 2, '列表', '2017-12-25 14:32:29', '127.0.0.1', 2),
+(3379, 'admin', 6, 3, '列表', '2017-12-25 14:33:57', '127.0.0.1', 2),
+(3380, 'admin', 3, 1, '列表', '2017-12-25 14:33:59', '127.0.0.1', 2),
+(3381, 'admin', 3, 4, '列表', '2017-12-25 14:33:59', '127.0.0.1', 2),
+(3382, 'admin', 3, 3, '列表', '2017-12-25 14:34:01', '127.0.0.1', 2),
+(3383, 'admin', 3, 4, '列表', '2017-12-25 14:34:01', '127.0.0.1', 2),
+(3384, 'admin', 3, 3, '列表', '2017-12-25 14:34:03', '127.0.0.1', 2),
+(3385, 'admin', 3, 4, '列表', '2017-12-25 14:34:04', '127.0.0.1', 2),
+(3386, 'admin', 3, 5, '列表', '2017-12-25 14:34:06', '127.0.0.1', 2),
+(3387, 'admin', 3, 3, '列表', '2017-12-25 14:34:07', '127.0.0.1', 2),
+(3388, 'admin', 4, 5, '列表', '2017-12-25 14:34:09', '127.0.0.1', 2),
+(3389, 'admin', 4, 4, '列表', '2017-12-25 14:34:10', '127.0.0.1', 2),
+(3390, 'admin', 3, 3, '列表', '2017-12-25 14:34:12', '127.0.0.1', 2),
+(3391, 'admin', 3, 4, '列表', '2017-12-25 14:34:14', '127.0.0.1', 2),
+(3392, 'admin', 3, 5, '列表', '2017-12-25 14:36:32', '127.0.0.1', 2),
+(3393, 'admin', 3, 4, '列表', '2017-12-25 14:36:33', '127.0.0.1', 2),
+(3394, 'admin', 3, 5, '列表', '2017-12-25 14:36:34', '127.0.0.1', 2),
+(3395, 'admin', 3, 4, '列表', '2017-12-25 14:36:36', '127.0.0.1', 2),
+(3396, 'admin', 3, 3, '列表', '2017-12-25 14:36:38', '127.0.0.1', 2),
+(3397, 'admin', 3, 2, '列表', '2017-12-25 14:36:40', '127.0.0.1', 2),
+(3398, 'admin', 3, 3, '列表', '2017-12-25 14:36:41', '127.0.0.1', 2),
+(3399, 'admin', 3, 4, '列表', '2017-12-25 14:36:41', '127.0.0.1', 2),
+(3400, 'admin', 3, 5, '列表', '2017-12-25 14:36:42', '127.0.0.1', 2),
+(3401, 'admin', 7, 1, '列表', '2017-12-25 14:36:43', '127.0.0.1', 2),
+(3402, 'admin', 7, 2, '列表', '2017-12-25 14:36:44', '127.0.0.1', 2),
+(3403, 'admin', 5, 2, '列表', '2017-12-25 14:36:46', '127.0.0.1', 2),
+(3404, 'admin', 7, 1, '列表', '2017-12-25 14:36:47', '127.0.0.1', 2),
+(3405, 'admin', 4, 4, '列表', '2017-12-25 14:36:49', '127.0.0.1', 2),
+(3406, 'admin', 5, 2, '列表', '2017-12-25 14:36:50', '127.0.0.1', 2),
+(3407, 'admin', 6, 1, '列表', '2017-12-25 14:37:03', '127.0.0.1', 2),
+(3408, 'admin', 6, 2, '列表', '2017-12-25 14:37:04', '127.0.0.1', 2),
+(3409, 'admin', 5, 2, '列表', '2017-12-25 14:37:54', '127.0.0.1', 2),
+(3410, 'admin', 7, 1, '列表', '2017-12-25 14:38:37', '127.0.0.1', 2),
+(3411, 'admin', 5, 2, '列表', '2017-12-25 14:38:43', '127.0.0.1', 2);
 
 -- --------------------------------------------------------
 
@@ -1218,46 +1293,47 @@ CREATE TABLE `contribution` (
 
 CREATE TABLE `deposit` (
   `id` int(11) UNSIGNED NOT NULL COMMENT '交易編號',
-  `user_id` int(11) UNSIGNED NOT NULL COMMENT '玩家ID',
-  `game_id` int(11) NOT NULL COMMENT '遊戲ID',
+  `user_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '會員ID',
+  `platform_id` int(11) NOT NULL COMMENT '平台ID',
   `money` int(20) UNSIGNED NOT NULL COMMENT '金額',
   `deposit_pay_id` int(11) NOT NULL COMMENT '第三方支付ID',
-  `pay_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '第三方序號',
-  `pay_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '儲值ID(外部提供)',
+  `pay_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '第三方序號',
+  `pay_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '儲值ID(外部提供)',
   `status` tinyint(4) UNSIGNED NOT NULL DEFAULT '0' COMMENT '狀態  [0: 未審核] [1:完成] [2:拒絕][3:捨棄]',
-  `contents` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '備註',
+  `contents` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '備註',
   `created_time` datetime DEFAULT NULL,
   `updated_time` datetime DEFAULT NULL,
-  `last_manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `last_manager` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `check_time` datetime NOT NULL COMMENT '審核時間'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 資料表的匯出資料 `deposit`
 --
 
-INSERT INTO `deposit` (`id`, `user_id`, `game_id`, `money`, `deposit_pay_id`, `pay_code`, `pay_id`, `status`, `contents`, `created_time`, `updated_time`, `last_manager`, `check_time`) VALUES
-(90, 1, 5, 800, 1, '145896', NULL, 1, '', '2017-12-14 12:01:06', '2017-12-14 12:01:44', 'admin', '2017-12-14 12:01:41'),
-(91, 3, 4, 700, 1, '753698', NULL, 3, '', '2017-12-14 12:02:14', '2017-12-14 12:02:27', 'admin', '2017-12-14 12:02:27'),
-(92, 2, 5, 850, 1, '454113', NULL, 1, '', '2017-12-14 12:07:12', '2017-12-14 12:07:27', 'customer', '2017-12-14 12:07:25');
+INSERT INTO `deposit` (`id`, `user_id`, `platform_id`, `money`, `deposit_pay_id`, `pay_code`, `pay_id`, `status`, `contents`, `created_time`, `updated_time`, `last_manager`, `check_time`) VALUES
+(95, 'a571615', 5, 500, 0, NULL, NULL, 3, '', '2017-12-20 16:09:01', '2017-12-21 09:25:03', 'admin', '2017-12-20 17:04:36'),
+(96, 'a571615', 5, 700, 0, NULL, NULL, 2, '', '2017-12-20 16:29:42', '2017-12-21 09:29:31', 'admin', '2017-12-20 16:31:05'),
+(97, 'a571615', 5, 4852, 0, NULL, NULL, 0, '', '2017-12-20 16:39:45', '2017-12-21 09:24:57', 'admin', '0000-00-00 00:00:00'),
+(98, 'ad1475', 4, 780, 0, NULL, NULL, 1, '', '2017-12-20 17:32:03', '2017-12-21 11:02:01', 'admin', '2017-12-21 11:01:59');
 
 --
 -- 觸發器 `deposit`
 --
 DELIMITER $$
-CREATE TRIGGER `deposit_insert_trigger` AFTER INSERT ON `deposit` FOR EACH ROW insert into deposit_log(deposit_id, user_id,game_id,contents, last_manager) values (NEW.id, NEW.user_id, NEW.game_id, "新增", NEW.last_manager)
+CREATE TRIGGER `deposit_insert_trigger` AFTER INSERT ON `deposit` FOR EACH ROW insert into deposit_log(deposit_id, user_id,platform_id,contents, last_manager) values (NEW.id, NEW.user_id, NEW.platform_id, "新增", NEW.last_manager)
 $$
 DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `deposit_update_trigger` AFTER UPDATE ON `deposit` FOR EACH ROW IF (NEW.contents != OLD.contents AND NEW.status != OLD.status) 
     THEN
-    	INSERT INTO deposit_log(deposit_id, user_id,game_id,status,contents, last_manager) values (OLD.id, OLD.user_id, OLD.game_id, NEW.status, NEW.contents, new.last_manager); 
+    	INSERT INTO deposit_log(deposit_id, user_id,platform_id,status,contents, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id, NEW.status, NEW.contents, new.last_manager); 
  ELSEIF (NEW.contents != OLD.contents) 
     THEN
-    	INSERT INTO deposit_log(deposit_id, user_id,game_id,contents, last_manager) values (OLD.id, OLD.user_id, OLD.game_id ,NEW.contents, new.last_manager);
+    	INSERT INTO deposit_log(deposit_id, user_id,platform_id,contents, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id ,NEW.contents, new.last_manager);
     ELSEIF (NEW.status != OLD.status) 
     THEN
-    	INSERT INTO deposit_log(deposit_id, user_id,game_id,status, last_manager) values (OLD.id, OLD.user_id, OLD.game_id ,NEW.status, new.last_manager);
+    	INSERT INTO deposit_log(deposit_id, user_id,platform_id,status, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id ,NEW.status, new.last_manager);
 END IF
 $$
 DELIMITER ;
@@ -1271,8 +1347,8 @@ DELIMITER ;
 CREATE TABLE `deposit_log` (
   `id` int(11) NOT NULL,
   `deposit_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
+  `user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `platform_id` int(11) NOT NULL,
   `status` tinyint(4) DEFAULT NULL COMMENT '狀態  [0: 未審核] [1:完成] [2:拒絕][3:捨棄]',
   `contents` longtext COLLATE utf8_unicode_ci NOT NULL,
   `last_manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -1283,13 +1359,10 @@ CREATE TABLE `deposit_log` (
 -- 資料表的匯出資料 `deposit_log`
 --
 
-INSERT INTO `deposit_log` (`id`, `deposit_id`, `user_id`, `game_id`, `status`, `contents`, `last_manager`, `updated_time`) VALUES
-(231, 90, 1, 5, NULL, '新增', 'admin', '2017-12-14 12:01:06'),
-(232, 90, 1, 5, 1, '', 'admin', '2017-12-14 12:01:41'),
-(233, 91, 3, 4, NULL, '新增', 'admin', '2017-12-14 12:02:14'),
-(234, 91, 3, 4, 3, '', 'admin', '2017-12-14 12:02:23'),
-(235, 92, 2, 5, NULL, '新增', 'customer', '2017-12-14 12:07:12'),
-(236, 92, 2, 5, 1, '', 'money', '2017-12-14 12:07:25');
+INSERT INTO `deposit_log` (`id`, `deposit_id`, `user_id`, `platform_id`, `status`, `contents`, `last_manager`, `updated_time`) VALUES
+(241, 97, 'a571615', 5, NULL, '新增', 'admin', '2017-12-20 16:39:45'),
+(242, 98, 'ad1475', 4, NULL, '新增', 'admin', '2017-12-20 17:32:03'),
+(243, 98, 'ad1475', 4, 1, '', 'admin', '2017-12-21 11:01:59');
 
 -- --------------------------------------------------------
 
@@ -1319,8 +1392,8 @@ INSERT INTO `deposit_pay` (`id`, `pay_name`, `last_manager`, `created_time`) VAL
 
 CREATE TABLE `dispensing` (
   `id` int(11) NOT NULL,
-  `user_id` tinyint(10) DEFAULT NULL COMMENT '玩家id',
-  `game_id` tinyint(10) DEFAULT NULL COMMENT '遊戲id',
+  `user_id` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '會員id',
+  `platform_id` tinyint(10) DEFAULT NULL COMMENT '遊戲id',
   `bank_card_id` int(11) NOT NULL COMMENT '我方銀行卡號',
   `bank_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '玩家銀行',
   `num` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '對方卡號',
@@ -1337,11 +1410,12 @@ CREATE TABLE `dispensing` (
 -- 資料表的匯出資料 `dispensing`
 --
 
-INSERT INTO `dispensing` (`id`, `user_id`, `game_id`, `bank_card_id`, `bank_id`, `num`, `money`, `contents`, `last_manager`, `created_time`, `updated_time`, `is_pay`, `check_time`) VALUES
-(28, 1, 5, 2, '17', '785436', '790', '', 'admin', '2017-12-14 12:03:03', '2017-12-14 12:03:33', 2, '2017-12-14 12:03:33'),
-(29, 2, 5, 1, '16', '45461', '800', '', 'admin', '2017-12-14 12:03:59', '2017-12-14 12:04:16', 3, '2017-12-14 12:04:16'),
-(30, 2, 5, 2, '17', '589612', '700', '', 'customer', '2017-12-14 12:05:09', '2017-12-14 12:05:36', 2, '2017-12-14 12:05:36'),
-(31, 3, 4, 1, '16', '4125', '5889', '', 'money', '2017-12-14 12:05:57', '2017-12-14 12:06:11', 3, '2017-12-14 12:06:11');
+INSERT INTO `dispensing` (`id`, `user_id`, `platform_id`, `bank_card_id`, `bank_id`, `num`, `money`, `contents`, `last_manager`, `created_time`, `updated_time`, `is_pay`, `check_time`) VALUES
+(53, 'a571615', 5, 0, '17', '3464787', '785', '', 'admin', '2017-12-20 17:01:16', '2017-12-21 10:38:31', 3, '2017-12-21 10:38:31'),
+(55, 'ad1475', 4, 0, '17', '56546471532', '500', '', 'admin', '2017-12-21 09:41:11', '2017-12-21 10:45:06', 3, '2017-12-21 10:45:06'),
+(56, 'ad1475', 4, 0, '17', '5821', '400', '', 'admin', '2017-12-21 10:46:37', '2017-12-21 10:46:48', 3, '2017-12-21 10:46:48'),
+(57, 'ad1475', 4, 0, '17', '2487514', '550', '', 'admin', '2017-12-21 10:47:10', '2017-12-21 10:47:20', 3, '2017-12-21 10:47:20'),
+(58, 'a571615', 5, 2, '18', '2146584771', '26564', '', 'admin', '2017-12-21 10:47:31', '2017-12-21 10:57:00', 1, '2017-12-21 10:57:00');
 
 --
 -- 觸發器 `dispensing`
@@ -1349,18 +1423,18 @@ INSERT INTO `dispensing` (`id`, `user_id`, `game_id`, `bank_card_id`, `bank_id`,
 DELIMITER $$
 CREATE TRIGGER `dispensing_check_updated_trigger` AFTER UPDATE ON `dispensing` FOR EACH ROW IF (NEW.contents != OLD.contents AND NEW.is_pay != OLD.is_pay) 
     THEN
-    	INSERT INTO dispensing_log(dispensing_id, user_id,game_id,is_pay,contents, last_manager) values (OLD.id, OLD.user_id, OLD.game_id, NEW.is_pay, NEW.contents, new.last_manager); 
+    	INSERT INTO dispensing_log(dispensing_id, user_id,platform_id,is_pay,contents, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id, NEW.is_pay, NEW.contents, new.last_manager); 
  ELSEIF (NEW.contents != OLD.contents) 
     THEN
-    	INSERT INTO dispensing_log(dispensing_id, user_id,game_id,contents, last_manager) values (OLD.id, OLD.user_id, OLD.game_id ,NEW.contents, new.last_manager);
+    	INSERT INTO dispensing_log(dispensing_id, user_id,platform_id,contents, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id ,NEW.contents, new.last_manager);
     ELSEIF (NEW.is_pay != OLD.is_pay) 
     THEN
-    	INSERT INTO dispensing_log(dispensing_id, user_id,game_id,is_pay, last_manager) values (OLD.id, OLD.user_id, OLD.game_id ,NEW.is_pay, new.last_manager);
+    	INSERT INTO dispensing_log(dispensing_id, user_id,platform_id,is_pay, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id ,NEW.is_pay, new.last_manager);
 END IF
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `dispensing_insert_trigger` AFTER INSERT ON `dispensing` FOR EACH ROW insert into dispensing_log(dispensing_id, user_id,game_id,contents, last_manager) values (NEW.id, NEW.user_id, NEW.game_id, "新增", NEW.last_manager)
+CREATE TRIGGER `dispensing_insert_trigger` AFTER INSERT ON `dispensing` FOR EACH ROW insert into dispensing_log(dispensing_id, user_id,platform_id,contents,last_manager) values (NEW.id, NEW.user_id,NEW.platform_id,"新增",NEW.last_manager)
 $$
 DELIMITER ;
 
@@ -1373,8 +1447,8 @@ DELIMITER ;
 CREATE TABLE `dispensing_log` (
   `id` int(11) NOT NULL,
   `dispensing_id` int(11) NOT NULL COMMENT '出款項目的ID',
-  `user_id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
+  `user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `platform_id` int(11) NOT NULL,
   `is_pay` tinyint(4) DEFAULT NULL COMMENT '狀態  [0: 未審核] [1:完成] [2:拒絕][3:捨棄]',
   `contents` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '備註',
   `last_manager` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -1385,15 +1459,35 @@ CREATE TABLE `dispensing_log` (
 -- 資料表的匯出資料 `dispensing_log`
 --
 
-INSERT INTO `dispensing_log` (`id`, `dispensing_id`, `user_id`, `game_id`, `is_pay`, `contents`, `last_manager`, `updated_time`) VALUES
-(54, 28, 1, 5, NULL, '新增', 'admin', '2017-12-14 12:03:03'),
-(55, 28, 1, 5, 2, '', 'admin', '2017-12-14 12:03:30'),
-(56, 29, 2, 5, NULL, '新增', 'admin', '2017-12-14 12:03:59'),
-(57, 29, 2, 5, 3, '', 'admin', '2017-12-14 12:04:11'),
-(58, 30, 2, 5, NULL, '新增', 'customer', '2017-12-14 12:05:09'),
-(59, 30, 2, 5, 2, '', 'money', '2017-12-14 12:05:33'),
-(60, 31, 3, 4, NULL, '新增', 'customer', '2017-12-14 12:05:57'),
-(61, 31, 3, 4, 3, '', 'customer', '2017-12-14 12:06:07');
+INSERT INTO `dispensing_log` (`id`, `dispensing_id`, `user_id`, `platform_id`, `is_pay`, `contents`, `last_manager`, `updated_time`) VALUES
+(93, 53, 'a571615', 5, NULL, '新增', 'admin', '2017-12-20 17:01:16'),
+(94, 53, 'a571615', 5, 1, '', 'admin', '2017-12-20 17:01:44'),
+(95, 54, '', 0, NULL, '新增', 'admin', '2017-12-21 09:37:27'),
+(96, 55, 'ad1475', 4, NULL, '新增', 'admin', '2017-12-21 09:41:11'),
+(97, 55, 'ad1475', 4, 1, '', 'admin', '2017-12-21 09:58:24'),
+(98, 55, 'ad1475', 4, 0, '', 'admin', '2017-12-21 10:01:01'),
+(99, 55, 'ad1475', 4, 1, '', 'admin', '2017-12-21 10:01:10'),
+(100, 53, 'a571615', 5, 0, '', 'admin', '2017-12-21 10:11:15'),
+(101, 53, 'a571615', 5, 3, '', 'admin', '2017-12-21 10:11:20'),
+(102, 55, 'ad1475', 4, 2, '', 'admin', '2017-12-21 10:11:39'),
+(103, 55, 'ad1475', 4, 0, '', 'admin', '2017-12-21 10:42:30'),
+(104, 55, 'ad1475', 4, 1, '', 'admin', '2017-12-21 10:42:39'),
+(105, 55, 'ad1475', 4, 0, '', 'admin', '2017-12-21 10:43:23'),
+(106, 55, 'ad1475', 4, 1, '', 'admin', '2017-12-21 10:43:30'),
+(107, 55, 'ad1475', 4, 0, '', 'admin', '2017-12-21 10:44:40'),
+(108, 55, 'ad1475', 4, 1, '', 'admin', '2017-12-21 10:44:48'),
+(109, 55, 'ad1475', 4, 0, '', 'admin', '2017-12-21 10:45:01'),
+(110, 55, 'ad1475', 4, 3, '', 'admin', '2017-12-21 10:45:06'),
+(111, 56, 'ad1475', 4, NULL, '新增', 'admin', '2017-12-21 10:46:37'),
+(112, 56, 'ad1475', 4, 3, '', 'admin', '2017-12-21 10:46:48'),
+(113, 57, 'ad1475', 4, NULL, '新增', 'admin', '2017-12-21 10:47:10'),
+(114, 57, 'ad1475', 4, 3, '', 'admin', '2017-12-21 10:47:20'),
+(115, 58, 'a571615', 5, NULL, '新增', 'admin', '2017-12-21 10:47:31'),
+(116, 58, 'a571615', 5, 1, '', 'admin', '2017-12-21 10:47:48'),
+(117, 58, 'a571615', 5, 0, '', 'admin', '2017-12-21 10:48:15'),
+(118, 58, 'a571615', 5, 1, '', 'admin', '2017-12-21 10:48:22'),
+(119, 58, 'a571615', 5, 0, '', 'admin', '2017-12-21 10:56:50'),
+(120, 58, 'a571615', 5, 1, '', 'admin', '2017-12-21 10:56:56');
 
 -- --------------------------------------------------------
 
@@ -1420,7 +1514,8 @@ CREATE TABLE `member` (
 INSERT INTO `member` (`id`, `member_id`, `member_name`, `platform_id`, `email`, `point`, `created_time`, `updated_time`, `last_manager`) VALUES
 (3, 'a571615', '煞氣a小夫', 4, '', 0, '2017-12-19 08:26:13', '2017-12-19 07:36:01', 'admin'),
 (4, 'CMPunk33', '王曉明', 4, '', 0, '2017-12-19 08:26:17', '2017-12-19 07:37:30', 'admin'),
-(5, 'GGQbbb123', '李小小', 4, '', 0, '2017-12-19 07:58:19', '2017-12-19 07:58:19', 'admin');
+(5, 'GGQbbb123', '李小小', 4, '', 0, '2017-12-19 07:58:19', '2017-12-19 07:58:19', 'admin'),
+(6, 'ad1475', '小花', 4, 'aaa@bbb.com', 16000, '2017-12-25 06:39:44', '2017-12-20 01:30:21', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1479,7 +1574,8 @@ INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType
 (32, 'MC5a3cb8c115cbe', NULL, 'dodopopogo9', NULL, NULL, 'GS5a39d331a100f', 150, 'TWD', '2017-12-22 15:48:17', '2017-12-22 16:06:06', '2017-12-22 16:06:06', '182B27CBD326ABF8A8356BECC964D842B84B8EE0798768F40B5109BC5A304A1DA129550981AA847893593873E979A57DEE6D92EE108D9981', 1, 1, 0, NULL),
 (33, 'MC5a3cbf06a072e', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:15:02', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF85714B4484AC2175CB84B8EE0798768F42C0D3CA2AC525088D2385DA1BDD4AEA114052E61CDB6F7BAEE6D92EE108D9981', 1, 0, 1, NULL),
 (34, 'MC5a3cbf14b28c1', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:15:16', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF84FF6BA675A32840DB84B8EE0798768F4481FB84CA747DE6FD2385DA1BDD4AEA164C92E8F011BA467EE6D92EE108D9981', 1, 0, 1, NULL),
-(35, 'MC5a3cc1b79c842', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:26:31', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF82145D4F8AD6B5E6C14E50B764CA495CB42DADC40926574CA4902937BDD6F2824043EEDA554B08DD7EE6D92EE108D9981', 1, 0, 1, NULL);
+(35, 'MC5a3cc1b79c842', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:26:31', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF82145D4F8AD6B5E6C14E50B764CA495CB42DADC40926574CA4902937BDD6F2824043EEDA554B08DD7EE6D92EE108D9981', 1, 0, 1, NULL),
+(36, 'MC5a409c99ad49f', NULL, 'ad1475', 'Billing', NULL, 'GS5a3cbb0d6b2e2', 1500, 'TWD', '2017-12-25 14:37:13', '2017-12-25 14:39:43', '2017-12-25 14:39:43', '182B27CBD326ABF842168A08873FCB83DAA209AE5E6CDD95B061B6B829B5BDB4050F7CB8864B2ECC012F2FF2E0D28982EE6D92EE108D9981', 1, 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1860,7 +1956,7 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3337;
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3412;
 
 --
 -- 使用資料表 AUTO_INCREMENT `anchor`
@@ -1890,13 +1986,13 @@ ALTER TABLE `contribution`
 -- 使用資料表 AUTO_INCREMENT `deposit`
 --
 ALTER TABLE `deposit`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '交易編號', AUTO_INCREMENT=93;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '交易編號', AUTO_INCREMENT=99;
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit_log`
 --
 ALTER TABLE `deposit_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit_pay`
@@ -1908,25 +2004,25 @@ ALTER TABLE `deposit_pay`
 -- 使用資料表 AUTO_INCREMENT `dispensing`
 --
 ALTER TABLE `dispensing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- 使用資料表 AUTO_INCREMENT `dispensing_log`
 --
 ALTER TABLE `dispensing_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- 使用資料表 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '使用者編號', AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '使用者編號', AUTO_INCREMENT=7;
 
 --
 -- 使用資料表 AUTO_INCREMENT `mycard`
 --
 ALTER TABLE `mycard`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- 使用資料表 AUTO_INCREMENT `mycard_log`
