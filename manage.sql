@@ -58,9 +58,11 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
+
 (1, '', '', 1, 0, 1, 0, 'a4f7bc965f9d6a176176f3769c3e2f811513838627725292r8ni95hrk9mrvhefl6jqfms6p', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-21 14:43:47', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '1048851cd37e6659eed5e669579eab921513742759975002r8ni95hrk9mrvhefl6jqfms6p', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-20 12:05:59', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db7b229025b7bf9e5c8bb2e1ea49518615132243199432qll4bu2p5e7v5vcr66igsi4kkd', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:05:19', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
+
 
 -- --------------------------------------------------------
 
@@ -1285,6 +1287,16 @@ CREATE TABLE `contribution` (
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+--
+-- 資料表的匯出資料 `contribution`
+--
+
+INSERT INTO `contribution` (`id`, `anchor_id`, `member_id`, `point`, `contents`, `created_date`) VALUES
+(1, 1, 'ad1475', 500, '', '2017-12-25 12:28:02'),
+(2, 2, 'a571615', 50, '', '2017-12-25 13:55:19');
+
+
 -- --------------------------------------------------------
 
 --
@@ -1528,7 +1540,7 @@ CREATE TABLE `mycard` (
   `FacTradeSeq` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `ServerId` int(11) DEFAULT NULL,
   `member_id` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `PaymentType` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `PaymentType` int(11) DEFAULT NULL,
   `ItemCode` int(11) DEFAULT NULL,
   `product_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Amount` int(11) NOT NULL,
@@ -1546,6 +1558,7 @@ CREATE TABLE `mycard` (
 --
 -- 資料表的匯出資料 `mycard`
 --
+
 
 INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType`, `ItemCode`, `product_id`, `Amount`, `Currency`, `Created_date`, `Pay_time`, `Check_time`, `AuthCode`, `ReturnCode`, `PayResult`, `Redeposit`, `last_manager`) VALUES
 (3, '780582', NULL, 'i12483254', NULL, NULL, 'GW8102774', 1390, 'TWD', '2017-12-12 17:12:43', '2017-12-14 10:16:32', '2017-12-15 17:41:54', '2D778DD7201E2CDD0B5BBFCD5A66D22AA69D7697DD8D786C4A40C055A83CB6B4706FB0B52DA93E900A673CF3CCF94770', 1, 1, 0, 'admin'),
@@ -1576,6 +1589,7 @@ INSERT INTO `mycard` (`id`, `FacTradeSeq`, `ServerId`, `member_id`, `PaymentType
 (34, 'MC5a3cbf14b28c1', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:15:16', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF84FF6BA675A32840DB84B8EE0798768F4481FB84CA747DE6FD2385DA1BDD4AEA164C92E8F011BA467EE6D92EE108D9981', 1, 0, 1, NULL),
 (35, 'MC5a3cc1b79c842', NULL, 'puppydoll', NULL, NULL, 'GS5a39d331a100f', 1000, 'TWD', '2017-12-22 16:26:31', '2017-12-25 09:54:04', '2017-12-25 09:54:04', '182B27CBD326ABF82145D4F8AD6B5E6C14E50B764CA495CB42DADC40926574CA4902937BDD6F2824043EEDA554B08DD7EE6D92EE108D9981', 1, 0, 1, NULL),
 (36, 'MC5a409c99ad49f', NULL, 'ad1475', 'Billing', NULL, 'GS5a3cbb0d6b2e2', 1500, 'TWD', '2017-12-25 14:37:13', '2017-12-25 14:39:43', '2017-12-25 14:39:43', '182B27CBD326ABF842168A08873FCB83DAA209AE5E6CDD95B061B6B829B5BDB4050F7CB8864B2ECC012F2FF2E0D28982EE6D92EE108D9981', 1, 1, 0, NULL);
+
 
 -- --------------------------------------------------------
 
@@ -1666,11 +1680,16 @@ INSERT INTO `product` (`id`, `product_id`, `name`, `amount`, `point`, `ratio`, `
 (8, 'GS5a3cbb0d6b2e2', '15000點', 1500, 15000, 10, 1000, 0, '2017-12-22 07:58:05', '2017-12-22 07:58:05', 'admin'),
 (9, 'GS5a3cbb8c7afa4', '聖誕節20000點再送10000', 2000, 20000, 10, 10000, 0, '2017-12-22 08:00:12', '2017-12-22 08:00:12', 'admin');
 
+
 --
 -- 觸發器 `product`
 --
 DELIMITER $$
 CREATE TRIGGER `product_check_updated_trigger` AFTER UPDATE ON `product` FOR EACH ROW INSERT INTO product_log (product_id, status, product_name,contents, last_manager) VALUES (OLD.product_id, NEW.status, NEW.name, "更新", NEW.last_manager)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `product_insert_trigger` AFTER INSERT ON `product` FOR EACH ROW INSERT INTO product_log (product_id, status, product_name,contents, last_manager) VALUES (NEW.product_id, NEW.status, NEW.name, "新增", NEW.last_manager)
 $$
 DELIMITER ;
 
@@ -1702,6 +1721,7 @@ INSERT INTO `product_log` (`id`, `product_id`, `status`, `product_name`, `conten
 (10, 'GS5a39d331a100f', 0, '10000點', '更新', 'admin', '2017-12-20 17:45:37'),
 (11, 'GS5a39d331a100f', 1, '10000點', '更新', 'admin', '2017-12-21 11:42:04');
 
+
 -- --------------------------------------------------------
 
 --
@@ -1726,10 +1746,11 @@ CREATE TABLE `rules` (
 --
 
 INSERT INTO `rules` (`r_id`, `r_name`, `r_depiction`, `r_agents`, `r_service`, `r_superadmin`, `r_system`, `r_admin`, `r_updatetime`, `r_createtime`) VALUES
+
 (2, '系統管理員', '最高權限管理組', 0, 0, 0, '', 'admin', '2017-12-20 16:38:25', '2016-02-02 18:36:21'),
 (3, '總代理人', '這個是總代理人帳號權限\r\n不可改', 0, 0, 0, '', 'admin', '2017-12-08 10:00:07', '2017-07-15 12:21:16'),
-(4, '財務', '調閱玩家資料與上下分操作', 1, 0, 0, '', 'admin', '2017-12-11 14:19:30', '2017-07-16 10:43:18'),
-(5, '行銷客服', '觀看基本資訊與出入款申請', 0, 1, 0, '', 'admin', '2017-12-20 12:05:46', '2017-07-20 13:03:09');
+(4, '財務', '調閱玩家資料與上下分操作', 1, 0, 0, '', 'admin', '2017-12-21 16:52:40', '2017-07-16 10:43:18'),
+(5, '行銷客服', '觀看基本資訊與出入款申請', 0, 1, 0, '', 'admin', '2017-12-21 16:53:18', '2017-07-20 13:03:09');
 
 -- --------------------------------------------------------
 
@@ -1823,6 +1844,7 @@ INSERT INTO `rules_auth` (`ra_id`, `r_id`, `ra_main_key`, `ra_fun_key`, `ra_auth
 (269, 2, 7, 1, 30, 'admin', '2017-12-20 16:38:25', '2017-12-20 16:38:25'),
 (270, 2, 7, 2, 30, 'admin', '2017-12-20 16:38:25', '2017-12-20 16:38:25'),
 (271, 2, 5, 2, 30, 'admin', '2017-12-20 16:38:25', '2017-12-20 16:38:25');
+
 
 --
 -- 已匯出資料表的索引
@@ -1958,6 +1980,7 @@ ALTER TABLE `admin`
 ALTER TABLE `admin_log`
   MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3412;
 
+
 --
 -- 使用資料表 AUTO_INCREMENT `anchor`
 --
@@ -1980,7 +2003,8 @@ ALTER TABLE `bank_card`
 -- 使用資料表 AUTO_INCREMENT `contribution`
 --
 ALTER TABLE `contribution`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 
 --
 -- 使用資料表 AUTO_INCREMENT `deposit`
@@ -2024,6 +2048,7 @@ ALTER TABLE `member`
 ALTER TABLE `mycard`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
+
 --
 -- 使用資料表 AUTO_INCREMENT `mycard_log`
 --
@@ -2047,6 +2072,7 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 
 --
 -- 使用資料表 AUTO_INCREMENT `rules_auth`

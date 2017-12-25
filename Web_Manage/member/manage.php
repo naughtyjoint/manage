@@ -19,9 +19,6 @@ try {
         }
         /* ## coder [bindData] --> ## */
         $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']].' | '.$langary_manage['updatetime'].' '.$row[$colname['update_time']];
-        /* ## coder [bindData] <-- ## */
-        /* ## coder [beforeBind] --> ## */
-        /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
 
@@ -96,7 +93,7 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['member_id']); ?>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
+                                    <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>
                                         <div class="col-sm-5 controls">
