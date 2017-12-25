@@ -23,6 +23,7 @@ $col[] = array('column' => $colname['point'], 'name' => '積分 ', 'order' => fa
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '200');
 $col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
+$col[]=array('column'=>$colname['id'],'name'=>'打賞紀錄','order'=>false,'width'=>'80','classname'=>'text-center');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -127,6 +128,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['update_time'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../anchor_log/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

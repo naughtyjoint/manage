@@ -16,13 +16,13 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '100');
-$col[] = array('column' => 'uid', 'name' => '玩家ID', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname_m['name'], 'name' => '玩家名稱', 'order' => true, 'width' => '100');
+$col[] = array('column' => 'uid', 'name' => '會員ID', 'order' => true, 'width' => '100');
+$col[] = array('column' => $colname_m['name'], 'name' => '會員名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname_p['name'], 'name' => '遊戲名稱', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_b['name'], 'name' => '出款銀行卡', 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['bank_id'], 'name' => '玩家銀行', 'order' => false, 'width' => '100');
-$col[] = array('column' => $colname['num'], 'name' => '玩家銀行卡號', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['bank_id'], 'name' => '會員銀行', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['num'], 'name' => '會員銀行卡號', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['is_pay'], 'name' => '狀態', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['create_time'], 'name' => '申請時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['check_time'], 'name' => '審核時間', 'order' => true, 'width' => '120');
