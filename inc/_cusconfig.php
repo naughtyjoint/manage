@@ -12,7 +12,7 @@ $DB = "dg02_old";*/
 $WebDeployLocation = dirname(__FILE__);
 $WebServerHostName = gethostname();
 
-$session_domain = "";
+$session_domain = "localhost";
 $HS = "127.0.0.1";
 $ID = "root";
 $PW = "";

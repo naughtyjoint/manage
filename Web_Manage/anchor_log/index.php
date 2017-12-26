@@ -16,7 +16,7 @@ $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_a['name'], 'name' => '主播名稱', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_m['name'], 'name' => '會員名稱', 'order' => false, 'width' => '100');
-$col[] = array('column' => $colname['point'], 'name' => '打賞金額', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['point'], 'name' => '打賞點數', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['contents'], 'name' => '備註', 'order' => false, 'width' => '120');
 $col[] = array('column' => $colname['created_date'], 'name' => '申請時間', 'order' => true, 'width' => '120');
 
