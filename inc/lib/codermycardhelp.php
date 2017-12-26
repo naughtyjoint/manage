@@ -89,6 +89,7 @@ class coderMycardHelp {
             'pay_code' => $FacTradeSeq,
             'pay_id' => null,
             'status' => 1,
+            'updated_time' => $datetime,
             'check_time' => $datetime
         );
         //插入入款管理資料表
