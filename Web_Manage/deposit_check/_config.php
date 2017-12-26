@@ -18,7 +18,10 @@ $colname_m=coderDBConf::$col_member;
 $table_p=coderDBConf::$platform; //遊戲
 $colname_p=coderDBConf::$col_platform;
 
+$table_product=coderDBConf::$product; //遊戲
+$colname_product=coderDBConf::$col_product;
 
+$product_array = class_mycard::getList_deposit(); //產品
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';

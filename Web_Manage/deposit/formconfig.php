@@ -6,7 +6,9 @@ $fobj[$colname["contents"]]=array("type"=>"textarea","name"=>"備註","column"=>
 
 $fobj[$colname["user_id"]]=array("type"=>"hidden","name"=>"會員","column"=>$colname["user_id"],"sql"=>false);
 $fobj[$colname["platform_id"]]=array("type"=>"hidden","name"=>"平台名稱","column"=>$colname["platform_id"],"sql"=>false);
-
+$fobj[$colname['product_id']] = array(
+    'type' => 'select', 'name' => '購買產品包', 'column' => $colname['product_id'], 'ary' => $product_array,"sql"=>false
+);
 $fobj[$colname["money"]]=array("type"=>"text","name"=>"入款金額","column"=>$colname["money"],'placeholder'=>'請輸入金額',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
 $fobj[$colname["create_time"]]=array("type"=>"hidden","name"=>"申請時間","column"=>$colname["create_time"],"sql"=>false);
 

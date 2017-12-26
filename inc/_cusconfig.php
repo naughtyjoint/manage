@@ -12,10 +12,10 @@ $DB = "dg02_old";*/
 $WebDeployLocation = dirname(__FILE__);
 $WebServerHostName = gethostname();
 
-$session_domain = "www.pkfun.xyz";
+$session_domain = "";
 $HS = "127.0.0.1";
-$ID = "pkbar";
-$PW = "ZwxhAV8e";
+$ID = "root";
+$PW = "";
 $DB = "manage";
 
 $HS_read = "127.0.0.1";

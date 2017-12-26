@@ -23,19 +23,14 @@ try {
         throw new Exception($msg);
     }
 
-    //多圖圖片
-    //$picgroup = $data[$colname['picgroup']];
-    //$data[$colname['picgroup']] = json_encode($picgroup);
-
-    /* ## coder [beforeModify] --> ## */
-    /* ## coder [beforeModify] <-- ## */
-
     $nowtime = datetime();
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['update_time']] = $nowtime;
 
     $nowstatus = post("nowstatus");
-   
+    $point = $colname_product['update_time'];
+    
+
     if ($method == 'edit') {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if(!empty($row[$colname['status']])){
@@ -48,9 +43,9 @@ try {
     } else {
         $data[$colname['user_id']] = post($colname['user_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);
-        $data[$colname['money']] = post($colname['money'],1);
+        $data[$colname['product_id']] = post($colname['product_id'],1);
         $data[$colname['create_time']] = $nowtime;
-        //$data[$colname['type']] = $_type;
+        $data[$colname['money']] = $colname_product['amount'];
         $id = $db->query_insert($table, $data);
     }
 

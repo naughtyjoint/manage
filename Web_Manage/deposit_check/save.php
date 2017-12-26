@@ -34,7 +34,7 @@ try {
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['update_time']] = $nowtime;
     $data[$colname['check_time']]= $nowtime;    
-
+    $data[$colname['product_id']] = post($colname['product_id'],1);
     $nowstatus = post("nowstatus");
     if ($method == 'edit') {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
@@ -44,26 +44,12 @@ try {
  
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
     } else {
-        /* ## coder [indInit] --> ## */
-        //$data[$colname["ind"]]=coderListOrderHelp::getMaxInd($table,$colname["ind"]);
-        /* ## coder [indInit] <-- ## */
-        /* ## coder [insert] --> ## */
-        /* ## coder [insert] <-- ## */
-
         $data[$colname['user_id']] = post($colname['user_id'],1);
-        // if(!class_player::getList_agidone($pid,$data[$colname['user_id']])){
-        //     throw new Exception("玩家錯誤!");
-        // }
-
-
-        //$data[$colname['amount']] = post($colname['amount'],1);
         $data[$colname['money']] = post($colname['money'],1);
-        //$data[$colname['cash']] = post($colname['cash'],1);
-        //$data[$colname['paycash']] = post($colname['paycash'],1);
         $data[$colname['company']] = post($colname['company'],1);
         $data[$colname['method']] = post($colname['method'],1);
+        
         $data[$colname['create_time']] = $nowtime;
-        //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);
     }
 
