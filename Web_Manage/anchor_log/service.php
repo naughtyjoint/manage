@@ -13,7 +13,7 @@ try{
 	$sHelp->select="t.*,m.`{$colname_m['member_id']}` as uid,m.`{$colname_m['name']}`
 					,a.`{$colname_a['id']}` as author_name,a.`{$colname_a['name']}`";
 	$sHelp->table=$table." t
-				  LEFT JOIN $table_m m ON m.`{$colname_m['id']}` = t.`{$colname['member_id']}`
+				  LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['member_id']}`
 				  LEFT JOIN $table_a a ON a.`{$colname_a['id']}` = t.`{$colname['anchor_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
