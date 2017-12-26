@@ -70,23 +70,6 @@ if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"]))
 
     $stmt->execute();
 
-    $query_deposit = "INSERT INTO deposit SET member_id=:FacTradeSeq , ServerId=:ServerId, member_id=:member_id, PaymentType=:PaymentType, ItemCode=:ItemCode, product_id=:product_id, Amount=:Amount, Currency=:Currency, Created_date=:Created_date, AuthCode=:AuthCode, ReturnCode=:ReturnCode";
-
-    $stmt = $con->prepare($query);
-
-    $stmt->bindParam(':FacTradeSeq', $FacTradeSeq);
-    $stmt->bindParam(':ServerId', $ServerId);
-    $stmt->bindParam(':member_id',$CustomerId);
-    $stmt->bindParam(':PaymentType',$PaymentType);
-    $stmt->bindParam(':ItemCode',$ItemCode);
-    $stmt->bindParam(':product_id',$ProductName);
-    $stmt->bindParam(':Amount',$Amount);
-    $stmt->bindParam(':Currency',$Currency);
-    $stmt->bindParam(':Created_date',$Createdate);
-    $stmt->bindParam(':AuthCode',$AuthCode);
-    $stmt->bindParam(':ReturnCode',$ReturnCode);
-
-    $stmt->execute();
 
     header("Location: ".$AuthUrl);
 }

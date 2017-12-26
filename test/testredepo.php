@@ -6,7 +6,7 @@ $DATA = array(
     "FacServiceId" => "luckyCL",
     "TotalNum" => 4,
     "FacTradeSeq" =>
-    ["MC5a41f04e1638b","MC5a41f07810adf"]
+    ["MC5a4210c3dd743","MC5a4210e5c2f51"]
     );
 
 $DATA_jencode = json_encode($DATA);

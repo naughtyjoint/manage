@@ -2,11 +2,11 @@
 include_once('_config.php');
 $opt = json_decode(file_get_contents('php://input'));
 
-$ReturnCode = $opt->ReturnCode;
-$ReturnMsg = $opt->ReturnMsg;
-$FacServiceId = $opt->FacServiceId;
-$TotalNum = $opt->TotalNum;
-$FacTradeSeq = $opt->FacTradeSeq;
+$ReturnCode = "1";//$opt->ReturnCode;
+$ReturnMsg = "QueryOK";//$opt->ReturnMsg;
+$FacServiceId = "luckyCL";//$opt->FacServiceId;
+$TotalNum = 2;//$opt->TotalNum;
+$FacTradeSeq = ["MC5a4210c3dd743","MC5a4210e5c2f51"];//$opt->FacTradeSeq;
 
 
 
@@ -53,6 +53,7 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
             $mycard->MycardProcess($data);
 
         }
+        $db->close();
 
     }
     echo json_encode($suc_resultback);

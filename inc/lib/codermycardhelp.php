@@ -18,9 +18,9 @@ class coderMycardHelp {
     public $Hash = "";     //驗證碼
     public $mem_id = "";
     public $datetime = null;
-    public $table_mycard = "mycard";
-    public $table_member = "member";
-    public $table_deposit = "deposit";
+    public $table_mycard = "";
+    public $table_member = "";
+//    public $table_deposit = "";
 
 
     public function __construct()
@@ -47,7 +47,7 @@ class coderMycardHelp {
         //更新交易狀態
         $db->query_update($table_mycard, $data, " FacTradeSeq='$FacTradeSeq'");
 
-        $query_confirm = "SELECT AuthCode, member_id, product_id FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
+        $query_confirm = "SELECT AuthCode, member_id, product_id, Amount FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
         $row = $db->query_first($query_confirm,[':FacTradeSeq' => $FacTradeSeq]);
 
         //mycard請款
@@ -56,9 +56,10 @@ class coderMycardHelp {
 
         //取得會員現有點數
         $mem_id = $row['member_id'];
-        $query_member = "SELECT point FROM member WHERE member_id=:member_id";
+        $query_member = "SELECT point,platform_id FROM member WHERE member_id=:member_id";
         $member_row = $db->query_first($query_member,[':member_id' => $mem_id]);
         $orig_point = $member_row['point'];
+        $platform_id = $member_row['platform_id'];
 
 
         //取得產品總點數
@@ -79,7 +80,21 @@ class coderMycardHelp {
         //更新會員點數
         $db->query_update($table_member,['point' => $totalpoint]," member_id='$mem_id'");
 
-//        $db->close();
+        $table_deposit = "deposit";
+        $depo_data = array(
+            'member_id' => $mem_id,
+            'platform_id' => $platform_id,
+            'money' => $row["Amount"],
+            'deposit_pay_id' => 1,
+            'pay_code' => $FacTradeSeq,
+            'pay_id' => null,
+            'status' => 1,
+            'check_time' => $datetime
+        );
+        //插入入款管理資料表
+        $db->query_insert($table_deposit,$depo_data);
+
+
     }
 
     //取得mycard交易授權碼
