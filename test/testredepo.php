@@ -4,9 +4,9 @@ $DATA = array(
     "ReturnCode" => "1",
     "ReturnMsg" => "QueryOK",
     "FacServiceId" => "luckyCL",
-    "TotalNum" => 3,
+    "TotalNum" => 4,
     "FacTradeSeq" =>
-    ["MC5a407e3c1c731","MC5a407e6d10742","MC5a407e959388f"]
+    ["MC5a41f04e1638b","MC5a41f07810adf"]
     );
 
 $DATA_jencode = json_encode($DATA);

@@ -20,6 +20,7 @@ class coderMycardHelp {
     public $datetime = null;
     public $table_mycard = "mycard";
     public $table_member = "member";
+    public $table_deposit = "deposit";
 
 
     public function __construct()
@@ -31,11 +32,13 @@ class coderMycardHelp {
 
         $datetime = date('Y-m-d H:i:s',time());
         extract($ary);
+        if(!isset($Redeposit)) $Redeposit=0;
         $db = Database::DB();
         $data = array(
             'ReturnCode' => $ReturnCode,
             'PaymentType' => $PaymentType,
-            'Pay_time' => $datetime
+            'Pay_time' => $datetime,
+            'Redeposit' => $Redeposit
         );
         $table_mycard = 'mycard';
         $table_member = 'member';
@@ -76,9 +79,10 @@ class coderMycardHelp {
         //更新會員點數
         $db->query_update($table_member,['point' => $totalpoint]," member_id='$mem_id'");
 
-        $db->close();
+//        $db->close();
     }
 
+    //取得mycard交易授權碼
     public function getAuthCode($ary){
 
         extract($ary);
