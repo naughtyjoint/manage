@@ -10,6 +10,7 @@ $fobj[$colname['product_id']] = array(
     'type' => 'select', 'name' => '購買產品包', 'column' => $colname['product_id'], 'ary' => $product_array,"sql"=>false
 );
 $fobj[$colname["money"]]=array("type"=>"text","name"=>"入款金額","column"=>$colname["money"],'placeholder'=>'請輸入金額',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
+$fobj[$colname["point"]]=array("type"=>"text","name"=>"點數","column"=>$colname["point"],'placeholder'=>'請輸入點數',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
 $fobj[$colname["create_time"]]=array("type"=>"hidden","name"=>"申請時間","column"=>$colname["create_time"],"sql"=>false);
 
 $fhelp->Bind($fobj);

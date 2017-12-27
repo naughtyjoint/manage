@@ -149,9 +149,9 @@ if ($errorhandle->isException()) {
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['platform_id']) ?> </label>
                                             <div class="col-sm-3 " >
-                                            <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
+                                                <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
                                                 <?php
-                                                    echo class_platform::getName($row[$colname['platform_id']]);
+                                                        echo class_mycard::getName($row[$colname['product_id']]);
                                                 ?>
                                                 </div>
                                             </div>
@@ -183,7 +183,23 @@ if ($errorhandle->isException()) {
                                                 ?>
                                             </div>
                                         </div>
-
+                                        <?php
+                                            if(isset($row[$colname['point']])) {
+                                        ?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['point']) ?> </label>
+                                            <div class="col-sm-3 " >
+                                            <div class="<?php echo (isset($row[$colname['point']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['point']]))?'style="text-align: left;"':''?>>
+                                                <?php
+                                                    echo $row[$colname['point']];
+                                                ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php 
+                                            }
+                                        ?>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>

@@ -170,7 +170,7 @@ if ($errorhandle->isException()) {
                                             }
                                          }
                                     </script>                                       
-                                    <div class="form-group" id="money-group" style="display:none;">
+                                    <div class="form-group" id="money-group" >
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
                                         <div class="col-sm-3 <?php echo (isset($row[$colname['money']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['money']]))?'style="text-align: left;"':''?>>
@@ -185,7 +185,23 @@ if ($errorhandle->isException()) {
                                             ?>
                                         </div>
                                     </div>
-                                       
+                                    <?php
+                                            if(isset($row[$colname['point']])) {
+                                        ?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['point']) ?> </label>
+                                            <div class="col-sm-3 " >
+                                            <div class="<?php echo (isset($row[$colname['point']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['point']]))?'style="text-align: left;"':''?>>
+                                                <?php
+                                                    echo $row[$colname['point']];
+                                                ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php 
+                                            }
+                                        ?>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
