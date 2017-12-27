@@ -71,7 +71,6 @@ $db->close();
             </ul>
         </div>
         <!-- END Breadcrumb -->
-
         <!-- BEGIN Main Content -->
         <div class="row">
             <div class="col-md-12">

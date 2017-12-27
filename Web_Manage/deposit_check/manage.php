@@ -161,6 +161,16 @@ if ($errorhandle->isException()) {
                                         ?>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['product_id']) ?> </label>
+                                            <div class="col-sm-3 <?php echo (isset($row[$colname['product_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['product_id']]))?'style="text-align: left;"':''?>>
+                                                <?php
+                                                    echo $fhelp->drawForm($colname['product_id']);
+                                                ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
                                             <div class="col-sm-3 <?php echo (isset($row[$colname['money']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['money']]))?'style="text-align: left;"':''?>>
                                                 <?php

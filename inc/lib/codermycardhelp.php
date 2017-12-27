@@ -84,6 +84,7 @@ class coderMycardHelp {
         $depo_data = array(
             'member_id' => $mem_id,
             'platform_id' => $platform_id,
+            'product_id' => $ProductId,
             'money' => $row["Amount"],
             'deposit_pay_id' => 1,
             'pay_code' => $FacTradeSeq,

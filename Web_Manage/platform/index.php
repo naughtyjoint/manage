@@ -64,7 +64,6 @@ $db->close();
                     <span class="divider"><i class="icon-angle-right"></i></span>
                 </li>
                 <?php echo $mtitle ?>
-
             </ul>
         </div>
         <!-- END Breadcrumb -->

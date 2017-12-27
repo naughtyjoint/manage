@@ -33,7 +33,7 @@ try{
 	$rows=$sHelp->getList();
 	//print_r($rows);exit;
 	for($i=0;$i<count($rows);$i++){
-	}
+	} 
 	
 	$result['result']=true;
 	$result['data']=$rows;

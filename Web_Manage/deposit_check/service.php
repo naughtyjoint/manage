@@ -7,12 +7,17 @@ try{
 	
 	$db = Database::DB();
 	$sHelp=new coderSelectHelp($db);
-	$sHelp->select="t.*,m.`{$colname_m['member_id']}` as uid,m.`{$colname_m['name']}`
+    $sHelp->select="t.*,m.`{$colname_m['member_id']}` as uid,m.`{$colname_m['name']}`
+					,product.`{$colname_product['id']}` as product,product.`{$colname_product['name']}`
 					,p.`{$colname_p['name']}`,third.`{$colname_third['name']}`";
-	$sHelp->table=$table." t
+    $sHelp->table=$table." t
 				  LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['member_id']}`
 				  LEFT JOIN $table_p p ON p.`{$colname_p['id']}` = t.`{$colname['platform_id']}`
-				  LEFT JOIN $table_third third ON third.`{$colname_third['id']}` = t.`{$colname['deposit_pay_id']}`";
+				  LEFT JOIN $table_third third ON third.`{$colname_third['id']}` = t.`{$colname['deposit_pay_id']}`
+                  LEFT JOIN $table_product product ON product.`{$colname_product['product_id']}` = t.`{$colname['product_id']}`";
+
+
+
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby="created_time";
