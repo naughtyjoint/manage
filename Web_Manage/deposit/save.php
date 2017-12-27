@@ -26,6 +26,7 @@ try {
     $nowtime = datetime();
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['update_time']] = $nowtime;
+    $amount = post($colname['money'],0);
 
     $nowstatus = post("nowstatus");
     $point = $colname_product['update_time'];
@@ -41,11 +42,18 @@ try {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
         
     } else {
-        $data[$colname['user_id']] = post($colname['user_id'],1);
+        if($amount==0){
+            $ProudctId = post($colname_product['product_id'],1);
+            $row_amount = $db->query_prepare_first("select {$colname_product['amount']} from $table_product WHERE {$colname_product['product_id']} = :P_id", array(':P_id' => $ProudctId));
+            $data[$colname['money']] = $row_amount['amount'];
+        }else{
+            $data[$colname['money']] = $amount;
+        }
+        $data[$colname['member_id']] = post($colname['member_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);
         $data[$colname['product_id']] = post($colname['product_id'],1);
         $data[$colname['create_time']] = $nowtime;
-        $data[$colname['money']] = $colname_product['amount'];
+
         $id = $db->query_insert($table, $data);
     }
 
