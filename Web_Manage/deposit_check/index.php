@@ -92,7 +92,7 @@ $db->close();
                         <div style="clear:both"></div>
                     </div>
                     <div class="box-content">
-                        <?php echo $listHelp->drawTable() ?>
+                        <?php echo $listHelp->drawTable() ?> 
                     </div>
                 </div>
             </div>
