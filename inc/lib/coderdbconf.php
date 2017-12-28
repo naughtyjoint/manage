@@ -21,8 +21,8 @@ class coderDBConf
     public static $col_dispensing = array('id'=>'id','user_id'=>'user_id','platform_id'=>'platform_id','bank_card_id'=>'bank_card_id','bank_id'=>'bank_id','num'=>'num','money'=>'money','contents'=>'contents','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time','check_time'=>'check_time','is_pay'=>'is_pay');
     public static $dispensing_log = 'dispensing_log'; //出款歷程
     public static $col_dispensing_log = array('id'=>'id','dispensing_id'=>'dispensing_id','user_id'=>'user_id','platform_id'=>'platform_id','manager'=>'last_manager','update_time'=>'updated_time','contents'=>'contents','is_pay'=>'is_pay');
-    // public static $deposit_pay = 'deposit_pay'; //第三方支付
-    // public static $col_deposit_pay = array('id'=>'id','name'=>'pay_name','manager'=>'last_manager','create_time'=>'created_time');
+    public static $deposit_pay = 'deposit_pay'; //第三方支付
+    public static $col_deposit_pay = array('id'=>'id','name'=>'pay_name','manager'=>'last_manager','create_time'=>'created_time');
     public static $platform = 'platform'; //平台名稱
     public static $col_platform = array('id'=>'id','name'=>'platform_name','manager'=>'last_manager','create_time'=>'created_time','update_time'=>'updated_time');
     public static $anchor = 'anchor'; //主播
@@ -30,11 +30,11 @@ class coderDBConf
     public static $member = 'member'; //會員
     public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_id'=>'platform_id','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $deposit = 'deposit'; //入款申請
-    public static $col_deposit = array('id'=>'id','user_id'=>'user_id','platform_id'=>'platform_id','product_id'=>'product_id','money'=>'money','point'=>'point','deposit_pay_id'=>'deposit_pay_id','pay_code'=>'pay_code','pay_id'=>'pay_id','status'=>'status','contents'=>'contents','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager','check_time'=>'check_time');
+    public static $col_deposit = array('id'=>'id','member_id'=>'member_id','platform_id'=>'platform_id','product_id'=>'product_id','money'=>'money','point'=>'point','deposit_pay_id'=>'deposit_pay_id','pay_code'=>'pay_code','pay_id'=>'pay_id','status'=>'status','contents'=>'contents','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager','check_time'=>'check_time');
     public static $deposit_check = 'deposit'; //入款審核
-    public static $col_deposit_check = array('id'=>'id','user_id'=>'user_id','platform_id'=>'platform_id','product_id'=>'product_id','money'=>'money','point'=>'point','company'=>'company','method'=>'method','status'=>'status','remark'=>'remark','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
+    public static $col_deposit_check = array('id'=>'id','member_id'=>'member_id','platform_id'=>'platform_id','product_id'=>'product_id','money'=>'money','point'=>'point','status'=>'status','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
     public static $deposit_log = 'deposit_log'; //入款歷程
-    public static $col_deposit_log = array('id'=>'id','user_id'=>'user_id','deposit_id'=>'deposit_id','platform_id'=>'platform_id','product_id'=>'product_id','status'=>'status','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
+    public static $col_deposit_log = array('id'=>'id','member_id'=>'member_id','deposit_id'=>'deposit_id','platform_id'=>'platform_id','product_id'=>'product_id','status'=>'status','contents'=>'contents','updated_time'=>'updated_time','manager'=>'last_manager');
     public static $product = 'product'; //產品
     public static $col_product = array('id'=>'id','product_id'=>'product_id','name'=>'name','amount'=>'amount','point'=>'point','ratio'=>'ratio','bonus'=>'bonus','status'=>'status','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $product_log = 'product_log'; //產品歷程

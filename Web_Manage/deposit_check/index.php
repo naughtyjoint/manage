@@ -19,6 +19,8 @@ $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'wid
 $col[] = array('column' => 'uid', 'name' => '會員ID', 'order' => true, 'width' => '80');
 $col[] = array('column' => $colname_m['name'], 'name' => '會員名稱', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_p['name'], 'name' => '平台名稱', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname_third['name'], 'name' => '第三方支付', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['pay_code'], 'name' => '第三方交易序號', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_product['name'], 'name' => '產品名稱', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['money'], 'name' => '金額', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['point'], 'name' => '點數', 'order' => true, 'width' => '100');
@@ -129,6 +131,8 @@ $db->close();
                     $tr.append('<td>' + row["uid"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_m['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_p['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_third['name'];?>"] + '</td>')
+                    $tr.append('<td>' + row["<?php echo $colname['pay_code'];?>"] + '</td>')
                     $tr.append('<td>' + row["<?php echo $colname_product['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['point'];?>"] + '</td>');

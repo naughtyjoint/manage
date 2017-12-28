@@ -11,7 +11,7 @@ try{
 					,product.`{$colname_product['id']}` as product,product.`{$colname_product['name']}`
 					,p.`{$colname_p['id']}` as platform,p.`{$colname_p['name']}`";
 	$sHelp->table=$table." t
-				  LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['user_id']}`
+				  LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['member_id']}`
 				  LEFT JOIN $table_product product ON product.`{$colname_product['product_id']}` = t.`{$colname['product_id']}`
 				  LEFT JOIN $table_p p ON p.`{$colname_p['id']}` = t.`{$colname['platform_id']}`";
 				  
