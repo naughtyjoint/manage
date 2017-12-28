@@ -4,14 +4,13 @@ $DATA = array(
     "ReturnCode" => "1",
     "ReturnMsg" => "QueryOK",
     "FacServiceId" => "luckyCL",
-    "TotalNum" => 4,
-    "FacTradeSeq" =>
-    ["MC5a4210c3dd743","MC5a4210e5c2f51"]
+    "TotalNum" => 2,
+    "FacTradeSeq" => ["MC5a4496a076396","MC5a4496d7a8da5"]
     );
 
 $DATA_jencode = json_encode($DATA);
 
-$url = "localhost/manage/Web_Manage/mycard/ReDeposit.php";
+$url = "http://www.pkfun.xyz/api/ReDeposit.php";
 $ch = curl_init();
 
 

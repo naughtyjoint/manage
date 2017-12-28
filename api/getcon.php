@@ -1,5 +1,5 @@
 <?php
-include_once('_config.php');
+include_once('codermycardhelp.php');
 $result = array(
     'ReturnCode' => $_POST["ReturnCode"],
     'ReturnMsg' => $_POST["ReturnMsg"],
@@ -37,8 +37,10 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     $mycard = new coderMycardHelp();
     $result = $mycard->MycardProcess($data);
 
-    if($result == "PaymentOK")
-    echo json_encode($suc_resultback);
+    if($result == "PaymentOK"){
+        echo json_encode($suc_resultback);
+        $db->close();
+    }
     else
     echo json_encode($fal_resultback);
 }else{
