@@ -53,6 +53,7 @@ if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
             $mycard->MycardProcess($data);
 
         }
+        $db = Database::DB();
         $db->close();
 
     }

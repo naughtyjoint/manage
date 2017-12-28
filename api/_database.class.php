@@ -4,8 +4,8 @@ class Database {
 private static $instance;
 
 var $server   = "localhost"; //database server
-var $user     = "pkbar"; //database login name
-var $pass     = "ZwxhAV8e"; //database login password
+var $user     = "root"; //database login name
+var $pass     = ""; //database login password
 var $database = "manage"; //database name
 var $pre      = ""; //table prefix
 

@@ -5,7 +5,7 @@ $DATA = array(
     "ReturnMsg" => "QueryOK",
     "FacServiceId" => "luckyCL",
     "TotalNum" => 2,
-    "FacTradeSeq" => ["MC5a4496a076396","MC5a4496d7a8da5"]
+    "FacTradeSeq" => ["MC5a44ba41c095c","MC5a44ba63b3ae6"]
     );
 
 $DATA_jencode = json_encode($DATA);
