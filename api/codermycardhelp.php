@@ -1,12 +1,9 @@
 <?php
-include_once '_database.class.php';
 include_once 'coderpointhelp.php';
+include '_database.class.php';
 
 class coderMycardHelp {
 
-    public $table_mycard = "mycard";
-    public $table_member = "member";
-    public $table_deposit = "deposit";
 
 
     public function __construct()
@@ -14,8 +11,33 @@ class coderMycardHelp {
 
     }
 
-    public function MycardProcess($ary){
 
+    public function AddMycard($ary){
+        $db = Database::DB();
+        extract($ary);
+        $mycard_data = array(
+            'FacTradeSeq' => $FacTradeSeq,
+            'ServerId' => $ServerId,
+            'member_id' => $member_id,
+            'PaymentType' => $PaymentType,
+            'ItemCode' => $ItemCode,
+            'product_id' => $product_id,
+            'Amount' => $Amount,
+            'Currency' => $Currency,
+            'Created_date' => $Created_date,
+            'AuthCode' => $AuthCode,
+            'ReturnCode' => $ReturnCode
+        );
+        $table = 'mycard';
+        $db->query_insert($table,$mycard_data);
+
+    }
+
+
+    function MycardProcess($ary){
+
+
+        $table = 'mycard';
         $datetime = date('Y-m-d H:i:s',time());
         extract($ary);
         if(!isset($Redeposit)) $Redeposit=0;
@@ -29,7 +51,7 @@ class coderMycardHelp {
 
 
         //更新交易狀態
-        $db->query_update($this->table_mycard, $data, " FacTradeSeq='$FacTradeSeq'");
+        $db->query_update($table, $data, " FacTradeSeq='$FacTradeSeq'");
 
         $query_confirm = "SELECT AuthCode, member_id, product_id, Amount FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
         $row = $db->query_first($query_confirm,[':FacTradeSeq' => $FacTradeSeq]);
@@ -59,7 +81,8 @@ class coderMycardHelp {
                 'PayResult' =>  $Payresult,
                 'Check_time' => $datetime,
             );
-            $db->query_update($this->table_mycard,$mycard_data," FacTradeSeq='$FacTradeSeq'");
+
+            $db->query_update($table,$mycard_data," FacTradeSeq='$FacTradeSeq'");
 
 
             $depo_data = array(
@@ -75,7 +98,8 @@ class coderMycardHelp {
                 'check_time' => $datetime
             );
             //插入入款管理資料表
-            $db->query_insert($this->table_deposit,$depo_data);
+            $table_deposit = 'deposit';
+            $db->query_insert($table_deposit,$depo_data);
             return "PaymentOK";
         }else{
             return "error";
@@ -85,7 +109,7 @@ class coderMycardHelp {
     }
 
     //取得mycard交易授權碼
-    public function getAuthCode($ary){
+    function getAuthCode($ary){
 
         extract($ary);
         $Encodedata = substr(urlencode($ProductName),strpos(urlencode($ProductName),"%"));
@@ -106,11 +130,40 @@ class coderMycardHelp {
 
 
         $opt=json_decode($output);
-        $AuthCode = $opt->AuthCode;
-        return $AuthCode;
+        $Result = $opt->ReturnCode;
+        if($Result!=1){
+            return 'Get AuthCode Failed';
+        }else{
+
+            $AuthCode = $opt->AuthCode;
+            $ReturnCode = 0;
+
+            $ary = array(
+                'FacTradeSeq' => $FacTradeSeq,
+                'ServerId' => $ServerId,
+                'member_id' => $CustomerId,
+                'PaymentType' => $PaymentType,
+                'ItemCode' => $ItemCode,
+                'product_id' => $ProductName,
+                'Amount' => $Amount,
+                'Currency' => $Currency,
+                'Created_date' => $Created_date,
+                'AuthCode' => $AuthCode,
+                'ReturnCode' => $ReturnCode
+            );
+
+            try{
+                //新增一筆mycard交易
+                self::AddMycard($ary);
+                return $AuthCode;
+
+            }catch (Exception $exception){
+                echo $exception->getMessage();
+            }
+        }
     }
 
-    public function paymentConfirm($authcode){
+    private function paymentConfirm($authcode){
         $url = "https://test.b2b.mycard520.com.tw/MyBillingPay/api/PaymentConfirm?AuthCode=".$authcode;
         $ch = curl_init();
 
