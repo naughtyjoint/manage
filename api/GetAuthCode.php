@@ -25,6 +25,7 @@ if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"])&
     $CustomerId = $_GET["CustomerId"];
     $Amount = $_GET["Amount"];
     $Currency = $_GET["Currency"];
+    $ProductName = $_GET["ProductName"];
     $getauth_ary = array(
             'FacServiceId' => $FacServiceId,
             'FacTradeSeq' => $FacTradeSeq,
