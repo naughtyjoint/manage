@@ -10,14 +10,14 @@ try{
     $getid = (get('id')!="")?get('id'):-1;
 
     //select
-	$sHelp->select="$table_cl.`{$colname_cl['id']}`,$table.`{$colname['name']}`,$table_cl.`{$colname_cl['chatlog']}`,$table_cl.`{$colname_cl['createtime']}`";
+	$sHelp->select="t.`{$colname_cl['id']}`,p.`{$colname['name']}`,t.`{$colname_cl['chatlog']}`,t.`{$colname_cl['createtime']}`";
     //from
-    $sHelp->table=$table_cl.",".$table;
+    $sHelp->table=$table_cl." t, ".$table." p";
 
     //where
     $sqlstr=$filterhelp->getSQLStr();
     $where = $sqlstr->SQL;
-    $where .= ($where==''?'':' AND ')."$table.`{$colname['id']}` = ".$getid . " AND $table_cl.`{$colname_cl['pgram_id']}` = ".$getid;
+    $where .= ($where==''?'':' AND ')."p.`{$colname['id']}` = ".$getid . " AND t.`{$colname_cl['pgram_id']}` = ".$getid;
     $sHelp->where=$where;
 
     $rows=$sHelp->getList();
