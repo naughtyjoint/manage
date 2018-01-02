@@ -23,15 +23,19 @@ try {
         throw new Exception($msg);
     }
 
+    //多圖圖片
+    //$picgroup = $data[$colname['picgroup']];
+    //$data[$colname['picgroup']] = json_encode($picgroup);
+
+    /* ## coder [beforeModify] --> ## */
+    /* ## coder [beforeModify] <-- ## */
+
     $nowtime = datetime();
     $data[$colname['manager']] = $adminuser['username'];
     $data[$colname['update_time']] = $nowtime;
-    $amount = post($colname['money'],0);
 
     $nowstatus = post("nowstatus");
-    $point = $colname_product['update_time'];
-    $amount = post($colname['money'],0);
-
+   
     if ($method == 'edit') {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if(!empty($row[$colname['status']])){
@@ -42,20 +46,11 @@ try {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
         
     } else {
-        if($amount==0){
-            $ProudctId = post($colname_product['product_id'],1);
-            $row_amount = $db->query_prepare_first("select {$colname_product['amount']},{$colname_product['point']} from $table_product WHERE {$colname_product['product_id']} = :P_id", array(':P_id' => $ProudctId));
-            $data[$colname['money']] = $row_amount['amount'];
-            $data[$colname['point']] = $row_amount['point'];
-        }else{
-            $data[$colname['money']] = $amount;
-            $data[$colname['point']] = $amount;
-        }
-        $data[$colname['member_id']] = post($colname['member_id'],1);
+        $data[$colname['user_id']] = post($colname['user_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);
-        $data[$colname['product_id']] = post($colname['product_id'],1);
+        $data[$colname['money']] = post($colname['money'],1);
         $data[$colname['create_time']] = $nowtime;
-
+        //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);
     }
 

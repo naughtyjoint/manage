@@ -21,7 +21,6 @@ $col[] = array('column' => $colname_p['product_id'], 'name' => '產品', 'order'
 $col[] = array('column' => $colname['FacTradeSeq'], 'name' => '第三方交易序號', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['ReturnCode'], 'name' => '交易狀態', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['PayResult'], 'name' => '請款狀態', 'order' => true, 'width' => '90');
-$col[] = array('column' => $colname['Redeposit'], 'name' => '補儲', 'order' => true, 'width' => '50');
 $col[] = array('column' => $colname['Amount'], 'name' => '金額', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Currency'], 'name' => '幣別', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Created_date'], 'name' => '交易時間', 'order' => true, 'width' => '120');
@@ -130,7 +129,6 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['FacTradeSeq'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['ReturnCode'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['PayResult'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['Redeposit'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Amount'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Currency'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Created_date'];?>"] + '</td>');

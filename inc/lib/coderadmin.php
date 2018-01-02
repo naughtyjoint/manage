@@ -63,6 +63,18 @@ class coderAdmin
                 'list' => array(
                     'mycard' => array('key' => 2, 'name' => $langary_auth['pay']['list']['mycard'], 'icon' => 'icon-usd', 'path' => 'mycard/index.php', 'auth' => 30),                  
                 )
+            ),
+            /*'test' => array('key' => 8, 'name' => $langary_auth['test']['name'], 'icon' => 'icon-lock', 'auth' => 30,
+                'list' => array(
+                    'parner' => array('key' => 1, 'name' => $langary_auth['test']['list']['parner'], 'icon' => 'icon-lock', 'path' => 'testpage/index.php', 'auth' => 30),
+                    'parner2' => array('key' => 2, 'name' => $langary_auth['test']['list']['parner2'], 'icon' => 'icon-lock', 'path' => 'testpage2/index.php', 'auth' => 30)
+                )
+            ),*/
+            'program' => array('key' => 8, 'name' => $langary_auth['program']['name'], 'icon' => 'icon-lock', 'auth' => 30,
+                'list' => array(
+                    'program_list' => array('key' => 1, 'name' => $langary_auth['program']['list']['program_list'], 'icon' => 'icon-lock', 'path' => 'program_list/index.php', 'auth' => 30)
+
+                )
             )
         );
     }

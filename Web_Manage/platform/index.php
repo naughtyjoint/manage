@@ -13,7 +13,7 @@ $listHelp->delSrc = "delservice.php";
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => $langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['name'], 'name' => '平台名稱', 'order' => true/*,'width'=>'300'*/);
+$col[] = array('column' => $colname['name'], 'name' => '平台名稱', 'order' => true,'width'=>'300');
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => $langary_Web_Manage_all['manager'], 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['update_time'], 'name' => $langary_Web_Manage_all['update_time'], 'order' => true, 'width' => '120');
@@ -64,6 +64,7 @@ $db->close();
                     <span class="divider"><i class="icon-angle-right"></i></span>
                 </li>
                 <?php echo $mtitle ?>
+
             </ul>
         </div>
         <!-- END Breadcrumb -->
@@ -75,6 +76,7 @@ $db->close();
                     <div class="box-title">
                         <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title ?></h3>
                         <div class="box-tool">
+                            <!-- 何必要有摺疊&關閉表格?? -->
                             <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
                             <a data-action="close" href="#"><i class="icon-remove"></i></a>
                         </div>
