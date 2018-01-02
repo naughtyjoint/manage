@@ -58,7 +58,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-(1, '', '', 1, 0, 1, 0, '4ec7ba32d3802c5b5852a6b1ffd745a4151451245534178cosiir37a7e783v2meggu1v1gi', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2017-12-29 09:54:15', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
+(1, '', '', 1, 0, 1, 0, '53b92696e0f31d45105fc1443d2620a9151486281369982i8qu41e66qg3ut7r3jl7pih4hg', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2018-01-02 11:13:33', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '60e58df6877dd77b434aef35828397a8151322428638780bd2h9aut8a08m15lqfmdnbck5s', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:04:46', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db84d35f53ef5be6e70fbbf60b061df015141661779345177ro40dgnam3jvpp6mqoim1c7f', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-25 09:42:57', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
 
@@ -1879,10 +1879,14 @@ CREATE TABLE `chatroom_log` (
 --
 
 INSERT INTO `chatroom_log` (`cl_id`, `cl_pgram_id`, `cl_record`, `cl_creatdate`) VALUES
-(1, 1, '05:17:12 CCC:安安你好\r\n05:18:06 學妹:你好 我正好要去洗澡', '2017-12-29 06:19:17'),
-(2, 1, '05:17:12 CCC:嗨晚安\r\n05:18:06 學妹:晚安\r\n/*學妹 狀態已經設為離線*/', '2017-12-29 06:19:17'),
-(3, 1, '03:30:02 CCC:嗚嗚嗚嗚嗚', '2017-12-29 06:20:40'),
-(4, 14, '05:17:12 CCC:安安你好\r\n05:18:06 學妹:你好 我正好要去洗澡', '2017-12-29 10:01:17');
+(5, 1, '05:17:12 CCC:安安你好', '2018-01-01 03:57:01'),
+(6, 1, '05:18:06 學妹:你好 我正好要去洗澡', '2018-01-01 03:57:01'),
+(7, 14, '05:17:12 CCC:嗨晚安', '2018-01-01 03:57:01'),
+(8, 14, '05:18:06 學妹:晚安', '2018-01-01 03:57:01'),
+(9, 14, '/*學妹 狀態已經設為離線*/', '2018-01-01 03:57:01'),
+(10, 1, '03:30:02 CCC:嗚嗚嗚嗚嗚', '2018-01-02 03:57:01'),
+(11, 14, '05:17:12 CCC:安安你好', '2018-01-02 03:57:01'),
+(12, 14, '05:18:06 學妹:你好 我正好要去洗澡', '2018-01-02 03:57:01');
 
 -- --------------------------------------------------------
 
@@ -2327,7 +2331,7 @@ CREATE TABLE `program` (
 --
 
 INSERT INTO `program` (`pgram_id`, `pgram_name`, `pgram_description`, `pgram_thumbnail`, `pgram_url`, `pgram_tag`, `pgram_chatlog`, `pgram_createdtime`, `pgram_updatetime`, `pgram_showtime`, `pgram_lastmanager`) VALUES
-(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '/pgram_img01', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '2,1', '05:17:12 CCC:安安你好\r\n05:18:06 學妹:你好 我正好要去洗澡', '2017-12-27 01:09:13', '2017-12-29 18:34:41', '每周一 19:00am~20:00am', 'admin'),
+(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '/pgram_img01', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '2', '05:17:12 CCC:安安你好\r\n05:18:06 學妹:你好 我正好要去洗澡', '2017-12-27 01:09:13', '2018-01-02 11:15:16', '每周一 19:00am~20:00am', 'admin'),
 (14, '美眉看MTV', '由現今才女介紹hitoMAV', 'thumbnail.jpg', 'https://www.w3schools.com/php/php_file_upload.asp', '2', '', '2017-12-29 17:54:11', '2017-12-29 17:54:11', '24hr 不間斷', 'admin');
 
 -- --------------------------------------------------------
@@ -2680,7 +2684,7 @@ ALTER TABLE `bank_card`
 -- 使用資料表 AUTO_INCREMENT `chatroom_log`
 --
 ALTER TABLE `chatroom_log`
-  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- 使用資料表 AUTO_INCREMENT `contribution`
@@ -2752,7 +2756,7 @@ ALTER TABLE `product_log`
 -- 使用資料表 AUTO_INCREMENT `program`
 --
 ALTER TABLE `program`
-  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- 使用資料表 AUTO_INCREMENT `rules_auth`
