@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 2017/12/28
- * Time: 下午 03:43
- */
-
 class coderPointHelp
 {
 
@@ -27,7 +20,6 @@ class coderPointHelp
         $db = Database::DB();
         $query_member = "SELECT point FROM member WHERE member_id=:member_id";
         $row = $db->query_first($query_member,[':member_id' => $mem_id]);
-        $db->close();
         return $row['point'];
     }
 
@@ -36,7 +28,6 @@ class coderPointHelp
         $db = Database::DB();
         $query= "SELECT point FROM anchor WHERE id=:id";
         $row = $db->query_first($query,[':id' => $id]);
-        $db->close();
         return $row['point'];
     }
 
@@ -52,7 +43,8 @@ class coderPointHelp
 
 
     //打賞轉點
-    public function PointToPoint($mem_id,$anc_id,$point,$content){
+    public function Contribution($ary){
+        extract($ary);
         $member_point = $this->getPoint($mem_id);
         $anchor_point = $this->getPoint_anc($anc_id);
         $member_point -= $point;
@@ -68,11 +60,6 @@ class coderPointHelp
         );
         $db->query_insert($this->table_contribution,$contribution);
         $db->close();
-
-        $result['success']=true;
-        $result['result']=$contribution;
-        $result['message']='Accessed successfully';
-        echo json_encode($result);
 
 
     }
