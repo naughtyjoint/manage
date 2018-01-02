@@ -1,5 +1,5 @@
 <?php
-include_once('_config.php');
+include_once('codermycardhelp.php');
 $result = array(
     'ReturnCode' => $_POST["ReturnCode"],
     'ReturnMsg' => $_POST["ReturnMsg"],
@@ -21,7 +21,7 @@ $suc_resultback = array(
 
 $fal_resultback = array(
     'ReturnCode' => '2',
-    'ReturnMsg' => 'Access faild, Parameter goes wrong.'
+    'ReturnMsg' => 'Access faild, something goes wrong.'
 );
 
 
@@ -35,10 +35,15 @@ $data = array(
 if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST["PayResult"])){
 
     $mycard = new coderMycardHelp();
-    $mycard->MycardProcess($data);
+    $result = $mycard->MycardProcess($data);
 
-    echo json_encode($suc_resultback);
-
+    if($result == "PaymentOK"){
+        echo json_encode($suc_resultback);
+        $db = Database::DB();
+        $db->close();
+    }
+    else
+    echo json_encode($fal_resultback);
 }else{
 
     echo json_encode($fal_resultback);
