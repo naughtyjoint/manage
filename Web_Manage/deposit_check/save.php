@@ -50,8 +50,8 @@ try {
         /* ## coder [insert] --> ## */
         /* ## coder [insert] <-- ## */
 
-        $data[$colname['user_id']] = post($colname['user_id'],1);
-        // if(!class_player::getList_agidone($pid,$data[$colname['user_id']])){
+        $data[$colname['member_id']] = post($colname['member_id'],1);
+        // if(!class_player::getList_agidone($pid,$data[$colname['member_id']])){
         //     throw new Exception("玩家錯誤!");
         // }
 

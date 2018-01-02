@@ -17,7 +17,7 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['deposit_id'], 'name' => '入款ID', 'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['user_id'], 'name' => '會員ID', 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname['member_id'], 'name' => '會員ID', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_m['name'], 'name' => '會員名稱', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname_p['name'], 'name' => '平台名稱', 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['status'], 'name' => '修改狀態', 'order' => false,'width'=>'120');
@@ -114,7 +114,7 @@ $db->close();
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
                     $tr.append('<td>' + row["<?php echo $colname['deposit_id'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['user_id'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['member_id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_m['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_p['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');

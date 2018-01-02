@@ -51,7 +51,7 @@ try {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
     } else {
         $data[$colname['create_time']]= $nowtime;
-        $data[$colname['user_id']] = post($colname['user_id'],1);  
+        $data[$colname['member_id']] = post($colname['member_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);          
         $data[$colname['bank_id']] = post($colname['bank_id'],1);  
         $data[$colname['num']] = post($colname['num'],1);          

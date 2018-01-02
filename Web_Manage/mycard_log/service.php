@@ -8,7 +8,7 @@ try{
 	$sHelp=new coderSelectHelp($db);
 	$sHelp->select="t.*,u.`{$colname_u['id']}` as uid,u.`{$colname_u['name']}`";
 	$sHelp->table=$table." t
-				LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['user_id']}`";
+				LEFT JOIN $table_u u ON u.`{$colname_u['id']}` = t.`{$colname['member_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
 	$sHelp->orderby="updated_time";

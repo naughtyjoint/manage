@@ -33,7 +33,7 @@ class CoderMember{
 	//檢查帳號是否存在
 	static function isExisit($acc){
 		global $db;
-		if($db -> query_first("SELECT user_id FROM ".CoderMember::$table." WHERE member_acc = '$acc'")){
+		if($db -> query_first("SELECT member_id FROM ".CoderMember::$table." WHERE member_acc = '$acc'")){
 			return true;
 		}else{
 			return false;
@@ -78,15 +78,15 @@ class CoderMember{
 			$data["member_regcode"] = self::createCode();
 			$data["member_regtime"] = request_cd();
 			
-			$user_id = $db -> query_insert(CoderMember::$table, $data);
+			$member_id = $db -> query_insert(CoderMember::$table, $data);
 
-			if($user_id == 0){
+			if($member_id == 0){
 				throw new Exception('建立會員資料時發生錯誤!');
 			}else{
 				self::_sendRegisterMail("Altrason會員", $data["member_regcode"], $data["member_acc"], $member -> lang);
 			}
 		}
-		return $user_id;
+		return $member_id;
 	}
 
 	//會員登入
@@ -119,7 +119,7 @@ class CoderMember{
 		if($row['member_isreg'] == 0){
 			//self::_sendRegisterMail("Altrason會員", $row["member_regcode"], $row["member_acc"], $member -> lang);
 			//throw new Exception('此帳號尚未完成Email認證程序,無法登入!');
-			$_SESSION['re_mail_id'] = $row['user_id'];
+			$_SESSION['re_mail_id'] = $row['member_id'];
 			throw new Exception($msg2);
 		}
 		
@@ -129,14 +129,14 @@ class CoderMember{
         global $db;
         $table = CoderMember::$table;
         $user = array(
-            'id' => $row['user_id'],
+            'id' => $row['member_id'],
             'account' => $row['member_acc'],
             'password' => $row['member_password'],
         );
         self::_setUser($user);
         
         $data["member_ip"] = request_ip();
-        $db -> query_update($table, $data, ' user_id=' . $row['user_id']);
+        $db -> query_update($table, $data, ' member_id=' . $row['member_id']);
     }
 	private static function _setUser($user) {
         $_SESSION['login_user'] = serialize($user);
@@ -156,7 +156,7 @@ class CoderMember{
 	}
 	public static function getLoginUserInfo($m_id){
 		global $db;
-        $sql = "SELECT * FROM ".CoderMember::$table." WHERE user_id = '$m_id'";
+        $sql = "SELECT * FROM ".CoderMember::$table." WHERE member_id = '$m_id'";
 		$row = $db -> query_first($sql);
 		return $row;
 	}
@@ -220,13 +220,13 @@ class CoderMember{
 	public static function reMail(CoderMemberItem $member){
 		global $db;
 		$m_acc = "";
-		$sql = "SELECT * FROM ".CoderMember::$table." WHERE user_id ='".$member -> id."' ";
+		$sql = "SELECT * FROM ".CoderMember::$table." WHERE member_id ='".$member -> id."' ";
 		$row = $db -> query_first($sql);
 		if($row){
 			$data["member_regcode"] = self::createCode();
 			$data["member_regtime"] = request_cd();
 			
-			$db -> query_update(CoderMember::$table, $data, "user_id = ".$member -> id);
+			$db -> query_update(CoderMember::$table, $data, "member_id = ".$member -> id);
 			$m_acc = $row['member_acc'];
 			self::_sendRegisterMail("Altrason會員", $data["member_regcode"], $row["member_acc"], $member -> lang);
 
@@ -284,7 +284,7 @@ class CoderMember{
 				try{ 
 					     
 					$db -> begin();
-					$db->exec('UPDATE ' . CoderMember::$table . ' SET member_isreg=1 WHERE user_id=' . $user['user_id']);
+					$db->exec('UPDATE ' . CoderMember::$table . ' SET member_isreg=1 WHERE member_id=' . $user['member_id']);
 					if($user['member_isnew']==1){
 						
 						class_mailchimp::getsubscribed($user['member_acc'],1);
@@ -360,7 +360,7 @@ class CoderMember{
 	}
 	private static function _setUser2($row) {
 		$user = array(
-            'id' => $row['user_id'],
+            'id' => $row['member_id'],
             'account' => $row['member_acc']
         );
         $_SESSION['pwd_user'] = serialize($user);
@@ -410,7 +410,7 @@ class CoderMember{
 			$data["member_isnew"] = $member -> isnew;
 			$data["member_updatetime"] = request_cd();
 			
-			$db -> query_update(CoderMember::$table, $data, "user_id = ".$m_id);
+			$db -> query_update(CoderMember::$table, $data, "member_id = ".$m_id);
 
 			$data["member_isnew"]==1?class_mailchimp::getsubscribed($m_account,1):class_mailchimp::getunsubscribed($m_account);
 		}
@@ -450,7 +450,7 @@ class CoderMember{
 			$data["member_isnew"] = $member -> isnew;
 			$data["member_updatetime"] = request_cd();
 			
-			$db -> query_update(CoderMember::$table, $data, "user_id = ".$m_id);
+			$db -> query_update(CoderMember::$table, $data, "member_id = ".$m_id);
 
 			$data["member_isnew"]==1?class_mailchimp::getsubscribed($m_account,1):class_mailchimp::getunsubscribed($m_account);
 		}
@@ -490,7 +490,7 @@ class CoderMember{
 			$data["member_regcode"] = self::createCode();
 			$data["member_regtime"] = request_cd();
 			$data["member_updatetime"] = request_cd();
-			$num = $db -> query_update(CoderMember::$table, $data, "user_id = ".$m_id);
+			$num = $db -> query_update(CoderMember::$table, $data, "member_id = ".$m_id);
 			if($num){
 				//self::loginOut();//如已更新密碼則登出
 				
@@ -532,7 +532,7 @@ class CoderMember{
 			$m_info = self::getLoginUser();
 			$m_id = $m_info["id"];
 
-			$sql = "SELECT * FROM ".CoderMember::$table." WHERE user_id = '$m_id'";
+			$sql = "SELECT * FROM ".CoderMember::$table." WHERE member_id = '$m_id'";
 			$row = $db -> query_first($sql);
 			if($row && (
 					(	empty($row['member_password']) && //社群帳號無須驗證原密碼
@@ -543,7 +543,7 @@ class CoderMember{
 			){
 				$data["member_password"] = coderAdmin::pwHash($member -> password);
 				$data["member_updatetime"] = request_cd();
-				$num = $db -> query_update(CoderMember::$table, $data, "user_id = ".$m_id);
+				$num = $db -> query_update(CoderMember::$table, $data, "member_id = ".$m_id);
 				if($num){//如已更新密碼則登出
 					self::loginOut();
 				}
@@ -575,12 +575,12 @@ class CoderMember{
 		}else{
 			$sql = "SELECT * FROM ".CoderMember::$table." WHERE member_acc ='".$member -> acc."'";
 			$row = $db -> query_first($sql);
-			$m_id = $row["user_id"];
+			$m_id = $row["member_id"];
 			
 			$data["member_pwdcode"] = self::createCode();
 			$data["member_pwdtime"] = request_cd();
 			
-			$db -> query_update(CoderMember::$table, $data, "user_id = ".$m_id);
+			$db -> query_update(CoderMember::$table, $data, "member_id = ".$m_id);
 
 			self::_sendPasswordMail("Altrason會員", $data["member_pwdcode"], $member -> acc, $member -> lang);
 		}
@@ -595,7 +595,7 @@ class CoderMember{
 		$data["member_pwdcode"] = "";
 		$data["member_pwdtime"] = "";
 		
-		$db -> query_update(CoderMember::$table, $data, "user_id = ".$member -> id);
+		$db -> query_update(CoderMember::$table, $data, "member_id = ".$member -> id);
 
 		unset($_SESSION['pwd_user']);
 		self::loginOut();	
@@ -627,7 +627,7 @@ class CoderMember{
 			$data["member_pwdcode"] = "";
 			$data["member_pwdtime"] = "";
 			
-			$db -> query_update(CoderMember::$table, $data, "user_id = ".$_SESSION["session_cln_id"]);
+			$db -> query_update(CoderMember::$table, $data, "member_id = ".$_SESSION["session_cln_id"]);
 
 		}
 	}

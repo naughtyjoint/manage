@@ -122,7 +122,7 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
-                    $tr.attr("onClick", "parent.closeBox(function(){parent.$('#myuser').html('"+row["<?php echo $colname['name']?>"]+"');parent.$('#mygame').html(' - "+row["platform_name"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').val('"+row["<?php echo $colname['member_id']?>"]+"');parent.$('#<?php echo $colname_t['user_id'];?>').valid();parent.$('#<?php echo $colname_t['platform_id'];?>').val('"+row["<?php echo $colname['platform_id']?>"]+"');parent.$('#<?php echo $colname_t['platform_id'];?>').valid();})");
+                    $tr.attr("onClick", "parent.closeBox(function(){parent.$('#myuser').html('"+row["<?php echo $colname['name']?>"]+"');parent.$('#mygame').html(' - "+row["platform_name"]+"');parent.$('#<?php echo $colname_t['member_id'];?>').val('"+row["<?php echo $colname['member_id']?>"]+"');parent.$('#<?php echo $colname_t['member_id'];?>').valid();parent.$('#<?php echo $colname_t['platform_id'];?>').val('"+row["<?php echo $colname['platform_id']?>"]+"');parent.$('#<?php echo $colname_t['platform_id'];?>').valid();})");
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["platform_name"] + '</td>');

@@ -3,7 +3,7 @@ $fhelp=new coderFormHelp();
 $fobj=array();
 $fobj[$colname["id"]]=array("type"=>"hidden","name"=>"ID","column"=>$colname["id"],"sql"=>false);
 $fobj[$colname["is_pay"]]=array("type"=>"checkbox","name"=>"是否出款","column"=>$colname["is_pay"],"value"=>"1");
-$fobj[$colname["user_id"]]=array("type"=>"hidden","name"=>"會員","column"=>$colname["user_id"],"sql"=>false);
+$fobj[$colname["member_id"]]=array("type"=>"hidden","name"=>"會員","column"=>$colname["member_id"],"sql"=>false);
 $fobj[$colname["platform_id"]]=array("type"=>"hidden","name"=>"平台名稱","column"=>$colname["platform_id"],"sql"=>false);
 
 $fobj[$colname['bank_id']] = array(

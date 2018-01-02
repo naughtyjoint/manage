@@ -1654,7 +1654,7 @@ INSERT INTO `deposit_pay` (`id`, `pay_name`, `last_manager`, `created_time`) VAL
 
 CREATE TABLE `dispensing` (
   `id` int(11) NOT NULL,
-  `user_id` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '會員id',
+  `member_id` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '會員id',
   `platform_id` tinyint(10) DEFAULT NULL COMMENT '遊戲id',
   `bank_card_id` int(11) NOT NULL COMMENT '我方銀行卡號',
   `bank_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '玩家銀行',
@@ -1672,7 +1672,7 @@ CREATE TABLE `dispensing` (
 -- 資料表的匯出資料 `dispensing`
 --
 
-INSERT INTO `dispensing` (`id`, `user_id`, `platform_id`, `bank_card_id`, `bank_id`, `num`, `money`, `contents`, `last_manager`, `created_time`, `updated_time`, `is_pay`, `check_time`) VALUES
+INSERT INTO `dispensing` (`id`, `member_id`, `platform_id`, `bank_card_id`, `bank_id`, `num`, `money`, `contents`, `last_manager`, `created_time`, `updated_time`, `is_pay`, `check_time`) VALUES
 (53, 'a571615', 5, 0, '17', '3464787', '785', '', 'admin', '2017-12-20 17:01:16', '2017-12-21 10:38:31', 3, '2017-12-21 10:38:31'),
 (55, 'ad1475', 4, 0, '17', '56546471532', '500', '', 'admin', '2017-12-21 09:41:11', '2017-12-21 10:45:06', 3, '2017-12-21 10:45:06'),
 (56, 'ad1475', 4, 0, '17', '5821', '400', '', 'admin', '2017-12-21 10:46:37', '2017-12-21 10:46:48', 3, '2017-12-21 10:46:48'),
@@ -1685,18 +1685,18 @@ INSERT INTO `dispensing` (`id`, `user_id`, `platform_id`, `bank_card_id`, `bank_
 DELIMITER $$
 CREATE TRIGGER `dispensing_check_updated_trigger` AFTER UPDATE ON `dispensing` FOR EACH ROW IF (NEW.contents != OLD.contents AND NEW.is_pay != OLD.is_pay) 
     THEN
-    	INSERT INTO dispensing_log(dispensing_id, user_id,platform_id,is_pay,contents, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id, NEW.is_pay, NEW.contents, new.last_manager); 
+    	INSERT INTO dispensing_log(dispensing_id, member_id,platform_id,is_pay,contents, last_manager) values (OLD.id, OLD.member_id, OLD.platform_id, NEW.is_pay, NEW.contents, new.last_manager);
  ELSEIF (NEW.contents != OLD.contents) 
     THEN
-    	INSERT INTO dispensing_log(dispensing_id, user_id,platform_id,contents, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id ,NEW.contents, new.last_manager);
+    	INSERT INTO dispensing_log(dispensing_id, member_id,platform_id,contents, last_manager) values (OLD.id, OLD.member_id, OLD.platform_id ,NEW.contents, new.last_manager);
     ELSEIF (NEW.is_pay != OLD.is_pay) 
     THEN
-    	INSERT INTO dispensing_log(dispensing_id, user_id,platform_id,is_pay, last_manager) values (OLD.id, OLD.user_id, OLD.platform_id ,NEW.is_pay, new.last_manager);
+    	INSERT INTO dispensing_log(dispensing_id, member_id,platform_id,is_pay, last_manager) values (OLD.id, OLD.member_id, OLD.platform_id ,NEW.is_pay, new.last_manager);
 END IF
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `dispensing_insert_trigger` AFTER INSERT ON `dispensing` FOR EACH ROW insert into dispensing_log(dispensing_id, user_id,platform_id,contents,last_manager) values (NEW.id, NEW.user_id,NEW.platform_id,"新增",NEW.last_manager)
+CREATE TRIGGER `dispensing_insert_trigger` AFTER INSERT ON `dispensing` FOR EACH ROW insert into dispensing_log(dispensing_id, member_id,platform_id,contents,last_manager) values (NEW.id, NEW.member_id,NEW.platform_id,"新增",NEW.last_manager)
 $$
 DELIMITER ;
 
@@ -1709,7 +1709,7 @@ DELIMITER ;
 CREATE TABLE `dispensing_log` (
   `id` int(11) NOT NULL,
   `dispensing_id` int(11) NOT NULL COMMENT '出款項目的ID',
-  `user_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `member_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `platform_id` int(11) NOT NULL,
   `is_pay` tinyint(4) DEFAULT NULL COMMENT '狀態  [0: 未審核] [1:完成] [2:拒絕][3:捨棄]',
   `contents` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '備註',
@@ -1721,7 +1721,7 @@ CREATE TABLE `dispensing_log` (
 -- 資料表的匯出資料 `dispensing_log`
 --
 
-INSERT INTO `dispensing_log` (`id`, `dispensing_id`, `user_id`, `platform_id`, `is_pay`, `contents`, `last_manager`, `updated_time`) VALUES
+INSERT INTO `dispensing_log` (`id`, `dispensing_id`, `member_id`, `platform_id`, `is_pay`, `contents`, `last_manager`, `updated_time`) VALUES
 (93, 53, 'a571615', 5, NULL, '新增', 'admin', '2017-12-20 17:01:16'),
 (94, 53, 'a571615', 5, 1, '', 'admin', '2017-12-20 17:01:44'),
 (95, 54, '', 0, NULL, '新增', 'admin', '2017-12-21 09:37:27'),

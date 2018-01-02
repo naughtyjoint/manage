@@ -2,7 +2,7 @@
 $filterhelp = new coderFilterHelp();
 $obj[] = array('type' => 'keyword', 'name' => '關鍵字', 'sql' => true, 'ary' => array(
     array('table'=>'t','column' => $colname['manager'], 'name' => '最後管理者'),
-    array('column' => $colname['user_id'], 'name' => '玩家名稱'),
+    array('column' => $colname['member_id'], 'name' => '玩家名稱'),
     array('column' => $colname['deposit_id'], 'name' => '入款ID')
 ));
 

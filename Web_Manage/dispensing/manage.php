@@ -23,7 +23,7 @@ try {
 
         //$db->close();
     } else {
-        $fhelp->setAttr($colname['user_id'], 'validate', array('required' => 'yes'));
+        $fhelp->setAttr($colname['member_id'], 'validate', array('required' => 'yes'));
         $fhelp->setAttr($colname['money'], 'validate', array('required' => 'yes','maxlength' => '11','digits'=>'yes'));
         $fhelp->setAttr($colname['bank_card_id'], 'validate', array('required' => 'yes','maxlength' => '50'));
         $fhelp->setAttr($colname['bank_id'], 'validate', array('required' => 'yes','maxlength' => '50'));
@@ -87,15 +87,15 @@ if ($errorhandle->isException()) {
                         <div class="row">
                         <div class="form-group ">
                         <label class="col-sm-3 col-lg-3 control-label">
-                            <?php echo $fhelp->drawLabel($colname['user_id']) ?> </label>
+                            <?php echo $fhelp->drawLabel($colname['member_id']) ?> </label>
                         <div class="col-sm-3 " >
-                            <div class="<?php echo (isset($row[$colname['user_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['user_id']]))?'style="text-align: left;"':''?>>
+                            <div class="<?php echo (isset($row[$colname['member_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['member_id']]))?'style="text-align: left;"':''?>>
                                 <?php 
-                                    if(isset($row[$colname['user_id']])) {
-                                        echo class_player::getName($row[$colname['user_id']]);
+                                    if(isset($row[$colname['member_id']])) {
+                                        echo class_player::getName($row[$colname['member_id']]);
                                     }
                                     else{
-                                        echo $fhelp->drawForm($colname['user_id']);
+                                        echo $fhelp->drawForm($colname['member_id']);
                                 ?>
                             
                                 <div class="control-label" style="text-align: left; font-size: 16px;">
