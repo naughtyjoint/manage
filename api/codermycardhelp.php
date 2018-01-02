@@ -1,6 +1,6 @@
 <?php
 include_once 'coderpointhelp.php';
-include '_database.class.php';
+include_once '_database.class.php';
 
 class coderMycardHelp {
 
