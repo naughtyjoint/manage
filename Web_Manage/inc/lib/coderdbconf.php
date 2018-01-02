@@ -40,7 +40,7 @@ class coderDBConf
     public static $product_log = 'product_log'; //產品歷程
     public static $col_product_log = array('id'=>'id','product_id'=>'product_id','status'=>'status','product_name'=>'product_name','contents'=>'contents','last_manager'=>'last_manager','updated_time'=>'updated_time');
     public static $mycard = 'mycard'; //mycard入款審核
-    public static $col_mycard = array('id'=>'id','member_id'=>'member_id','FacTradeSeq'=>'FacTradeSeq','member_id'=>'member_id','product_id'=>'product_id','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','manager'=>'last_manager');
+    public static $col_mycard = array('id'=>'id','user_id'=>'user_id','FacTradeSeq'=>'FacTradeSeq','member_id'=>'member_id','product_id'=>'product_id','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','Redeposit'=>'Redeposit');
     public static $mycard_log = 'mycard_log'; //mycard入款歷程
     public static $col_mycard_log = array('id'=>'id','deposit_id'=>'deposit_id','member_id'=>'member_id','FacTradeSeq'=>'FacTradeSeq','PayResult'=>'PayResult','updated_time'=>'updated_time','manager'=>'last_manager');
 
