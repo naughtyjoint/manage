@@ -1,7 +1,7 @@
 <?php
 include_once 'codermycardhelp.php';
 
-$FacServiceId = "luckyCL";  //廠商服務代碼
+$FacServiceId = "luckySG";  //廠商服務代碼
 $FacTradeSeq = uniqid('MC');   //廠商交易序號(自動產生)
 $TradeType = "2";   //交易模式
 $ServerId = "";     //伺服器代號
@@ -46,7 +46,7 @@ if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"])&
     $AuthUrl = "https://test.mycard520.com.tw/MyCardPay?AuthCode=".$AuthCode;
 
 
-        header("Location: ".$AuthUrl);
+        echo $AuthUrl;
 
 
 }else{
