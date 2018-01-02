@@ -113,15 +113,15 @@ if ($errorhandle->isException()) {
                                     </div>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['member_id']) ?> </label>
+                                                <?php echo $fhelp->drawLabel($colname['user_id']) ?> </label>
                                             <div class="col-sm-3 " >
-                                                <div class="<?php echo (isset($row[$colname['member_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['member_id']]))?'style="text-align: left;"':''?>>
+                                                <div class="<?php echo (isset($row[$colname['user_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['user_id']]))?'style="text-align: left;"':''?>>
                                                     <?php
-                                                        if(isset($row[$colname['member_id']])) {
-                                                            echo class_player::getName($row[$colname['member_id']]);
+                                                        if(isset($row[$colname['user_id']])) {
+                                                            echo class_player::getName($row[$colname['user_id']]);
                                                         }
                                                         else{
-                                                            echo $fhelp->drawForm($colname['member_id']);
+                                                            echo $fhelp->drawForm($colname['user_id']);
                                                             
                                                     ?>
                                                 
@@ -149,9 +149,9 @@ if ($errorhandle->isException()) {
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['platform_id']) ?> </label>
                                             <div class="col-sm-3 " >
-                                                <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
+                                            <div class="<?php echo (isset($row[$colname['platform_id']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['platform_id']]))?'style="text-align: left;"':''?>>
                                                 <?php
-                                                        echo class_mycard::getName($row[$colname['product_id']]);
+                                                    echo class_platform::getName($row[$colname['platform_id']]);
                                                 ?>
                                                 </div>
                                             </div>
@@ -159,16 +159,6 @@ if ($errorhandle->isException()) {
                                         <?php 
                                             }
                                         ?>
-                                        <div class="form-group ">
-                                            <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['product_id']) ?> </label>
-                                            <div class="col-sm-3 <?php echo (isset($row[$colname['product_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['product_id']]))?'style="text-align: left;"':''?>>
-                                                <?php
-                                                    echo $fhelp->drawForm($colname['product_id']);
-                                                ?>
-                                            </div>
-                                        </div>
-
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['money']) ?> </label>
@@ -183,23 +173,7 @@ if ($errorhandle->isException()) {
                                                 ?>
                                             </div>
                                         </div>
-                                        <?php
-                                            if(isset($row[$colname['point']])) {
-                                        ?>
-                                        <div class="form-group ">
-                                            <label class="col-sm-3 col-lg-3 control-label">
-                                                <?php echo $fhelp->drawLabel($colname['point']) ?> </label>
-                                            <div class="col-sm-3 " >
-                                            <div class="<?php echo (isset($row[$colname['point']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['point']]))?'style="text-align: left;"':''?>>
-                                                <?php
-                                                    echo $row[$colname['point']];
-                                                ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php 
-                                            }
-                                        ?>
+
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>

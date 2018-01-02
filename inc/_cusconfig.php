@@ -23,6 +23,7 @@ $ID_read = "root";
 $PW_read = "";
 $DB_read = "manage_read";
 
+
 $weburl_root="/manage/";//前台cookie紀錄路徑
 $webmanageurl_root=$webmanageurl_cookiepath=$weburl_root."Web_Manage/";//後台cookie紀錄路徑
 $weburl="http://".$session_domain.$weburl_root;//指定網域  最後須加【/】 ex.http://www.wmch.com.tw/

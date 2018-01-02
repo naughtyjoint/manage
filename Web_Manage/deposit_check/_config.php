@@ -12,22 +12,13 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$deposit;
 $colname=coderDBConf::$col_deposit;
 
-$table_m=coderDBConf::$member; //會員
+$table_m=coderDBConf::$member; //玩家
 $colname_m=coderDBConf::$col_member;
 
-$table_p=coderDBConf::$platform; //平台
+$table_p=coderDBConf::$platform; //遊戲
 $colname_p=coderDBConf::$col_platform;
 
 
-$table_third=coderDBConf::$deposit_pay; //第三方支付
-$colname_third= coderDBConf::$col_deposit_pay;
-
-
-$table_product=coderDBConf::$product; //商品
-$colname_product=coderDBConf::$col_product;
-
-
-$product_array = class_mycard::getList_deposit(); //產品
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';

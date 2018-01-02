@@ -120,7 +120,21 @@ $langary_auth = array(
         'list'=>array(
             'mycard'=>'mycard入款'
         )
+    ),
+    /*'test' => array(
+        'name'=>'夥伴資料',
+        'list'=>array(
+            'parner'=>'夥伴列表',
+            'parner2'=>'夥伴列表2'
+        )
+    )*/
+    'program' => array(
+        'name'=>'節目資料',
+        'list'=>array(
+            'program_list'=>'節目列表'
+        )
     )
+
 
 );
 
@@ -454,6 +468,15 @@ $langary_Web_Manage_all = array(
     'player' => '玩家',
     'bank' => '銀行',
     'platform' => '平台名稱',
+    'parnername' => '成員名稱',
+    'parnerage' => '年齡',
+    'parnerweight' => '身材',
+    'pgram_name' => '節目名稱',
+    'thumbnail' => '縮圖位置',
+    'url' => '節目網址',
+    'tag' => '節目標籤',
+    'showtime' => '節目時間',
+    'chatlog' => '聊天紀錄'
 );
 
 

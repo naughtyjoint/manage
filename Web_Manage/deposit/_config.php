@@ -15,13 +15,8 @@ $colname=coderDBConf::$col_deposit;
 $table_m=coderDBConf::$member; //玩家
 $colname_m=coderDBConf::$col_member;
 
-$table_p=coderDBConf::$platform; //平台
+$table_p=coderDBConf::$platform; //遊戲
 $colname_p=coderDBConf::$col_platform;
-
-$table_product=coderDBConf::$product; //商品
-$colname_product=coderDBConf::$col_product;
-
-$product_array = class_mycard::getList_deposit(); //產品
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';
