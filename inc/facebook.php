@@ -81,7 +81,7 @@ class Facebook extends BaseFacebook
    * @var array
    */
   protected static $kSupportedKeys =
-    array('state', 'code', 'access_token', 'user_id');
+    array('state', 'code', 'access_token', 'member_id');
 
   /**
    * Initiates Shared Session

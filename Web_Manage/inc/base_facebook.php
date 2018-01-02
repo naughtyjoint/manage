@@ -566,14 +566,14 @@ abstract class BaseFacebook
     // who the user is.
     $signed_request = $this->getSignedRequest();
     if ($signed_request) {
-      if (array_key_exists('user_id', $signed_request)) {
-        $user = $signed_request['user_id'];
+      if (array_key_exists('member_id', $signed_request)) {
+        $user = $signed_request['member_id'];
 
-        if($user != $this->getPersistentData('user_id')){
+        if($user != $this->getPersistentData('member_id')){
           $this->clearAllPersistentData();
         }
 
-        $this->setPersistentData('user_id', $signed_request['user_id']);
+        $this->setPersistentData('member_id', $signed_request['member_id']);
         return $user;
       }
 
@@ -583,7 +583,7 @@ abstract class BaseFacebook
       return 0;
     }
 
-    $user = $this->getPersistentData('user_id', $default = 0);
+    $user = $this->getPersistentData('member_id', $default = 0);
     $persisted_access_token = $this->getPersistentData('access_token');
 
     // use access_token to fetch user id if we have a user access_token, or if
@@ -594,7 +594,7 @@ abstract class BaseFacebook
         !($user && $persisted_access_token == $access_token)) {
       $user = $this->getUserFromAccessToken();
       if ($user) {
-        $this->setPersistentData('user_id', $user);
+        $this->setPersistentData('member_id', $user);
       } else {
         $this->clearAllPersistentData();
       }

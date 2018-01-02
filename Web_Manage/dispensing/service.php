@@ -11,7 +11,7 @@ try{
 					b.`{$colname_b['id']}` as bank,b.`{$colname_b['name']}`,
 	                bc.`{$colname_bc['id']}` as bank_card,bc.`{$colname_bc['name']}`";
 	$sHelp->table=$table." t
-				  LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['user_id']}`
+				  LEFT JOIN $table_m m ON m.`{$colname_m['member_id']}` = t.`{$colname['member_id']}`
 				  LEFT JOIN $table_p p ON p.`{$colname_p['id']}` = t.`{$colname['platform_id']}`
 				  LEFT JOIN $table_b b ON b.`{$colname_b['id']}` = t.`{$colname['bank_id']}`
 				  LEFT JOIN $table_bc bc ON bc.`{$colname_bc['id']}` = t.`{$colname['bank_card_id']}`";

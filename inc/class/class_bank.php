@@ -43,7 +43,7 @@ class class_bank{
         return $db->fetch_all_array($sql);
     }
 
-    public static function getList_agidone($agid,$user_id){ //判斷代理人或總代 有哪些玩家　尋找單一玩家
+    public static function getList_agidone($agid,$member_id){ //判斷代理人或總代 有哪些玩家　尋找單一玩家
         $db = Database::DB();
         $colname = coderDBConf::$col_player;
         $where = "";
@@ -53,7 +53,7 @@ class class_bank{
 
         $sql = "select `{$colname['nickname']}` as name,`{$colname['id']}` as value
                 from ".coderDBConf::$player."
-                where `{$colname['id']}`=$user_id $where
+                where `{$colname['id']}`=$member_id $where
                 ORDER BY `{$colname['id']}` DESC";
 
         return $db->query_prepare_first($sql);
@@ -69,12 +69,12 @@ class class_bank{
         return $db->fetch_all_array($sql);
     }
 
-    public static function getList_one($user_id){
+    public static function getList_one($member_id){
         global $db;
         $colname = coderDBConf::$col_users;
         $sql = "select *
                 from ".coderDBConf::$users."
-                where `{$colname['id']}`=$user_id 
+                where `{$colname['id']}`=$member_id 
                 ORDER BY `{$colname['id']}` DESC";
 
         return $db->query_prepare_first($sql);

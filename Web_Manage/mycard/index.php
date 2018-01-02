@@ -2,7 +2,6 @@
 include_once('_config.php');
 include_once('filterconfig.php');
 coderAdmin::vaild($auth, 'view');
-
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
 //$listHelp->editLink = "manage.php";
@@ -13,7 +12,6 @@ $listHelp->ajaxSrc = "service.php";
 //$listHelp->ordersortable = "orderservice.php";
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
-
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '50');
 $col[] = array('column' => $colname['member_id'], 'name' => '會員ID', 'order' => true, 'width' => '80');
@@ -21,19 +19,17 @@ $col[] = array('column' => $colname_p['product_id'], 'name' => '產品', 'order'
 $col[] = array('column' => $colname['FacTradeSeq'], 'name' => '第三方交易序號', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['ReturnCode'], 'name' => '交易狀態', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['PayResult'], 'name' => '請款狀態', 'order' => true, 'width' => '90');
+$col[] = array('column' => $colname['Redeposit'], 'name' => '補儲', 'order' => true, 'width' => '50');
 $col[] = array('column' => $colname['Amount'], 'name' => '金額', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Currency'], 'name' => '幣別', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['Created_date'], 'name' => '交易時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['Pay_time'], 'name' => '交易完成時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['Check_time'], 'name' => '請款時間', 'order' => true, 'width' => '120');
-
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
-
 /* ## coder [listHelp] <-- ## */
-
 $db = Database::DB();
-coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', '列表'); 
+coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', '列表');
 $db->close();
 ?>
 <!DOCTYPE html>
@@ -80,7 +76,7 @@ $db->close();
 
         <!-- BEGIN Main Content -->
         <div class="row">
-            <div class="col-md-12"> 
+            <div class="col-md-12">
                 <div class="box">
                     <div class="box-title">
                         <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title ?></h3>
@@ -112,7 +108,7 @@ $db->close();
 <script type="text/javascript">
     $(document).ready(function () {
         /* ## coder [listRow] --> ## */
-        $('#table1').coderlisthelp({ 
+        $('#table1').coderlisthelp({
             debug: true, callback: function (obj, rows) {
                 obj.html('');
                 var count = rows.length;
@@ -129,6 +125,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['FacTradeSeq'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['ReturnCode'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['PayResult'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname['Redeposit'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Amount'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Currency'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['Created_date'];?>"] + '</td>');
@@ -137,7 +134,6 @@ $db->close();
                     obj.append($tr);
                 }
             }, listComplete: function () {
-
             }
         });
         /* ## coder [listRow] <-- ## */
