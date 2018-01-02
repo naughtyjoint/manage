@@ -90,6 +90,7 @@ class coderMycardHelp {
                 'platform_id' => $platform_id,
                 'product_id' => $ProductId,
                 'money' => $row["Amount"],
+                'point' => $totalpoint,
                 'deposit_pay_id' => 1,
                 'pay_code' => $FacTradeSeq,
                 'pay_id' => null,
