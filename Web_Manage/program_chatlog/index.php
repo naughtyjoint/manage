@@ -13,7 +13,7 @@ $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname_cl['id'],          'name' => $langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
+$col[] = array('column' => $colname_cl['id'],          'name' => $langary_Web_Manage_all['chatlog'].$langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['name'],           'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_cl['chatlog'],     'name' => $langary_Web_Manage_all['chatlog'], 'order' => false, 'width' => '120');
 $col[] = array('column' => $colname_cl['createtime'],  'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '120');
@@ -115,7 +115,7 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo  $colname['id'];?>"]);
                     $tr.attr("title",  row["<?php echo $colname['name'];?>"]);
-                    $tr.append('<td>' + row["<?php echo $colname_cl['id'];?>"] + '</td>');
+                    $tr.append('<td >' + row["<?php echo $colname_cl['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['chatlog'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['createtime'];?>"] + '</td>');
