@@ -12,7 +12,7 @@ $listHelp->ajaxSrc = "service.php";
 $listHelp->delSrc = "delservice.php";
 
 $col = array();
-$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60');
+$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60','def_desc'=>'desc');
 $col[] = array('column' => $colname['name'],        'name' => $langary_Web_Manage_all['pgram_name'], 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['description'], 'name' => $langary_Web_Manage_all['depiction'],  'order' =>false, 'width' => '120');
 $col[] = array('column' => $colname['thumbnail'],   'name' => $langary_Web_Manage_all['thumbnail'],  'order' =>false, 'width' => '100');
@@ -69,7 +69,7 @@ $db->close();
                     <a href="../home/index.php">Home</a>
                     <span class="divider"><i class="icon-angle-right"></i></span>
                 </li>
-                <?php echo $mtitle ?>
+                <?php echo $mtitle; ?>
 
             </ul>
         </div>
@@ -80,7 +80,7 @@ $db->close();
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-title">
-                        <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title ?></h3>
+                        <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title; ?></h3>
                         <div class="box-tool">
                             <!-- 何必要有摺疊&關閉表格?? -->
                             <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
@@ -89,7 +89,7 @@ $db->close();
                         <div style="clear:both"></div>
                     </div>
                     <div class="box-content">
-                        <?php echo $listHelp->drawTable() ?>
+                        <?php echo $listHelp->drawTable(); ?>
                     </div>
                 </div>
             </div>
