@@ -12,7 +12,7 @@ $listHelp->ajaxSrc = "service.php";
 $listHelp->delSrc = "delservice.php";
 
 $col = array();
-$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60','def_desc'=>'desc');
+$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['name'],        'name' => $langary_Web_Manage_all['pgram_name'], 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['description'], 'name' => $langary_Web_Manage_all['depiction'],  'order' =>false, 'width' => '120');
 $col[] = array('column' => $colname['thumbnail'],   'name' => $langary_Web_Manage_all['thumbnail'],  'order' =>false, 'width' => '100');
@@ -131,7 +131,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['updatetime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['showtime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../chatlog_list/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

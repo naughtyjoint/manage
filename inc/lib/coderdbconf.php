@@ -50,7 +50,7 @@ class coderDBConf
     public static $tag = 'tags';
     public static $col_tag = array('id'=>'tag_id', 'name'=>'tag_name', 'staus'=>'tags_status', 'createtime'=>'tag_createdtime', 'updatetime'=>'tag_updatetime', 'manage'=>'tag_lastmanage');
     public static $chatlog = 'chatroom_log';
-    public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'chatlog'=>'cl_record', 'createtime'=>'cl_creatdate');
+    public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'record_id'=>'cl_record_id', 'chatlog'=>'cl_record', 'createtime'=>'cl_creatdate');
 
 
 

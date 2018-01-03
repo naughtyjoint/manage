@@ -2120,6 +2120,7 @@ INSERT INTO `bank_card` (`id`, `bank_name`, `bank_id`, `bank_card_no`, `last_man
 CREATE TABLE `chatroom_log` (
   `cl_id` int(3) NOT NULL,
   `cl_pgram_id` int(3) NOT NULL COMMENT '所屬節目id',
+  `cl_record_id` int(3) NOT NULL COMMENT '哪一次開節目',
   `cl_record` text COLLATE utf8_unicode_ci NOT NULL COMMENT '聊天室紀錄',
   `cl_creatdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2128,15 +2129,18 @@ CREATE TABLE `chatroom_log` (
 -- 資料表的匯出資料 `chatroom_log`
 --
 
-INSERT INTO `chatroom_log` (`cl_id`, `cl_pgram_id`, `cl_record`, `cl_creatdate`) VALUES
-(5, 1, '05:17:12 CCC:安安你好', '2018-01-01 03:57:01'),
-(6, 1, '05:18:06 學妹:你好 我正好要去洗澡', '2018-01-01 03:57:01'),
-(7, 14, '05:17:12 CCC:嗨晚安', '2018-01-01 03:57:01'),
-(8, 14, '05:18:06 學妹:晚安', '2018-01-01 03:57:01'),
-(9, 14, '/*學妹 狀態已經設為離線*/', '2018-01-01 03:57:01'),
-(10, 1, '03:30:02 CCC:嗚嗚嗚嗚嗚', '2018-01-02 03:57:01'),
-(11, 14, '05:17:12 CCC:安安你好', '2018-01-02 03:57:01'),
-(12, 14, '05:18:06 學妹:你好 我正好要去洗澡', '2018-01-02 03:57:01');
+INSERT INTO `chatroom_log` (`cl_id`, `cl_pgram_id`, `cl_record_id`, `cl_record`, `cl_creatdate`) VALUES
+(5, 1, 1, 'CCC:安安你好', '2018-01-01 05:03:21'),
+(6, 1, 1, '學妹:你好 我正好要去洗澡', '2018-01-01 07:03:21'),
+(7, 14, 1, 'CCC:嗨晚安', '2018-01-02 07:03:21'),
+(8, 14, 1, '學妹:晚安', '2018-01-02 07:03:21'),
+(9, 14, 1, '/*學妹 狀態已經設為離線*/', '2018-01-01 02:05:42'),
+(10, 1, 2, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:03:21'),
+(11, 14, 2, 'CCC:安安你好', '2018-01-03 07:03:21'),
+(12, 14, 2, '學妹:你好 我正好要去洗澡', '2018-01-03 07:03:21'),
+(16, 1, 3, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:53:00'),
+(17, 1, 3, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:53:00'),
+(18, 1, 4, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:53:00');
 
 -- --------------------------------------------------------
 
@@ -2586,7 +2590,6 @@ CREATE TABLE `program` (
   `pgram_thumbnail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `pgram_url` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `pgram_tag` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `pgram_chatlog` text COLLATE utf8_unicode_ci NOT NULL,
   `pgram_createdtime` datetime NOT NULL,
   `pgram_updatetime` datetime NOT NULL,
   `pgram_showtime` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -2597,9 +2600,11 @@ CREATE TABLE `program` (
 -- 資料表的匯出資料 `program`
 --
 
-INSERT INTO `program` (`pgram_id`, `pgram_name`, `pgram_description`, `pgram_thumbnail`, `pgram_url`, `pgram_tag`, `pgram_chatlog`, `pgram_createdtime`, `pgram_updatetime`, `pgram_showtime`, `pgram_lastmanager`) VALUES
-(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '/pgram_img01', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '2', '05:17:12 CCC:安安你好\r\n05:18:06 學妹:你好 我正好要去洗澡', '2017-12-27 01:09:13', '2018-01-02 11:15:16', '每周一 19:00am~20:00am', 'admin'),
-(14, '美眉看MTV', '由現今才女介紹hitoMAV', 'thumbnail.jpg', 'https://www.w3schools.com/php/php_file_upload.asp', '2', '', '2017-12-29 17:54:11', '2017-12-29 17:54:11', '24hr 不間斷', 'admin');
+INSERT INTO `program` (`pgram_id`, `pgram_name`, `pgram_description`, `pgram_thumbnail`, `pgram_url`, `pgram_tag`, `pgram_createdtime`, `pgram_updatetime`, `pgram_showtime`, `pgram_lastmanager`) VALUES
+(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '/pgram_img01', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '2', '2017-12-27 01:09:13', '2018-01-02 11:15:16', '每周一 19:00am~20:00am', 'admin'),
+(14, '美眉看MTV', '由現今才女介紹hitoMV', 'thumbnail.jpg', 'https://www.w3schools.com/php/php_file_upload.asp', '2', '2017-12-29 17:54:11', '2018-01-02 15:20:27', '24hr 不間斷', 'admin'),
+(19, 'aasdf', 'asdf', 'manage.sql', 'asdfsa', '1', '2018-01-03 17:52:53', '2018-01-03 17:52:53', 'asdf', 'admin'),
+(20, 'aasdf', 'asdf', 'manage.sql', 'asdfsa', '1', '2018-01-03 17:52:54', '2018-01-03 17:52:54', 'asdf', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2941,7 +2946,6 @@ ALTER TABLE `admin_log`
 --
 ALTER TABLE `agent`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '代理編號', AUTO_INCREMENT=6;
-
 --
 -- 使用資料表 AUTO_INCREMENT `anchor`
 --
@@ -2964,7 +2968,7 @@ ALTER TABLE `bank_card`
 -- 使用資料表 AUTO_INCREMENT `chatroom_log`
 --
 ALTER TABLE `chatroom_log`
-  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- 使用資料表 AUTO_INCREMENT `contribution`
@@ -3036,7 +3040,8 @@ ALTER TABLE `product_log`
 -- 使用資料表 AUTO_INCREMENT `program`
 --
 ALTER TABLE `program`
-  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 
 --
 -- 使用資料表 AUTO_INCREMENT `rules_auth`

@@ -2,8 +2,6 @@
 include_once('_config.php');
 $errorhandle=new coderErrorHandle();
 try{
-	coderAdmin::vaild($auth,'del');
-	
 	$success=false;
 	$count=0;
 	$msg=$langary_delservice['msg'];
@@ -14,12 +12,14 @@ try{
 		$db = Database::DB();
 		$idlist="'".implode("','",$id)."'";
 
-		$count=$db->exec("delete from $table where `{$colname['id']}` in($idlist)");
+		$count=$db->exec("update  $table set `{$colname['chatlog']}`=null where `{$colname['id']}` in($idlist)");
 		if($count>0){
 			$success=true;
-			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.$langary_delservice['insert'].'('.$idlist.')');
+			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'edit',$count.$langary_delservice['edit'].'('.$idlist.')');
+            echo "<script>alert('update success')</script>";
 		}
 		else{
+            echo "<script>alert('update error')</script>";
 			throw new Exception($langary_delservice['exception']);
 		}
 

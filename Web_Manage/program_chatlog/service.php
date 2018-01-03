@@ -8,6 +8,7 @@ try{
 	$sHelp=new coderSelectHelp($db);
 
     $getid = (get('id')!="")?get('id'):-1;
+    $getrid=(get('r_id')!="")?get('r_id'):-1;
 
     //select
 	$sHelp->select="t.`{$colname_cl['id']}`,p.`{$colname['name']}`,t.`{$colname_cl['chatlog']}`,t.`{$colname_cl['createtime']}`";
@@ -17,7 +18,7 @@ try{
     //where
     $sqlstr=$filterhelp->getSQLStr();
     $where = $sqlstr->SQL;
-    $where .= ($where==''?'':' AND ')."p.`{$colname['id']}` = ".$getid . " AND t.`{$colname_cl['pgram_id']}` = ".$getid;
+    $where .= ($where==''?'':' AND ')."p.`{$colname['id']}` = ".$getid . " AND t.`{$colname_cl['pgram_id']}` = ".$getid." AND t.`{$colname_cl['record_id']}` = ".$getrid;
     $sHelp->where=$where;
 
     $rows=$sHelp->getList();
