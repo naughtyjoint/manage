@@ -9,7 +9,8 @@ $listHelp = new coderListHelp('table1', $page_title);
 $listHelp->ajaxSrc = "service.php?id=".$getid."&r_id=".$getrid;
 $listHelp->check_auth = false;
 
-//$listHelp->delSrc = "delservice.php";
+$listHelp->mutileSelect=true;
+$listHelp->delSrc = "delservice.php";
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 

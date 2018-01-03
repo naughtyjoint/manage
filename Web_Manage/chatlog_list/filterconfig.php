@@ -1,8 +1,7 @@
 <?php
 $filterhelp = new coderFilterHelp();
 $obj[] = array('type' => 'keyword', 'name' => '關鍵字', 'sql' => true, 'ary' => array(
-    array('column' => $colname_cl['id'], 'name' => 'ID'),
-    array('column' => $colname_cl['chatlog'], 'name' => '聊天紀錄')
+    array('column' => $colname_cl['record_id'], 'name' => '開播編號')
 ));
-$obj[] = array('type' => 'dategroup', 'column' => 'dategroup', 'sql' => true,'table'=>'t', 'ary' => array(array('column' => $colname_cl['createtime'], 'name' => '建立時間')));
+//$obj[] = array('type' => 'dategroup', 'column' => 'dategroup', 'sql' => true,'table'=>'t', 'ary' => array(array('column' => $colname_cl['createtime'], 'name' => '建立時間')));
 $filterhelp->Bind($obj);

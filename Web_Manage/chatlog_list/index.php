@@ -8,7 +8,7 @@ $listHelp = new coderListHelp('table1', $page_title);
 $listHelp->ajaxSrc = "service.php?id=".$getid;
 $listHelp->check_auth = false;
 
-//$listHelp->delSrc = "delservice.php";
+$listHelp->delSrc = "delservice.php";
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
