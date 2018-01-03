@@ -12,7 +12,7 @@ $listHelp->ajaxSrc = "service.php";
 $listHelp->delSrc = "delservice.php";
 
 $col = array();
-$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60','def_desc'=>'desc');
+$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['name'],        'name' => $langary_Web_Manage_all['pgram_name'], 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['description'], 'name' => $langary_Web_Manage_all['depiction'],  'order' =>false, 'width' => '120');
 $col[] = array('column' => $colname['thumbnail'],   'name' => $langary_Web_Manage_all['thumbnail'],  'order' =>false, 'width' => '100');

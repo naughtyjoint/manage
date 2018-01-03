@@ -8,12 +8,12 @@ $listHelp = new coderListHelp('table1', $page_title);
 $listHelp->ajaxSrc = "service.php?id=".$getid;
 $listHelp->check_auth = false;
 
-$listHelp->editLink = "manage.php";
-$listHelp->delSrc = "delservice.php";
+//$listHelp->delSrc = "delservice.php";
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
+$col[] = array('column' => $colname_cl['record_id'], 'name' => '開播編號', 'order' => true, 'width' => '100','def_desc'=>'desc');
 $col[] = array('column' => $colname['name'], 'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
 $col[] = array('column' => 'start_time',     'name' => '開始聊天時間', 'order' => false, 'width' => '100');
 $col[] = array('column' => 'end_time',       'name' => '最後聊天時間', 'order' => false, 'width' => '100');
@@ -117,11 +117,12 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo  $colname['id'];?>"]);
                     $tr.attr("title",  row["<?php echo $colname['name'];?>"]);
+                    $tr.append('<td >' + row["<?php echo $colname_cl['record_id'];?>"] + '</td>');
                     $tr.append('<td >' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["start_time"] + '</td>');
                     $tr.append('<td>' + row["end_time"] + '</td>');
                     $tr.append('<td>' + row["loglength"] + '</td>');
-                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + "&r_id="+ row["<?php echo $colname_cl['record_id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

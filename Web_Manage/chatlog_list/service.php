@@ -10,9 +10,11 @@ try{
     $getid = (get('id')!="")?get('id'):-1;
 
     //select
-    $sHelp->select="123t.`{$colname_cl['record_id']}`, p.`{$colname['name']}`,
-    (SELECT COUNT(*) FROM ".$table_cl." a WHERE  a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}`) as chat_count";
-
+    $sHelp->select="t.`{$colname_cl['record_id']}`, p.`{$colname['name']}`,
+    (SELECT COUNT(*) FROM ".$table_cl." a WHERE  a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}`) as loglength,
+    (SELECT MIN(a.`{$colname_cl['createtime']}`) FROM ".$table_cl." a WHERE a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}` ) as start_time,
+    (SELECT MAX(a.`{$colname_cl['createtime']}`) FROM ".$table_cl." a WHERE a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}` ) as end_time,"
+    ."p.`{$colname['id']}`";
 
     //$sHelp->select="t.`{$colname_cl['id']}`,p.`{$colname['name']}`,t.`{$colname_cl['chatlog']}`,t.`{$colname_cl['createtime']}`";
     //from
@@ -25,19 +27,6 @@ try{
     $sHelp->where=$where;
 
     $rows=$sHelp->getList();
-
-    for($i=0;$i<count($rows);$i++)
-    {
-        /*if($rows[$i][$colname['name']] != "")
-        {
-            $rows[$i]["loglength"] = count($colname_cl['pgram_id']);
-            $rows[$i]["start_time"] = count($colname_cl['pgram_id']);
-            $rows[$i]["end_time"] = count($colname_cl['pgram_id']);
-        }*/
-        $rows[$i]["loglength"] = count($rows[$i][$colname_cl["chatlog"]]);
-        //$rows[$i]["start_time"] = '456');
-        //$rows[$i]["end_time"] = '789');
-    }
 
     $sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");

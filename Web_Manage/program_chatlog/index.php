@@ -1,11 +1,12 @@
 <?php
 include_once('_config.php');
 include_once('filterconfig.php');
-$getid = (get('id')!="")?get('id'):0;
+$getid = (get('id')!="")?get('id'):-1;
+$getrid = (get('r_id')!="")?get('r_id'):-1;
 
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
-$listHelp->ajaxSrc = "service.php?id=".$getid;
+$listHelp->ajaxSrc = "service.php?id=".$getid."&r_id=".$getrid;
 $listHelp->check_auth = false;
 
 //$listHelp->delSrc = "delservice.php";
