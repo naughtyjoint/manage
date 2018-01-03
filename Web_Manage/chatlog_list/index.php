@@ -1,32 +1,32 @@
 <?php
 include_once('_config.php');
-//include_once('filterconfig.php');
-coderAdmin::vaild($auth, 'view');
+include_once('filterconfig.php');
+$getid = (get('id')!="")?get('id'):0;
 
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
-$listHelp->mutileSelect = true;
-//$listHelp->editLink = "manage.php";
-$listHelp->addLink = "manage.php";
-$listHelp->ajaxSrc = "service.php";
-//$listHelp->delSrc = "delservice.php";
+$listHelp->ajaxSrc = "service.php?id=".$getid;
+$listHelp->check_auth = false;
+
+$listHelp->editLink = "manage.php";
+$listHelp->delSrc = "delservice.php";
+$listHelp->orderColumn = $orderColumn;
+$listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname['id'],      'name' => $langary_Web_Manage_all['id'],          'order' => true, 'width' => '60');
-$col[] = array('column' => $colname['name'],    'name' => $langary_Web_Manage_all['parnername'],  'order' => true, 'width' => '200');
-$col[] = array('column' => $colname['age'],     'name' => $langary_Web_Manage_all['parnerage'],   'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['weight'],  'name' => $langary_Web_Manage_all['parnerweight'],'order' => true, 'width' => '100');
-
-
-//Notice: Undefined index: weight in C:\xampp\htdocs\pkbar\Web_Manage\testpage\index.php on line 18
+$col[] = array('column' => $colname['name'], 'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
+$col[] = array('column' => 'start_time',     'name' => '開始聊天時間', 'order' => false, 'width' => '100');
+$col[] = array('column' => 'end_time',       'name' => '最後聊天時間', 'order' => false, 'width' => '100');
+$col[] = array('column' => '$loglength',     'name' => '留言數量 ', 'order' => false, 'width' => '80');
+$col[] = array('column' => $colname['id'],   'name' => $langary_Web_Manage_all['chatlog'],    'order' =>false, 'width' => '80','classname'=>'text-center');
 
 $listHelp->Bind($col);
-//$listHelp->bindFilter($filterhelp);
+$listHelp->bindFilter($filterhelp);
 
 /* ## coder [listHelp] <-- ## */
 
 $db = Database::DB();
-coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', $langary_Web_Manage_all['insert']);
+
 $db->close();
 ?>
 <!DOCTYPE html>
@@ -39,19 +39,20 @@ $db->close();
             background-color: white !important;
             border: none !important;
         }
+        tr{ cursor: pointer; }
     </style>
 </head>
 <body>
-<?php include('../navbar.php'); ?>
+<?php //include('../navbar.php'); ?>
 <!-- BEGIN Container -->
 <div class="container" id="main-container">
-    <?php include('../left.php'); ?>
+    <?php //include('../left.php'); ?>
     <!-- BEGIN Content -->
     <div id="main-content">
         <!-- BEGIN Page Title -->
         <div class="page-title">
             <div>
-                <h1><i class="<?php echo $mainicon ?>"></i> <?php echo $page_title ?><?php echo $langary_index['page_title']?></h1>
+                <h1><i class="<?php echo $mainicon ?>"></i> <?php echo $page_title ?>管理</h1>
                 <h4><?php echo $page_desc ?></h4>
             </div>
         </div>
@@ -78,7 +79,6 @@ $db->close();
                     <div class="box-title">
                         <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title ?></h3>
                         <div class="box-tool">
-                            <!-- 何必要有摺疊&關閉表格?? -->
                             <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
                             <a data-action="close" href="#"><i class="icon-remove"></i></a>
                         </div>
@@ -103,7 +103,7 @@ $db->close();
 
 <script type="text/javascript" src="../js/coderlisthelp.js"></script>
 
-<script type="text/javascript">
+<script type="text/javascript"> 
     $(document).ready(function () {
         /* ## coder [listRow] --> ## */
         $('#table1').coderlisthelp({
@@ -115,12 +115,13 @@ $db->close();
                     var $tr = $('<tr></tr>');
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("title", row["<?php echo $colname['name'];?>"]);
-                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['age'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['weight'];?>"] + '</td>');
+                    $tr.attr("delkey", row["<?php echo  $colname['id'];?>"]);
+                    $tr.attr("title",  row["<?php echo $colname['name'];?>"]);
+                    $tr.append('<td >' + row["<?php echo $colname['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["start_time"] + '</td>');
+                    $tr.append('<td>' + row["end_time"] + '</td>');
+                    $tr.append('<td>' + row["loglength"] + '</td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

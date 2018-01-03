@@ -131,7 +131,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['updatetime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['showtime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../chatlog_list/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

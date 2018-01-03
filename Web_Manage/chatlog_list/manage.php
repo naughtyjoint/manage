@@ -18,7 +18,7 @@ try {
             throw new Exception($langary_manage['exception']);
         }
         /* ## coder [bindData] --> ## */
-        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['create_time']].' | '.$langary_manage['updatetime'].' '.$row[$colname['update_time']];
+        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname['updatetime']];
         /* ## coder [bindData] <-- ## */
         /* ## coder [beforeBind] --> ## */
         /* ## coder [beforeBind] <-- ## */
@@ -97,6 +97,42 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['name']) ?>
                                         </div>
                                     </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['description']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['description']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['thumbnail']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['thumbnail']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['url']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['url']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['tag']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['tag']) ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['showtime']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['showtime']) ?>
+                                        </div>
+                                    </div>
 
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
@@ -154,6 +190,13 @@ if ($errorhandle->isException()) {
 <script type="text/javascript" src="../assets/dropzone/downloads/dropzone.min.js"></script>
 <!-- 裁圖&傳圖 -->
 <script type="text/javascript" src="../assets/jcrop/jquery.Jcrop.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../assets/chosen-bootstrap/chosen.min.css"/>
+<script type="text/javascript" src="../assets/chosen-bootstrap/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../js/coderpicupload.js"></script>
+<script type="text/javascript" src="../js/coderlisthelp.js"></script>
+
+<script type="text/javascript">
+
 <!-- ## coder [includeScript] -> ## -->
 <!-- ## coder [includeScript] <- ## -->
 <script type="text/javascript">
@@ -165,8 +208,7 @@ if ($errorhandle->isException()) {
         /* ## coder [jsVaildScript] --> ## */
         /* ## coder [jsVaildScript] <-- ## */
     })
-
-
 </script>
 </body>
 </html>
+
