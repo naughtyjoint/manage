@@ -38,8 +38,11 @@ try{
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
+        for($i=0;$i<4;$i++){
+            @$num .=dechex(rand(0,15));
+        }
         $data[$colname['created_time']]= $nowtime;
-        $data[$colname['agent_id']] = post($colname['agent_id'],1);
+        $data[$colname['agent_id']] = $num;
         $data[$colname['name']] = post($colname['name'],1); 
         $data[$colname['email']] = post($colname['email'],1);
 		$id=$db->query_insert($table,$data);
