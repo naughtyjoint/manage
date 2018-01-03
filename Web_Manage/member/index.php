@@ -21,7 +21,7 @@ $col[] = array('column' => $colname['member_id'], 'name' => '會員ID ', 'order'
 $col[] = array('column' => $colname['name'], 'name' => '會員名稱 ', 'order' => false, 'width' => '200');
 $col[] = array('column' => 'platform_name', 'name' => '平台名稱 ', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['email'], 'name' => 'E-mail ', 'order' => false);
-$col[] = array('column' => $colname['point'], 'name' => '積分 ', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname['point'], 'name' => '點數 ', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['login_time'], 'order' => true, 'width' => '200');
 //$col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');

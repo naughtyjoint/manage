@@ -3,12 +3,13 @@ include_once 'coderpointhelp.php';
 
 
 $fal_resultback = array(
-    'ReturnCode' => '2',
-    'ReturnMsg' => 'failed to get AuthCode .'
+    'success' => 'false',
+    'result' => '',
+    'message' => 'Contribution failed.'
 );
 
 
-if(isset($_POST["token"])&&isset($_POST["member_id"])&&isset($_POST["anchor_id"])&&isset($_POST["point"])&&isset($_POST["content"])){
+if(!empty($_POST["token"])&&!empty($_POST["member_id"])&&!empty($_POST["anchor_id"])&&!empty($_POST["point"])&&!empty($_POST["content"])){
     $member_id = $_POST["member_id"];
     $anchor_id = $_POST["anchor_id"];
     $point = $_POST["point"];
@@ -20,11 +21,8 @@ if(isset($_POST["token"])&&isset($_POST["member_id"])&&isset($_POST["anchor_id"]
         'content' => $content
     );
     $contribute = new coderPointHelp();
-    $contribute->Contribution($contribute_ary);
+    $result = $contribute->Contribution($contribute_ary);
 
-    $result['success']=true;
-    $result['result']=$contribute_ary;
-    $result['message']='Accessed successfully';
     echo json_encode($result);
 
 
