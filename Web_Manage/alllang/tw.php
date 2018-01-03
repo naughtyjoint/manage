@@ -60,6 +60,7 @@ $langary_auth = array(
         'name'=>'會員',
         'list'=>array(
             'platform'=>'平台列表',
+            'agent' =>'代理',
             'player'=>'會員列表',
             'anchor'=>'主播列表'
         )

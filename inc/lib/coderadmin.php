@@ -22,7 +22,7 @@ class coderAdmin
             'admin' => array('key' => 1, 'name' => $langary_auth['admin']['name'], 'icon' => 'icon-lock', 'auth' => 30,
                 'list' => array(
                     'admin' => array('key' => 1, 'name' => $langary_auth['admin']['list']['admin'], 'icon' => 'icon-lock', 'path' => 'admin/index.php', 'auth' => 30),
-                    'adminlog' => array('key' => 2, 'name' => $langary_auth['admin']['list']['adminlog'], 'icon' => 'icon-lock', 'path' => 'adminlog/index.php', 'auth' => 2),
+                    'adminlog' => array('key' => 2, 'name' => $langary_auth['admin']['list']['adminlog'], 'icon' => 'icon-lock', 'path' => 'adminlog/index.php', 'auth' => 2)
                 )
             ),
             'auth' => array('key' => 2, 'name' => $langary_auth['auth']['name'], 'icon' => 'icon-lock', 'auth' => 30,
@@ -33,8 +33,9 @@ class coderAdmin
             'member' => array('key' => 6, 'name' => $langary_auth['member']['name'], 'icon' => 'icon-lock', 'auth' => 30,
                 'list' => array(
                     'platform' => array('key' => 1, 'name' => $langary_auth['member']['list']['platform'], 'icon' => 'icon-lock', 'path' => 'platform/index.php', 'auth' => 30),
-                    'player' => array('key' => 2, 'name' => $langary_auth['member']['list']['player'], 'icon' => 'icon-lock', 'path' => 'member/index.php', 'auth' => 30),
-                    'anchor' => array('key' => 3, 'name' => $langary_auth['member']['list']['anchor'], 'icon' => 'icon-lock', 'path' => 'anchor/index.php', 'auth' => 30)
+                    'agent' => array('key' => 2, 'name' => $langary_auth['member']['list']['agent'], 'icon' => 'icon-lock', 'path' => 'agent/index.php', 'auth' => 30),
+                    'player' => array('key' => 3, 'name' => $langary_auth['member']['list']['player'], 'icon' => 'icon-lock', 'path' => 'member/index.php', 'auth' => 30),
+                    'anchor' => array('key' => 4, 'name' => $langary_auth['member']['list']['anchor'], 'icon' => 'icon-lock', 'path' => 'anchor/index.php', 'auth' => 30)
                 )
             ),
             'dispensing' => array('key' => 3, 'name' => $langary_auth['dispensing']['name'], 'icon' => 'icon-usd', 'auth' => 30,
