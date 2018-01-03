@@ -117,7 +117,7 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo  $colname['id'];?>"]);
                     $tr.attr("title",  row["<?php echo $colname['name'];?>"]);
-                    $tr.append('<td >' + row["<?php echo $colname_cl['id'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_cl['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['chatlog'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['createtime'];?>"] + '</td>');

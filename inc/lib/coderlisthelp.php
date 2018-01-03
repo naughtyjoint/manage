@@ -141,7 +141,7 @@ class coderListHelp{
 		<img src="../images/loading.gif" width="23" id="filterloading" style="float:left;margin-right:10px;">
                    <div class="btn-group">';
 		echo ($this->addLink!="") ? '<a class="btn btn-circle show-tooltip" title="新增'.$this->name.'" href="'.$this->addLink.'" id="addBtn"><i class="icon-plus"></i></a>' : '';
-		echo ($this->delSrc!="" && $this->mutileSelect) ? '<a class="btn btn-circle show-tooltip" title="刪除被選擇取的'.$this->name.'" href="#" id="mutileDelBtn"><i class="icon-trash"></i></a>' : '';
+		echo ($this->delSrc!="" && $this->mutileSelect) ? '<a class="btn btn-circle show-tooltip" title="刪除被選取的'.$this->name.'" href="#" id="mutileDelBtn"><i class="icon-trash"></i></a>' : '';
         echo '</div>';
 		echo '<div class="btn-group">';
 		echo ($this->addexcelLink!="") ? '<a class="btn btn-circle show-tooltip" title="匯入Excel'.$this->name.'資料" href="'.$this->addexcelLink.'"" id="addexcelBtn"><i class="glyphicon glyphicon-import" style="top:0px;"></i></a>' : '';
