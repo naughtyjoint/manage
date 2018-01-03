@@ -86,13 +86,15 @@ if ($errorhandle->isException()) {
                                 <!--left start-->
                                 <div class="col-md-10">
                                     <!-- ## coder [formScript] -> ## -->
+                                    <?php if(isset($row[$colname['agent_id']])){ ?>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['agent_id']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['agent_id']); ?>
+                                            <?php echo $row[$colname['agent_id']]; ?>
                                         </div>
                                     </div>
+                                    <?php } ?>
                                     <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['name']) ?> </label>

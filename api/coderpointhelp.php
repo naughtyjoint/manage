@@ -12,9 +12,7 @@ class coderPointHelp
 
     public function __construct()
     {
-        $this->table_member;
-        $this->table_anchor;
-        $this->table_contribution;
+
     }
 
     //取得單一會員點數總數
@@ -40,7 +38,6 @@ class coderPointHelp
         $totalpoint = $orig_point+$point;
         $db = Database::DB();
         $db->query_update($this->table_member,['point' => $totalpoint]," member_id='$mem_id'");
-        $db->close();
     }
 
 

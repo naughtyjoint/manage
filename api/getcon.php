@@ -39,8 +39,6 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
 
     if($result == "PaymentOK"){
         echo json_encode($suc_resultback);
-        $db = Database::DB();
-        $db->close();
     }
     else
     echo json_encode($fal_resultback);
