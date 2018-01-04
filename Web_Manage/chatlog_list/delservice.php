@@ -11,11 +11,11 @@ try{
 	if(count($id)>0){
 		$db = Database::DB();
 		$idlist="'".implode("','",$id)."'";
-
-		$count=$db->exec("update  $table set `{$colname['chatlog']}`=null where `{$colname['id']}` in($idlist)");
+        //$colname_cl['record_id']
+		$count=$db->exec("delete from $table_cl where `{$colname_cl['record_id']}` in($idlist)");
 		if($count>0){
 			$success=true;
-			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'edit',$count.$langary_delservice['edit'].'('.$idlist.')');
+			//coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'edit',$count.$langary_delservice['edit'].'('.$idlist.')');
             echo "<script>alert('update success')</script>";
 		}
 		else{
