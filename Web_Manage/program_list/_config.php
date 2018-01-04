@@ -5,6 +5,7 @@ $main_auth_key='program';
 $fun_auth_key='program_list';
 include('../_config.php');
 
+$file_path=$admin_path_admin;
 
 $auth=coderAdmin::Auth($fun_auth_key);
 

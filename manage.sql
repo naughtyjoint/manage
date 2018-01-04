@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2018-01-03 11:56:52
--- 伺服器版本: 10.1.28-MariaDB
--- PHP 版本： 7.1.11
+-- 產生時間： 2018-01-04 11:00:23
+-- 伺服器版本: 10.1.29-MariaDB
+-- PHP 版本： 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,7 +58,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-(1, '', '', 1, 0, 1, 0, '2f43bfa323a0391b3024f3b11304208c151495012335697p7amh88v33chrm210is0d00c9k', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2018-01-03 11:28:43', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
+(1, '', '', 1, 0, 1, 0, 'a03fa0e9277cf7e8d91a5bc12a2596251515048545723103d4h719ra69bq0vgf0lc646acg', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2018-01-04 14:49:05', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '60e58df6877dd77b434aef35828397a8151322428638780bd2h9aut8a08m15lqfmdnbck5s', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:04:46', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db84d35f53ef5be6e70fbbf60b061df015141661779345177ro40dgnam3jvpp6mqoim1c7f', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-25 09:42:57', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
 
@@ -2014,7 +2014,50 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (4216, 'admin', 6, 2, '列表', '2018-01-03 11:44:57', '127.0.0.1', 2),
 (4217, 'admin', 6, 2, '1筆資料(\'4\')', '2018-01-03 11:50:43', '127.0.0.1', 16),
 (4218, 'admin', 6, 2, 'id:5', '2018-01-03 11:50:51', '127.0.0.1', 4),
-(4219, 'admin', 6, 2, '列表', '2018-01-03 11:51:24', '127.0.0.1', 2);
+(4219, 'admin', 6, 2, '列表', '2018-01-03 11:51:24', '127.0.0.1', 2),
+(4220, 'admin', 0, 0, 'admin登入成功', '2018-01-04 09:53:43', '::1', 1),
+(4221, 'admin', 8, 1, '列表', '2018-01-04 09:56:32', '::1', 2),
+(4222, 'admin', 8, 1, '1筆資料(\'20\')', '2018-01-04 09:59:02', '::1', 16),
+(4223, 'admin', 8, 1, '列表', '2018-01-04 10:04:56', '::1', 2),
+(4224, 'admin', 8, 1, '列表', '2018-01-04 10:32:04', '::1', 2),
+(4225, 'admin', 6, 3, '列表', '2018-01-04 10:32:49', '::1', 2),
+(4226, 'admin', 8, 1, '列表', '2018-01-04 10:32:52', '::1', 2),
+(4227, 'admin', 0, 0, 'admin登入成功', '2018-01-04 10:33:40', '::1', 1),
+(4228, 'admin', 8, 1, '列表', '2018-01-04 10:33:45', '::1', 2),
+(4229, 'admin', 5, 2, '列表', '2018-01-04 11:58:35', '::1', 2),
+(4230, 'admin', 8, 1, '列表', '2018-01-04 11:58:59', '::1', 2),
+(4231, 'admin', 0, 0, 'admin登入成功', '2018-01-04 13:48:23', '::1', 1),
+(4232, 'admin', 8, 1, '列表', '2018-01-04 13:48:29', '::1', 2),
+(4233, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 13:48:43', '::1', 8),
+(4234, 'admin', 8, 1, '列表', '2018-01-04 13:55:49', '::1', 2),
+(4235, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 13:56:05', '::1', 8),
+(4236, 'admin', 0, 0, 'admin登入成功', '2018-01-04 14:49:05', '::1', 1),
+(4237, 'admin', 8, 1, '列表', '2018-01-04 14:49:15', '::1', 2),
+(4238, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 14:52:09', '::1', 8),
+(4239, 'admin', 8, 1, '列表', '2018-01-04 15:18:23', '::1', 2),
+(4240, 'admin', 8, 1, '列表', '2018-01-04 15:44:33', '::1', 2),
+(4241, 'admin', 8, 1, '美眉看MTV id:14', '2018-01-04 15:46:45', '::1', 8),
+(4242, 'admin', 8, 1, '列表', '2018-01-04 15:46:48', '::1', 2),
+(4243, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 15:48:25', '::1', 8),
+(4244, 'admin', 8, 1, '美眉看MTV id:14', '2018-01-04 15:49:45', '::1', 8),
+(4245, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 15:49:54', '::1', 8),
+(4246, 'admin', 8, 1, '列表', '2018-01-04 15:51:07', '::1', 2),
+(4247, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 16:13:16', '::1', 8),
+(4248, 'admin', 8, 1, '列表', '2018-01-04 16:13:27', '::1', 2),
+(4249, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 16:17:45', '::1', 8),
+(4250, 'admin', 8, 1, '列表', '2018-01-04 16:31:27', '::1', 2),
+(4251, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 16:31:40', '::1', 8),
+(4252, 'admin', 8, 1, '列表', '2018-01-04 16:31:43', '::1', 2),
+(4253, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 16:45:51', '::1', 8),
+(4254, 'admin', 8, 1, '列表', '2018-01-04 16:49:12', '::1', 2),
+(4255, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 16:50:42', '::1', 8),
+(4256, 'admin', 8, 1, '列表', '2018-01-04 16:55:08', '::1', 2),
+(4257, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 16:56:41', '::1', 8),
+(4258, 'admin', 8, 1, '列表', '2018-01-04 17:05:52', '::1', 2),
+(4259, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 17:06:07', '::1', 8),
+(4260, 'admin', 8, 1, '列表', '2018-01-04 17:24:39', '::1', 2),
+(4261, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-04 17:43:37', '::1', 8),
+(4262, 'admin', 8, 1, 'qwer id:21', '2018-01-04 17:45:27', '::1', 4);
 
 -- --------------------------------------------------------
 
@@ -2137,10 +2180,7 @@ INSERT INTO `chatroom_log` (`cl_id`, `cl_pgram_id`, `cl_record_id`, `cl_record`,
 (9, 14, 1, '/*學妹 狀態已經設為離線*/', '2018-01-01 02:05:42'),
 (10, 1, 2, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:03:21'),
 (11, 14, 2, 'CCC:安安你好', '2018-01-03 07:03:21'),
-(12, 14, 2, '學妹:你好 我正好要去洗澡', '2018-01-03 07:03:21'),
-(16, 1, 3, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:53:00'),
-(17, 1, 3, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:53:00'),
-(18, 1, 4, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:53:00');
+(12, 14, 2, '學妹:你好 我正好要去洗澡', '2018-01-03 07:03:21');
 
 -- --------------------------------------------------------
 
@@ -2587,7 +2627,7 @@ CREATE TABLE `program` (
   `pgram_id` int(11) NOT NULL,
   `pgram_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `pgram_description` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `pgram_thumbnail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `pgram_thumbnail` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `pgram_url` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `pgram_tag` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `pgram_createdtime` datetime NOT NULL,
@@ -2601,10 +2641,11 @@ CREATE TABLE `program` (
 --
 
 INSERT INTO `program` (`pgram_id`, `pgram_name`, `pgram_description`, `pgram_thumbnail`, `pgram_url`, `pgram_tag`, `pgram_createdtime`, `pgram_updatetime`, `pgram_showtime`, `pgram_lastmanager`) VALUES
-(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '/pgram_img01', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '2', '2017-12-27 01:09:13', '2018-01-02 11:15:16', '每周一 19:00am~20:00am', 'admin'),
-(14, '美眉看MTV', '由現今才女介紹hitoMV', 'thumbnail.jpg', 'https://www.w3schools.com/php/php_file_upload.asp', '2', '2017-12-29 17:54:11', '2018-01-02 15:20:27', '24hr 不間斷', 'admin'),
-(19, 'aasdf', 'asdf', 'manage.sql', 'asdfsa', '1', '2018-01-03 17:52:53', '2018-01-03 17:52:53', 'asdf', 'admin'),
-(20, 'aasdf', 'asdf', 'manage.sql', 'asdfsa', '1', '2018-01-03 17:52:54', '2018-01-03 17:52:54', 'asdf', 'admin');
+(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '2,1', '2017-12-27 01:09:13', '2018-01-04 17:43:36', '每周一 19:00am~20:00am', 'admin'),
+(14, '美眉看MTV', '由現今才女介紹hitoMV', '', 'https://www.w3schools.com/php/php_file_upload.asp', '2', '2017-12-29 17:54:11', '2018-01-04 15:49:45', '24hr 不間斷', 'admin'),
+(19, 'aasdf', 'asdf', '', 'asdfsa', '1', '2018-01-03 17:52:53', '2018-01-03 17:52:53', 'asdf', 'admin'),
+(20, 'aasdf', 'asdf', '', 'asdfsa', '1', '2018-01-03 17:52:53', '2018-01-03 17:52:53', 'asdf', 'admin'),
+(21, 'qwer', 'asdf', '', 'zxcv', '2', '2018-01-04 17:45:27', '2018-01-04 17:45:27', '1234', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2757,32 +2798,6 @@ INSERT INTO `tags` (`tag_id`, `tag_name`, `tag_status`, `tag_createdtime`, `tag_
 (1, '生活', 1, '2017-12-28 05:12:07', '2017-12-28 07:26:23', 'admin'),
 (2, '輕鬆', 1, '2017-12-28 04:17:15', '2017-12-28 03:13:14', 'admin');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `test_table`
---
-
-CREATE TABLE `test_table` (
-  `t_id` int(10) NOT NULL,
-  `t_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `t_age` int(10) NOT NULL,
-  `t_weight` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `last_manager` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `created_time` datetime NOT NULL,
-  `updated_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- 資料表的匯出資料 `test_table`
---
-
-INSERT INTO `test_table` (`t_id`, `t_name`, `t_age`, `t_weight`, `last_manager`, `created_time`, `updated_time`) VALUES
-(1, 'max', 30, '健壯', 'admin', '2017-12-26 05:15:18', '2017-12-27 15:30:06'),
-(2, 'wade', 25, '精實', 'admin', '2017-12-26 04:14:20', '2017-12-27 15:30:15'),
-(3, 'vito', 28, '小腹微凸', 'admin', '2017-12-26 03:10:12', '2017-12-27 15:30:29'),
-(4, '妙娟', 18, '苗條', 'admin', '2017-12-26 09:16:22', '2017-12-27 15:31:04');
-
 --
 -- 已匯出資料表的索引
 --
@@ -2920,12 +2935,6 @@ ALTER TABLE `tags`
   ADD PRIMARY KEY (`tag_id`);
 
 --
--- 資料表索引 `test_table`
---
-ALTER TABLE `test_table`
-  ADD PRIMARY KEY (`t_id`);
-
---
 -- 在匯出的資料表使用 AUTO_INCREMENT
 --
 
@@ -2939,13 +2948,14 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4220;
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4263;
 
 --
 -- 使用資料表 AUTO_INCREMENT `agent`
 --
 ALTER TABLE `agent`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '代理編號', AUTO_INCREMENT=6;
+
 --
 -- 使用資料表 AUTO_INCREMENT `anchor`
 --
@@ -2968,7 +2978,7 @@ ALTER TABLE `bank_card`
 -- 使用資料表 AUTO_INCREMENT `chatroom_log`
 --
 ALTER TABLE `chatroom_log`
-  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- 使用資料表 AUTO_INCREMENT `contribution`
@@ -3040,8 +3050,7 @@ ALTER TABLE `product_log`
 -- 使用資料表 AUTO_INCREMENT `program`
 --
 ALTER TABLE `program`
-  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
+  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- 使用資料表 AUTO_INCREMENT `rules_auth`
@@ -3054,12 +3063,6 @@ ALTER TABLE `rules_auth`
 --
 ALTER TABLE `tags`
   MODIFY `tag_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- 使用資料表 AUTO_INCREMENT `test_table`
---
-ALTER TABLE `test_table`
-  MODIFY `t_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
