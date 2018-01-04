@@ -28,9 +28,10 @@
       } else {
         alert('User cancelled login or did not fully authorize.');
       }
-    });
+    }, {scope: 'public_profile,email'});
     return false;
   };
+
   window.fbAsyncInit = function() {
     FB.init({
       appId: '401417810290014',
