@@ -10,9 +10,10 @@ try{
 	// $sHelp->select="*";
 	// $sHelp->table=$table;
 
-	$sHelp->select="a.`{$colname_a['agent_id']}`, a.`{$colname_a['name']}`, m.`{$colname['id']}`, m.`{$colname['member_id']}`, m.`{$colname['name']}`, m.`{$colname['email']}`, m.`{$colname['point']}`, m.`{$colname['create_time']}`, m.`{$colname['update_time']}`";
+	$sHelp->select="a.`{$colname_a['agent_id']}`, a.`{$colname_a['name']}`, m.`{$colname['id']}`, m.`{$colname['member_id']}`, m.`{$colname['name']}`, m.`{$colname['email']}`, m.`{$colname['point']}`, m.`{$colname['create_time']}`, m.`{$colname['update_time']}`, SUM(c.`{$colname_c['point']}`) as totalcon";
 	$sHelp->table = $table." m 
 					LEFT JOIN $table_a a ON m.`{$colname['agent_id']}` = a.`{$colname_a['agent_id']}`
+					LEFT JOIN $table_c c ON c.`{$colname_c['member_id']}` = m.`{$colname['member_id']}`
 					";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
@@ -22,12 +23,13 @@ try{
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
     $where .= ($where==''?'':' AND ')."a.`{$colname_a['id']}` = ".$getid;
-
+    $groupby = "m.`{$colname['id']}`";
     /*if($adminuser['type'] > 1){
         $where .= ($where==''?'':' AND ')."u.`{$colname['agent_id']}` = ".$adminuser['id'];
     }*/
 
 	$sHelp->where=$where;
+	$sHelp->groupby=$groupby;
 
 	$rows=$sHelp->getList();
 	//print_r($rows);exit;

@@ -19,6 +19,7 @@ $col[] = array('column' => $colname['member_id'], 'name' => '會員ID ', 'order'
 $col[] = array('column' => $colname['name'], 'name' => '會員名稱 ', 'order' => false, 'width' => '200');
 $col[] = array('column' => $colname['email'], 'name' => 'E-mail ', 'order' => false);
 $col[] = array('column' => $colname['point'], 'name' => '點數 ', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname_c['point'], 'name' => '總打賞點數 ', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['login_time'], 'order' => true, 'width' => '200');
 //$col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
 $col[]=array('column'=>$colname['id'],'name'=>'打賞紀錄','order'=>false,'width'=>'80','classname'=>'text-center');
@@ -123,6 +124,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['email'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['point'];?>"] + '</td>');
+                    $tr.append('<td>' + row["totalcon"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
                     $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../award_log/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);

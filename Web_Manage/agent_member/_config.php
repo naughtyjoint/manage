@@ -9,6 +9,9 @@ $colname=coderDBConf::$col_member;
 $table_a=coderDBConf::$agent;
 $colname_a=coderDBConf::$col_agent;
 
+$table_c=coderDBConf::$award_log;
+$colname_c=coderDBConf::$col_award_log;
+
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';
