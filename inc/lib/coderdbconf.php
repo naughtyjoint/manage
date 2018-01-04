@@ -28,7 +28,7 @@ class coderDBConf
     public static $anchor = 'anchor'; //主播
     public static $col_anchor = array('id'=>'id','name'=>'name','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'update_time','manager'=>'last_manager');
     public static $member = 'member'; //會員
-    public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_id'=>'platform_id','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
+    public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_id'=>'platform_id','agent_id'=>'agent_id','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
     public static $agent = 'agent'; //代理
     public static $col_agent = array('id'=>'id','agent_id'=>'agent_id','name'=>'agent_name','email'=>'email','created_time'=>'created_time','updated_time'=>'updated_time','manager'=>'last_manager');
     public static $deposit = 'deposit'; //入款申請
@@ -42,7 +42,7 @@ class coderDBConf
     public static $product_log = 'product_log'; //產品歷程
     public static $col_product_log = array('id'=>'id','product_id'=>'product_id','status'=>'status','product_name'=>'product_name','contents'=>'contents','last_manager'=>'last_manager','updated_time'=>'updated_time');
     public static $mycard = 'mycard'; //mycard入款審核
-    public static $col_mycard = array('id'=>'id','member_id'=>'member_id','FacTradeSeq'=>'FacTradeSeq','member_id'=>'member_id','product_id'=>'product_id','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','Redeposit'=>'Redeposit');
+    public static $col_mycard = array('id'=>'id','member_id'=>'member_id','FacTradeSeq'=>'FacTradeSeq','product_id'=>'product_id','Amount'=>'Amount','Currency'=>'Currency','Created_date'=>'Created_date','PayResult'=>'PayResult','ReturnCode'=>'ReturnCode','Pay_time'=>'Pay_time','Check_time'=>'Check_time','Redeposit'=>'Redeposit');
     public static $award_log = 'contribution'; //獎金紀錄
     public static $col_award_log = array('id'=>'id','anchor_id'=>'anchor_id','member_id'=>'member_id','point'=>'point','contents'=>'contents','created_date'=>'created_date');
     public static $program = 'program'; //節目列表.

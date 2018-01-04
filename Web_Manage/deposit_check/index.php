@@ -131,9 +131,9 @@ $db->close();
                     $tr.append('<td>' + row["uid"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_m['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_p['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname_third['name'];?>"] + '</td>')
+                    $tr.append('<td>' + row["third_pay_name"] + '</td>')
                     $tr.append('<td>' + row["<?php echo $colname['pay_code'];?>"] + '</td>')
-                    $tr.append('<td>' + row["<?php echo $colname_product['name'];?>"] + '</td>');
+                    $tr.append('<td>' + row["product_name"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['money'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['point'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['status'];?>"] + '</td>');

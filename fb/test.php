@@ -1,8 +1,8 @@
 <?PHP
+session_start();
 require_once __DIR__ . '/vendor/autoload.php'; // change path as needed
 
-$access_token = "EAAFtFl39JV4BAGYZCASd8K1bMzH3IRXvN8tBp7NIdRjUdINbZBkTaow2cX7nFVlaObBZCd0VZCd1nWrfZAiLSNBYdN4rCLwwsLzwg8VysugEoLbvLxFIG9VYot0yTfyo4c5ddVb8JalqLIr2ZCJ13StGMKwHbxSscafiaUtqtQ4capYDcE9SRCUgnfCDd2RidQsP6TbyQZCoQZDZD";
-//"EAAFtFl39JV4BAHeZCU2R6A7l9iQ7D7ziGeroNDEllsZA31RYQIxThdpeFtJNYB78Lt0TgfQpjylDwDoT5mFybnPOnMPeE7wQZC0iP9A7JzVyqtV1JLE7JeCH01ZCzhjJDqBrBMqTAH1aJjCOWO1dHG6cn39ZBeCWGnL4CMIf8pBC6LKeX9uSCmveg0QDxmEmecr2eZBDbZACQZDZD";
+$access_token = "EAAFtFl39JV4BABAYynDcCbXnKWOXMaEq6vZBCrtJPECQfEoKYDLDGmoGKlhJ6ug03h1rpJVwZBZAZBM8JIjXhs7m54vv0knOouTespZB1vARMuZB3w0ZCREKq2NNsZCsEalKnncCIUcYm8Ycs0OeYgxXI4rqKx4kBOinWWWE55GEvSQLTYVomK2uP8n1HanZCz9lxNGzV5zIFGwZDZD";
 $fb = new \Facebook\Facebook([
   'app_id' => '401417810290014',
   'app_secret' => '08ab9f4b3e74440a242015acc1c0b7d7',
@@ -21,7 +21,10 @@ $fb = new \Facebook\Facebook([
 try {
   // Get the \Facebook\GraphNodes\GraphUser object for the current user.
   // If you provided a 'default_access_token', the '{access-token}' is optional.
-  $response = $fb->get('/me', $access_token);
+//  $oAuth2Client = $fb->getOAuth2Client();
+//  if(!$access_token->isLongLived())
+//    $access_token = $oAuth2Client->getLongLivedAccessToken($access_token);
+  $response = $fb->get('/me?fields=email,name', $access_token);
 } catch(\Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -34,4 +37,9 @@ try {
 
 $me = $response->getGraphUser();
 echo 'Name:' . $me->getName() .', ID:' .  $me->getId();
+echo 'email:' . $me->getEmail();
+
+$userData = $response->getGraphNode()->asArray();
+
+$_SESSION['User_data'] = $userData;
 ?>

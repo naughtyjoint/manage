@@ -1,31 +1,27 @@
 <?php
 include_once('_config.php');
 include_once('filterconfig.php');
-coderAdmin::vaild($auth, 'view');
-//echo($adminuser["type"]);
+$getid = (get('id')!="")?get('id'):0;
+
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
-$listHelp->mutileSelect=true;
-$listHelp->editLink = "manage.php";
-$listHelp->addLink = "manage.php";
-$listHelp->delSrc = "delservice.php";
-$listHelp->ajaxSrc = "service.php";
-//$listHelp->orderSrc = "orderservice.php";
-//$listHelp->ordersortable = "orderservice.php";
+
+$listHelp->ajaxSrc = "service.php?id=".$getid;
+$listHelp->check_auth = false;
+
 $listHelp->orderColumn = $orderColumn;
 $listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
+$col[] = array('column' => $colname_a['agent_id'], 'name' => '代理ID ', 'order' => false, 'width' => '200');
+$col[] = array('column' => $colname_a['name'], 'name' => '代理名稱 ', 'order' => false, 'width' => '200');
 $col[] = array('column' => $colname['member_id'], 'name' => '會員ID ', 'order' => false, 'width' => '200');
 $col[] = array('column' => $colname['name'], 'name' => '會員名稱 ', 'order' => false, 'width' => '200');
-$col[] = array('column' => 'platform_name', 'name' => '平台名稱 ', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['agent_id'], 'name' => '代理ID ', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['email'], 'name' => 'E-mail ', 'order' => false);
 $col[] = array('column' => $colname['point'], 'name' => '點數 ', 'order' => false, 'width' => '100');
+$col[] = array('column' => $colname_c['point'], 'name' => '總打賞點數 ', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['create_time'], 'name' => $langary_Web_Manage_all['login_time'], 'order' => true, 'width' => '200');
 //$col[] = array('column' => $colname['update_time'], 'name' => '最後修改時間', 'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['manager'], 'name' => '最後管理者', 'order' => true, 'width' => '100');
 $col[]=array('column'=>$colname['id'],'name'=>'打賞紀錄','order'=>false,'width'=>'80','classname'=>'text-center');
 
 $listHelp->Bind($col);
@@ -34,7 +30,7 @@ $listHelp->bindFilter($filterhelp);
 /* ## coder [listHelp] <-- ## */
 
 $db = Database::DB();
-coderAdminLog::insert($adminuser['username'], $main_auth_key, $fun_auth_key, 'view', '列表');
+
 $db->close();
 ?>
 <!DOCTYPE html>
@@ -50,10 +46,8 @@ $db->close();
     </style>
 </head>
 <body>
-<?php include('../navbar.php'); ?>
 <!-- BEGIN Container -->
 <div class="container" id="main-container">
-    <?php include('../left.php'); ?>
     <!-- BEGIN Content -->
     <div id="main-content">
         <!-- BEGIN Page Title -->
@@ -124,15 +118,14 @@ $db->close();
                     $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname['id'];?>"]);
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
-                    $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_a['agent_id'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_a['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['member_id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["platform_name"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['agent_id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['email'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['point'];?>"] + '</td>');
+                    $tr.append('<td>' + row["totalcon"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['create_time'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
                     $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../award_log/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }

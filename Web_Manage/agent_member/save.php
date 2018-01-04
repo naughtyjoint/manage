@@ -31,25 +31,17 @@ try{
 
     $nowtime = datetime();
     $data[$colname['manager']]=$adminuser['username'];
-    $data[$colname['updated_time']]= $nowtime;
+    $data[$colname['update_time']]= $nowtime;
 
 
 
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
 	}else{
-        for($j=0;$j<pow(16,4);$j++){
-            for($i=0;$i<4;$i++){
-                @$num .=strtoupper(dechex(rand(0,15)));
-            }
-            $avoidrepeat = $db->query_prepare_first("SELECT COUNT({$colname["agent_id"]}) FROM $table WHERE {$colname["agent_id"]}=:agent_id",array(':agent_id' => $num));
-            if($avoidrepeat['COUNT(agent_id)'] == 0 )
-                break;
-        }
-
-        $data[$colname['created_time']]= $nowtime;
-        $data[$colname['agent_id']] = $num;
-        $data[$colname['name']] = post($colname['name'],1); 
+        $data[$colname['create_time']]= $nowtime;
+        $data[$colname['member_id']] = post($colname['member_id'],1);
+        $data[$colname['name']] = post($colname['name'],1);
+        $data[$colname['platform_id']] = post($colname['platform_id'],1);
         $data[$colname['email']] = post($colname['email'],1);
 		$id=$db->query_insert($table,$data);
 	}
