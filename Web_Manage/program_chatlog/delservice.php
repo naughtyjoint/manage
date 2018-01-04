@@ -2,7 +2,9 @@
 include_once('_config.php');
 $errorhandle=new coderErrorHandle();
 try{
-	$success=false;
+    //coderAdmin::vaild($auth,'del');
+
+    $success=false;
 	$count=0;
 	$msg=$langary_delservice['msg'];
 
@@ -15,7 +17,7 @@ try{
 		$count=$db->exec("delete from $table_cl where `{$colname_cl['id']}` in($idlist)");
 		if($count>0){
 			$success=true;
-			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.$langary_delservice['insert'].'('.$idlist.')');
+			//coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.$langary_delservice['insert'].'('.$idlist.')');
 		}
 		else{
 			throw new Exception($langary_delservice['exception']);

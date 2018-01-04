@@ -1,11 +1,7 @@
 <?php
 $inc_path="../../inc/";
 $manage_path="../";
-$main_auth_key='program';
-$fun_auth_key='program_list';
 include('../_config.php');
-
-$auth=coderAdmin::Auth($fun_auth_key);
 
 $table=coderDBConf::$program;
 $colname=coderDBConf::$col_program;

@@ -124,7 +124,11 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['description'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['thumbnail'];?>"] + '</td>');
+
+                    var pic = (row["<?php echo $colname['thumbnail']?>"] !="")?'<?php echo $file_path;?>s'+row["<?php echo $colname['thumbnail']?>"]:'../images/nouser.jpg';
+                    $tr.append('<td><img src="'+pic+'" width="40" height="40"></img></td>');
+
+                    //$tr.append('<td>' + row["<?php //echo $colname['thumbnail'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['url'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['tag'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['createtime'];?>"] + '</td>');

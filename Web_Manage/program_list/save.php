@@ -46,6 +46,8 @@ try{
 		$id=$db->query_insert($table,$data);
 	}
 
+    coderFormHelp::moveCopyPic($data[$colname['thumbnail']],$admin_path_temp,$file_path,'s');
+
 
     $admin_title=isset($data[$colname['name']]) ? $data[$colname['name']] : '';
     coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,$method,"{$data[$colname['name']]} id:{$id}");

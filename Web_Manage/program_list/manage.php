@@ -4,9 +4,7 @@ include_once('formconfig.php');
 $errorhandle = new coderErrorHandle();
 $id = get('id', 1);
 $manageinfo = "";
-/* ## coder [initData] --> ## */
-
-/* ## coder [initData] <-- ## */
+$pic = "";
 try {
 
     if ($id != "") {
@@ -24,6 +22,8 @@ try {
         /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
+
+        $pic = $row[$colname['thumbnail']];
 
         $method = 'edit';
         $active = $langary_edit_add['edit'];
@@ -49,6 +49,11 @@ if ($errorhandle->isException()) {
     <link rel="stylesheet" type="text/css" href="../assets/dropzone/downloads/css/dropzone.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/jcrop/jquery.Jcrop.min.css"/>
     <!-- ## coder [phpScript] -> ## -->
+    <script language="javascript" type="text/javascript">
+        <?php
+        coderFormHelp::drawPicScript($method, $file_path, $pic, 'org_pic');
+        ?>
+    </script>
     <!-- ## coder [phpScript] <- ## -->
 
 </head>
@@ -107,8 +112,8 @@ if ($errorhandle->isException()) {
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['thumbnail']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['thumbnail']) ?>
+                                        <div class="col-sm-8 controls">
+                                            <div id="picupload"></div><?php // echo $fhelp->drawForm($colname['thumbnail']) ?>
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -138,29 +143,30 @@ if ($errorhandle->isException()) {
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
                                             <button type="submit" class="btn btn-primary"><i
-                                                        class="icon-ok"></i><?php echo $langary_manage['ok'];?><?php echo $active ?></button>
-                                            <button type="button" class="btn"
-                                                    onClick="$.confirm({
-                                                                title: '<?php echo $langary_manage['confirm_cancel'].$active ?>'+'?',
-                                                                content: '',
-                                                                type: 'red',
-                                                                typeAnimated: true,
-                                                                buttons: {
-                                                                    tryAgain: {
-                                                                        text: langary_jsall['confirm_ok'],
-                                                                        btnClass: 'btn-red',
-                                                                        action: function(){
-                                                                                parent.closeBox();
-                                                                        }
-                                                                    },
-                                                                    alphabet: {
-                                                                        text: langary_jsall['confirm_cancel'],
-                                                                        action: function(){
-                                                                        }
-                                                                    }
+                                                        class="icon-ok"></i><?php echo $langary_manage['ok']; ?><?php echo $active ?>
+                                            </button>
+                                            <button type="button" class="btn" onclick="$.confirm({
+                                                        title: '<?php echo $langary_manage['confirm_cancel'] . $active ?>'+'?',
+                                                        content: '',
+                                                        type: 'red',
+                                                        typeAnimated: true,
+                                                        buttons: {
+                                                            tryAgain: {
+                                                                text: langary_jsall['confirm_ok'],
+                                                                btnClass: 'btn-red',
+                                                                action: function(){
+                                                                    parent.closeBox();
                                                                 }
-                                                            });">
-                                                <i class="icon-remove"></i><?php echo $langary_manage['cancel'];?><?php echo $active ?></button>
+                                                            },
+                                                            alphabet: {
+                                                            text: langary_jsall['confirm_cancel'],
+                                                                action: function(){
+                                                                }
+                                                            }
+                                                        }
+                                                    });"><i
+                                                        class="icon-remove"></i><?php echo $langary_manage['cancel']; ?><?php echo $active ?>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -195,11 +201,11 @@ if ($errorhandle->isException()) {
 <script type="text/javascript" src="../js/coderpicupload.js"></script>
 <script type="text/javascript" src="../js/coderlisthelp.js"></script>
 
+
 <script type="text/javascript">
 
 <!-- ## coder [includeScript] -> ## -->
 <!-- ## coder [includeScript] <- ## -->
-<script type="text/javascript">
     $(document).ready(function () {
         /* ## coder [jsScript] --> ## */
         /* ## coder [jsScript] <-- ## */
@@ -208,6 +214,23 @@ if ($errorhandle->isException()) {
         /* ## coder [jsVaildScript] --> ## */
         /* ## coder [jsVaildScript] <-- ## */
     })
+
+$('#picupload').coderpicupload({
+    pics: [{
+        name: '<?php echo $langary_Web_Manage_all['pic2'];?>',
+        type: 5,
+        tag: 's',
+        width: 60,
+        height: 60
+    }],
+    width: '100',
+    height: '100',
+    s_width: '60px',
+    s_height: '60px',
+    org_pic: org_pic,
+    id: '<?php echo $colname["thumbnail"];?>'/*,required:true*/
+});
+<?php echo coderFormHelp::drawVaildScript();?>
 </script>
 </body>
 </html>
