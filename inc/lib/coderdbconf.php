@@ -32,7 +32,7 @@ class coderDBConf
     public static $agent = 'agent'; //代理
     public static $col_agent = array('id'=>'id','agent_id'=>'agent_id','name'=>'agent_name','email'=>'email','created_time'=>'created_time','updated_time'=>'updated_time','manager'=>'last_manager');
     public static $deposit = 'deposit'; //入款申請
-    public static $col_deposit = array('id'=>'id','member_id'=>'member_id','platform_id'=>'platform_id','product_id'=>'product_id','money'=>'money','point'=>'point','deposit_pay_id'=>'deposit_pay_id','pay_code'=>'pay_code','pay_id'=>'pay_id','status'=>'status','contents'=>'contents','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager','check_time'=>'check_time');
+    public static $col_deposit = array('id'=>'id','member_id'=>'member_id','platform_id'=>'platform_id','product_id'=>'product_id','agent_id'=>'agent_id','money'=>'money','point'=>'point','deposit_pay_id'=>'deposit_pay_id','pay_code'=>'pay_code','pay_id'=>'pay_id','status'=>'status','contents'=>'contents','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager','check_time'=>'check_time');
     public static $deposit_check = 'deposit'; //入款審核
     public static $col_deposit_check = array('id'=>'id','member_id'=>'member_id','platform_id'=>'platform_id','product_id'=>'product_id','money'=>'money','point'=>'point','status'=>'status','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'transfers_manager','statustime'=>'transfers_statustime');
     public static $deposit_log = 'deposit_log'; //入款歷程
