@@ -26,12 +26,15 @@ try{
     $where .= ($where==''?'':' AND ')."t.`{$colname_cl['pgram_id']}` = ".$getid . " GROUP BY t.`{$colname_cl['record_id']}`";
     $sHelp->where=$where;
 
+    //some order setting
+    $sHelp->page_size=get("pagenum");
+    $sHelp->page=get("page");
+    $sHelp->orderby=get("orderkey",1);
+    $sHelp->orderdesc=get("orderdesc",1);
+
     $rows=$sHelp->getList();
 
-    $sHelp->page_size=get("pagenum");
-	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+
 
 	$result['result']=true;
 	$result['data']=$rows;

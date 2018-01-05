@@ -19,15 +19,6 @@ try{
 	$sHelp->where=$where;
 
 	$rows=$sHelp->getList();
-	//print_r($rows);exit;
-	for($i=0;$i<count($rows);$i++){
-		/* ## coder [modify] --> ## */
-		//$rows[$i][$colname['is_public']]='<span class="label label-'.$incary_labelstyle[$rows[$i][$colname['is_public']]].'">'.coderHelp::getAryVal($langary_yn,$rows[$i][$colname['is_public']]).'</span>';
-
-
-
-		/* ## coder [modify] <-- ## */
-	}
 
 	$result['result']=true;
 	$result['data']=$rows;

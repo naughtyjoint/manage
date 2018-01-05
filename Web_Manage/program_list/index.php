@@ -14,9 +14,9 @@ $listHelp->delSrc = "delservice.php";
 $col = array();
 $col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['name'],        'name' => $langary_Web_Manage_all['pgram_name'], 'order' => true, 'width' => '100');
-$col[] = array('column' => $colname['description'], 'name' => $langary_Web_Manage_all['depiction'],  'order' =>false, 'width' => '120');
-$col[] = array('column' => $colname['thumbnail'],   'name' => $langary_Web_Manage_all['thumbnail'],  'order' =>false, 'width' => '100');
-$col[] = array('column' => $colname['url'],         'name' => $langary_Web_Manage_all['link_name'],  'order' =>false, 'width' => '120');
+$col[] = array('column' => $colname['description'], 'name' => $langary_Web_Manage_all['depiction'],  'order' =>false, 'width' => '150');
+$col[] = array('column' => $colname['thumbnail'],   'name' => $langary_Web_Manage_all['pic2'],       'order' =>false, 'width' => '100','classname'=>'text-center');
+$col[] = array('column' => $colname['url'],         'name' => $langary_Web_Manage_all['url'],        'order' =>false, 'width' => '100');
 $col[] = array('column' => $colname['tag'],         'name' => $langary_Web_Manage_all['tag'],        'order' =>false, 'width' => '120');
 $col[] = array('column' => $colname['createtime'],  'name' => $langary_Web_Manage_all['create_time'],'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['updatetime'],  'name' => $langary_Web_Manage_all['update_time'],'order' => true, 'width' => '120');
@@ -126,7 +126,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['description'];?>"] + '</td>');
 
                     var pic = (row["<?php echo $colname['thumbnail']?>"] !="")?'<?php echo $file_path;?>s'+row["<?php echo $colname['thumbnail']?>"]:'../images/nouser.jpg';
-                    $tr.append('<td><img src="'+pic+'" width="40" height="40"></img></td>');
+                    $tr.append('<td class="text-center"><img src="'+pic+'" width="40" height="40"></img></td>');
 
                     //$tr.append('<td>' + row["<?php //echo $colname['thumbnail'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['url'];?>"] + '</td>');
@@ -135,7 +135,7 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['updatetime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['showtime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['manager'];?>"] + '</td>');
-                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../chatlog_list/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlist/index.php?id=' + row["<?php echo $colname['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {
