@@ -1,6 +1,5 @@
 <?php
 include_once 'coderpointhelp.php';
-
 class coderMycardHelp {
 
 
@@ -73,7 +72,8 @@ class coderMycardHelp {
             $rows = $db->query_first($query_point,[':product_id' => $ProductId]);
             $totalpoint = $rows['point']+$rows['bonus'];
 
-            coderPointHelp::MoneyToPoint($mem_id,$totalpoint);
+            $pointhelp = new coderPointHelp();
+            $pointhelp->MoneyToPoint($mem_id,$totalpoint);
 
             //更新mycard狀態
             $mycard_data = array(
@@ -89,6 +89,7 @@ class coderMycardHelp {
                 'platform_id' => $platform_id,
                 'product_id' => $ProductId,
                 'money' => $row["Amount"],
+                'point' => $totalpoint,
                 'deposit_pay_id' => 1,
                 'pay_code' => $FacTradeSeq,
                 'pay_id' => null,
@@ -99,8 +100,10 @@ class coderMycardHelp {
             //插入入款管理資料表
             $table_deposit = 'deposit';
             $db->query_insert($table_deposit,$depo_data);
+            $db->close();
             return "PaymentOK";
         }else{
+            $db->close();
             return "error";
         }
 

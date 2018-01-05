@@ -45,7 +45,7 @@ function array_to1d($a,$name) { //二維轉1維
     return $out;
 }
 
-//=========fb===========
+//=========api===========
 function facebook_token($token){
     $facebook = new Facebook(array('appId'  => FB_APP_ID,'secret' => FB_APP_SECRECT));
     $facebook->setAccessToken($token);
