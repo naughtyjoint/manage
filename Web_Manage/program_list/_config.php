@@ -14,7 +14,6 @@ $colname=coderDBConf::$col_program;
 
 $tags_array = class_program::getList_all();
 
-$orderDesc='desc';
 $page_title=$auth['name'];
 $page=request_pag("page");
 $page_desc="{$page_title}-".$langary_config['page_desc3'];

@@ -113,7 +113,7 @@ if ($errorhandle->isException()) {
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['thumbnail']) ?> </label>
                                         <div class="col-sm-8 controls">
-                                            <div id="picupload"></div><?php // echo $fhelp->drawForm($colname['thumbnail']) ?>
+                                            <div id="picupload"></div>
                                         </div>
                                     </div>
                                     <div class="form-group ">
