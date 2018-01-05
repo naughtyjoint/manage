@@ -20,6 +20,18 @@ try{
 
 	$rows=$sHelp->getList();
 
+    for($i=0;$i<count($rows);$i++){
+        if($rows[$i][$colname['tag']] !="") {
+            $ary_numbers = explode(",", $rows[$i][$colname['tag']]);
+            $newary = array();
+            foreach ($ary_numbers as $val) {
+                $newary [] = '<span class="badge badge-' . $incary_lotterystyle[2] . '">' . $val . '</span>';
+            }
+            $rows[$i][$colname['tag']] = implode(" ", $newary);
+        }
+        /* ## coder [modify] <-- ## */
+    }
+
 	$result['result']=true;
 	$result['data']=$rows;
 	$result['page']=$sHelp->page_info;
