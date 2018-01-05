@@ -9,16 +9,14 @@ $listHelp->ajaxSrc = "service.php?id=".$getid;
 $listHelp->check_auth = false;
 
 $listHelp->delSrc = "delservice.php";
-$listHelp->orderColumn = $orderColumn;
-$listHelp->orderDesc = $orderDesc;
 
 $col = array();
-$col[] = array('column' => $colname_cl['record_id'], 'name' => '開播編號', 'order' => true, 'width' => '100','def_desc'=>'desc');
-$col[] = array('column' => $colname['name'], 'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
-$col[] = array('column' => 'start_time',     'name' => '開始聊天時間', 'order' => false, 'width' => '100');
-$col[] = array('column' => 'end_time',       'name' => '最後聊天時間', 'order' => false, 'width' => '100');
-$col[] = array('column' => '$loglength',     'name' => '留言數量 ', 'order' => false, 'width' => '80');
-$col[] = array('column' => $colname['id'],   'name' => $langary_Web_Manage_all['chatlog'],    'order' =>false, 'width' => '80','classname'=>'text-center');
+$col[] = array('column' => $colname_cl['record_id'], 'name' => '開播編號',                             'order' => true,  'width' => '100');
+$col[] = array('column' => $colname['name'],         'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
+$col[] = array('column' => 'start_time',             'name' => '開始聊天時間',                          'order' => false, 'width' => '100');
+$col[] = array('column' => 'end_time',               'name' => '最後聊天時間',                          'order' => false, 'width' => '100');
+$col[] = array('column' => '$loglength',             'name' => '留言數量 ',                            'order' => false, 'width' => '80');
+$col[] = array('column' => $colname['id'],           'name' => $langary_Web_Manage_all['chatlog'],    'order' =>false,  'width' => '80','classname'=>'text-center');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -39,7 +37,6 @@ $db->close();
             background-color: white !important;
             border: none !important;
         }
-        tr{ cursor: pointer; }
     </style>
 </head>
 <body>
@@ -66,7 +63,7 @@ $db->close();
                     <a href="../home/index.php">Home</a>
                     <span class="divider"><i class="icon-angle-right"></i></span>
                 </li>
-                <?php echo $mtitle ?>
+                <?php echo $mtitle; ?>
 
             </ul>
         </div>
@@ -77,7 +74,7 @@ $db->close();
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-title">
-                        <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title ?></h3>
+                        <h3 style="float:left"><i class="icon-table"></i> <?php echo $page_title; ?></h3>
                         <div class="box-tool">
                             <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
                             <a data-action="close" href="#"><i class="icon-remove"></i></a>
@@ -85,7 +82,7 @@ $db->close();
                         <div style="clear:both"></div>
                     </div>
                     <div class="box-content">
-                        <?php echo $listHelp->drawTable() ?>
+                        <?php echo $listHelp->drawTable(); ?>
                     </div>
                 </div>
             </div>
@@ -103,7 +100,7 @@ $db->close();
 
 <script type="text/javascript" src="../js/coderlisthelp.js"></script>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
     $(document).ready(function () {
         /* ## coder [listRow] --> ## */
         $('#table1').coderlisthelp({
@@ -113,8 +110,7 @@ $db->close();
                 for (var i = 0; i < count; i++) {
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
-                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
-                    $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
+                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname_cl['record_id'];?>"] + "&order_key=<?php echo $colname_cl['record_id'];?>");
                     $tr.attr("delkey", row["<?php echo  $colname_cl['record_id'];?>"]);
                     $tr.attr("title",  " " + row["<?php echo $colname['name'];?>"] + " " + row["loglength"] + " 筆聊天紀錄");
                     $tr.append('<td >' + row["<?php echo $colname_cl['record_id'];?>"] + '</td>');

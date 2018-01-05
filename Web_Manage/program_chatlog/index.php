@@ -11,8 +11,6 @@ $listHelp->check_auth = false;
 
 $listHelp->mutileSelect=true;
 $listHelp->delSrc = "delservice.php";
-$listHelp->orderColumn = $orderColumn;
-$listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname_cl['id'],          'name' => $langary_Web_Manage_all['chatlog'].$langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
@@ -39,7 +37,6 @@ $db->close();
             background-color: white !important;
             border: none !important;
         }
-        tr{ cursor: pointer; }
     </style>
 </head>
 <body>
@@ -52,7 +49,7 @@ $db->close();
         <!-- BEGIN Page Title -->
         <div class="page-title">
             <div>
-                <h1><i class="<?php echo $mainicon ?>"></i> <?php echo $page_title ?>管理</h1>
+                <h1><i class="<?php echo $mainicon ;?>"></i> <?php echo $page_title ;?>管理</h1>
                 <h4><?php echo $page_desc ?></h4>
             </div>
         </div>
@@ -66,7 +63,7 @@ $db->close();
                     <a href="../home/index.php">Home</a>
                     <span class="divider"><i class="icon-angle-right"></i></span>
                 </li>
-                <?php echo $mtitle ?>
+                <?php echo $mtitle ;?>
 
             </ul>
         </div>
@@ -85,7 +82,7 @@ $db->close();
                         <div style="clear:both"></div>
                     </div>
                     <div class="box-content">
-                        <?php echo $listHelp->drawTable() ?>
+                        <?php echo $listHelp->drawTable() ;?>
                     </div>
                 </div>
             </div>
@@ -113,10 +110,9 @@ $db->close();
                 for (var i = 0; i < count; i++) {
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
-                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname['id'];?>"] + "&order_key=<?php echo $colname['id'];?>");
-                    $tr.attr("editlink", "id=" + row["<?php echo $colname['id'];?>"]);
-                    $tr.attr("delkey", row["<?php echo  $colname_cl['id'];?>"]);
-                    $tr.attr("title",  "聊天紀錄ID ["+row["<?php echo $colname_cl['id'];?>"+"]"]);
+                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname_cl['id'];?>"] + "&order_key=<?php echo $colname_cl['id'];?>");
+                    $tr.attr("delkey", row["<?php echo $colname_cl['id'];?>"]);
+                    $tr.attr("title",  "聊天紀錄ID ["+row["<?php echo $colname_cl['id'];?>"]+"]");
                     $tr.append('<td>' + row["<?php echo $colname_cl['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['chatlog'];?>"] + '</td>');

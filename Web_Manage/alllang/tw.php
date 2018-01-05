@@ -473,7 +473,6 @@ $langary_Web_Manage_all = array(
     'parnerage' => '年齡',
     'parnerweight' => '身材',
     'pgram_name' => '節目名稱',
-    'thumbnail' => '縮圖位置',
     'url' => '節目網址',
     'tag' => '節目標籤',
     'showtime' => '節目時間',
