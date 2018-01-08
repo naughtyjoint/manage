@@ -12,6 +12,9 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$program;
 $colname=coderDBConf::$col_program;
 
+//$table_tag=coderDBConf::$tag;
+//$colname_tag=coderDBConf::$col_tag;
+
 $tags_array = class_program::getList_all();
 
 $page_title=$auth['name'];

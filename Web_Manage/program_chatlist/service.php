@@ -10,20 +10,19 @@ try{
     $getid = (get('id')!="")?get('id'):-1;
 
     //select
-    $sHelp->select="t.`{$colname_cl['record_id']}`, p.`{$colname['name']}`,
-    (SELECT COUNT(*) FROM ".$table_cl." a WHERE  a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}`) as loglength,
-    (SELECT MIN(a.`{$colname_cl['createtime']}`) FROM ".$table_cl." a WHERE a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}` ) as start_time,
-    (SELECT MAX(a.`{$colname_cl['createtime']}`) FROM ".$table_cl." a WHERE a.`{$colname_cl['pgram_id']}`=t.`{$colname_cl['pgram_id']}` and a.`{$colname_cl['record_id']}`=t.`{$colname_cl['record_id']}` ) as end_time,"
-    ."p.`{$colname['id']}`";
+    $sHelp->select="e.`{$colname_ep['id']}`, p.`{$colname['name']}`, e.`{$colname_ep['anchors']}`, e.`{$colname_ep['start_time']}`, e.`{$colname_ep['end_time']}`,
+    SEC_TO_TIME( TIMESTAMPDIFF(SECOND, e.`{$colname_ep['start_time']}`, e.`{$colname_ep['end_time']}`) ) AS episode_length,
+    (SELECT COUNT(*) FROM ".$table_cl." a WHERE a.`{$colname_cl['record_id']}`=e.`{$colname_ep['id']}`) AS chatlog_count,"
+    ."p.`{$colname['id']}`, e.`{$colname_ep['updatetime']}`, e.`{$colname_ep['manage']}`";
 
-    //$sHelp->select="t.`{$colname_cl['id']}`,p.`{$colname['name']}`,t.`{$colname_cl['chatlog']}`,t.`{$colname_cl['createtime']}`";
+
     //from
-    $sHelp->table=$table_cl." t LEFT join ".$table." p on t.`{$colname_cl['pgram_id']}`=p.`{$colname['id']}`";
+    $sHelp->table=$table_ep." e LEFT JOIN ".$table." p ON e.`{$colname_ep['pgram_id']}`=p.`{$colname['id']}`";
 
     //where
     $sqlstr=$filterhelp->getSQLStr();
     $where = $sqlstr->SQL;
-    $where .= ($where==''?'':' AND ')."t.`{$colname_cl['pgram_id']}` = ".$getid . " GROUP BY t.`{$colname_cl['record_id']}`";
+    $where .= ($where==''?'':' AND ')."e.`{$colname_ep['pgram_id']}` = ".$getid;
     $sHelp->where=$where;
 
     //some order setting

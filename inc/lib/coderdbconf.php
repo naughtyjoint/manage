@@ -47,12 +47,12 @@ class coderDBConf
     public static $col_award_log = array('id'=>'id','anchor_id'=>'anchor_id','member_id'=>'member_id','point'=>'point','contents'=>'contents','created_date'=>'created_date');
     public static $program = 'program'; //節目列表.
     public static $col_program = array('id'=>'pgram_id','name'=>'pgram_name','description'=>'pgram_description','thumbnail'=>'pgram_thumbnail','url'=>'pgram_url','tag'=>'pgram_tag','createtime'=>'pgram_createdtime','updatetime'=>'pgram_updatetime','showtime'=>'pgram_showtime','manager'=>'pgram_lastmanager');
-    public static $tag = 'tags';
+    public static $tag = 'program_tags';
     public static $col_tag = array('id'=>'tag_id', 'name'=>'tag_name', 'staus'=>'tags_status', 'createtime'=>'tag_createdtime', 'updatetime'=>'tag_updatetime', 'manage'=>'tag_lastmanage');
-    public static $chatlog = 'chatroom_log';
+    public static $chatlog = 'program_chatroom';
     public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'record_id'=>'cl_record_id', 'chatlog'=>'cl_record', 'createtime'=>'cl_creatdate');
-
-
+    public static $episode = 'program_episode';
+    public static $col_episode = array('id' => 'ep_id', 'pgram_id'=>'ep_pgram_id', 'anchors'=>'ep_anchors', 'start_time'=>'ep_start_time', 'end_time'=>'ep_end_time', 'createtime'=>'ep_createdtime', 'updatetime'=>'ep_updatetime', 'manage'=>'ep_lastmanage');
 
 
 }

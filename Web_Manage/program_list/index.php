@@ -22,7 +22,7 @@ $col[] = array('column' => $colname['createtime'],  'name' => $langary_Web_Manag
 $col[] = array('column' => $colname['updatetime'],  'name' => $langary_Web_Manage_all['update_time'],'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['showtime'],    'name' => $langary_Web_Manage_all['showtime'],   'order' => true, 'width' => '120');
 $col[] = array('column' => $colname['manager'],     'name' => $langary_Web_Manage_all['manager'],    'order' => true, 'width' => '120');
-$col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['chatlog'],    'order' =>false, 'width' => '80','classname'=>'text-center');
+$col[] = array('column' => $colname['id'],          'name' => '節目紀錄',   'order' =>false, 'width' => '80','classname'=>'text-center');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
