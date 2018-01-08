@@ -82,6 +82,7 @@ if ($errorhandle->isException()) {
         <div class="row">
             <form class="form-horizontal" action="save.php" id="myform" name="myform" method="post">
                 <?php echo $fhelp->drawForm($colname['id']) ?>
+                <?php echo $fhelp->drawForm($colname['member_id']) ?>
                 <input type="hidden" name="nowstatus" value="<?php echo ($method == 'edit')?$row[$colname['status']]:'0'?>">
                 <div class="col-md-12">
                     <div class="box">

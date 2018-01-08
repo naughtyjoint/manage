@@ -20,7 +20,7 @@ $fal_resultback = array(
     'ReturnMsg' => 'Access faild, Something goes wrong.'
 );
 
-if(!empty($ReturnCode) && $FacServiceId == "luckyCL" && isset($FacTradeSeq)){
+if(!empty($ReturnCode) && $FacServiceId == "luckySG" && isset($FacTradeSeq)){
 
     $datetime = date('Y-m-d H:i:s',time());
     $redepositcheck = true;

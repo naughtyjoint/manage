@@ -12,11 +12,14 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$deposit;
 $colname=coderDBConf::$col_deposit;
 
-$table_m=coderDBConf::$member; //玩家
+$table_m=coderDBConf::$member; //會員
 $colname_m=coderDBConf::$col_member;
 
-$table_p=coderDBConf::$platform; //遊戲
+$table_p=coderDBConf::$platform; //平台
 $colname_p=coderDBConf::$col_platform;
+
+$table_product=coderDBConf::$product; //產品
+$colname_product=coderDBConf::$col_product;
 
 $orderColumn=$colname["id"];
 $orderDesc='desc';
