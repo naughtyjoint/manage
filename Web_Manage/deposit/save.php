@@ -47,7 +47,7 @@ try {
         
     } else {
         $product_row= $db->query_prepare_first(
-            "select product_id,ratio from $table_product  WHERE {$colname_product['point']}=:point AND {$colname_product['status']}=:status", array(':point' => 1, ':status' => 1));
+            "select product_id,ratio from $table_product  WHERE {$colname_product['amount']}=:point AND {$colname_product['status']}=:status", array(':point' => 1, ':status' => 1));
         $data[$colname['member_id']] = post($colname['member_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);
         $data[$colname['money']] = post($colname['money'],1);
