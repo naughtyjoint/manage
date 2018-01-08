@@ -33,7 +33,17 @@ try{
 
     $rows=$sHelp->getList();
 
-
+    for($i=0;$i<count($rows);$i++){
+        if($rows[$i][$colname_ep['anchors']] !="") {
+            $ary_numbers = explode(",", $rows[$i][$colname_ep['anchors']]);
+            $newary = array();
+            foreach ($ary_numbers as $val) {
+                $key = array_search( $val, array_column($anchors_array, 'value') );
+                $newary [] = '<span class="badge badge-' . $incary_lotterystyle[/*$val%10*/2] . '">' . $anchors_array[$key]['name'] . '</span>';
+            }
+            $rows[$i][$colname_ep['anchors']] = implode(" ", $newary);
+        }
+    }
 
 	$result['result']=true;
 	$result['data']=$rows;

@@ -188,6 +188,7 @@ $.fn.coderpicupload = function(settings) {
 	    		                		showPics(r,_settings.croptag);
 	    		                	}else{
 	    		                		oops('上傳失敗:'+r['msg'],r);
+                                        //alert('上傳失敗:'+r['msg'],r);
 	    		                	}
 	    		                },
 	    		            });
