@@ -26,6 +26,7 @@ if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"])&
     $Amount = $_GET["Amount"];
     $Currency = $_GET["Currency"];
     $ProductName = $_GET["ProductName"];
+    $agent_id = $_GET["agent_id"];
     $getauth_ary = array(
             'FacServiceId' => $FacServiceId,
             'FacTradeSeq' => $FacTradeSeq,
@@ -39,7 +40,8 @@ if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"])&
             'Currency' => $Currency,
             'SandBoxMode' => $SandBoxMode,
             'FacKey' => $FacKey,
-            'Created_date' => $Createdate
+            'Created_date' => $Createdate,
+            'agent_id' => $agent_id
     );
     $mycard = new coderMycardHelp();
     $AuthCode = $mycard->getAuthCode($getauth_ary);

@@ -25,6 +25,7 @@ class coderMycardHelp {
             'Amount' => $Amount,
             'Currency' => $Currency,
             'Created_date' => $Created_date,
+            'agent_id' => $agent_id,
             'AuthCode' => $AuthCode,
             'ReturnCode' => $ReturnCode
         );
@@ -53,7 +54,7 @@ class coderMycardHelp {
         //更新交易狀態
         $db->query_update($table, $data, " FacTradeSeq='$FacTradeSeq'");
 
-        $query_confirm = "SELECT AuthCode, member_id, product_id, Amount FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
+        $query_confirm = "SELECT AuthCode, member_id, product_id, Amount, agent_id FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
         $row = $db->query_first($query_confirm,[':FacTradeSeq' => $FacTradeSeq]);
 
         //mycard請款
@@ -97,7 +98,8 @@ class coderMycardHelp {
                 'pay_id' => null,
                 'status' => 1,
                 'updated_time' => $datetime,
-                'check_time' => $datetime
+                'check_time' => $datetime,
+                'agent_id' => $row["agent_id"]
             );
             //插入入款管理資料表
             $table_deposit = 'deposit';
@@ -153,7 +155,8 @@ class coderMycardHelp {
                 'Currency' => $Currency,
                 'Created_date' => $Created_date,
                 'AuthCode' => $AuthCode,
-                'ReturnCode' => $ReturnCode
+                'ReturnCode' => $ReturnCode,
+                'agent_id' => $agent_id
             );
 
             try{

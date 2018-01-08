@@ -8,6 +8,7 @@ $fobj[$colname["member_id"]]=array("type"=>"hidden","name"=>"會員","column"=>$
 $fobj[$colname["platform_id"]]=array("type"=>"hidden","name"=>"平台名稱","column"=>$colname["platform_id"],"sql"=>false);
 
 $fobj[$colname["money"]]=array("type"=>"text","name"=>"入款金額","column"=>$colname["money"],'placeholder'=>'請輸入金額',"validate"=>array('maxlength' => '50','digits'=>'yes'),'sql'=>false);
+$fobj[$colname["agent_id"]]=array("type"=>"text","name"=>"代理ID","column"=>$colname["platform_id"],"sql"=>false);
 $fobj[$colname["create_time"]]=array("type"=>"hidden","name"=>"申請時間","column"=>$colname["create_time"],"sql"=>false);
 
 $fhelp->Bind($fobj);
