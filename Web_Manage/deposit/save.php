@@ -49,6 +49,7 @@ try {
         $data[$colname['member_id']] = post($colname['member_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);
         $data[$colname['money']] = post($colname['money'],1);
+        $data[$colname['agent_id']] = post($colname['agent_id'],1);
         $data[$colname['create_time']] = $nowtime;
         //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);

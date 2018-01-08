@@ -219,7 +219,7 @@ class Facebook extends BaseFacebook
    * @return string The name of the session key.
    */
   protected function constructSessionVariableName($key) {
-    $parts = array('fb', $this->getAppId(), $key);
+    $parts = array('api', $this->getAppId(), $key);
     if ($this->sharedSessionID) {
       array_unshift($parts, $this->sharedSessionID);
     }

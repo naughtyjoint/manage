@@ -24,6 +24,7 @@ class coderMycardHelp {
             'Amount' => $Amount,
             'Currency' => $Currency,
             'Created_date' => $Created_date,
+            'agent_id' => $agent_id,
             'AuthCode' => $AuthCode,
             'ReturnCode' => $ReturnCode
         );
@@ -52,7 +53,7 @@ class coderMycardHelp {
         //更新交易狀態
         $db->query_update($table, $data, " FacTradeSeq='$FacTradeSeq'");
 
-        $query_confirm = "SELECT AuthCode, member_id, product_id, Amount FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
+        $query_confirm = "SELECT AuthCode, member_id, product_id, Amount, agent_id FROM mycard WHERE FacTradeSeq=:FacTradeSeq";
         $row = $db->query_first($query_confirm,[':FacTradeSeq' => $FacTradeSeq]);
 
         //mycard請款
@@ -73,7 +74,8 @@ class coderMycardHelp {
             $rows = $db->query_first($query_point,[':product_id' => $ProductId]);
             $totalpoint = $rows['point']+$rows['bonus'];
 
-            coderPointHelp::MoneyToPoint($mem_id,$totalpoint);
+            $pointhelp = new coderPointHelp();
+            $pointhelp->MoneyToPoint($mem_id,$totalpoint);
 
             //更新mycard狀態
             $mycard_data = array(
@@ -89,18 +91,22 @@ class coderMycardHelp {
                 'platform_id' => $platform_id,
                 'product_id' => $ProductId,
                 'money' => $row["Amount"],
+                'point' => $totalpoint,
                 'deposit_pay_id' => 1,
                 'pay_code' => $FacTradeSeq,
                 'pay_id' => null,
                 'status' => 1,
                 'updated_time' => $datetime,
-                'check_time' => $datetime
+                'check_time' => $datetime,
+                'agent_id' => $row["agent_id"]
             );
             //插入入款管理資料表
             $table_deposit = 'deposit';
             $db->query_insert($table_deposit,$depo_data);
+            $db->close();
             return "PaymentOK";
         }else{
+            $db->close();
             return "error";
         }
 
@@ -148,7 +154,8 @@ class coderMycardHelp {
                 'Currency' => $Currency,
                 'Created_date' => $Created_date,
                 'AuthCode' => $AuthCode,
-                'ReturnCode' => $ReturnCode
+                'ReturnCode' => $ReturnCode,
+                'agent_id' => $agent_id
             );
 
             try{
