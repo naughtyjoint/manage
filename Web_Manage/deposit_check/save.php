@@ -40,6 +40,9 @@ try {
         $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         if($row[$colname['status']] == 3){
             $data[$colname['status']] = 3;
+        }else if(post('status',1)){
+            $transPoint = new coderPointHelp();
+            $transPoint->MoneyToPoint($row[$colname['member_id']],$row[$colname['point']]);
         }
  
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");

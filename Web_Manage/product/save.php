@@ -38,8 +38,12 @@ try{
 
 
     if($method=='edit'){
-
-        $db->query_update($table,$data," {$colname['id']}='{$id}'");
+        $oneBucksCount = $db->queryCount('SELECT * FROM product WHERE amount = 1 AND status = 1');
+        if($oneBucksCount > 0 && $data[$colname['status']]==1){
+            throw new Exception($langary_Web_Manage_all['product_repeat']);
+        }else{
+            $db->query_update($table,$data," {$colname['id']}='{$id}'");
+        }
 	}else{
         $data[$colname['product_id']]=uniqid('GS');
 		$data[$colname['create_time']]= $nowtime;

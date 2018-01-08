@@ -46,11 +46,15 @@ try {
         $db->query_update($table, $data, " {$colname['id']}='{$id}'");
         
     } else {
+        $product_row= $db->query_prepare_first(
+            "select product_id,ratio from $table_product  WHERE {$colname_product['amount']}=:point AND {$colname_product['status']}=:status", array(':point' => 1, ':status' => 1));
         $data[$colname['member_id']] = post($colname['member_id'],1);
         $data[$colname['platform_id']] = post($colname['platform_id'],1);
         $data[$colname['money']] = post($colname['money'],1);
         $data[$colname['agent_id']] = post($colname['agent_id'],1);
         $data[$colname['create_time']] = $nowtime;
+        $data[$colname['product_id']] = $product_row['product_id'];
+        $data[$colname['point']] = post($colname['money'],1) * $product_row['ratio'];
         //$data[$colname['type']] = $_type;
         $id = $db->query_insert($table, $data);
     }

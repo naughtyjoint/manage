@@ -261,8 +261,9 @@ $langary_bettings = array(
     2 => '撤單'
 );
 $langary_transfers_product = array(
-    0 => '上架中',
-    1 => '下架',
+    0 => '未上架',
+    1 => '上架中',
+    2 => '下架中'
 );
 
 //月份
@@ -476,7 +477,8 @@ $langary_Web_Manage_all = array(
     'url' => '節目網址',
     'tag' => '節目標籤',
     'showtime' => '節目時間',
-    'chatlog' => '聊天紀錄'
+    'chatlog' => '聊天紀錄',
+    'product_repeat' => '上架商品重複'
 );
 
 
