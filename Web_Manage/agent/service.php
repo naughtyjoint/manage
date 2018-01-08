@@ -10,22 +10,24 @@ try{
 	// $sHelp->select="*";
 	// $sHelp->table=$table;
 
-	$sHelp->select="m.*";
-	$sHelp->table = $table." m";
+	$sHelp->select="m.* , SUM(d.`{$colname_d['money']}`) as totaldeposit";
+	$sHelp->table = $table." m
+	                LEFT JOIN $table_d d ON m.`{$colname['agent_id']}` = d.`{$colname_d['agent_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("created_time");
+	$sHelp->orderby="totaldeposit";
 	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;
-
+    $groupby = "m.`{$colname['agent_id']}`";
 
     /*if($adminuser['type'] > 1){
         $where .= ($where==''?'':' AND ')."u.`{$colname['agent_id']}` = ".$adminuser['id'];
     }*/
 
 	$sHelp->where=$where;
+	$sHelp->groupby=$groupby;
 
 	$rows=$sHelp->getList();
 	//print_r($rows);exit;

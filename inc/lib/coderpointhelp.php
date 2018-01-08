@@ -10,9 +10,7 @@ class coderPointHelp
 
     public function __construct()
     {
-        $this->table_member;
-        $this->table_anchor;
-        $this->table_contribution;
+
     }
 
     //取得單一會員點數總數
@@ -38,7 +36,6 @@ class coderPointHelp
         $totalpoint = $orig_point+$point;
         $db = Database::DB();
         $db->query_update($this->table_member,['point' => $totalpoint]," member_id='$mem_id'");
-        $db->close();
     }
 
 
@@ -47,21 +44,33 @@ class coderPointHelp
         extract($ary);
         $member_point = $this->getPoint($mem_id);
         $anchor_point = $this->getPoint_anc($anc_id);
-        $member_point -= $point;
-        $anchor_point += $point;
-        $db = Database::DB();
-        $db->query_update($this->table_member,['point' => $member_point]," member_id='$mem_id'");
-        $db->query_update($this->table_anchor,['point' => $anchor_point]," id='$anc_id'");
-        $contribution = array(
-            'anchor_id' => $anc_id,
-            'member_id' => $mem_id,
-            'point' => $point,
-            'contents' => $content
-        );
-        $db->query_insert($this->table_contribution,$contribution);
-        $db->close();
+        if($member_point>=$point){
+            $member_point -= $point;
+            $anchor_point += $point;
+            $db = Database::DB();
+            $db->query_update($this->table_member,['point' => $member_point]," member_id='$mem_id'");
+            $db->query_update($this->table_anchor,['point' => $anchor_point]," id='$anc_id'");
+            $contribution = array(
+                'anchor_id' => $anc_id,
+                'member_id' => $mem_id,
+                'point' => $point,
+                'contents' => $content
+            );
+            $db->query_insert($this->table_contribution,$contribution);
+            $db->close();
 
+            return array(
+                'success' => 'true',
+                'result' => $ary,
+                'message' => "Contributed successfully"
+            );
 
+        }else if($member_point<$point)
+            return array(
+                'success' => 'false',
+                'result' => '',
+                'message' => "點數餘額不足"
+            );
     }
 
 }

@@ -10,6 +10,9 @@ $auth=coderAdmin::Auth($fun_auth_key);
 $table=coderDBConf::$agent;
 $colname=coderDBConf::$col_agent;
 
+$table_d=coderDBConf::$deposit_check;
+$colname_d=coderDBConf::$col_deposit_check;
+
 $table_a = coderDBConf::$admin; //管理員
 $colname_a = coderDBConf::$col_admin;
 

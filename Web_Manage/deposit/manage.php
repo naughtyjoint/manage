@@ -159,6 +159,20 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname['agent_id']) ?> </label>
+                                        <div class="col-sm-3 <?php echo (isset($row[$colname['agent_id']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['agent_id']]))?'style="text-align: left;"':''?>>
+                                            <?php
+                                            if(isset($row[$colname['agent_id']])) {
+                                                echo $row[$colname['agent_id']];
+                                            }
+                                            else{
+                                                echo $fhelp->drawForm($colname['agent_id']);
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>
                                         <div class="col-sm-3 controls">
                                             <?php echo $fhelp->drawForm($colname['contents']) ?>
