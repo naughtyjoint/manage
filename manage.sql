@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2018-01-05 11:03:43
+-- 產生時間： 2018-01-08 07:22:52
 -- 伺服器版本: 10.1.29-MariaDB
 -- PHP 版本： 7.2.0
 
@@ -68,7 +68,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-(1, '', '', 1, 0, 1, 0, 'a03fa0e9277cf7e8d91a5bc12a2596251515048545723103d4h719ra69bq0vgf0lc646acg', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2018-01-04 14:49:05', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
+(1, '', '', 1, 0, 1, 0, '1b0dc8d5e016a34a62b47d72434836c0151539189053852det09el50cvi87353ikijf2t9j', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2018-01-08 14:11:30', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '60e58df6877dd77b434aef35828397a8151322428638780bd2h9aut8a08m15lqfmdnbck5s', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:04:46', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db84d35f53ef5be6e70fbbf60b061df015141661779345177ro40dgnam3jvpp6mqoim1c7f', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-25 09:42:57', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
 
@@ -2103,7 +2103,15 @@ INSERT INTO `admin_log` (`al_id`, `a_username`, `al_main_key`, `al_fun_key`, `al
 (4295, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-05 17:57:28', '::1', 8),
 (4296, 'admin', 8, 1, '列表', '2018-01-05 17:57:57', '::1', 2),
 (4297, 'admin', 8, 1, '美眉看MTV id:14', '2018-01-05 17:58:39', '::1', 8),
-(4298, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-05 17:59:22', '::1', 8);
+(4298, 'admin', 8, 1, 'fun開玩 id:1', '2018-01-05 17:59:22', '::1', 8),
+(4299, 'admin', 0, 0, 'admin登入成功', '2018-01-08 10:15:00', '::1', 1),
+(4300, 'admin', 8, 1, '列表', '2018-01-08 10:15:05', '::1', 2),
+(4301, 'admin', 8, 1, '美眉看MTV id:14', '2018-01-08 11:00:51', '::1', 8),
+(4302, 'admin', 8, 1, '列表', '2018-01-08 11:02:33', '::1', 2),
+(4303, 'admin', 0, 0, 'admin登入成功', '2018-01-08 14:09:41', '::1', 1),
+(4304, 'admin', 8, 1, '列表', '2018-01-08 14:09:44', '::1', 2),
+(4305, 'admin', 0, 0, 'admin登入成功', '2018-01-08 14:11:30', '::1', 1),
+(4306, 'admin', 8, 1, '列表', '2018-01-08 14:11:40', '::1', 2);
 
 -- --------------------------------------------------------
 
@@ -2202,34 +2210,6 @@ CREATE TABLE `bank_card` (
 INSERT INTO `bank_card` (`id`, `bank_name`, `bank_id`, `bank_card_no`, `last_manager`, `created_time`, `updated_time`) VALUES
 (1, '工商01', '18', '6548513', 'admin', '2017-12-06 10:08:25', '2017-12-06 10:08:25'),
 (2, '國泰', '17', '789456123', 'customer', '2017-12-06 10:08:44', '2017-12-13 14:33:33');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `chatroom_log`
---
-
-CREATE TABLE `chatroom_log` (
-  `cl_id` int(3) NOT NULL,
-  `cl_pgram_id` int(3) NOT NULL COMMENT '所屬節目id',
-  `cl_record_id` int(3) NOT NULL COMMENT '哪一次開節目',
-  `cl_record` text COLLATE utf8_unicode_ci NOT NULL COMMENT '聊天室紀錄',
-  `cl_creatdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 資料表的匯出資料 `chatroom_log`
---
-
-INSERT INTO `chatroom_log` (`cl_id`, `cl_pgram_id`, `cl_record_id`, `cl_record`, `cl_creatdate`) VALUES
-(5, 1, 1, 'CCC:安安你好', '2018-01-01 05:03:21'),
-(6, 1, 1, '學妹:你好 我正好要去洗澡', '2018-01-01 07:03:21'),
-(7, 14, 1, 'CCC:嗨晚安', '2018-01-02 07:03:21'),
-(8, 14, 1, '學妹:晚安', '2018-01-02 07:03:21'),
-(9, 14, 1, '/*學妹 狀態已經設為離線*/', '2018-01-01 02:05:42'),
-(10, 1, 2, 'CCC:嗚嗚嗚嗚嗚', '2018-01-03 07:03:21'),
-(11, 14, 2, 'CCC:安安你好', '2018-01-03 07:03:21'),
-(12, 14, 2, '學妹:你好 我正好要去洗澡', '2018-01-03 07:03:21');
 
 -- --------------------------------------------------------
 
@@ -2713,7 +2693,95 @@ CREATE TABLE `program` (
 
 INSERT INTO `program` (`pgram_id`, `pgram_name`, `pgram_description`, `pgram_thumbnail`, `pgram_url`, `pgram_tag`, `pgram_createdtime`, `pgram_updatetime`, `pgram_showtime`, `pgram_lastmanager`) VALUES
 (1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', 'e2a582a12c488d638c18ffddb29bcb8d.jpg', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '9,8', '2017-12-27 01:09:13', '2018-01-05 17:59:22', '每周一 19:00am~20:00am', 'admin'),
-(14, '美眉看MTV', '由現今才女介紹hitoMV', '0cf37e6e2c89c792e1171af7d7679419.png', 'https://www.w3schools.com/php/php_file_upload.asp', '10,9', '2017-12-29 17:54:11', '2018-01-05 17:59:15', '24hr 不間斷', 'admin');
+(14, '美眉看MTV', '由現今才女介紹hitoMV', '0cf37e6e2c89c792e1171af7d7679419.png', 'https://www.w3schools.com/php/php_file_upload.asp', '13,12,10,9,8,7,6,5,4,3,2,1', '2017-12-29 17:54:11', '2018-01-08 11:01:21', '24hr 不間斷', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `program_chatroom`
+--
+
+CREATE TABLE `program_chatroom` (
+  `cl_id` int(3) NOT NULL,
+  `cl_pgram_id` int(3) NOT NULL COMMENT '所屬節目id',
+  `cl_record_id` int(3) NOT NULL COMMENT '哪一次開節目',
+  `cl_record` text COLLATE utf8_unicode_ci NOT NULL COMMENT '聊天室紀錄',
+  `cl_creatdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `program_chatroom`
+--
+
+INSERT INTO `program_chatroom` (`cl_id`, `cl_pgram_id`, `cl_record_id`, `cl_record`, `cl_creatdate`) VALUES
+(5, 1, 1, 'CCC:安安你好', '2018-01-01 05:03:21'),
+(6, 1, 1, '學妹:你好 我正好要去洗澡', '2018-01-01 07:03:21'),
+(7, 14, 2, 'CCC:嗨晚安', '2018-01-08 03:42:30'),
+(8, 14, 2, '學妹:晚安', '2018-01-08 03:42:30'),
+(9, 14, 2, '/*學妹 狀態已經設為離線*/', '2018-01-08 03:42:30'),
+(10, 1, 3, 'CCC:嗚嗚嗚嗚嗚', '2018-01-08 03:42:30'),
+(11, 14, 4, 'CCC:安安你好', '2018-01-08 03:42:30'),
+(12, 14, 4, '學妹:你好 我正好要去洗澡', '2018-01-08 03:42:30');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `program_episode`
+--
+
+CREATE TABLE `program_episode` (
+  `ep_id` int(3) NOT NULL,
+  `ep_pgram_id` int(3) NOT NULL COMMENT '所屬節目id',
+  `ep_anchors` varchar(30) COLLATE utf8_unicode_ci NOT NULL COMMENT '本次節目主播',
+  `ep_start_time` timestamp NULL DEFAULT NULL,
+  `ep_end_time` timestamp NULL DEFAULT NULL,
+  `ep_createtime` timestamp NULL DEFAULT NULL,
+  `ep_updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ep_lastmanage` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `program_episode`
+--
+
+INSERT INTO `program_episode` (`ep_id`, `ep_pgram_id`, `ep_anchors`, `ep_start_time`, `ep_end_time`, `ep_createtime`, `ep_updatetime`, `ep_lastmanage`) VALUES
+(1, 1, '1', '2017-12-31 16:00:00', '2018-01-07 19:16:13', '2018-01-08 03:37:48', '2018-01-08 03:37:48', 'admin'),
+(2, 14, '2', '2018-01-01 20:13:13', '2018-01-01 22:18:16', '2018-01-08 03:37:48', '2018-01-08 03:37:48', 'admin'),
+(3, 1, '2,3', '2018-01-03 02:28:10', '2018-01-03 04:29:12', '2018-01-08 03:40:42', '2018-01-08 03:41:01', 'admin'),
+(4, 14, '1,2,3', '2018-01-04 22:15:10', '2018-01-08 02:22:33', '2018-01-08 03:40:30', '2018-01-08 03:40:30', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `program_tags`
+--
+
+CREATE TABLE `program_tags` (
+  `tag_id` int(11) UNSIGNED NOT NULL,
+  `tag_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `tag_status` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '狀態 [0:停用] [1:啟用]',
+  `tag_createdtime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `tag_updatetime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `tag_lastmanage` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `program_tags`
+--
+
+INSERT INTO `program_tags` (`tag_id`, `tag_name`, `tag_status`, `tag_createdtime`, `tag_updatetime`, `tag_lastmanage`) VALUES
+(1, '生活', 1, '2017-12-28 05:12:07', '2017-12-28 07:26:23', 'admin'),
+(2, '輕鬆', 1, '2017-12-28 04:17:15', '2017-12-28 03:13:14', 'admin'),
+(3, '正妹', 1, '2018-01-05 16:39:24', '2018-01-05 16:39:03', 'admin'),
+(4, '火車', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(5, '微星MSI', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(6, '華碩', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(7, '宏碁', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(8, 'Dell戴爾', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(9, '天王星', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(10, 'LG樂金', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(12, '1041111', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
+(13, 'HDMI遊戲', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2843,39 +2911,6 @@ INSERT INTO `rules_auth` (`ra_id`, `r_id`, `ra_main_key`, `ra_fun_key`, `ra_auth
 (484, 2, 5, 2, 30, 'admin', '2018-01-03 11:28:19', '2018-01-03 11:28:19'),
 (485, 2, 8, 1, 30, 'admin', '2018-01-03 11:28:19', '2018-01-03 11:28:19');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `tags`
---
-
-CREATE TABLE `tags` (
-  `tag_id` int(11) UNSIGNED NOT NULL,
-  `tag_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `tag_status` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '狀態 [0:停用] [1:啟用]',
-  `tag_createdtime` datetime DEFAULT CURRENT_TIMESTAMP,
-  `tag_updatetime` datetime DEFAULT CURRENT_TIMESTAMP,
-  `tag_lastmanage` varchar(20) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 資料表的匯出資料 `tags`
---
-
-INSERT INTO `tags` (`tag_id`, `tag_name`, `tag_status`, `tag_createdtime`, `tag_updatetime`, `tag_lastmanage`) VALUES
-(1, '生活', 1, '2017-12-28 05:12:07', '2017-12-28 07:26:23', 'admin'),
-(2, '輕鬆', 1, '2017-12-28 04:17:15', '2017-12-28 03:13:14', 'admin'),
-(3, '正妹', 1, '2018-01-05 16:39:24', '2018-01-05 16:39:03', 'admin'),
-(4, '火車', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(5, '微星MSI', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(6, '華碩', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(7, '宏碁', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(8, 'Dell戴爾', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(9, '天王星', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(10, 'LG樂金', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(12, '1041111', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin'),
-(13, 'HDMI遊戲', 1, '2018-01-05 16:45:36', '2018-01-05 16:45:36', 'admin');
-
 --
 -- 已匯出資料表的索引
 --
@@ -2915,12 +2950,6 @@ ALTER TABLE `bank`
 --
 ALTER TABLE `bank_card`
   ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `chatroom_log`
---
-ALTER TABLE `chatroom_log`
-  ADD PRIMARY KEY (`cl_id`);
 
 --
 -- 資料表索引 `contribution`
@@ -2995,6 +3024,24 @@ ALTER TABLE `program`
   ADD PRIMARY KEY (`pgram_id`);
 
 --
+-- 資料表索引 `program_chatroom`
+--
+ALTER TABLE `program_chatroom`
+  ADD PRIMARY KEY (`cl_id`);
+
+--
+-- 資料表索引 `program_episode`
+--
+ALTER TABLE `program_episode`
+  ADD PRIMARY KEY (`ep_id`);
+
+--
+-- 資料表索引 `program_tags`
+--
+ALTER TABLE `program_tags`
+  ADD PRIMARY KEY (`tag_id`);
+
+--
 -- 資料表索引 `rules`
 --
 ALTER TABLE `rules`
@@ -3005,12 +3052,6 @@ ALTER TABLE `rules`
 --
 ALTER TABLE `rules_auth`
   ADD PRIMARY KEY (`ra_id`);
-
---
--- 資料表索引 `tags`
---
-ALTER TABLE `tags`
-  ADD PRIMARY KEY (`tag_id`);
 
 --
 -- 在匯出的資料表使用 AUTO_INCREMENT
@@ -3026,7 +3067,7 @@ ALTER TABLE `admin`
 -- 使用資料表 AUTO_INCREMENT `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4299;
+  MODIFY `al_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4307;
 
 --
 -- 使用資料表 AUTO_INCREMENT `agent`
@@ -3051,12 +3092,6 @@ ALTER TABLE `bank`
 --
 ALTER TABLE `bank_card`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- 使用資料表 AUTO_INCREMENT `chatroom_log`
---
-ALTER TABLE `chatroom_log`
-  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- 使用資料表 AUTO_INCREMENT `contribution`
@@ -3128,19 +3163,31 @@ ALTER TABLE `product_log`
 -- 使用資料表 AUTO_INCREMENT `program`
 --
 ALTER TABLE `program`
-  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `pgram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- 使用資料表 AUTO_INCREMENT `program_chatroom`
+--
+ALTER TABLE `program_chatroom`
+  MODIFY `cl_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- 使用資料表 AUTO_INCREMENT `program_episode`
+--
+ALTER TABLE `program_episode`
+  MODIFY `ep_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- 使用資料表 AUTO_INCREMENT `program_tags`
+--
+ALTER TABLE `program_tags`
+  MODIFY `tag_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- 使用資料表 AUTO_INCREMENT `rules_auth`
 --
 ALTER TABLE `rules_auth`
   MODIFY `ra_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=486;
-
---
--- 使用資料表 AUTO_INCREMENT `tags`
---
-ALTER TABLE `tags`
-  MODIFY `tag_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

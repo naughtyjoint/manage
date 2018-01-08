@@ -9,7 +9,9 @@ $colname=coderDBConf::$col_program;
 $table_cl=coderDBConf::$chatlog;
 $colname_cl=coderDBConf::$col_chatlog;
 
-$orderColumn=$colname["id"];
+$table_ep=coderDBConf::$episode;
+$colname_ep=coderDBConf::$col_episode;
+
 $orderDesc='desc';
 $page_title="節目聊天紀錄";
 $page=request_pag("page");

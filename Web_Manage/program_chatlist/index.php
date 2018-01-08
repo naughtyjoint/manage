@@ -11,12 +11,18 @@ $listHelp->check_auth = false;
 $listHelp->delSrc = "delservice.php";
 
 $col = array();
-$col[] = array('column' => $colname_cl['record_id'], 'name' => '開播編號',                             'order' => true,  'width' => '100');
+$col[] = array('column' => $colname_ep['id'], 'name' => '開播編號',                             'order' => true,  'width' => '100');
 $col[] = array('column' => $colname['name'],         'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
-$col[] = array('column' => 'start_time',             'name' => '開始聊天時間',                          'order' => false, 'width' => '100');
-$col[] = array('column' => 'end_time',               'name' => '最後聊天時間',                          'order' => false, 'width' => '100');
-$col[] = array('column' => '$loglength',             'name' => '留言數量 ',                            'order' => false, 'width' => '80');
+$col[] = array('column' => $colname_ep['anchors'],                'name' => '節目主播', 'order' => false, 'width' => '100');
+$col[] = array('column' =>$colname_ep['start_time'],'name' => '開始時間',                          'order' => false, 'width' => '100');
+$col[] = array('column' => $colname_ep['end_time'], 'name' => '最後時間',                          'order' => false, 'width' => '100');
+$col[] = array('column' => 'episode_length',         'name' => '節目時長(時:分:秒)',                          'order' => false, 'width' => '100');
+//$col[] = array('column' => 'cl_start_time',             'name' => '開始聊天時間',                          'order' => false, 'width' => '100');
+//$col[] = array('column' => 'cl_end_time',               'name' => '最後聊天時間',                          'order' => false, 'width' => '100');
+$col[] = array('column' => 'chatlog_count',             'name' => '留言數量 ',                            'order' => false, 'width' => '80');
 $col[] = array('column' => $colname['id'],           'name' => $langary_Web_Manage_all['chatlog'],    'order' =>false,  'width' => '80','classname'=>'text-center');
+$col[] = array('column' => $colname_ep['updatetime'],  'name' => $langary_Web_Manage_all['update_time'],'order' => false, 'width' => '80');
+$col[] = array('column' => $colname_ep['manage'],     'name' => $langary_Web_Manage_all['manager'],    'order' => false, 'width' => '50');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -110,15 +116,19 @@ $db->close();
                 for (var i = 0; i < count; i++) {
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
-                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname_cl['record_id'];?>"] + "&order_key=<?php echo $colname_cl['record_id'];?>");
-                    $tr.attr("delkey", row["<?php echo  $colname_cl['record_id'];?>"]);
-                    $tr.attr("title",  " " + row["<?php echo $colname['name'];?>"] + " " + row["loglength"] + " 筆聊天紀錄");
-                    $tr.append('<td >' + row["<?php echo $colname_cl['record_id'];?>"] + '</td>');
+                    $tr.attr("orderlink", "order_id=" + row["<?php echo $colname_ep['id'];?>"] + "&order_key=<?php echo $colname_ep['id'];?>");
+                    $tr.attr("delkey", row["<?php echo  $colname_ep['id'];?>"]);
+                    $tr.attr("title",  " " + row["<?php echo $colname['name'];?>"] + " " + row["chatlog_count"] + " 筆聊天紀錄");
+                    $tr.append('<td >' + row["<?php echo $colname_ep['id'];?>"] + '</td>');
                     $tr.append('<td >' + row["<?php echo $colname['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["start_time"] + '</td>');
-                    $tr.append('<td>' + row["end_time"] + '</td>');
-                    $tr.append('<td>' + row["loglength"] + '</td>');
-                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + "&r_id="+ row["<?php echo $colname_cl['record_id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td >' + row["<?php echo $colname_ep['anchors'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_ep['start_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_ep['end_time'];?>"] + '</td>');
+                    $tr.append('<td>' + row["episode_length"] + '</td>');
+                    $tr.append('<td >' + row["chatlog_count"] + '</td>');
+                    $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + "&r_id="+ row["<?php echo $colname_ep['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
+                    $tr.append('<td>' + row["<?php echo $colname_ep['updatetime'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_ep['manage'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {
