@@ -22,7 +22,8 @@ class imgUploder
 	var $file_sh = '';
 	var $file_x = '';
 	var $file_y = '';
-	function imgUploder($Ufile)
+	//function imgUploder($Ufile)
+    function __construct($Ufile)
 	{
 		$this->file=$Ufile['tmp_name'];
 		$this->file_name=hc($Ufile['name']);
