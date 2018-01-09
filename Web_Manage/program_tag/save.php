@@ -10,7 +10,6 @@ try{
         coderAdmin::vaild($auth,'edit');
         $method='edit';
         $active=$langary_edit_add['edit'];
-        $current_pic = $db->query_prepare_first("SELECT {$colname['thumbnail']} FROM $table WHERE {$colname['id']}=:id",array(':id' => $id));
     }else{
         coderAdmin::vaild($auth,'add');
         $method='add';
@@ -24,6 +23,12 @@ try{
         throw new Exception($msg);
     }
 
+    //多圖圖片
+    //$picgroup = $data[$colname['picgroup']];
+    //$data[$colname['picgroup']] = json_encode($picgroup);
+
+    /* ## coder [beforeModify] --> ## */
+    /* ## coder [beforeModify] <-- ## */
 
     $nowtime = datetime();
     $data[$colname['manager']]=$adminuser['username'];
@@ -32,16 +37,6 @@ try{
 
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
-        //若上傳了新圖，刪掉舊的
-        if($data[$colname['thumbnail']] != $current_pic[$colname['thumbnail']])
-        {
-            if(is_file($file_path . $current_pic[$colname['thumbnail']])){
-                unlink($file_path.$current_pic[$colname['thumbnail']]);
-            }
-            if(is_file($file_path . 's'.$current_pic[$colname['thumbnail']])){
-                unlink($file_path . 's'.$current_pic[$colname['thumbnail']]);
-            }
-        }
 	}else{
         /* ## coder [indInit] --> ## */
         /* ## coder [indInit] <-- ## */
@@ -51,15 +46,8 @@ try{
 		$id=$db->query_insert($table,$data);
 	}
 
-    //coderFormHelp::moveCopyPic($data[$colname['thumbnail']],$admin_path_temp,$file_path,'s');
+    coderFormHelp::moveCopyPic($data[$colname['thumbnail']],$admin_path_temp,$file_path,'s');
 
-    //上傳成功，移除temp資料夾的圖檔
-    /*if(is_file($admin_path_temp . $data[$colname['thumbnail']])){
-        unlink($admin_path_temp.$data[$colname['thumbnail']]);
-    }
-    if(is_file($admin_path_temp . 's'.$data[$colname['thumbnail']])){
-        unlink($admin_path_temp . 's'.$data[$colname['thumbnail']]);
-    }*/
 
     $admin_title=isset($data[$colname['name']]) ? $data[$colname['name']] : '';
     coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,$method,"{$data[$colname['name']]} id:{$id}");

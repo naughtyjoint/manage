@@ -3,34 +3,34 @@ include_once('_config.php');
 include_once('formconfig.php');
 $errorhandle = new coderErrorHandle();
 $id = get('id', 1);
+$pg_id = get('pgram_id', 1);
 $manageinfo = "";
-$pic = "";
 try {
 
     if ($id != "") {
-        coderAdmin::vaild($auth, 'edit');
+        //coderAdmin::vaild($auth, 'edit');
 
         $db = Database::DB();
-        $row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
+        //$row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
+        $row = $db->query_prepare_first("select * from $table a, $table_ep b WHERE a.{$colname['id']}=:id AND b.{$colname_ep['id']}=:pg_id", array(':id' => $id, ':pg_id'=>$pg_id));
+        //$row = $db->fetch_all_array("select * from ".$table." a, ".$table_ep." b  WHERE a.".$colname['id']."=".$id." AND b.".$colname_ep['id']."=".$pg_id);
         if (empty($row)) {
             throw new Exception($langary_manage['exception']);
         }
         /* ## coder [bindData] --> ## */
-        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname['updatetime']];
+        //$manageinfo='  '.$langary_manage['admin'].' '.$row[$colname_ep['manage']].' | '.$langary_manage['createtime'].' '.$row[$colname_ep['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname_ep['updatetime']];
         /* ## coder [bindData] <-- ## */
         /* ## coder [beforeBind] --> ## */
         /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
 
-        $pic = $row[$colname['thumbnail']];
-
         $method = 'edit';
         $active = $langary_edit_add['edit'];
 
         $db->close();
     } else {
-        coderAdmin::vaild($auth, 'add');
+        //coderAdmin::vaild($auth, 'add');
         $method = 'add';
         $active = $langary_edit_add['add'];
     }
@@ -49,11 +49,6 @@ if ($errorhandle->isException()) {
     <link rel="stylesheet" type="text/css" href="../assets/dropzone/downloads/css/dropzone.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/jcrop/jquery.Jcrop.min.css"/>
     <!-- ## coder [phpScript] -> ## -->
-    <script language="javascript" type="text/javascript">
-        <?php
-        coderFormHelp::drawPicScript($method, $file_path, $pic, 'org_pic');
-        ?>
-    </script>
     <!-- ## coder [phpScript] <- ## -->
 
 </head>
@@ -80,6 +75,7 @@ if ($errorhandle->isException()) {
         <div class="row">
             <form class="form-horizontal" action="save.php" id="myform" name="myform" method="post">
                 <?php echo $fhelp->drawForm($colname['id']) ?>
+                <?php echo $fhelp->drawForm($colname_ep['id']) ?>
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-title">
@@ -104,38 +100,9 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['description']) ?> </label>
+                                            <?php echo $fhelp->drawLabel($colname_ep['anchors']) ?> </label>
                                         <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['description']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['thumbnail']) ?> </label>
-                                        <div class="col-sm-8 controls">
-                                            <div id="picupload"></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['url']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['url']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['tag']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['tag']) ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['showtime']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['showtime']) ?>
+                                            <?php echo $fhelp->drawForm($colname_ep['anchors']) ?>
                                         </div>
                                     </div>
 
@@ -198,7 +165,6 @@ if ($errorhandle->isException()) {
 <script type="text/javascript" src="../assets/jcrop/jquery.Jcrop.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../assets/chosen-bootstrap/chosen.min.css"/>
 <script type="text/javascript" src="../assets/chosen-bootstrap/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="../js/coderpicupload.js"></script>
 <script type="text/javascript" src="../js/coderlisthelp.js"></script>
 
 
@@ -215,22 +181,6 @@ if ($errorhandle->isException()) {
         /* ## coder [jsVaildScript] <-- ## */
     })
 
-$('#picupload').coderpicupload({
-    pics: [{
-        name: '<?php echo $langary_Web_Manage_all['pic2'];?>',
-        type: 5,
-        tag: 's',
-        width: 60,
-        height: 60
-    }],
-    width: '100',
-    height: '100',
-    s_width: '60px',
-    s_height: '60px',
-    org_pic: org_pic,
-    id: '<?php echo $colname['thumbnail'];?>',
-    name:'<?php echo $id;?>'/*,required:true*/
-});
 <?php echo coderFormHelp::drawVaildScript();?>
 </script>
 </body>
