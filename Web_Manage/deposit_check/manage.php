@@ -207,7 +207,15 @@ if ($errorhandle->isException()) {
                                                 ?>
                                             </div>
                                         </div>
-
+                                        <?php if(isset($row[$colname['point']])){?>
+                                        <div class="form-group ">
+                                            <label class="col-sm-3 col-lg-3 control-label">
+                                                <?php echo $fhelp->drawLabel($colname['point']); ?> </label>
+                                            <div class="col-sm-3 <?php echo (isset($row[$colname['point']]))?'control-label':'controls'?>" <?php echo (isset($row[$colname['point']]))?'style="text-align: left;"':''?>>
+                                                <?php echo $row[$colname['point']]; ?>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
                                         <div class="form-group ">
                                             <label class="col-sm-3 col-lg-3 control-label">
                                                 <?php echo $fhelp->drawLabel($colname['contents']) ?> </label>

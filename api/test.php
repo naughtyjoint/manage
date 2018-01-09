@@ -2,7 +2,6 @@
 session_start();
 include "_database.class.php";
 require_once __DIR__ . '/vendor/autoload.php'; // change path as needed
-unset($_SESSION['memberData']);
 
 //判斷是否登入
 if(isset($_SESSION["memberData"]) && ($_SESSION["memberData"]!="")){
