@@ -228,8 +228,7 @@ $('#picupload').coderpicupload({
     s_width: '60px',
     s_height: '60px',
     org_pic: org_pic,
-    id: '<?php echo $colname['thumbnail'];?>',
-    name:'<?php echo $id;?>'/*,required:true*/
+    id: '<?php echo $colname["thumbnail"];?>'/*,required:true*/
 });
 <?php echo coderFormHelp::drawVaildScript();?>
 </script>

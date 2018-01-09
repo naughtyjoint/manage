@@ -122,17 +122,11 @@ $langary_auth = array(
             'mycard'=>'mycard入款'
         )
     ),
-    /*'test' => array(
-        'name'=>'夥伴資料',
-        'list'=>array(
-            'parner'=>'夥伴列表',
-            'parner2'=>'夥伴列表2'
-        )
-    )*/
     'program' => array(
         'name'=>'節目資料',
         'list'=>array(
-            'program_list'=>'節目列表'
+            'program_list'=>'節目列表',
+            'program_tag'=>'標籤列表'
         )
     )
 
@@ -475,6 +469,7 @@ $langary_Web_Manage_all = array(
     'pgram_name' => '節目名稱',
     'url' => '節目網址',
     'tag' => '節目標籤',
+    'tag_name' => '標籤名稱',
     'showtime' => '節目時間',
     'chatlog' => '聊天紀錄'
 );

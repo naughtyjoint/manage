@@ -24,36 +24,23 @@ try{
         throw new Exception($msg);
     }
 
-    /* ## coder [beforeModify] --> ## */
-    /* ## coder [beforeModify] <-- ## */
-    //$data[$colname['id']] = null;
-    //start from here
-
-
     $nowtime = datetime();
     $data[$colname_ep['manage']]=$adminuser['username'];
     $data[$colname_ep['updatetime']]= $nowtime;
 
+    $admin_title=isset($data[$colname['name']]) ? $data[$colname['name']] : '';
 
     if($method=='edit'){
-        //$db->query_update($table_ep,$data," {$colname_ep['id']}='{$id}'");
-        $db->query_update($table_ep,$data," {$colname_ep['id']}='{$id}'");
+        unset($data[$colname['name']]);
+        $db->query_update($table_ep, $data," {$colname_ep['id']}='{$pg_id}'");
 	}else{
-        /* ## coder [indInit] --> ## */
-        /* ## coder [indInit] <-- ## */
-        /* ## coder [insert] --> ## */
-        /* ## coder [insert] <-- ## */        
 		$data[$colname['createtime']]= $nowtime;
 		$id=$db->query_insert($table,$data);
 	}
 
-    $admin_title=isset($data[$colname['name']]) ? $data[$colname['name']] : '';
-    coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,$method,"{$data[$colname['name']]} id:{$id}");
-
-
     $db->close();
 
-    echo showParentSaveNote($page_title,$active,$admin_title,"manage.php?id=".$id."pgram_id=".$pg_id);
+    echo showParentSaveNote($page_title,$active,$admin_title,"manage.php?id=".$id."&pgram_id=".$pg_id);
 }
 catch(Exception $e){
 	$errorhandle->setException($e); // 收集例外

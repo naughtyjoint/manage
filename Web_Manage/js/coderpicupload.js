@@ -22,6 +22,7 @@ $.fn.coderpicupload = function(settings) {
 		debug:true,
 		required:false,
 		bind_obj:null,
+        name:""
     };
     var _settings = $.extend(_defaultSettings, settings);
 	return this.each(function() {
@@ -209,6 +210,9 @@ $.fn.coderpicupload = function(settings) {
 		function uploadpic(pic){
 			var pics=_settings.pics;
 			if(pic){
+			    if(_settings.name !== "")
+                    _settings.ajaxsrc = _settings.ajaxsrc+"?id="+_settings.name;
+
 				_settings.croptagary = {};
 				var $processbar=$process.find('.progress-bar');
 				$process.show();

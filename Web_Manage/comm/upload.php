@@ -9,11 +9,14 @@ $filename_orig = '';
 $success=false;
 $width=0;
 $height=0;
+$id = get('id', 1);
+
 if ($file->file_name != "")
 {   
 	$filename_orig = $file->file_name;
     $filename = explode('.',$file->file_name);
-	$file->set("file_name",md5(uniqid(rand())).'.'.end($filename));
+	//$file->set("file_name",md5(uniqid(rand())).'.'.end($filename));
+    $file->set("file_name",$id.'.'.end($filename));
 	$file->set("file_max",1024*1024*3);
 	$file->set("file_dir",$filepath);
 	$file->set("overwrite","3");

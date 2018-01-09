@@ -48,7 +48,7 @@ class coderDBConf
     public static $program = 'program'; //節目列表.
     public static $col_program = array('id'=>'pgram_id','name'=>'pgram_name','description'=>'pgram_description','thumbnail'=>'pgram_thumbnail','url'=>'pgram_url','tag'=>'pgram_tag','createtime'=>'pgram_createdtime','updatetime'=>'pgram_updatetime','showtime'=>'pgram_showtime','manager'=>'pgram_lastmanager');
     public static $tag = 'program_tags';
-    public static $col_tag = array('id'=>'tag_id', 'name'=>'tag_name', 'staus'=>'tags_status', 'createtime'=>'tag_createdtime', 'updatetime'=>'tag_updatetime', 'manage'=>'tag_lastmanage');
+    public static $col_tag = array('id'=>'tag_id', 'name'=>'tag_name', 'status'=>'tag_status', 'createtime'=>'tag_createdtime', 'updatetime'=>'tag_updatetime', 'manage'=>'tag_lastmanage');
     public static $chatlog = 'program_chatroom';
     public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'record_id'=>'cl_record_id', 'chatlog'=>'cl_record', 'createtime'=>'cl_creatdate');
     public static $episode = 'program_episode';
