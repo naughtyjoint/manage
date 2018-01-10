@@ -7,12 +7,14 @@ if ( !isset( $_SESSION["origURL"] ) )
 $loginless_resultback = array(
     'success' => 'false',
     'result' => '',
+    'code' => 3,
     'message' => 'Please login.'
 );
 
 $fal_resultback = array(
     'success' => 'false',
     'result' => '',
+    'code' => 4,
     'message' => 'Contribution failed.'
 );
 
@@ -20,7 +22,7 @@ $fal_resultback = array(
 if($_SESSION["origURL"] == "http://localhost/manage/test/contributiontest.html"){
 
     if(isset($_SESSION['memberData']) && ($_SESSION['memberData']!="")){
-        if(!empty($_POST["anchor_id"])&&!empty($_POST["point"])&&!empty($_POST["content"])){
+        if(!empty($_POST["anchor_id"])&&!empty($_POST["point"])){
             $member_id = $_SESSION['memberData']['member_id'];
             $anchor_id = $_POST["anchor_id"];
             $point = $_POST["point"];

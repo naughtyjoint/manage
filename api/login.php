@@ -1,6 +1,5 @@
 <?PHP
 session_start();
-//unset($_SESSION['memberData']);
 include "_func.php";
 include "_database.class.php";
 include "coderfbhelp.php";
@@ -49,7 +48,7 @@ if(isset($_SESSION["memberData"]) && ($_SESSION["memberData"]!="")){
 }
 else if(isset($_POST["accesstoken"]) && ($_POST["accesstoken"]!="")){
 
-    $access_token = "EAAFtFl39JV4BAHnZBgzTlubRPvkSjZBXehu48s6HPtfkFnLEBI1OOFZC5EgJMcXfc6r5SqIgty3xOWpKWZAZBEFoof0UTlD8nNgtYt8KdTa7nFb1dQsG7ZA3gZADyZCf82DluQySU5cYjOg76pgob7u0ZBoTMd1IMHQG8Dsq4UK1B0VXkO2C0S5pMZBd7Ojq6OEKs5vgcV6s9rYf2kgN6cKfILQ8xBehUV5k8ZD";
+    $access_token = "EAAFtFl39JV4BAKH9RmFZAOJvxiJRZASCPfFyhc4nrMOZAKdEsWSjqh5S820qyfFBFv5MvcB0ZAGsp7c4N6SiBx7TsLw7tNxOUhsAURVDtE8M4RsJTzFTJYq5qwndDDugjTSzOHQh2kSqCuj830vr5gKKjVcmVlIQPhmQ9xjd1rFwHwDSpWq4HVSy3nd2pLfhwsn5IojvKgZDZD";
 //$access_token = $_POST["accesstoken"];
 
     $Fb = new CoderFbHelp($access_token);

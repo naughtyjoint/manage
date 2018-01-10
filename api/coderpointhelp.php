@@ -65,6 +65,7 @@ class coderPointHelp
             return array(
                 'success' => 'true',
                 'result' => $ary,
+                'code' => 1,
                 'message' => "Contributed successfully"
             );
 
@@ -73,6 +74,7 @@ class coderPointHelp
             return array(
                 'success' => 'false',
                 'result' => $ary,
+                'code' => 2,
                 'message' => "點數餘額不足"
             );
     }

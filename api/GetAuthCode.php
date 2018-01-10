@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'codermycardhelp.php';
 
 $FacServiceId = "luckySG";  //廠商服務代碼
@@ -15,29 +16,36 @@ $SandBoxMode = "true";  //測試環境
 $FacKey = "B8sqJqY3QFQg8wE2LZ4AxcWQ69v3RUyy";   //廠商key
 $Createdate = date('Y-m-d H:i:s',time());
 
-$fal_resultback = array(
-    'success' => 'false',
-    'result' => '',
-    'message' => 'Failed to get AuthCode .'
-);
 
 $result_suc = array(
     'success' => 'true',
     'result' => '',
+    'code' => 1,
     'message' => 'Get AuthCode successfully.'
 );
+$fal_resultback = array(
+    'success' => 'false',
+    'result' => '',
+    'code' => 2,
+    'message' => 'Failed to get AuthCode .'
+);
+$login_resultback = array(
+    'success' => 'false',
+    'result' => '',
+    'code' => 3,
+    'message' => 'Please log in.'
+);
 
-
-if(isset($_GET["CustomerId"]) && !empty($_GET["CustomerId"]) &&
-    isset($_GET["Amount"])&& !empty($_GET["Amount"]) &&
-    isset($_GET["Currency"])&& !empty($_GET["Currency"]) &&
-    isset($_GET["ProductName"])&& !empty($_GET["ProductName"])){
-    $CustomerId = $_GET["CustomerId"];
-    $Amount = $_GET["Amount"];
-    $Currency = $_GET["Currency"];
-    $ProductName = $_GET["ProductName"];
-    $agent_id = $_GET["agent_id"];
-    $getauth_ary = array(
+if(isset($_SESSION['memberData']) && ($_SESSION['memberData']!="")){
+    if(isset($_GET["Amount"])&& !empty($_GET["Amount"]) &&
+        isset($_GET["Currency"])&& !empty($_GET["Currency"]) &&
+        isset($_GET["ProductName"])&& !empty($_GET["ProductName"])){
+        $CustomerId = $_SESSION["memberData"]['member_id'];
+        $Amount = $_GET["Amount"];
+        $Currency = $_GET["Currency"];
+        $ProductName = $_GET["ProductName"];
+        $agent_id = $_GET["agent_id"];
+        $getauth_ary = array(
             'FacServiceId' => $FacServiceId,
             'FacTradeSeq' => $FacTradeSeq,
             'TradeType' => $TradeType,
@@ -52,19 +60,22 @@ if(isset($_GET["CustomerId"]) && !empty($_GET["CustomerId"]) &&
             'FacKey' => $FacKey,
             'Created_date' => $Createdate,
             'agent_id' => $agent_id
-    );
-    $mycard = new coderMycardHelp();
-    $result = $mycard->getAuthCode($getauth_ary);
-    if($result["success"]=='true'){
-        $result_suc['result'] = $result['result'];
-        echo json_encode($result_suc);
-    }else if($result["success"]=='false'){
+        );
+        $mycard = new coderMycardHelp();
+        $result = $mycard->getAuthCode($getauth_ary);
+        if($result["success"]=='true'){
+            $result_suc['result'] = $result['result'];
+            echo json_encode($result_suc);
+        }else if($result["success"]=='false'){
+            echo json_encode($fal_resultback);
+        }
+
+
+    }else{
         echo json_encode($fal_resultback);
     }
-
-
 }else{
-    echo json_encode($fal_resultback);
+    echo json_encode($login_resultback);
 }
 
 
