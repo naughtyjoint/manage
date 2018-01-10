@@ -94,7 +94,6 @@ else if(isset($_POST["account"]) && ($_POST["account"]!="") && isset($_POST["pas
             'member_id' => $userData['id'],
             'member_pw' => $userData['pw'],
             'member_name' => $userData['name'],
-            'platform_id' => '4',
             'email' => $userData['email']
         );
 
