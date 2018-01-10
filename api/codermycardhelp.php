@@ -146,6 +146,7 @@ class coderMycardHelp {
         }else{
 
             $AuthCode = $opt->AuthCode;
+            $AuthUrl = "https://test.mycard520.com.tw/MyCardPay?AuthCode=".$AuthCode;
             $ReturnCode = 0;
 
             $ary = array(
@@ -169,7 +170,7 @@ class coderMycardHelp {
 
                 return array(
                     'success' => 'true',
-                    'result' => $AuthCode,
+                    'result' => $AuthUrl,
                     'msg' => 'Get AuthCode Succeed.'
                 );
 
