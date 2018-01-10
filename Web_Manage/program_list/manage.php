@@ -4,6 +4,7 @@ include_once('formconfig.php');
 $errorhandle = new coderErrorHandle();
 $manageinfo = "";
 $pic = "";
+$id = get('id', 1);
 try {
 
     if ($id != "") {
