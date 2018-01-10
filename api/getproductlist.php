@@ -2,13 +2,25 @@
 
 include_once "_database.class.php";
 
-$db = Database::DB();
-$sql = 'SELECT * FROM product';
-$rows = $db->preparefetch_all_array($sql);
+$result =array(
+    'success' => true,
+    'result' => '',
+    'message' => "request successful"
+);
+try{
+    $db = Database::DB();
 
-$result['success']=true;
-$result['result']=$rows;
-echo json_encode($result);
+    isset($_GET["id"])?
+        $row = $db->preparefetch_all_array("SELECT * FROM product WHERE id=:id",[':id' => $_GET["id"]]):
+        $row = $db->fetch_all_array("SELECT * FROM product");
 
-
-
+    $db->close();
+    $result["result"]=$row;
+    echo json_encode($result);
+}
+catch(Exception $e) {
+    $db->close();
+    $result['success'] = false;
+    $result['message'] = $e->getMessage();
+    echo json_encode($result);
+}
