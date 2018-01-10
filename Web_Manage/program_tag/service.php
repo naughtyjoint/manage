@@ -21,11 +21,11 @@ try{
 	$rows=$sHelp->getList();
 
     for($i=0;$i<count($rows);$i++){
-        if($rows[$i][$colname['status']] == "1") {
-            $rows[$i][$colname['status']] = '<span class="badge badge-' . $incary_labelstyle[1] . '">已啟用</span>';
-        }
+        //if($rows[$i][$colname['status']] == "1") {
+            $rows[$i][$colname['status']] = '<span class="badge badge-' . $incary_labelstyle[$rows[$i][$colname['status']]] . '">'.$langary_agents_link[$rows[$i][$colname['status']]].'</span>';
+        /*}
         else
-            $rows[$i][$colname['status']] = '<span class="badge badge-' . $incary_labelstyle[0] . '">未啟用</span>';
+            $rows[$i][$colname['status']] = '<span class="badge badge-' . $incary_labelstyle[0] . '">未啟用</span>';*/
     }
 
 	$result['result']=true;

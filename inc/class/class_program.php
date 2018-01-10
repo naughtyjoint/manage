@@ -24,10 +24,10 @@ class class_program{
         if($in_id!==""){
             $where .= "where `{$colname['id']}` in(".$in_id.")";
         }
-        $sql = "select {$colname['name']} as name,{$colname['id']} as value
+        $sql = "select {$colname['name']} as name,{$colname['id']} as value,{$colname['status']} as status
                 from ".coderDBConf::$tag."
                 $where
-                ORDER BY `{$colname['id']}` DESC";
+                ORDER BY `{$colname['id']}`";
         return $db->fetch_all_array($sql);
     }
 

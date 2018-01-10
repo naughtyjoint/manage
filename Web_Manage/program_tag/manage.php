@@ -4,7 +4,6 @@ include_once('formconfig.php');
 $errorhandle = new coderErrorHandle();
 $id = get('id', 1);
 $manageinfo = "";
-$pic = "";
 try {
 
     if ($id != "") {
@@ -16,14 +15,12 @@ try {
             throw new Exception($langary_manage['exception']);
         }
         /* ## coder [bindData] --> ## */
-        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manager']].' | '.$langary_manage['createtime'].' '.$row[$colname['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname['updatetime']];
+        $manageinfo='  '.$langary_manage['admin'].' '.$row[$colname['manage']].' | '.$langary_manage['createtime'].' '.$row[$colname['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname['updatetime']];
         /* ## coder [bindData] <-- ## */
         /* ## coder [beforeBind] --> ## */
         /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
-
-        $pic = $row[$colname['thumbnail']];
 
         $method = 'edit';
         $active = $langary_edit_add['edit'];
@@ -49,11 +46,6 @@ if ($errorhandle->isException()) {
     <link rel="stylesheet" type="text/css" href="../assets/dropzone/downloads/css/dropzone.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/jcrop/jquery.Jcrop.min.css"/>
     <!-- ## coder [phpScript] -> ## -->
-    <script language="javascript" type="text/javascript">
-        <?php
-        coderFormHelp::drawPicScript($method, $file_path, $pic, 'org_pic');
-        ?>
-    </script>
     <!-- ## coder [phpScript] <- ## -->
 
 </head>
@@ -104,38 +96,9 @@ if ($errorhandle->isException()) {
                                     </div>
                                     <div class="form-group ">
                                         <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['description']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['description']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['thumbnail']) ?> </label>
-                                        <div class="col-sm-8 controls">
-                                            <div id="picupload"></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['url']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['url']) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['tag']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['tag']) ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label class="col-sm-3 col-lg-3 control-label">
-                                            <?php echo $fhelp->drawLabel($colname['showtime']) ?> </label>
-                                        <div class="col-sm-5 controls">
-                                            <?php echo $fhelp->drawForm($colname['showtime']) ?>
+                                            <?php echo $fhelp->drawLabel($colname['status']) ?> </label>
+                                            <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname['status']) ?>
                                         </div>
                                     </div>
 
@@ -215,21 +178,6 @@ if ($errorhandle->isException()) {
         /* ## coder [jsVaildScript] <-- ## */
     })
 
-$('#picupload').coderpicupload({
-    pics: [{
-        name: '<?php echo $langary_Web_Manage_all['pic2'];?>',
-        type: 5,
-        tag: 's',
-        width: 60,
-        height: 60
-    }],
-    width: '100',
-    height: '100',
-    s_width: '60px',
-    s_height: '60px',
-    org_pic: org_pic,
-    id: '<?php echo $colname["thumbnail"];?>'/*,required:true*/
-});
 <?php echo coderFormHelp::drawVaildScript();?>
 </script>
 </body>
