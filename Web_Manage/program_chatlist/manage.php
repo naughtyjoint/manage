@@ -17,6 +17,8 @@ try {
         if (empty($row)) {
             throw new Exception($langary_manage['exception']);
         }
+
+        $fhelp->setAttr($colname['name'], 'readonly', true);
         /* ## coder [bindData] --> ## */
         //$manageinfo='  '.$langary_manage['admin'].' '.$row[$colname_ep['manage']].' | '.$langary_manage['createtime'].' '.$row[$colname_ep['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname_ep['updatetime']];
         /* ## coder [bindData] <-- ## */

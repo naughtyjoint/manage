@@ -23,15 +23,8 @@ try{
         throw new Exception($msg);
     }
 
-    //多圖圖片
-    //$picgroup = $data[$colname['picgroup']];
-    //$data[$colname['picgroup']] = json_encode($picgroup);
-
-    /* ## coder [beforeModify] --> ## */
-    /* ## coder [beforeModify] <-- ## */
-
     $nowtime = datetime();
-    $data[$colname['manager']]=$adminuser['username'];
+    $data[$colname['manage']]=$adminuser['username'];
     $data[$colname['updatetime']]= $nowtime;
 
 
@@ -45,8 +38,6 @@ try{
 		$data[$colname['createtime']]= $nowtime;
 		$id=$db->query_insert($table,$data);
 	}
-
-    coderFormHelp::moveCopyPic($data[$colname['thumbnail']],$admin_path_temp,$file_path,'s');
 
 
     $admin_title=isset($data[$colname['name']]) ? $data[$colname['name']] : '';

@@ -6,15 +6,15 @@ coderAdmin::vaild($auth, 'view');
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
 $listHelp->mutileSelect=true;
-//$listHelp->editLink = "manage.php";
-//$listHelp->addLink = "manage.php";
+$listHelp->editLink = "manage.php";
+$listHelp->addLink = "manage.php";
 $listHelp->ajaxSrc = "service.php";
 $listHelp->delSrc = "delservice.php";
 
 $col = array();
 $col[] = array('column' => $colname['id'],         'name' => $langary_Web_Manage_all['id'],         'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['name'],       'name' => $langary_Web_Manage_all['tag_name'],   'order' =>false, 'width' => '100');
-$col[] = array('column' => $colname['status'],       'name' => $langary_Web_Manage_all['status'],   'order' =>false, 'width' => '100');
+$col[] = array('column' => $colname['status'],     'name' => $langary_Web_Manage_all['status'],   'order' =>false, 'width' => '100');
 $col[] = array('column' => $colname['createtime'], 'name' => $langary_Web_Manage_all['create_time'],'order' =>false, 'width' => '100');
 $col[] = array('column' => $colname['updatetime'], 'name' => $langary_Web_Manage_all['update_time'],'order' =>false, 'width' => '80');
 $col[] = array('column' => $colname['manage'],     'name' => $langary_Web_Manage_all['manager'],    'order' =>false, 'width' => '120');

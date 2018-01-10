@@ -26,7 +26,9 @@ try{
             $newary = array();
             foreach ($ary_numbers as $val) {
                 $key = array_search( $val, array_column($tags_array, 'value') );
-                $newary [] = '<span class="badge badge-' . $incary_lotterystyle[2] . '">' . $tags_array[$key]['name'] . '</span>';
+                //$newary [] = '<span class="badge badge-' . $incary_lotterystyle[2] . '">' . $tags_array[$key]['name'] . '</span>';
+                if($key>=0)
+                    $newary [] = '<span class="badge badge-' . $product_labelstyle[$tags_array[$key]['status']] . '">' . $tags_array[$key]['name'] . '</span>';
             }
             $rows[$i][$colname['tag']] = implode(" ", $newary);
         }

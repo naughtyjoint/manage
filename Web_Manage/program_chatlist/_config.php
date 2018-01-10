@@ -15,7 +15,7 @@ $colname_ep=coderDBConf::$col_episode;
 $anchors_array = getList_all();
 
 $orderDesc='desc';
-$page_title="節目聊天紀錄";
+$page_title="節目開播紀錄";
 $page=request_pag("page");
 $page_desc="{$page_title}-您可將內容修改為希望呈現的內容。";
 $mtitle='<li class="active">'.$page_title.'</li>';
