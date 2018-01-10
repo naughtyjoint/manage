@@ -16,12 +16,22 @@ $FacKey = "B8sqJqY3QFQg8wE2LZ4AxcWQ69v3RUyy";   //廠商key
 $Createdate = date('Y-m-d H:i:s',time());
 
 $fal_resultback = array(
-    'ReturnCode' => '2',
-    'ReturnMsg' => 'failed to get AuthCode .'
+    'success' => 'false',
+    'result' => '',
+    'message' => 'Failed to get AuthCode .'
+);
+
+$result_suc = array(
+    'success' => 'true',
+    'result' => '',
+    'message' => 'Get AuthCode successfully.'
 );
 
 
-if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"])&&isset($_GET["ProductName"])){
+if(isset($_GET["CustomerId"]) && !empty($_GET["CustomerId"]) &&
+    isset($_GET["Amount"])&& !empty($_GET["Amount"]) &&
+    isset($_GET["Currency"])&& !empty($_GET["Currency"]) &&
+    isset($_GET["ProductName"])&& !empty($_GET["ProductName"])){
     $CustomerId = $_GET["CustomerId"];
     $Amount = $_GET["Amount"];
     $Currency = $_GET["Currency"];
@@ -44,11 +54,13 @@ if(isset($_GET["CustomerId"])&&isset($_GET["Amount"])&&isset($_GET["Currency"])&
             'agent_id' => $agent_id
     );
     $mycard = new coderMycardHelp();
-    $AuthCode = $mycard->getAuthCode($getauth_ary);
-    $AuthUrl = "https://test.mycard520.com.tw/MyCardPay?AuthCode=".$AuthCode;
-
-
-        echo $AuthUrl;
+    $result = $mycard->getAuthCode($getauth_ary);
+    if($result["success"]=='true'){
+        $result_suc['result'] = $result['result'];
+        echo json_encode($result_suc);
+    }else if($result["success"]=='false'){
+        echo json_encode($fal_resultback);
+    }
 
 
 }else{
