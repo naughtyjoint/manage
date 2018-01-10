@@ -2,7 +2,6 @@
 include_once('_config.php');
 include_once('formconfig.php');
 $errorhandle = new coderErrorHandle();
-$id = get('id', 1);
 $manageinfo = "";
 $pic = "";
 try {
