@@ -60,6 +60,7 @@ class coderPointHelp
             );
             $db->query_insert($this->table_contribution,$contribution);
             $db->close();
+            $ary["member_point"] = $member_point;
 
             return array(
                 'success' => 'true',
@@ -68,9 +69,10 @@ class coderPointHelp
             );
 
         }else if($member_point<$point)
+            $ary["member_point"] = $member_point;
             return array(
                 'success' => 'false',
-                'result' => '',
+                'result' => $ary,
                 'message' => "點數餘額不足"
             );
     }

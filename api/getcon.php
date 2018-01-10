@@ -1,17 +1,18 @@
 <?php
 include_once('codermycardhelp.php');
+include '_func.php';
 $result = array(
-    'ReturnCode' => $_POST["ReturnCode"],
-    'ReturnMsg' => $_POST["ReturnMsg"],
-    'PayResult' => $_POST["PayResult"],
-    'FacTradeSeq' => $_POST["FacTradeSeq"],
-    'PaymentType' => $_POST["PaymentType"],
-    'Amount' => $_POST["Amount"],
-    'Currency' => $_POST["Currency"],
-    'MyCardTradeNo' => $_POST["MyCardTradeNo"],
-    'MyCardType' => $_POST["MyCardType"],
-    'PromoCode' => $_POST["PromoCode"],
-    'Hash' => $_POST["Hash"]
+    'ReturnCode' => post("ReturnCode",1),
+    'ReturnMsg' => post("ReturnMsg",1),
+    'PayResult' => post("PayResult",1),
+    'FacTradeSeq' => post("FacTradeSeq",1),
+    'PaymentType' => post("PaymentType",1),
+    'Amount' => post("Amount",0),
+    'Currency' => post("Currency",1),
+    'MyCardTradeNo' => post("MyCardTradeNo",1),
+    'MyCardType' => post("MyCardType",1),
+    'PromoCode' => post("PromoCode",1),
+    'Hash' => post("Hash",1)
 );
 
 $suc_resultback = array(
