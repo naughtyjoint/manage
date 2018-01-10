@@ -100,6 +100,9 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['name']); ?>
                                         </div>
                                     </div>
+                                    <?php
+                                    if(isset($row[$colname['platform_id']])) {
+                                    ?>
                                     <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['platform_id']) ?>
@@ -108,6 +111,7 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawForm($colname['platform_id']); ?>
                                         </div>
                                     </div>
+                                    <?php } ?>
                                     <div class="form-group">
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['email']) ?>
@@ -122,7 +126,9 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawLabel($colname['point']) ?>
                                         </label>
                                         <div class="col-sm-5 controls">
+                                            <div class="<?php echo (isset($row[$colname['point']]))?'control-label':'controls'?>"<?php echo (isset($row[$colname['point']]))?'style="text-align: left;"':''?>>
                                             <?php echo $row[$colname['point']]; ?>
+                                            </div>
                                         </div>
                                     </div>
                                     <?php }?>

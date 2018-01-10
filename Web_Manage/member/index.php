@@ -17,8 +17,8 @@ $listHelp->orderDesc = $orderDesc;
 
 $col = array();
 $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'width' => '60','def_desc'=>'desc');
-$col[] = array('column' => $colname['member_id'], 'name' => '會員ID ', 'order' => false, 'width' => '200');
-$col[] = array('column' => $colname['name'], 'name' => '會員名稱 ', 'order' => false, 'width' => '200');
+$col[] = array('column' => $colname['member_id'], 'name' => '會員登入帳號 ', 'order' => false, 'width' => '200');
+$col[] = array('column' => $colname['name'], 'name' => '會員暱稱 ', 'order' => false, 'width' => '200');
 $col[] = array('column' => 'platform_name', 'name' => '平台名稱 ', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['agent_id'], 'name' => '代理ID ', 'order' => true, 'width' => '100');
 $col[] = array('column' => $colname['email'], 'name' => 'E-mail ', 'order' => false);

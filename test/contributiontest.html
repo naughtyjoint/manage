@@ -3,101 +3,13 @@
     <title>打賞測試</title>
 </head>
 <body>
-<button id="loginButton" onClick="logInWithFacebook()" type="button" style="display:none;">登入</button>
-<button id="logoutButton" onClick="logoutFacebook()" type="button" style="display:none;">登出</button>
-
-<div id="profile"></div>
-
-<script>
-
-    logoutFacebook = function(){
-        FB.logout(function(response) {
-            window.location.reload()
-        });
-    }
-
-
-
-    logInWithFacebook = function() {
-        FB.login(function(response) {
-            if (response.authResponse) {
-                //alert('Your user id is:'+ response.authResponse.userID);
-                document.getElementById("profile").innerHTML = JSON.stringify(response);
-                document.getElementById("loginButton").style.display = "none";
-                document.getElementById("logoutButton").style.display = "block";
-
-                // Now you can redirect the user or do an AJAX request to
-                // a PHP script that grabs the signed request from the cookie.
-            } else {
-                alert('User cancelled login or did not fully authorize.');
-            }
-        }, {scope: 'public_profile,email'});
-        return false;
-    };
-
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: '401417810290014',
-            cookie: true, // This is important, it's not enabled by default
-            version: 'v2.10'
-        });
-
-        FB.getLoginStatus(function(response) {
-
-            if (response.status === 'connected') {
-                var uid = response.authResponse.userID;
-                var accessToken = response.authResponse.accessToken;
-                document.getElementById("loginButton").style.display = "none";
-                document.getElementById("logoutButton").style.display = "block";
-                document.getElementById("profile").innerHTML = JSON.stringify(response);
-            } else if (response.status === 'not_authorized') {
-                document.getElementById("loginButton").style.display = "block";
-                document.getElementById("logoutButton").style.display = "none";
-                document.getElementById("profile").innerHTML = JSON.stringify(response);
-                // the user is logged in to Facebook,
-                // but has not authenticated your app
-            } else {
-                document.getElementById("loginButton").style.display = "block";
-                document.getElementById("logoutButton").style.display = "none";
-                document.getElementById("profile").innerHTML = JSON.stringify(response);
-                // the user isn't logged in to Facebook.
-            }
-        });
-
-        //document.getElementById("myDIV").style.display = "none";
-
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-
-
-</script>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.11&appId=401417810290014';
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-</div>
-
 <form method="POST" action="../api/contribute.php">
     <!--<form method="GET" action="../api/GetAuthCode.php">-->
     會員代號<input type="hidden" name="member_id"><br>
     選擇主播<select id="anchor" name="anchor_id" class="form-control">
         <option>請選擇</option>
         <option value="1">多朵</option>
-        <option value="2">小花</option>
+        <option value="2">王美</option>
         <option value="3">朱兒</option>
     </select><br>
     打賞點數<input type="text" name="point"><br>
