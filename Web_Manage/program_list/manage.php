@@ -142,7 +142,7 @@ if ($errorhandle->isException()) {
                                     <!-- ## coder [formScript] <- ## -->
                                     <div class="form-group">
                                         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-3">
-                                            <button type="submit" class="btn btn-primary"><i
+                                            <button id="ok_btn" type="submit" class="btn btn-primary"><i
                                                         class="icon-ok"></i><?php echo $langary_manage['ok']; ?><?php echo $active ?>
                                             </button>
                                             <button type="button" class="btn" onclick="$.confirm({
@@ -229,9 +229,22 @@ $('#picupload').coderpicupload({
     s_height: '60px',
     org_pic: org_pic,
     id: '<?php echo $colname['thumbnail'];?>',
-    name:'<?php echo $id;?>'/*,required:true*/
+    name:'<?php echo $id;?>',
+    old_img:'<?php echo $pic;?>'/*,required:true*/
 });
 <?php echo coderFormHelp::drawVaildScript();?>
+
+/*document.getElementById("ok_btn").addEventListener("click", function(e){
+    parent.pagereload();
+    console.log(parent);
+});*/
+
+window.onunload = closingCode;
+function closingCode(){
+    parent.pagereload();
+    console.log("we r closing");
+    return null;
+}
 </script>
 </body>
 </html>

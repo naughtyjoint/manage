@@ -22,7 +22,8 @@ $.fn.coderpicupload = function(settings) {
 		debug:true,
 		required:false,
 		bind_obj:null,
-        name:""
+        name:"",
+        old_img:""
     };
     var _settings = $.extend(_defaultSettings, settings);
 	return this.each(function() {
@@ -46,7 +47,7 @@ $.fn.coderpicupload = function(settings) {
 			//此元件不顯示原始圖片
 			$origin=$('<td valign="bottom" align="left"><img src="'+_settings.nophotopic+'" style="max-width:'+_settings.org_width+';max-height:'+_settings.org_height+'" class="myform_pic show-popover"  data-placement="top" data-trigger="hover"  data-content="此圖片為原圖的預覽,點擊圖片可看原始圖檔。'+sizetxt+'" data-original-title="原始圖片"><p><span class="label label-gray label-font">原始圖片</span></p></td>');
 			//
-			//$origin=$('');
+			//顯示縮圖
 			$content.append($origin);
 			if(_settings.pics !=null){
 				for(var i=0;i<_settings.pics.length;i++){
@@ -211,7 +212,12 @@ $.fn.coderpicupload = function(settings) {
 			var pics=_settings.pics;
 			if(pic){
 			    if(_settings.name !== "")
-                    _settings.ajaxsrc = _settings.ajaxsrc+"?id="+_settings.name;
+				{
+                    _settings.ajaxsrc = "../comm/upload.php?id="+_settings.name;
+                    if(_settings.old_img !== "")
+                        _settings.ajaxsrc = "../comm/upload.php?id="+_settings.name+"&old_img="+_settings.old_img;
+				}
+
 
 				_settings.croptagary = {};
 				var $processbar=$process.find('.progress-bar');
@@ -253,9 +259,10 @@ $.fn.coderpicupload = function(settings) {
 			}
 		}
 		function showPics(pic,croptag){
+			var timer = new Date().getTime();
 			var _pic=$origin.find('img');
 			var _croptag=croptag || '';
-			_pic.attr({'src':pic['filepath']+pic['filename']});
+			_pic.attr({'src':pic['filepath']+pic['filename']+'?time='+timer});
 			$origin.find('span').html('原始圖片'+pic['width']+'x'+pic['height']);
 			$hidden.val(pic['filename']);
 			var pics=_settings.pics;
@@ -271,7 +278,7 @@ $.fn.coderpicupload = function(settings) {
 					}else{
 						var _pics = pic['filepath'];
 					}
-					_pics += _thistag+pic['filename']+'?time='+new Date().getTime();
+					_pics += _thistag+pic['filename']+'?time='+timer;//*/
 
 					parent.find('#spic'+i).attr({'src':_pics,'data-filepath':pic['filepath'],'data-picname':pic['filename']});
 				}

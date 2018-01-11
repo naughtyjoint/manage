@@ -33,7 +33,7 @@ try{
     if($method=='edit'){
         $db->query_update($table,$data," {$colname['id']}='{$id}'");
         //若上傳了新圖，刪掉舊的
-        if($data[$colname['thumbnail']] != $current_pic[$colname['thumbnail']])
+        /*if($data[$colname['thumbnail']] != $current_pic[$colname['thumbnail']])
         {
             if(is_file($file_path . $current_pic[$colname['thumbnail']])){
                 unlink($file_path.$current_pic[$colname['thumbnail']]);
@@ -41,7 +41,7 @@ try{
             if(is_file($file_path . 's'.$current_pic[$colname['thumbnail']])){
                 unlink($file_path . 's'.$current_pic[$colname['thumbnail']]);
             }
-        }
+        }*/
 	}else{
         /* ## coder [indInit] --> ## */
         /* ## coder [indInit] <-- ## */
