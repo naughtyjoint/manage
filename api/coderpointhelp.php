@@ -63,7 +63,7 @@ class coderPointHelp
             $ary["member_point"] = $member_point;
 
             return array(
-                'success' => 'true',
+                'success' => true,
                 'result' => $ary,
                 'code' => 1,
                 'message' => "Contributed successfully"
@@ -72,7 +72,7 @@ class coderPointHelp
         }else if($member_point<$point)
             $ary["member_point"] = $member_point;
             return array(
-                'success' => 'false',
+                'success' => false,
                 'result' => $ary,
                 'code' => 2,
                 'message' => "點數餘額不足"

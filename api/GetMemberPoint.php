@@ -1,6 +1,6 @@
 <?php
 include_once "coderpointhelp.php";
-
+header('Content-type:application/json; charset=utf-8');
 $result_suc =array(
     'success' => true,
     'result' => '',

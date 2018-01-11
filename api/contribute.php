@@ -1,18 +1,19 @@
 <?php
+header('Content-type:application/json; charset=utf-8');
 session_start();
 include_once 'coderpointhelp.php';
 if ( !isset( $_SESSION["origURL"] ) )
     $_SESSION["origURL"] = $_SERVER["HTTP_REFERER"];
 
 $loginless_resultback = array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 3,
     'message' => 'Please login.'
 );
 
 $fal_resultback = array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 4,
     'message' => 'Contribution failed.'

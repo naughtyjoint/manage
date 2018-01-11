@@ -1,4 +1,6 @@
 <?php
+header('Content-type:application/json; charset=utf-8');
+
 session_start();
 include_once 'codermycardhelp.php';
 
@@ -18,19 +20,19 @@ $Createdate = date('Y-m-d H:i:s',time());
 
 
 $result_suc = array(
-    'success' => 'true',
+    'success' => true,
     'result' => '',
     'code' => 1,
     'message' => 'Get AuthCode successfully.'
 );
 $fal_resultback = array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 2,
     'message' => 'Failed to get AuthCode .'
 );
 $login_resultback = array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 3,
     'message' => 'Please log in.'

@@ -1,4 +1,5 @@
 <?PHP
+header('Content-type:application/json; charset=utf-8');
 session_start();
 include "_func.php";
 include "_database.class.php";
@@ -6,7 +7,7 @@ include "coderfbhelp.php";
 require_once __DIR__ . '/vendor/autoload.php'; // change path as needed
 
 $result_re =array(
-    'success' => 'true',
+    'success' => true,
     'result' => '',
     'code' => 1,
     'message' => "Registered successfully , please log in."
@@ -14,7 +15,7 @@ $result_re =array(
 
 
 $result_lo =array(
-    'success' => 'true',
+    'success' => true,
     'result' => '',
     'code' => 4,
     'message' => "Account already existed, please log in."
@@ -22,7 +23,7 @@ $result_lo =array(
 
 
 $result_false =array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 3,
     'message' => "System false."
@@ -32,7 +33,7 @@ $result_false =array(
 //判斷是否登入
 if(isset($_SESSION["memberData"]) && ($_SESSION["memberData"]!="")){
     $result_already =array(
-        'success' => 'true',
+        'success' => true,
         'result' => '',
         'code' => 2,
         'message' => "Logined already"

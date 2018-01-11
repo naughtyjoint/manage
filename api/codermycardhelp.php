@@ -140,7 +140,7 @@ class coderMycardHelp {
         $Result = $opt->ReturnCode;
         if($Result!=1){
             return array(
-                'success' => 'false',
+                'success' => false,
                 'result' => '',
                 'msg' => 'Get AuthCode Failed.'
             );
@@ -172,7 +172,7 @@ class coderMycardHelp {
                 self::AddMycard($ary);
 
                 return array(
-                    'success' => 'true',
+                    'success' => true,
                     'result' => $AuthUrl,
                     'msg' => 'Get AuthCode Succeed.'
                 );

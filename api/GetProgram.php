@@ -1,6 +1,6 @@
 <?php
 include "_database.class.php";
-
+header('Content-type:application/json; charset=utf-8');
 
 $result =array(
     'success' => true,
