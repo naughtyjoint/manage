@@ -16,7 +16,7 @@ class coderPointHelp
     }
 
     //取得單一會員點數總數
-    private function getPoint($mem_id){
+    static function getPoint($mem_id){
         $db = Database::DB();
         $query_member = "SELECT point FROM member WHERE member_id=:member_id";
         $row = $db->query_first($query_member,[':member_id' => $mem_id]);
@@ -24,7 +24,7 @@ class coderPointHelp
     }
 
     //取得單一主播點數總數
-    private function getPoint_anc($id){
+    private static function getPoint_anc($id){
         $db = Database::DB();
         $query= "SELECT point FROM anchor WHERE id=:id";
         $row = $db->query_first($query,[':id' => $id]);
