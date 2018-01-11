@@ -133,6 +133,11 @@ class imgUploder
 			{
 				$this->file_name=$this->file_name;
 			}
+			if($this->overwrite=="4")
+            {
+                @unlink($this->file_dir.$this->file_name);
+                @unlink($this->file_dir.'s'.$this->file_name);
+            }
 		}
 	}
 	function chk_Copy()
@@ -463,10 +468,7 @@ class imgUploder
 		$this->chk_FileDir();
 		$this->chk_File();
 
-		if ($this->user_msg==""){
 
-			$this->chk_Copy();
-		}
 		if ($this->user_msg!=""){
 		//	echo $this->user_msg;
 			$this->file_name="";
@@ -480,10 +482,15 @@ class imgUploder
 			}
 			if ($this->smallimg =="1")
 			{
-				@unlink($this->file_dir."sm".$this->oldimg);
+				@unlink($this->file_dir."s".$this->oldimg);
 			}
-			return true;
 		}
+
+        if ($this->user_msg==""){
+
+            $this->chk_Copy();
+            return true;
+        }
 	}
 }
 

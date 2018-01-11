@@ -11,7 +11,7 @@ try{
     $db = Database::DB();
 
     isset($_GET["id"])?
-        $row = $db->fetch_all_array("SELECT * FROM program WHERE pgram_id=".$_GET["id"]):
+        $row = $db->preparefetch_all_array("SELECT * FROM program WHERE pgram_id=:id", array(":id"=>$_GET["id"]) ):
         $row = $db->fetch_all_array("SELECT * FROM program");
 
     $db->close();

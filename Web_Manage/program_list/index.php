@@ -108,6 +108,8 @@ $db->close();
 <script type="text/javascript" src="../js/coderlisthelp.js"></script>
 
 <script type="text/javascript">
+    function pagereload(){ location.reload();}
+
     $(document).ready(function () {
         /* ## coder [listRow] --> ## */
         $('#table1').coderlisthelp({
