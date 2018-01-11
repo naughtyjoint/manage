@@ -16,6 +16,7 @@ class coderMycardHelp {
         extract($ary);
         $mycard_data = array(
             'FacTradeSeq' => $FacTradeSeq,
+            'TradeSeq' => $TradeSeq,
             'ServerId' => $ServerId,
             'member_id' => $member_id,
             'PaymentType' => $PaymentType,
@@ -138,17 +139,20 @@ class coderMycardHelp {
         $Result = $opt->ReturnCode;
         if($Result!=1){
             return array(
-                'success' => 'false',
+                'success' => false,
                 'result' => '',
                 'msg' => 'Get AuthCode Failed.'
             );
         }else{
 
             $AuthCode = $opt->AuthCode;
+            $TradeSeq = $opt->TradeSeq;
+            $AuthUrl = "https://test.mycard520.com.tw/MyCardPay?AuthCode=".$AuthCode;
             $ReturnCode = 0;
 
             $ary = array(
                 'FacTradeSeq' => $FacTradeSeq,
+                'TradeSeq' => $TradeSeq,
                 'ServerId' => $ServerId,
                 'member_id' => $CustomerId,
                 'PaymentType' => $PaymentType,
@@ -167,8 +171,8 @@ class coderMycardHelp {
                 self::AddMycard($ary);
 
                 return array(
-                    'success' => 'true',
-                    'result' => $AuthCode,
+                    'success' => true,
+                    'result' => $AuthUrl,
                     'msg' => 'Get AuthCode Succeed.'
                 );
 

@@ -1,4 +1,5 @@
 <?PHP
+header('Content-type:application/json; charset=utf-8');
 session_start();
 include "_func.php";
 include "_database.class.php";
@@ -7,28 +8,28 @@ require_once __DIR__ . '/vendor/autoload.php'; // change path as needed
 
 
 $result_lo =array(
-    'success' => 'true',
+    'success' => true,
     'result' => '',
     'code' => 1,
     'message' => "Login successfully."
 );
 
 $result_pwf =array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 2,
     'message' => "Wrong password."
 );
 
 $result_re =array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 3,
     'message' => "Member does not exist, please register."
 );
 
 $result_false =array(
-    'success' => 'false',
+    'success' => false,
     'result' => '',
     'code' => 4,
     'message' => "System false."
@@ -38,7 +39,7 @@ $result_false =array(
 //判斷是否登入
 if(isset($_SESSION["memberData"]) && ($_SESSION["memberData"]!="")){
     $result_already =array(
-        'success' => 'true',
+        'success' => true,
         'result' => '',
         'code' => 5,
         'message' => "Logged in already"
@@ -48,8 +49,8 @@ if(isset($_SESSION["memberData"]) && ($_SESSION["memberData"]!="")){
 }
 else if(isset($_POST["accesstoken"]) && ($_POST["accesstoken"]!="")){
 
-    $access_token = "EAAFtFl39JV4BAKH9RmFZAOJvxiJRZASCPfFyhc4nrMOZAKdEsWSjqh5S820qyfFBFv5MvcB0ZAGsp7c4N6SiBx7TsLw7tNxOUhsAURVDtE8M4RsJTzFTJYq5qwndDDugjTSzOHQh2kSqCuj830vr5gKKjVcmVlIQPhmQ9xjd1rFwHwDSpWq4HVSy3nd2pLfhwsn5IojvKgZDZD";
-//$access_token = $_POST["accesstoken"];
+//    $access_token = "EAAFtFl39JV4BAKH9RmFZAOJvxiJRZASCPfFyhc4nrMOZAKdEsWSjqh5S820qyfFBFv5MvcB0ZAGsp7c4N6SiBx7TsLw7tNxOUhsAURVDtE8M4RsJTzFTJYq5qwndDDugjTSzOHQh2kSqCuj830vr5gKKjVcmVlIQPhmQ9xjd1rFwHwDSpWq4HVSy3nd2pLfhwsn5IojvKgZDZD";
+    $access_token = $_POST["accesstoken"];
 
     $Fb = new CoderFbHelp($access_token);
     $userData = $Fb->getUserArray();
@@ -60,7 +61,21 @@ else if(isset($_POST["accesstoken"]) && ($_POST["accesstoken"]!="")){
     $idCount = $db->query_prepare_first($queryId,array(':member_id' => $userData['id']));
 
     if($idCount['COUNT(member_id)']==0) {
-        echo json_encode($result_re);
+        $table = "member";
+        $memberData = array(
+            'member_id' => $userData['id'],
+            'member_name' => $userData['name'],
+            'platform_id' => '4',
+            'email' => $userData['email']
+        );
+
+        $db->query_insert($table,$memberData);
+        $db->close();
+
+        $result_lo["result"]=$memberData;
+        echo json_encode($result_lo);
+        $_SESSION['memberData'] = $memberData;
+        $db->close();
     }else{
         $memberData = $db->query_prepare_first("SELECT member_id,member_name,email,platform_id, point FROM member WHERE member_id=:member_id",array(':member_id' => $userData['id']));
         $result_lo["result"]=$memberData;

@@ -1,6 +1,7 @@
 <?php
 include_once('codermycardhelp.php');
 include '_func.php';
+header('Content-type:application/json; charset=utf-8');
 $result = array(
     'ReturnCode' => post("ReturnCode",1),
     'ReturnMsg' => post("ReturnMsg",1),
