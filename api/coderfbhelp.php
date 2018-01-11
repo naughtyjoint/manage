@@ -26,11 +26,21 @@ class CoderFbHelp
             $response = $fb->get('/me?fields=email,name', $access_token);
         } catch(\Facebook\Exceptions\FacebookResponseException $e) {
             // When Graph returns an error
-            echo 'Graph returned an error: ' . $e->getMessage();
+            $result = array(
+                'success' => false,
+                'result' => '',
+                'message' => 'Graph returned an error: ' . $e->getMessage()
+            );
+            echo json_encode($result);
             exit;
         } catch(\Facebook\Exceptions\FacebookSDKException $e) {
             // When validation fails or other local issues
-            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            $result = array(
+                'success' => false,
+                'result' => '',
+                'message' => 'Facebook SDK returned an error: ' . $e->getMessage(),
+            );
+            echo json_encode($result);
             exit;
         }
 

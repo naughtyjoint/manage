@@ -60,7 +60,21 @@ else if(isset($_POST["accesstoken"]) && ($_POST["accesstoken"]!="")){
     $idCount = $db->query_prepare_first($queryId,array(':member_id' => $userData['id']));
 
     if($idCount['COUNT(member_id)']==0) {
-        echo json_encode($result_re);
+        $table = "member";
+        $memberData = array(
+            'member_id' => $userData['id'],
+            'member_name' => $userData['name'],
+            'platform_id' => '4',
+            'email' => $userData['email']
+        );
+
+        $db->query_insert($table,$memberData);
+        $db->close();
+
+        $result_lo["result"]=$memberData;
+        echo json_encode($result_lo);
+        $_SESSION['memberData'] = $memberData;
+        $db->close();
     }else{
         $memberData = $db->query_prepare_first("SELECT member_id,member_name,email,platform_id, point FROM member WHERE member_id=:member_id",array(':member_id' => $userData['id']));
         $result_lo["result"]=$memberData;
