@@ -1,5 +1,6 @@
 <?php
 include_once('codermycardhelp.php');
+header('Content-type:application/json; charset=utf-8');
 $opt = json_decode(file_get_contents('php://input'));
 
 $ReturnCode = $opt->ReturnCode;

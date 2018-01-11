@@ -1,5 +1,5 @@
 <?php
-include "_database.class.php";
+include_once "_database.class.php";
 header('Content-type:application/json; charset=utf-8');
 
 $result =array(
@@ -11,8 +11,8 @@ try{
     $db = Database::DB();
 
     isset($_GET["id"])?
-        $row = $db->preparefetch_all_array("SELECT * FROM program WHERE pgram_id=:id", array(":id"=>$_GET["id"]) ):
-        $row = $db->fetch_all_array("SELECT * FROM program");
+        $row = $db->preparefetch_all_array("SELECT * FROM product WHERE id=:id",[':id' => $_GET["id"]]):
+        $row = $db->fetch_all_array("SELECT * FROM product");
 
     $db->close();
     $result["result"]=$row;
@@ -24,4 +24,3 @@ catch(Exception $e) {
     $result['message'] = $e->getMessage();
     echo json_encode($result);
 }
-

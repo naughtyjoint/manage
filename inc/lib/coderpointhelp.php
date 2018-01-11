@@ -14,7 +14,7 @@ class coderPointHelp
     }
 
     //取得單一會員點數總數
-    private function getPoint($mem_id){
+    static function getPoint($mem_id){
         $db = Database::DB();
         $query_member = "SELECT point FROM member WHERE member_id=:member_id";
         $row = $db->query_first($query_member,[':member_id' => $mem_id]);
@@ -22,7 +22,7 @@ class coderPointHelp
     }
 
     //取得單一主播點數總數
-    private function getPoint_anc($id){
+    private static function getPoint_anc($id){
         $db = Database::DB();
         $query= "SELECT point FROM anchor WHERE id=:id";
         $row = $db->query_first($query,[':id' => $id]);
@@ -58,17 +58,21 @@ class coderPointHelp
             );
             $db->query_insert($this->table_contribution,$contribution);
             $db->close();
+            $ary["member_point"] = $member_point;
 
             return array(
-                'success' => 'true',
+                'success' => true,
                 'result' => $ary,
+                'code' => 1,
                 'message' => "Contributed successfully"
             );
 
         }else if($member_point<$point)
+            $ary["member_point"] = $member_point;
             return array(
-                'success' => 'false',
-                'result' => '',
+                'success' => false,
+                'result' => $ary,
+                'code' => 2,
                 'message' => "點數餘額不足"
             );
     }

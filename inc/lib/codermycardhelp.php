@@ -16,6 +16,7 @@ class coderMycardHelp {
         extract($ary);
         $mycard_data = array(
             'FacTradeSeq' => $FacTradeSeq,
+            'TradeSeq' => $TradeSeq,
             'ServerId' => $ServerId,
             'member_id' => $member_id,
             'PaymentType' => $PaymentType,
@@ -137,14 +138,21 @@ class coderMycardHelp {
         $opt=json_decode($output);
         $Result = $opt->ReturnCode;
         if($Result!=1){
-            return 'Get AuthCode Failed';
+            return array(
+                'success' => false,
+                'result' => '',
+                'msg' => 'Get AuthCode Failed.'
+            );
         }else{
 
             $AuthCode = $opt->AuthCode;
+            $TradeSeq = $opt->TradeSeq;
+            $AuthUrl = "https://test.mycard520.com.tw/MyCardPay?AuthCode=".$AuthCode;
             $ReturnCode = 0;
 
             $ary = array(
                 'FacTradeSeq' => $FacTradeSeq,
+                'TradeSeq' => $TradeSeq,
                 'ServerId' => $ServerId,
                 'member_id' => $CustomerId,
                 'PaymentType' => $PaymentType,
@@ -161,7 +169,13 @@ class coderMycardHelp {
             try{
                 //新增一筆mycard交易
                 self::AddMycard($ary);
-                return $AuthCode;
+
+                return array(
+                    'success' => true,
+                    'result' => $AuthUrl,
+                    'msg' => 'Get AuthCode Succeed.'
+                );
+
 
             }catch (Exception $exception){
                 echo $exception->getMessage();
