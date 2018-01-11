@@ -16,7 +16,7 @@ try{
 					";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("create_time");
+	$sHelp->orderby=$colname["create_time"];
 	//$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
