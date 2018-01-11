@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2018-01-10 10:06:28
+-- 產生時間： 2018-01-11 11:34:36
 -- 伺服器版本: 10.1.29-MariaDB
 -- PHP 版本： 7.2.0
 
@@ -58,7 +58,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`a_id`, `a_games_id`, `a_all_upid`, `a_add_adminid`, `a_first_upid`, `a_level`, `a_service`, `a_mid`, `a_username`, `a_password`, `a_name`, `a_email`, `a_pic`, `r_id`, `a_forgetcode`, `a_forgetcode_time`, `a_ip`, `a_logintime`, `a_ispublic`, `a_admin`, `a_createtime`, `a_updatetime`) VALUES
-(1, '', '', 1, 0, 1, 0, '0496a1fee4d65a91bd3bac3b9046e60e1515573537873388k4jiqgumbtom0tpbjlcpa2mf2', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2018-01-10 16:38:57', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
+(1, '', '', 1, 0, 1, 0, '9ea0da03184f6c06ea28f25fcba09650151565161764978u53ptla1bup7u16ah071q01e5r', 'admin', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '系統管理員', 'admin@gmail.com', '', 2, NULL, '0000-00-00 00:00:00', '::1', '2018-01-11 14:20:17', 1, 'admin', '2017-10-17 13:43:34', '2017-10-17 13:43:34'),
 (17, '', '', 1, 0, 1, 0, '60e58df6877dd77b434aef35828397a8151322428638780bd2h9aut8a08m15lqfmdnbck5s', 'customer', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '客服', 'aaa@vvv.com', '', 5, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-14 12:04:46', 1, 'admin', '2017-12-06 16:50:57', '2017-12-08 09:58:18'),
 (18, '', '', 1, 0, 1, 0, 'db84d35f53ef5be6e70fbbf60b061df015141661779345177ro40dgnam3jvpp6mqoim1c7f', 'money', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', '財務', 'bbb@ccc.ddd', '', 4, NULL, '0000-00-00 00:00:00', '127.0.0.1', '2017-12-25 09:42:57', 1, 'admin', '2017-12-08 09:58:44', '2017-12-08 09:58:44');
 
@@ -3033,8 +3033,9 @@ CREATE TABLE `program` (
 --
 
 INSERT INTO `program` (`pgram_id`, `pgram_name`, `pgram_description`, `pgram_thumbnail`, `pgram_url`, `pgram_tag`, `pgram_createdtime`, `pgram_updatetime`, `pgram_showtime`, `pgram_lastmanager`) VALUES
-(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '17640b33f7e6248b9b2967bc2b3160b7.png', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '8,9,10,13', '2017-12-27 01:09:13', '2018-01-10 18:14:23', '每周一 19:00am~20:00am', 'admin'),
-(14, '美眉看MTV', '由現今才女介紹hitoMV', '0cf37e6e2c89c792e1171af7d7679419.png', 'https://www.w3schools.com/php/php_file_upload.asp', '13,12,10,9,8,7,6,5,4,3,2,1', '2017-12-29 17:54:11', '2018-01-08 11:01:21', '24hr 不間斷', 'admin');
+(1, 'fun開玩', '一個清新、優質的節目，主要以開箱及玩遊戲為主', '1.jpg', 'https://www.youtube.com/watch?v=Jv3zvWZlXkk', '8,9', '2017-12-27 01:09:13', '2018-01-11 18:33:29', '每周一 19:00am~20:00am', 'admin'),
+(14, '美眉看MTV', '由現今才女介紹hitoMV', '14.png', 'https://www.w3schools.com/php/php_file_upload.asp', '1,2,3,4,5,6,7,8,9,10,12,13', '2017-12-29 17:54:11', '2018-01-11 11:07:32', '24hr 不間斷', 'admin');
+
 
 -- --------------------------------------------------------
 

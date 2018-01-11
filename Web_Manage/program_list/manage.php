@@ -242,7 +242,6 @@ $('#picupload').coderpicupload({
 window.onunload = closingCode;
 function closingCode(){
     parent.pagereload();
-    console.log("we r closing");
     return null;
 }
 </script>
