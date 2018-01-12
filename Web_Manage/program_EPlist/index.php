@@ -10,6 +10,7 @@ $listHelp->check_auth = false;
 
 $listHelp->delSrc = "delservice.php";
 $listHelp->editLink = "manage.php";
+$listHelp->addLink = "manage.php?id=".$getid;
 
 $col = array();
 $col[] = array('column' => $colname_ep['id'],       'name' => '開播編號',                             'order' => true,  'width' => '100');
@@ -23,6 +24,7 @@ $col[] = array('column' => 'episode_length',        'name' => '節目時長(時:
 $col[] = array('column' => 'chatlog_count',         'name' => '留言數量 ',                            'order' => false, 'width' => '80');
 $col[] = array('column' => $colname['id'],          'name' => $langary_Web_Manage_all['chatlog'],    'order' =>false,  'width' => '80','classname'=>'text-center');
 $col[] = array('column' => $colname_ep['updatetime'],'name' => $langary_Web_Manage_all['update_time'],'order' => false, 'width' => '80');
+$col[] = array('column' => $colname_ep['createtime'],'name' => $langary_manage['createtime'],'order' => false, 'width' => '80');
 $col[] = array('column' => $colname_ep['manage'],   'name' => $langary_Web_Manage_all['manager'],    'order' => false, 'width' => '50');
 
 $listHelp->Bind($col);
@@ -130,6 +132,7 @@ $db->close();
                     $tr.append('<td >' + row["chatlog_count"] + '</td>');
                     $tr.append('<td class="text-center"><button class="btn btn-sm btn-warning" onclick="openBox(\'../program_chatlog/index.php?id=' + row["<?php echo $colname['id']?>"] + "&r_id="+ row["<?php echo $colname_ep['id']?>"] + '\',\'95%\',\'95%\',\'fade\',function(){$(\'#table1\').find(\'#refreshBtn\').click()})"><span class="glyphicon  glyphicon-list-alt"></span></button></td>');
                     $tr.append('<td>' + row["<?php echo $colname_ep['updatetime'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_ep['createtime'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_ep['manage'];?>"] + '</td>');
                     obj.append($tr);
                 }
