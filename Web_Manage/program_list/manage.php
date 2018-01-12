@@ -229,8 +229,7 @@ $('#picupload').coderpicupload({
     s_height: '60px',
     org_pic: org_pic,
     id: '<?php echo $colname['thumbnail'];?>',
-    name:'<?php echo $id;?>',
-    old_img:'<?php echo $pic;?>'/*,required:true*/
+    name:'<?php echo $id;?>'/*,required:true*/
 });
 <?php echo coderFormHelp::drawVaildScript();?>
 

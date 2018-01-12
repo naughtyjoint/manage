@@ -10,10 +10,14 @@ $success=false;
 $width=0;
 $height=0;
 $id = get('id', 1);
-$old_img = get('old_img', 1);
 
 if ($file->file_name != "")
-{   
+{
+    $db = Database::DB();
+    $row = $db->query_prepare_first("select pgram_thumbnail from program  WHERE pgram_id=:id", array(':id' => $id));
+    if($row != null)
+        $old_img = $row['pgram_thumbnail'];
+
 	$filename_orig = $file->file_name;
     $filename = explode('.',$file->file_name);
 	//$file->set("file_name",md5(uniqid(rand())).'.'.end($filename));
@@ -40,7 +44,7 @@ if ($file->file_name != "")
 		$width=$size[0];
 		$height=$size[1];
 
-		$db = Database::DB();
+
         $db->query_update('program',array('pgram_thumbnail'=>($file->file_name))," pgram_id='{$id}'");
         $db->close();
 	}

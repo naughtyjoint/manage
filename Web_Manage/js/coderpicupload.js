@@ -22,8 +22,7 @@ $.fn.coderpicupload = function(settings) {
 		debug:true,
 		required:false,
 		bind_obj:null,
-        name:"",
-        old_img:""
+        name:""
     };
     var _settings = $.extend(_defaultSettings, settings);
 	return this.each(function() {
@@ -212,11 +211,7 @@ $.fn.coderpicupload = function(settings) {
 			var pics=_settings.pics;
 			if(pic){
 			    if(_settings.name !== "")
-				{
                     _settings.ajaxsrc = "../comm/upload.php?id="+_settings.name;
-                    if(_settings.old_img !== "")
-                        _settings.ajaxsrc = "../comm/upload.php?id="+_settings.name+"&old_img="+_settings.old_img;
-				}
 
 
 				_settings.croptagary = {};
