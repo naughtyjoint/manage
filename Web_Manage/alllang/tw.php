@@ -242,7 +242,10 @@ $langary_transfers_manage = array(
 );
 $langary_mycard = array(
     0 => '未交易',
-    1 => '已交易'
+    1 => '已交易',
+    'Created_date' => '交易時間',
+    'Pay_time' => '付款時間',
+    'Check_time' => '請款時間'
 );
 $langary_mycard_pay = array(
     0 => '未請款',
@@ -361,7 +364,8 @@ $langary_orderservice = array(
 
 $langary_edit_add = array(
     'edit' => '編輯',
-    'add' => '新增'
+    'add' => '新增',
+    'view' => '瀏覽'
 );
 
 $langary_manage = array(

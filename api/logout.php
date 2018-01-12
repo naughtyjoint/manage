@@ -1,7 +1,7 @@
 <?php
 header('Content-type:application/json; charset=utf-8');
 session_start();
-session_unset();
+unset($_SESSION["memberData"]);
 $result =array(
     'success' => true,
     'message' => "Logout successfully"

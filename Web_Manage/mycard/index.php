@@ -4,7 +4,7 @@ include_once('filterconfig.php');
 coderAdmin::vaild($auth, 'view');
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
-//$listHelp->editLink = "manage.php";
+$listHelp->editLink = "manage.php";
 //$listHelp->addLink = "manage.php";
 $listHelp->ajaxSrc = "service.php";
 //$listHelp->delSrc = "delservice.php";
@@ -17,7 +17,6 @@ $col[] = array('column' => $colname['id'], 'name' => 'ID', 'order' => true, 'wid
 $col[] = array('column' => $colname['member_id'], 'name' => '會員ID', 'order' => true, 'width' => '80');
 $col[] = array('column' => $colname_p['product_id'], 'name' => '產品', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['FacTradeSeq'], 'name' => '第三方交易序號', 'order' => true, 'width' => '150');
-$col[] = array('column' => $colname['TradeSeq'], 'name' => 'MyCard交易序號', 'order' => true, 'width' => '150');
 $col[] = array('column' => $colname['agent_id'], 'name' => '代理ID', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['ReturnCode'], 'name' => '交易狀態', 'order' => true, 'width' => '90');
 $col[] = array('column' => $colname['PayResult'], 'name' => '請款狀態', 'order' => true, 'width' => '90');
@@ -125,7 +124,6 @@ $db->close();
                     $tr.append('<td>' + row["<?php echo $colname['member_id'];?>"] + '</td>');
                     $tr.append('<td>' + row["product_name"]+'('+row["product"]+')' + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['FacTradeSeq'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['TradeSeq'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['agent_id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['ReturnCode'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['PayResult'];?>"] + '</td>');
