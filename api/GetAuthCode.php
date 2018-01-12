@@ -3,6 +3,7 @@ header('Content-type:application/json; charset=utf-8');
 
 session_start();
 include_once 'codermycardhelp.php';
+include_once '_database.class.php';
 
 $FacServiceId = "luckySG";  //廠商服務代碼
 $FacTradeSeq = uniqid('MC');   //廠商交易序號(自動產生)
@@ -17,7 +18,7 @@ $Currency = "";  //幣別
 $SandBoxMode = "true";  //測試環境
 $FacKey = "B8sqJqY3QFQg8wE2LZ4AxcWQ69v3RUyy";   //廠商key
 $Createdate = date('Y-m-d H:i:s',time());
-
+$agent_id = "";
 
 $result_suc = array(
     'success' => true,
@@ -37,16 +38,32 @@ $login_resultback = array(
     'code' => 3,
     'message' => 'Please log in.'
 );
+$agent_resultback = array(
+    'success' => false,
+    'result' => '',
+    'code' => 4,
+    'message' => 'Failed to get agent id .'
+);
 
-if(isset($_SESSION['memberData']) && ($_SESSION['memberData']!="")){
-    if(isset($_GET["Amount"])&& !empty($_GET["Amount"]) &&
-        isset($_GET["Currency"])&& !empty($_GET["Currency"]) &&
-        isset($_GET["ProductName"])&& !empty($_GET["ProductName"])){
+if(isset($_SESSION['memberData']) && ($_SESSION['memberData']!="")) {
+    if (isset($_GET["Amount"]) && !empty($_GET["Amount"]) &&
+        isset($_GET["Currency"]) && !empty($_GET["Currency"]) &&
+        isset($_GET["ProductName"]) && !empty($_GET["ProductName"])) {
+        if (isset($_GET["agent_id"]) && !empty($_GET["agent_id"])) {
+            $agent_id = $_GET["agent_id"];
+            $db = Database::DB();
+            $sql = "SELECT * FROM agent WHERE agent_id = '" . $agent_id . "'";
+            $agent_count = $db->queryCount($sql);
+            if ($agent_count == 0) {
+                echo json_encode($agent_resultback);
+                exit();
+            }
+        }
+
         $CustomerId = $_SESSION["memberData"]['member_id'];
         $Amount = $_GET["Amount"];
         $Currency = $_GET["Currency"];
         $ProductName = $_GET["ProductName"];
-        $agent_id = $_GET["agent_id"];
         $getauth_ary = array(
             'FacServiceId' => $FacServiceId,
             'FacTradeSeq' => $FacTradeSeq,

@@ -2,6 +2,7 @@
 include_once('codermycardhelp.php');
 include '_func.php';
 header('Content-type:application/json; charset=utf-8');
+
 $result = array(
     'ReturnCode' => post("ReturnCode",1),
     'ReturnMsg' => post("ReturnMsg",1),
@@ -30,7 +31,10 @@ $fal_resultback = array(
 $data = array(
     'FacTradeSeq' => $result["FacTradeSeq"],
     'ReturnCode' => $result["ReturnCode"],
-    'PaymentType' => $result["PaymentType"]
+    'PaymentType' => $result["PaymentType"],
+    'MyCardTradeNo' => $result["MyCardTradeNo"],
+    'MyCardType' => $result["MyCardType"],
+    'PromoCode' => $result["PromoCode"]
 );
 
 
@@ -49,6 +53,8 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
     echo json_encode($fal_resultback);
 
 }
+
+header("Location:http://www.pkfun.xyz/pkfun");
 
 
 ?>

@@ -19,8 +19,8 @@ $fal_resultback = array(
     'message' => 'Contribution failed.'
 );
 
-//if($_SESSION["origURL"] == "http://pkfun.xyz/pkbar/contributiontest.html"){
-if($_SESSION["origURL"] == "http://localhost/manage/test/contributiontest.html"){
+//if($_SESSION["origURL"] == 'http://www.pkfun.xyz/cms/test/contributiontest.html'){
+if($_SESSION["origURL"] == 'http://localhost/manage/test/contributiontest.html'){
 
     if(isset($_SESSION['memberData']) && ($_SESSION['memberData']!="")){
         if(!empty($_POST["anchor_id"])&&!empty($_POST["point"])){

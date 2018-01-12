@@ -41,15 +41,27 @@ class coderMycardHelp {
         $table = 'mycard';
         $datetime = date('Y-m-d H:i:s',time());
         extract($ary);
-        if(!isset($Redeposit)) $Redeposit=0;
-        $db = Database::DB();
-        $data = array(
-            'ReturnCode' => $ReturnCode,
-            'PaymentType' => $PaymentType,
-            'Pay_time' => $datetime,
-            'Redeposit' => $Redeposit
-        );
-
+        if(!isset($Redeposit)){
+            $Redeposit = 0;
+            $db = Database::DB();
+            $data = array(
+                'ReturnCode' => $ReturnCode,
+                'PaymentType' => $PaymentType,
+                'MyCardTradeNo' => $MyCardTradeNo,
+                'MyCardType' => $MyCardType,
+                'PromoCode' => $PromoCode,
+                'Pay_time' => $datetime,
+                'Redeposit' => $Redeposit
+            );
+        }else{
+            $db = Database::DB();
+            $data = array(
+                'ReturnCode' => $ReturnCode,
+                'PaymentType' => $PaymentType,
+                'Pay_time' => $datetime,
+                'Redeposit' => $Redeposit
+            );
+        }
 
         //更新交易狀態
         $db->query_update($table, $data, " FacTradeSeq='$FacTradeSeq'");

@@ -1,7 +1,12 @@
 <?php
 include_once('codermycardhelp.php');
+include_once('_func.php');
 header('Content-type:application/json; charset=utf-8');
-$opt = json_decode(file_get_contents('php://input'));
+
+
+$data = post('DATA',2);
+$opt = json_decode($data);
+
 
 $ReturnCode = $opt->ReturnCode;
 $ReturnMsg = $opt->ReturnMsg;
@@ -29,7 +34,7 @@ if(!empty($ReturnCode) && $FacServiceId == "luckySG" && isset($FacTradeSeq)){
     if($TotalNum == 1){
 
         $data = array(
-            'FacTradeSeq' => $FacTradeSeq,
+            'FacTradeSeq' => $FacTradeSeq[0],
             'ReturnCode' => $ReturnCode,
             'PaymentType' => null,
             'Redeposit' => 1
