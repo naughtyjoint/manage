@@ -10,11 +10,21 @@ try{
 
 	$id=request_ary('id',0);
 
+
 	if(count($id)>0){
 		$db = Database::DB();
 		$idlist="'".implode("','",$id)."'";
+        $imglist = $db->fetch_all_array("select `{$colname['thumbnail']}` from $table  WHERE `{$colname['id']}` in ($idlist)");
 
 		$count=$db->exec("delete from $table where `{$colname['id']}` in($idlist)");
+        for($i=0;$i<count($imglist);$i++) {
+            if ($imglist[$i][$colname['thumbnail']] != "")
+            {
+                @unlink($file_path.$imglist[$i][$colname['thumbnail']]);
+                @unlink($file_path.'s'.$imglist[$i][$colname['thumbnail']]);
+            }
+	    }
+
 		if($count>0){
 			$success=true;
 			coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'del',$count.$langary_delservice['insert'].'('.$idlist.')');

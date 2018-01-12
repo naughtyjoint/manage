@@ -113,7 +113,11 @@ if ($errorhandle->isException()) {
                                         <label class="col-sm-3 col-lg-3 control-label">
                                             <?php echo $fhelp->drawLabel($colname['thumbnail']) ?> </label>
                                         <div class="col-sm-8 controls">
+                                            <?php if($id != ""){?>
                                             <div id="picupload"></div>
+                                            <?php }else{?>
+                                            <div>請先完成新增節目再來上傳圖片</div>
+                                            <?php }?>
                                         </div>
                                     </div>
                                     <div class="form-group ">

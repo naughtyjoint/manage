@@ -78,7 +78,7 @@ $.fn.coderpicupload = function(settings) {
 			$hidden=$('<input type="hidden" thisid="'+_settings.id+'" name="'+_settings.id+'" id="'+_settings.id+'" class="hasvalidate" value="" '+(_settings.required==true ? ' required="yes" ' : ' ')+'>');
 			$buttoncontent.append($hidden);
 			parent.append($buttoncontent);
-			parent.find('img').click(function(){
+			/*parent.find('img').click(function(){
 				if($(this).attr('data-filepath') && $(this).attr('data-picname')){
 					$.colorbox({html:'<div><img src="'+$(this).attr('src')+'"><div class="jcrop_picbox_edit" data-sno="'+$(this).attr('data-sno')+'" data-filepath="'+$(this).attr('data-filepath')+'" data-picname="'+$(this).attr('data-picname')+'"><span class="glyphicon glyphicon-pencil"></span></div></div>',maxWidth: "95%",initialWidth:'50px',initialHeight:'50px'});//href:$(this).attr('src')
 					$('.jcrop_picbox_edit').click(function(){
@@ -87,7 +87,7 @@ $.fn.coderpicupload = function(settings) {
 				}else{
 					$.colorbox({href:$(this).attr('src'),maxWidth: "95%",initialWidth:'50px',initialHeight:'50px'});
 				}
-			})
+			})*/
 			initButton();
 			if(_settings.org_pic!=null){
 				showPics(_settings.org_pic);
