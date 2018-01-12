@@ -13,7 +13,7 @@ try{
     $sHelp->select="e.`{$colname_ep['id']}`, p.`{$colname['name']}`, e.`{$colname_ep['anchors']}`, e.`{$colname_ep['start_time']}`, e.`{$colname_ep['end_time']}`,
     SEC_TO_TIME( TIMESTAMPDIFF(SECOND, e.`{$colname_ep['start_time']}`, e.`{$colname_ep['end_time']}`) ) AS episode_length,
     (SELECT COUNT(*) FROM ".$table_cl." a WHERE a.`{$colname_cl['record_id']}`=e.`{$colname_ep['id']}`) AS chatlog_count,"
-    ."p.`{$colname['id']}`, e.`{$colname_ep['updatetime']}`, e.`{$colname_ep['manage']}`";
+    ."p.`{$colname['id']}`, e.`{$colname_ep['updatetime']}`, e.`{$colname_ep['createtime']}`, e.`{$colname_ep['manage']}`";
 
 
     //from

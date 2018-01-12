@@ -52,7 +52,7 @@ class coderDBConf
     public static $chatlog = 'program_chatroom';
     public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'record_id'=>'cl_record_id', 'chatlog'=>'cl_record', 'createtime'=>'cl_creatdate');
     public static $episode = 'program_episode';
-    public static $col_episode = array('id' => 'ep_id', 'pgram_id'=>'ep_pgram_id', 'anchors'=>'ep_anchors', 'start_time'=>'ep_start_time', 'end_time'=>'ep_end_time', 'createtime'=>'ep_createdtime', 'updatetime'=>'ep_updatetime', 'manage'=>'ep_lastmanage');
+    public static $col_episode = array('id' => 'ep_id', 'pgram_id'=>'ep_pgram_id', 'anchors'=>'ep_anchors', 'start_time'=>'ep_start_time', 'end_time'=>'ep_end_time', 'createtime'=>'ep_createtime', 'updatetime'=>'ep_updatetime', 'manage'=>'ep_lastmanage');
 
 
 }

@@ -7,7 +7,7 @@ try{
     $db = Database::DB();
     $id = post($colname['id'],1);
     $pg_id = post($colname_ep['id'],1);
-    if($id!=""){
+    if($id!="" && $pg_id!=""){
         //coderAdmin::vaild($auth,'edit');
         $method='edit';
         $active=$langary_edit_add['edit'];
@@ -33,14 +33,19 @@ try{
     if($method=='edit'){
         unset($data[$colname['name']]);
         $db->query_update($table_ep, $data," {$colname_ep['id']}='{$pg_id}'");
+        echo showParentSaveNote($page_title,$active,$admin_title,"manage.php?id=".$id."&pgram_id=".$pg_id);
 	}else{
-		$data[$colname['createtime']]= $nowtime;
-		$id=$db->query_insert($table,$data);
+        unset($data[$colname['name']]);
+        $data[$colname_ep['pgram_id']] = $id;
+		$data[$colname_ep['createtime']]= $nowtime;
+		$id=$db->query_insert($table_ep,$data);
+        echo showParentSaveNote($page_title,$active,$admin_title,"manage.php?id=".$id."&pgram_id=".$pg_id);
 	}
 
     $db->close();
 
-    echo showParentSaveNote($page_title,$active,$admin_title,"manage.php?id=".$id."&pgram_id=".$pg_id);
+
+    //echo showParentSaveNote($page_title,$active,$admin_title,"manage.php?id=".$id."&pgram_id=".$pg_id);
 }
 catch(Exception $e){
 	$errorhandle->setException($e); // 收集例外

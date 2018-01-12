@@ -7,23 +7,16 @@ $pg_id = get('pgram_id', 1);
 $manageinfo = "";
 try {
 
-    if ($id != "") {
+    if ($id != "" && $pg_id != "") {
         //coderAdmin::vaild($auth, 'edit');
 
         $db = Database::DB();
-        //$row = $db->query_prepare_first("select * from $table  WHERE {$colname['id']}=:id", array(':id' => $id));
         $row = $db->query_prepare_first("select * from $table a, $table_ep b WHERE a.{$colname['id']}=:id AND b.{$colname_ep['id']}=:pg_id", array(':id' => $id, ':pg_id'=>$pg_id));
-        //$row = $db->fetch_all_array("select * from ".$table." a, ".$table_ep." b  WHERE a.".$colname['id']."=".$id." AND b.".$colname_ep['id']."=".$pg_id);
         if (empty($row)) {
             throw new Exception($langary_manage['exception']);
         }
 
         $fhelp->setAttr($colname['name'], 'readonly', true);
-        /* ## coder [bindData] --> ## */
-        //$manageinfo='  '.$langary_manage['admin'].' '.$row[$colname_ep['manage']].' | '.$langary_manage['createtime'].' '.$row[$colname_ep['createtime']].' | '.$langary_manage['updatetime'].' '.$row[$colname_ep['updatetime']];
-        /* ## coder [bindData] <-- ## */
-        /* ## coder [beforeBind] --> ## */
-        /* ## coder [beforeBind] <-- ## */
 
         $fhelp->bindData($row);
 
@@ -33,8 +26,20 @@ try {
         $db->close();
     } else {
         //coderAdmin::vaild($auth, 'add');
+
+        $db = Database::DB();
+        $row = $db->query_prepare_first("select * from $table WHERE {$colname['id']}=:id", array( ':id' => $id) );
+        if (empty($row)) {
+            throw new Exception($langary_manage['exception']);
+        }
+
+        $fhelp->setAttr($colname['name'], 'readonly', true);
+        $fhelp->bindData($row);
+
         $method = 'add';
         $active = $langary_edit_add['add'];
+
+        $db->close();
     }
 } catch (Exception $e) {
     $db->close();
@@ -78,6 +83,8 @@ if ($errorhandle->isException()) {
             <form class="form-horizontal" action="save.php" id="myform" name="myform" method="post">
                 <?php echo $fhelp->drawForm($colname['id']) ?>
                 <?php echo $fhelp->drawForm($colname_ep['id']) ?>
+                <?php echo $fhelp->drawForm($colname_ep['updatetime']) ?>
+                <?php echo $fhelp->drawForm($colname_ep['createtime']) ?>
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-title">
@@ -105,6 +112,20 @@ if ($errorhandle->isException()) {
                                             <?php echo $fhelp->drawLabel($colname_ep['anchors']) ?> </label>
                                         <div class="col-sm-5 controls">
                                             <?php echo $fhelp->drawForm($colname_ep['anchors']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname_ep['start_time']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname_ep['start_time']) ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-sm-3 col-lg-3 control-label">
+                                            <?php echo $fhelp->drawLabel($colname_ep['end_time']) ?> </label>
+                                        <div class="col-sm-5 controls">
+                                            <?php echo $fhelp->drawForm($colname_ep['end_time']) ?>
                                         </div>
                                     </div>
 

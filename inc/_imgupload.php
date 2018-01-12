@@ -132,11 +132,6 @@ class imgUploder
 			{
 				$this->file_name=$this->file_name;
 			}
-			if($this->overwrite=="4")
-            {
-                @unlink($this->file_dir.$this->file_name);
-                @unlink($this->file_dir.'s'.$this->file_name);
-            }
 		}
 	}
 	function chk_Copy()
@@ -459,9 +454,27 @@ class imgUploder
 		imagedestroy($source);
 		imagedestroy($target);
 	}
+	function chk_FileType()
+    {
+        switch(exif_imagetype($this->file_dir.$this->file_name) )
+        {
+            case 1:
+                $this->fileex='gif';
+                break;
+            case 2:
+                $this->fileex='jpg';
+                break;
+            case 3:
+                $this->fileex='png';
+                break;
+            default:
+                $r=explode('.',$this->file_name);
+                $this->fileex=strtolower(end($r));
+                break;
+        }
+    }
 	function upload()
 	{
-
 		$this->chk_FileSize();
 		$this->chk_Style();
 		$this->chk_FileDir();
@@ -488,6 +501,7 @@ class imgUploder
         if ($this->user_msg==""){
 
             $this->chk_Copy();
+            $this->chk_FileType();
             return true;
         }
 	}
