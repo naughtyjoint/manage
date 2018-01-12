@@ -1,9 +1,10 @@
 <?php
-include_once "coderpointhelp.php";
+include "_database.class.php";
 session_start();
 header('Content-type:application/json; charset=utf-8');
 $result_suc =array(
     'success' => true,
+    'count' => '',
     'result' => '',
     'message' => "request successful"
 );
@@ -15,13 +16,15 @@ $result_fal =array(
 try{
     if(isset($_SESSION['memberData']) && ($_SESSION['memberData']!="")) {
 
-        $db = Database::DB();
         $member_id = $_SESSION["memberData"]["member_id"];
-        $row = coderPointHelp::getPoint($member_id);
+        $db = Database::DB();
+        $row = $db->preparefetch_all_array("SELECT * FROM contribution WHERE member_id=:id", array(":id" => $member_id) );
+        $count = count($row);
         $db->close();
-
         $result_suc["result"]=$row;
+        $result_suc["count"]=$count;
         echo json_encode($result_suc);
+
     }else{
         echo json_encode($result_fal);
     }
