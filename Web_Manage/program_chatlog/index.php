@@ -1,8 +1,8 @@
 <?php
 include_once('_config.php');
 include_once('filterconfig.php');
-$getid = (get('id')!="")?get('id'):-1;
-$getrid = (get('r_id')!="")?get('r_id'):-1;
+$getid = (get('id')!="")?get('id'):-1;      //節目ID
+$getrid = (get('r_id')!="")?get('r_id'):-1; //開播ID
 
 /* ## coder [listHelp] --> ## */
 $listHelp = new coderListHelp('table1', $page_title);
@@ -11,12 +11,16 @@ $listHelp->check_auth = false;
 
 $listHelp->mutileSelect=true;
 $listHelp->delSrc = "delservice.php";
+$listHelp->editLink = "manage.php";
+$listHelp->addLink = "manage.php?id=".$getid."&ep_id=".$getrid;
 
 $col = array();
 $col[] = array('column' => $colname_cl['id'],          'name' => $langary_Web_Manage_all['chatlog'].$langary_Web_Manage_all['id'], 'order' => true, 'width' => '60');
 $col[] = array('column' => $colname['name'],           'name' => $langary_Web_Manage_all['pgram_name'], 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname_cl['chatlog'],     'name' => $langary_Web_Manage_all['chatlog'], 'order' => false, 'width' => '120');
-$col[] = array('column' => $colname_cl['createtime'],  'name' => $langary_Web_Manage_all['create_time'], 'order' => true, 'width' => '120');
+$col[] = array('column' => $colname_cl['createtime'],  'name' => $langary_Web_Manage_all['create_time'], 'order' => false, 'width' => '120');
+$col[] = array('column' => $colname_cl['updatetime'],  'name' => $langary_Web_Manage_all['update_time'], 'order' => false, 'width' => '120');
+$col[] = array('column' => $colname_cl['manage'],      'name' => $langary_Web_Manage_all['manager'], 'order' => false, 'width' => '120');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);
@@ -111,12 +115,15 @@ $db->close();
                     var row = rows[i];
                     var $tr = $('<tr></tr>');
                     $tr.attr("orderlink", "order_id=" + row["<?php echo $colname_cl['id'];?>"] + "&order_key=<?php echo $colname_cl['id'];?>");
+                    $tr.attr("editlink", "id=" + <?php echo $getid;?> + "&chat_id=" + row["<?php echo $colname_cl['id'];?>"]);
                     $tr.attr("delkey", row["<?php echo $colname_cl['id'];?>"]);
                     $tr.attr("title",  "聊天紀錄ID ["+row["<?php echo $colname_cl['id'];?>"]+"]");
                     $tr.append('<td>' + row["<?php echo $colname_cl['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['chatlog'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname_cl['createtime'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_cl['updatetime'];?>"] + '</td>');
+                    $tr.append('<td>' + row["<?php echo $colname_cl['manage'];?>"] + '</td>');
                     obj.append($tr);
                 }
             }, listComplete: function () {

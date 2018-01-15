@@ -11,12 +11,11 @@ try{
 	if(count($id)>0){
 		$db = Database::DB();
 		$idlist="'".implode("','",$id)."'";
-        //$colname_cl['record_id']
-		$count=$db->exec("delete from $table_cl where `{$colname_cl['record_id']}` in($idlist)");
+
+		$count=$db->exec("delete from $table_ep where `{$colname_ep['id']}` in($idlist)");
+        $count_2=$db->exec("delete from $table_cl where `{$colname_cl['record_id']}` in($idlist)");
 		if($count>0){
 			$success=true;
-			//coderAdminLog::insert($adminuser['username'],$main_auth_key,$fun_auth_key,'edit',$count.$langary_delservice['edit'].'('.$idlist.')');
-            echo "<script>alert('update success')</script>";
 		}
 		else{
             echo "<script>alert('update error')</script>";
