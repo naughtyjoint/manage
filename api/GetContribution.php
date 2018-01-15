@@ -18,7 +18,7 @@ try{
 
         $member_id = $_SESSION["memberData"]["member_id"];
         $db = Database::DB();
-        $row = $db->preparefetch_all_array("SELECT * FROM contribution WHERE member_id=:id", array(":id" => $member_id) );
+        $row = $db->preparefetch_all_array("SELECT * FROM contribution WHERE member_id=:id ORDER BY created_date DESC", array(":id" => $member_id ));
         $count = count($row);
         $db->close();
         $result_suc["result"]=$row;
