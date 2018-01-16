@@ -17,8 +17,8 @@ try{
 				  LEFT JOIN $table_a a ON a.`{$colname_a['id']}` = t.`{$colname['anchor_id']}`";
 	$sHelp->page_size=get("pagenum");
 	$sHelp->page=get("page");
-	$sHelp->orderby=get("orderkey",1);
-	$sHelp->orderdesc=get("orderdesc",1);
+	$sHelp->orderby=$colname["created_date"];
+//	$sHelp->orderdesc=get("orderdesc",1);
 
 	$sqlstr=$filterhelp->getSQLStr();
 	$where = $sqlstr->SQL;

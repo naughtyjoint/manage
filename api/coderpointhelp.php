@@ -59,8 +59,10 @@ class coderPointHelp
                 'contents' => $content
             );
             $db->query_insert($this->table_contribution,$contribution);
+            $anc_name = $db->query_prepare_first("SELECT name FROM anchor WHERE id=:id",[':id' => $anc_id]);
             $db->close();
             $ary["member_point"] = $member_point;
+            $ary["anc_name"] = $anc_name['name'];
 
             return array(
                 'success' => true,
