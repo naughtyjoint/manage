@@ -18,7 +18,7 @@ $col[] = array('column' => $colname_a['name'], 'name' => '主播名稱', 'order'
 $col[] = array('column' => $colname_m['name'], 'name' => '會員名稱', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['point'], 'name' => '打賞金額', 'order' => false, 'width' => '100');
 $col[] = array('column' => $colname['contents'], 'name' => '留言', 'order' => false, 'width' => '120');
-$col[] = array('column' => $colname['created_date'], 'name' => '申請時間', 'order' => true, 'width' => '120');
+$col[] = array('column' => $colname['created_date'], 'name' => '打賞時間', 'order' => true, 'width' => '120');
 
 $listHelp->Bind($col);
 $listHelp->bindFilter($filterhelp);

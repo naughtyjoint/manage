@@ -31,6 +31,7 @@ if($_SESSION["origURL"] == 'http://localhost/manage/test/contributiontest.html')
             $contribute_ary = array(
                 'mem_id' => $member_id,
                 'anc_id' => $anchor_id,
+                'anc_name' => "",
                 'point' => $point,
                 'content' => $content
             );
