@@ -34,7 +34,7 @@ try {
     } else {
         $fhelp->setAttr($colname['member_id'], 'validate', array('required' => 'yes'));
         $fhelp->setAttr($colname['money'], 'validate', array('required' => 'yes','maxlength' => '11','digits'=>'yes'));
-        $fhelp->setAttr($colname['platform_id'], 'validate', array('required' => 'yes','maxlength' => '50'));
+//        $fhelp->setAttr($colname['platform_id'], 'validate', array('required' => 'no','maxlength' => '50'));
         coderAdmin::vaild($auth, 'add');
         $method = 'add';
         $active = '新增';
