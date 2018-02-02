@@ -28,7 +28,7 @@ class coderDBConf
     public static $anchor = 'anchor'; //主播
     public static $col_anchor = array('id'=>'id','name'=>'name','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'update_time','manager'=>'last_manager');
     public static $member = 'member'; //會員
-    public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_id'=>'platform_id','agent_id'=>'agent_id','email'=>'email','point'=>'point','create_time'=>'created_time','update_time'=>'updated_time','manager'=>'last_manager');
+    public static $col_member = array('id'=>'id','member_id'=>'member_id','name'=>'member_name','platform_id'=>'platform_id','agent_id'=>'agent_id','email'=>'email','point'=>'point','create_time'=>'created_at','update_time'=>'updated_at','manager'=>'last_manager');
     public static $agent = 'agent'; //代理
     public static $col_agent = array('id'=>'id','agent_id'=>'agent_id','name'=>'agent_name','email'=>'email','created_time'=>'created_time','updated_time'=>'updated_time','manager'=>'last_manager');
     public static $deposit = 'deposit'; //入款申請
@@ -50,7 +50,7 @@ class coderDBConf
     public static $tag = 'program_tags';
     public static $col_tag = array('id'=>'tag_id', 'name'=>'tag_name', 'status'=>'tag_status', 'createtime'=>'tag_createdtime', 'updatetime'=>'tag_updatetime', 'manage'=>'tag_lastmanage');
     public static $chatlog = 'program_chatroom';
-    public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'record_id'=>'cl_record_id', 'chatlog'=>'cl_record', 'createtime'=>'cl_creatdate', 'updatetime'=>'cl_updatetime',  'manage'=>'cl_lastmanage');
+    public static $col_chatlog = array('id'=>'cl_id', 'pgram_id'=>'cl_pgram_id', 'record_id'=>'cl_record_id', 'sender'=>'cl_sender', 'chatlog'=>'cl_msg', 'createtime'=>'cl_creatdate', 'updatetime'=>'cl_updatetime',  'manage'=>'cl_lastmanage');
     public static $episode = 'program_episode';
     public static $col_episode = array('id' => 'ep_id', 'pgram_id'=>'ep_pgram_id', 'anchors'=>'ep_anchors', 'start_time'=>'ep_start_time', 'end_time'=>'ep_end_time', 'createtime'=>'ep_createtime', 'updatetime'=>'ep_updatetime', 'manage'=>'ep_lastmanage');
 

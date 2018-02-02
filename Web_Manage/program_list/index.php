@@ -125,7 +125,8 @@ $db->close();
                     $tr.attr("title", row["<?php echo $colname['name'];?>"]);
                     $tr.append('<td>' + row["<?php echo $colname['id'];?>"] + '</td>');
                     $tr.append('<td>' + row["<?php echo $colname['name'];?>"] + '</td>');
-                    $tr.append('<td>' + row["<?php echo $colname['description'];?>"] + '</td>');
+                    $tr.append('<td><p style="text-overflow : ellipsis;overflow:hidden;width:100%;max-width:300px;-webkit-line-clamp: 3;-webkit-box-orient: vertical;line-height:1.5;margin:1em 0;display: -webkit-box; ">'
+                        + row["<?php echo $colname['description'];?>"] + '</p></td>');
 
                     var pic = (row["<?php echo $colname['thumbnail']?>"] !="")?'<?php echo $file_path;?>s'+row["<?php echo $colname['thumbnail']?>"]:'../images/nouser.jpg';
                     $tr.append('<td class="text-center"><img src="'+pic+'" width="40" height="40"></img></td>');

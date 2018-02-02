@@ -477,6 +477,7 @@ $langary_Web_Manage_all = array(
     'tag_name' => '標籤名稱',
     'showtime' => '節目時間',
     'chatlog' => '聊天紀錄',
+    'sender' => '發送者',
     'product_repeat' => '上架商品重複'
 );
 

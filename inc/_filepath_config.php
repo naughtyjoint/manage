@@ -1,6 +1,7 @@
 <?php
 //admin
-$admin_path_admin = "../upload/admin/";
+//$admin_path_admin = "../upload/admin/";
+$admin_path_admin = "/var/www/html/pkfun/public/img/gallery/";
 
 //config
 $path_webconf="upload/config/";

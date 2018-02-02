@@ -11,7 +11,7 @@ try{
     $getrid=(get('r_id')!="")?get('r_id'):-1;
 
     //select
-	$sHelp->select="t.`{$colname_cl['id']}`,p.`{$colname['name']}`,t.`{$colname_cl['chatlog']}`,t.`{$colname_cl['createtime']}`,t.`{$colname_cl['updatetime']}`,t.`{$colname_cl['manage']}`";
+	$sHelp->select="t.`{$colname_cl['id']}`,p.`{$colname['name']}`,t.`{$colname_cl['sender']}`,t.`{$colname_cl['chatlog']}`,t.`{$colname_cl['createtime']}`,t.`{$colname_cl['updatetime']}`,t.`{$colname_cl['manage']}`";
     //from
     $sHelp->table=$table_cl." t, ".$table." p";
 
