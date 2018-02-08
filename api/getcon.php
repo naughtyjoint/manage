@@ -54,7 +54,7 @@ if(!empty($_POST["ReturnCode"]) && !empty($_POST["ReturnMsg"]) && !empty($_POST[
 
 }
 
-header("Location:http://www.pkfun.xyz/pkfun");
+header("Location:http://www.pkfun.xyz/");
 
 
 ?>

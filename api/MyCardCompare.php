@@ -7,6 +7,9 @@ $db = Database::DB();
 if(isset($_POST["StartDateTime"]) && !empty($_POST["StartDateTime"]) && isset($_POST["EndDateTime"]) && !empty($_POST["EndDateTime"])){
     $qry = "SELECT PaymentType,TradeSeq,MyCardTradeNo,FacTradeSeq,member_id,Amount,Currency,Pay_time FROM mycard WHERE Pay_time > :StartDateTime AND Pay_time < :EndDateTime";
     $result = $db->preparefetch_all_array($qry,[":StartDateTime" => post('StartDateTime',1) , ":EndDateTime" => post('EndDateTime',1)]);
+    if($result==false){
+        echo "No Data";
+    }
     foreach ($result as $item){
         $date = new DateTime($item["Pay_time"]);
         $date_str = $date->format('Y-m-d')."T".$date->format('H:i:s');
